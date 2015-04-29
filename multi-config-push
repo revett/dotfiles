@@ -1,0 +1,31 @@
+#!/bin/sh
+
+if [ $1 = "help" ]; then
+  echo "Usages: multi-config-push <comp_1...comp_n> <project> <env>"
+  exit 0
+fi
+
+COMPONENTS=( "$@" )
+
+ENV=${COMPONENTS[${#COMPONENTS[@]} - 1]}
+unset COMPONENTS[${#COMPONENTS[@]}-1]
+
+PROJECT=${COMPONENTS[${#COMPONENTS[@]} - 1]}
+unset COMPONENTS[${#COMPONENTS[@]}-1]
+
+echo "Components:  ${COMPONENTS[@]}"
+echo "Project:     $PROJECT"
+echo "Environment: $ENV"
+echo
+
+read -p "Are you sure (y/n)? " -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+  echo "Okay! Stopping."
+  exit 1
+fi
+
+for component in "${COMPONENTS[@]}"; do
+  bbc-cosmos-tools config push $component --project=$PROJECT --env=$ENV --force;
+done

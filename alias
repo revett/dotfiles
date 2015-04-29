@@ -1,0 +1,17 @@
+alias alias-list="cat ~/.scripts/alias"
+
+alias bbc="cd ~/Dropbox/Projects/BBC"
+alias code="cd ~/Dropbox/Projects/Code"
+
+alias bi="bundle install"
+alias bu="bundle update"
+alias rack="rackup -p 9292"
+
+alias gpush="git push -u origin "
+alias gmerge="git merge --squash "
+
+alias hello="echo \"Hello Charlie!\""
+
+alias re-source="source ~/.zshrc"
+
+alias spurious-up="chruby 2.0 && boot2docker up && spurious-server start && spurious up"

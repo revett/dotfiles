@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ $1 = "help" ]; then
+  echo "Usages: cosmos-ip <component> <env>"
+  exit 0
+fi
+
+if [ "$#" -ne 2 ]; then
+  echo "Usage: cosmos-ip <component> <env>"
+  exit 1
+fi
+
+echo "Component:   $1"
+echo "Environment: $2"
+
+IFS=' ' read -a array <<< $(bbc-cosmos-tools component ssh $1 --env=$2)
+IP=${array[${#array[@]} - 1]}
+
+echo "IP Address:  $IP"
+echo ""
+
+ssh $IP
