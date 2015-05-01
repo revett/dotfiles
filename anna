@@ -1,17 +1,22 @@
 #!/bin/sh
 
+RED="\033[0;31m"
+BLUE="\033[0;34m"
+PURPLE="\033[0;35m"
+NC="\033[0m"
+
 commands ()
 {
-  echo "Commands:\n" \
-       "  edit    - change how anna works\n" \
-       "  list    - show known scripts\n" \
-       "  refresh - git pull new commits\n" \
-       "  setup   - initial setup for anna";
+  echo "${PURPLE}Commands:${NC}\n" \
+       "  ${BLUE}edit${NC}    - change how anna works\n" \
+       "  ${BLUE}list${NC}    - show known scripts\n" \
+       "  ${BLUE}refresh${NC} - git pull new commits\n" \
+       "  ${BLUE}setup${NC}   - initial setup for anna";
 }
 
 not_found ()
 {
-  echo "'$1' is not a known command.\n"
+  echo "${RED}'$1' is not a known command.${NC}\n"
   usage
   commands
   exit 1
@@ -26,14 +31,14 @@ setup ()
     ln -s ~/.scripts/dotfiles/.zshrc ~/.zshrc 
     exit 0
   else
-    echo "Error: you must be in the scripts Dropbox directory to run this command"
+    echo "${RED}Error: you must be in the scripts Dropbox directory to run this command.${NC}"
     exit 1
   fi  
 }
 
 usage ()
 {
-  echo "Usage: anna <command>\n"
+  echo "${PURPLE}Usage:${NC} anna <command>\n"
 }
 
 if [ $# -eq 0 ]; then
