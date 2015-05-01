@@ -2,6 +2,16 @@
 
 Scripts, config and dotfiles shared between my laptops.
 
-```bash
+### Setup
+
+Symlink the directory:
+
+```
 ln -s ~/Dropbox/Projects/Code/Github/scripts ~/.scripts
+```
+
+Symlink `./zshrc`:
+
+```
+ln -s ~/.scripts/dotfiles/.zshrc ~/.zshrc
 ```

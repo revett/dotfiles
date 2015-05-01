@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ $1 = "help" ]; then
-  echo "Usage: multi-config-push <comp_1...comp_n> <project> <env>"
+if [ $# -eq 0 ]; then
+  echo "multi-config-push <comp_1...comp_n> <project> <env>"
   exit 0
 fi
 

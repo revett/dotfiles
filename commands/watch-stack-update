@@ -1,8 +1,8 @@
 #!/bin/sh
 
-USAGE="Usage: watch-stack-update <component> <project> <env>"
+USAGE="watch-stack-update <component> <project> <env>"
 
-if [ $1 = "help" ]; then
+if [ $# -eq 0 ]; then
   echo $USAGE
   exit 0
 fi

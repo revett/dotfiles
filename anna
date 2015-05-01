@@ -1,0 +1,67 @@
+#!/bin/sh
+
+commands ()
+{
+  echo "Commands:\n" \
+       "  edit  - change how anna works\n" \
+       "  list  - show known scripts\n" \
+       "  setup - initial setup for anna";
+}
+
+not_found ()
+{
+  echo "'$1' is not a known command.\n"
+  usage
+  commands
+  exit 1
+}
+
+setup ()
+{
+  if [ $(PWD) = "/Users/charlie/Dropbox/Projects/Code/Github/scripts" ]; then
+    echo "Symlinking the directory..."
+    ln -s ~/Dropbox/Projects/Code/Github/scripts ~/.scripts
+    echo "Symlinking .zshrc to home..."
+    ln -s ~/.scripts/dotfiles/.zshrc ~/.zshrc 
+    exit 0
+  else
+    echo "Error: you must be in the scripts Dropbox directory to run this command"
+    exit 1
+  fi  
+}
+
+usage ()
+{
+  echo "Usage: anna <command>\n"
+}
+
+if [ $# -eq 0 ]; then
+  commands
+  exit 0
+fi
+
+if [ $# -gt 1 ]; then
+  usage
+  commands
+  exit 1
+fi
+
+if [ $1 = "edit" ]; then
+  vim ~/.scripts/anna 
+  exit 0
+fi
+
+if [ $1 = "list" ]; then
+  for file in ~/.scripts/commands/*
+  do
+    $(basename $file)
+  done
+  exit 0
+fi
+
+if [ $1 = "setup" ]; then
+  setup
+  exit 0
+fi
+
+not_found $1
