@@ -1,0 +1,20 @@
+#!/bin/sh
+
+USAGE="Usage: watch-stack-update <component> <project> <env>"
+
+if [ $1 = "help" ]; then
+  echo $USAGE
+  exit 0
+fi
+
+if [ "$#" -ne 3 ]; then
+  echo $USAGE
+  exit 1
+fi
+
+echo "Component:   $1"
+echo "Project:     $2"
+echo "Environment: $3"
+
+watch -n 0.5 bbc-cosmos-tools stack events $1 --project=$2 --env=$3
+
