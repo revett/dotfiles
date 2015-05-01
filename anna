@@ -3,9 +3,10 @@
 commands ()
 {
   echo "Commands:\n" \
-       "  edit  - change how anna works\n" \
-       "  list  - show known scripts\n" \
-       "  setup - initial setup for anna";
+       "  edit    - change how anna works\n" \
+       "  list    - show known scripts\n" \
+       "  refresh - git pull new commits\n" \
+       "  setup   - initial setup for anna";
 }
 
 not_found ()
@@ -56,6 +57,12 @@ if [ $1 = "list" ]; then
   do
     $(basename $file)
   done
+  exit 0
+fi
+
+if [ $1 = "refresh" ]; then
+  cd ~/.scripts
+  git pull
   exit 0
 fi
 

@@ -2,6 +2,7 @@ alias alias-list="cat ~/.scripts/alias"
 
 alias bbc="cd ~/Dropbox/Projects/BBC"
 alias code="cd ~/Dropbox/Projects/Code"
+alias scripts="cd ~/.scripts"
 
 alias bi="bundle install"
 alias bu="bundle update"
