@@ -39,17 +39,6 @@ PATH="$DEV_ENV/scripts:$PATH"
 
 source $DEV_ENV/alias
 
+# Setup zsh-syntax-highlighting
+source $DEV_ENV/dotfiles/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/plugin.zsh
 
-# Setup zsh-autosuggestions
-source /Users/charlie/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.zsh
-
-# Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-
-zle -N zle-line-init
-
-# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-# zsh-autosuggestions is designed to be unobtrusive)
-bindkey '^T' autosuggest-toggle
