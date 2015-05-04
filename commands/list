@@ -1,0 +1,11 @@
+#!/bin/sh
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+cd $DIR/..
+
+for file in scripts/*
+do
+  $(basename $file)
+done
+ 

@@ -32,7 +32,9 @@ export DOCKER_TLS_VERIFY=1
 
 export BBC_COSMOS_TOOLS_CERT=~/.certs/dev.bbc.co.uk.pem
 
-PATH="$HOME/.scripts:$PATH"
-PATH="$HOME/.scripts/commands:$PATH"
+DEV_ENV=$HOME/Dropbox/Projects/Code/Github/dev-env
 
-source ~/.scripts/alias
+PATH="$DEV_ENV:$PATH"
+PATH="$DEV_ENV/scripts:$PATH"
+
+source $DEV_ENV/alias

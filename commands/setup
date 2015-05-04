@@ -1,0 +1,10 @@
+#!/bin/sh
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+echo "Symlinking .zshrc to $HOME..."
+ln -s $DIR/../dotfiles/.zshrc ~/.zshrc
+
+# Thoughts:
+# - gives option to delete file if already exists
+# - use for loop
