@@ -4,14 +4,14 @@ Scripts, config and dotfiles shared between my laptops.
 
 ### Setup
 
-Symlink the directory:
+Setup Dropbox to:
 
 ```
-ln -s ~/Dropbox/Projects/Code/Github/scripts ~/.scripts
+/Users/charlie/Dropbox
 ```
 
-Symlink `./zshrc`:
+Run **setup**:
 
 ```
-ln -s ~/.scripts/dotfiles/.zshrc ~/.zshrc
+cd ~/Dropbox/Projects/Code/Github/dev-env && anna setup
 ```
