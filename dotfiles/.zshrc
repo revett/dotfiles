@@ -19,7 +19,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew bundler chruby common-aliases docker gem jsontools ruby sudo web-search)
+plugins=(git brew bundler chruby common-aliases docker gem jsontools ruby sudo web-search zsh-syntax-highlighting)
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
@@ -38,3 +38,18 @@ PATH="$DEV_ENV:$PATH"
 PATH="$DEV_ENV/scripts:$PATH"
 
 source $DEV_ENV/alias
+
+
+# Setup zsh-autosuggestions
+source /Users/charlie/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.zsh
+
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+
+zle -N zle-line-init
+
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
