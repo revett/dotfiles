@@ -1,0 +1,29 @@
+#!/bin/sh
+
+BLUE="\033[0;34m"
+PURPLE="\033[0;35m"
+NC="\033[0m"
+
+usage ()
+{
+  echo "${BLUE}open-gh${NC}\n" \
+       "  - open current git directory in browser.\n" \
+       "  - ${PURPLE}args:${NC} <owner>";
+}
+
+if [ $# -eq 0 ]; then
+  usage
+  exit 0
+fi
+
+if [ $# -ne 1 ]; then
+  usage
+  exit 1
+fi
+
+REPO=${PWD##*/};
+URL="http://github.com/$1/$REPO"
+
+echo "Opening $URL"
+
+open $URL
