@@ -1,7 +1,18 @@
 #!/bin/sh
 
+BLUE="\033[0;34m"
+PURPLE="\033[0;35m"
+NC="\033[0m"
+
+usage ()
+{
+  echo "${BLUE}multi-config-push${NC}\n" \
+       "  - push config to multiple Cosmos components.\n" \
+       "  - ${PURPLE}args:${NC} <comp_1...comp_n> <project> <env>";
+}
+
 if [ $# -eq 0 ]; then
-  echo "multi-config-push <comp_1...comp_n> <project> <env>"
+  usage
   exit 0
 fi
 

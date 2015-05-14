@@ -10,8 +10,10 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 commands ()
 {
   echo "${PURPLE}Commands:${NC}\n" \
+       "  ${BLUE}alias${NC}   - show custom alias\n" \
        "  ${BLUE}edit${NC}    - open vim for dev-env\n" \
        "  ${BLUE}list${NC}    - show known scripts\n" \
+       "  ${BLUE}log${NC}     - edit daily log\n" \
        "  ${BLUE}refresh${NC} - git pull new commits\n" \
        "  ${BLUE}setup${NC}   - initial setup";
 }

@@ -1,14 +1,23 @@
 #!/bin/sh
 
-USAGE="watch-stack-update <component> <project> <env>"
+BLUE="\033[0;34m"
+PURPLE="\033[0;35m"
+NC="\033[0m"
+
+usage ()
+{
+  echo "${BLUE}watch-stack-update${NC}\n" \
+       "  - watch events for a Cosmos component stack update.\n" \
+       "  - ${PURPLE}args:${NC} <component> <project> <env>";
+}
 
 if [ $# -eq 0 ]; then
-  echo $USAGE
+  usage
   exit 0
 fi
 
 if [ "$#" -ne 3 ]; then
-  echo $USAGE
+  usage
   exit 1
 fi
 
@@ -17,4 +26,3 @@ echo "Project:     $2"
 echo "Environment: $3"
 
 watch -n 0.5 bbc-cosmos-tools stack events $1 --project=$2 --env=$3
-
