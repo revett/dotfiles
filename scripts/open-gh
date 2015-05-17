@@ -21,7 +21,7 @@ if [ $# -ne 1 ]; then
   exit 1
 fi
 
-REPO=${PWD##*/};
+REPO=$(basename `git rev-parse --show-toplevel`);
 URL="http://github.com/$1/$REPO"
 
 echo "Opening $URL"
