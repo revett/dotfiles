@@ -1,0 +1,38 @@
+#!/bin/sh
+
+BLUE="\033[0;34m"
+RED="\033[0;31m"
+PURPLE="\033[0;35m"
+NC="\033[0m"
+
+usage ()
+{
+  echo "${BLUE}gmerge-fork${NC}\n" \
+       "  - merge PR into master from fork.\n" \
+       "  - ${PURPLE}args:${NC} <pr_number>";
+}
+
+if [ $# -eq 0 ]; then
+  usage
+  exit 0
+fi
+
+if [ $# -ne 1 ]; then
+  echo "${RED}ERROR${NC} - only accepts 1 argument."
+  usage
+  exit 1
+fi
+
+ID="$1_fork"
+
+echo "${BLUE}Switching to master branch...${NC}"
+git checkout master -q
+
+echo "${BLUE}Pulling latest from remote...${NC}"
+git pull -q
+
+echo "${BLUE}Fetching branch from fork...${NC}"
+git fetch origin pull/$1/head:$ID -q
+
+echo "${BLUE}Merge squashing branch ($ID) into master...${NC}"
+git merge --squash $ID -q
