@@ -1,6 +1,7 @@
 #!/bin/sh
 
 BLUE="\033[0;34m"
+RED="\033[0;31m"
 PURPLE="\033[0;35m"
 NC="\033[0m"
 
@@ -14,6 +15,12 @@ usage ()
 if [ $# -eq 0 ]; then
   usage
   exit 0
+fi
+
+if [ $# -lt 3 ]; then
+  echo "${RED}ERROR${NC} - must give at least 3 arguments."
+  usage
+  exit 1
 fi
 
 COMPONENTS=( "$@" )
