@@ -42,3 +42,4 @@ source $DEV_ENV/alias
 # Setup zsh-syntax-highlighting
 source $DEV_ENV/dotfiles/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/plugin.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
