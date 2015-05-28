@@ -26,8 +26,7 @@ fi
 echo "Component:   $1"
 echo "Environment: $2"
 
-IFS=' ' read -a array <<< $(bbc-cosmos-tools component ssh $1 --env=$2)
-IP=${array[${#array[@]} - 1]}
+IP=$(bbc-cosmos-tools component ssh $1 --env=$2 | tail -n1 | cut -d \  -f 6)
 
 echo "IP Address:  $IP"
 echo ""
