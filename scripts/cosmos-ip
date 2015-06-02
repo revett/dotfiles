@@ -26,7 +26,7 @@ fi
 echo "Component:   $1"
 echo "Environment: $2"
 
-IP=$(bbc-cosmos-tools component ssh $1 --env=$2 | tail -n1 | cut -d \  -f 6)
+IP=$(echo "1" | bbc-cosmos-tools component ssh $1 --env=$2 | tail -n1 | cut -d \  -f 6)
 
 echo "IP Address:  $IP"
 echo ""
