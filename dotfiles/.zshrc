@@ -21,7 +21,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git brew bundler chruby common-aliases docker gem jsontools ruby sudo web-search zsh-syntax-highlighting)
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/charlie/Dropbox/Projects/Code/golang/bin"
 
 source $ZSH/oh-my-zsh.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
@@ -31,6 +31,8 @@ export DOCKER_CERT_PATH=/Users/charlie/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 
 export BBC_COSMOS_TOOLS_CERT=~/.certs/dev.bbc.co.uk.pem
+
+export GOPATH=/Users/charlie/Dropbox/Projects/Code/golang
 
 DEV_ENV=$HOME/Dropbox/Projects/Code/Github/dev-env
 
