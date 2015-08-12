@@ -6,10 +6,12 @@ alias bi='bundle install'
 alias bu='bundle update'
 alias rack='rackup -p 9292'
 
-alias dir='basename $(pwd)'
+alias dir='basename $(git rev-parse --show-toplevel)'
 
 alias gpush='git push -u origin '
 alias gmerge='git merge --squash '
+
+alias bct="bbc-cosmos-tools"
 
 alias re-source='source ~/.zshrc'
 
