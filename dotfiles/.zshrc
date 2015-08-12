@@ -26,9 +26,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/charlie/Dropbox
 source $ZSH/oh-my-zsh.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/charlie/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+eval "$(docker-machine env dev)"
 
 export BBC_COSMOS_TOOLS_CERT=~/.certs/dev.bbc.co.uk.pem
 
