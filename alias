@@ -6,6 +6,8 @@ alias bi='bundle install'
 alias bu='bundle update'
 alias rack='rackup -p 9292'
 
+alias rubo='rubocop | grep F'
+
 alias dir='basename $(git rev-parse --show-toplevel)'
 
 alias gpush='git push -u origin '
