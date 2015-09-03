@@ -1,5 +1,6 @@
 alias bbc='cd ~/Dropbox/Projects/BBC'
 alias code='cd ~/Dropbox/Projects/Code'
+alias golang='cd ~/Dropbox/Projects/Code/golang/src'
 alias dev-env='cd ~/Dropbox/Projects/Code/Github/dev-env'
 
 alias bi='bundle install'
@@ -13,6 +14,8 @@ alias dir='basename $(git rev-parse --show-toplevel)'
 
 alias gpush='git push -u origin '
 alias gmerge='git merge --squash '
+
+alias docker-up='docker-machine start dev && eval "$(docker-machine env dev)"'
 
 alias bct="bbc-cosmos-tools"
 
