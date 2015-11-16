@@ -29,6 +29,7 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 eval "$(docker-machine env dev)"
 
 export BBC_COSMOS_TOOLS_CERT=~/.certs/dev.bbc.co.uk.pem
+export BBC_CERT=/Users/charlie/.certs/dev.bbc.co.uk.pem
 
 export GOPATH=/Users/charlie/Dropbox/Projects/Code/golang
 
