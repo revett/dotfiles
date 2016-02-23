@@ -1,4 +1,4 @@
-alias bbc='cd ~/Dropbox/Projects/BBC'
+alias vidsy='cd ~/Dropbox/Projects/vidsy'
 alias code='cd ~/Dropbox/Projects/Code'
 alias golang='cd ~/Dropbox/Projects/Code/golang/src'
 alias dev-env='cd ~/Dropbox/Projects/Code/Github/dev-env'
@@ -15,10 +15,12 @@ alias dir='basename $(git rev-parse --show-toplevel)'
 alias gpush='git push -u origin '
 alias gmerge='git merge --squash '
 
-alias docker-up='docker-machine start dev && eval "$(docker-machine env dev)"'
+alias docker-up='docker-machine start default && eval "$(docker-machine env default)"'
 
 alias bct="bbc-cosmos-tools"
 
 alias re-source='source ~/.zshrc'
 
 alias spurious-up='chruby 2.0 && boot2docker up && spurious-server start && spurious up'
+
+alias weather='curl -4 http://wttr.in/London'
