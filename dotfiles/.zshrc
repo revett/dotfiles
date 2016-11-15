@@ -1,36 +1,65 @@
+# ---
+# ZSH
+# ---
+
 export ZSH=/Users/revett/.oh-my-zsh
-
 ZSH_THEME="robbyrussell"
-
 HIST_STAMPS="dd/mm/yyyy"
-
 plugins=(git brew bundler chruby docker gem)
+source $ZSH/oh-my-zsh.sh
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
-export GOPATH="/Users/revett/projects/code/golang"
-export PATH=$PATH:/usr/local/go/bin
+# ---
+# HOMEBREW
+# ---
 
 export HOMEBREW_NO_ANALYTICS=1
 
-source $ZSH/oh-my-zsh.sh
+# ---
+# GOLANG
+# ---
 
-DEV_ENV=$HOME/projects/code/github.com/revett/dev-env
+export GOPATH="/Users/revett/projects/code/golang"
 
-PATH="$DEV_ENV:$PATH"
-PATH="/Users/revett/projects/vidsy/infrastructure/scripts:$PATH"
-PATH="$GOPATH/bin:$PATH"
-PATH="/Users/revett/.npm-packages/bin:$PATH"
+# ---
+# PATH
+# ---
 
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+export PATH="$PATH:$DEV_ENV"
+export PATH="$PATH:/Users/revett/projects/vidsy/infrastructure/scripts"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:/Users/revett/.npm-packages/bin"
+
+# ---
+# ALIASES
+# ---
+
+export DEV_ENV="$HOME/projects/code/github.com/revett/dev-env"
 source $DEV_ENV/alias
+
+# ---
+# CHRUBY
+# ---
 
 source /usr/local/share/chruby/chruby.sh
 
+# ---
+# GITHUB SSH
+# ---
+
 eval `keychain --eval github_vidsy_mbp`
 
-export NVM_DIR="/Users/revett/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# ---
+# NVM
+# ---
 
+export NVM_DIR="/Users/revett/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 nvm use
+
+# ---
+# ZSH AUTOCOMPLETE?
+# ---
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
