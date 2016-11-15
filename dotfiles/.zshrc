@@ -1,46 +1,36 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=/Users/revett/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+HIST_STAMPS="dd/mm/yyyy"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="dd.mm.yyyy"
+plugins=(git brew bundler chruby docker gem)
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew bundler chruby common-aliases docker gem jsontools ruby sudo web-search zsh-syntax-highlighting)
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/charlie/Dropbox/Projects/Code/golang/bin"
+export GOPATH="/Users/revett/projects/code/golang"
+export PATH=$PATH:/usr/local/go/bin
+
+export HOMEBREW_NO_ANALYTICS=1
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
 
-eval "$(docker-machine env dev)"
-
-export BBC_COSMOS_TOOLS_CERT=~/.certs/dev.bbc.co.uk.pem
-export BBC_CERT=/Users/charlie/.certs/dev.bbc.co.uk.pem
-
-export GOPATH=/Users/charlie/Dropbox/Projects/Code/golang
-
-DEV_ENV=$HOME/Dropbox/Projects/Code/Github/dev-env
+DEV_ENV=$HOME/projects/code/github.com/revett/dev-env
 
 PATH="$DEV_ENV:$PATH"
-PATH="$DEV_ENV/scripts:$PATH"
+PATH="/Users/revett/projects/vidsy/infrastructure/scripts:$PATH"
+PATH="$GOPATH/bin:$PATH"
+PATH="/Users/revett/.npm-packages/bin:$PATH"
 
 source $DEV_ENV/alias
 
-# Setup zsh-syntax-highlighting
-source $DEV_ENV/dotfiles/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/plugin.zsh
+source /usr/local/share/chruby/chruby.sh
+
+eval `keychain --eval github_vidsy_mbp`
+
+export NVM_DIR="/Users/revett/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+nvm use
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
