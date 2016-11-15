@@ -1,26 +1,9 @@
-alias vidsy='cd ~/Dropbox/Projects/vidsy'
-alias code='cd ~/Dropbox/Projects/Code'
-alias golang='cd ~/Dropbox/Projects/Code/golang/src'
-alias dev-env='cd ~/Dropbox/Projects/Code/Github/dev-env'
-
 alias bi='bundle install'
 alias bu='bundle update'
-alias rack='rackup -p 9292'
-
-alias rubo='rubocop | grep F'
-alias ready='rspec spec/ && rubocop --fail-level F | grep F'
-
+alias code='cd ~/Projects/code'
+alias dc='docker-compose '
+alias dev-env='cd ~/Projects/code/Github/dev-env'
 alias dir='basename $(git rev-parse --show-toplevel)'
-
-alias gpush='git push -u origin '
-alias gmerge='git merge --squash '
-
-alias docker-up='docker-machine start default && eval "$(docker-machine env default)"'
-
-alias bct="bbc-cosmos-tools"
-
+alias golang='cd ~/Projects/code/golang/src'
 alias re-source='source ~/.zshrc'
-
-alias spurious-up='chruby 2.0 && boot2docker up && spurious-server start && spurious up'
-
-alias weather='curl -4 http://wttr.in/London'
+alias vidsy='cd ~/Projects/vidsy'
