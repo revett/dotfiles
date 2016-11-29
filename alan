@@ -23,6 +23,7 @@ function listCommands {
   printf " - gh-pr\n"
   printf " - init\n"
   printf " - ls\n"
+  printf " - pwd\n"
 }
 
 function openGithubPR {
