@@ -12,6 +12,10 @@ function generateGithubURL {
   git config remote.origin.url | cut -f2 -d. | tr ':' /
 }
 
+function generatePassword {
+  dd if=/dev/urandom bs=1 count=30 2>/dev/null | base64
+}
+
 function listCommands {
   printf "Usage: alan <cmd> <args...>\n\n"
   printf "Commands:\n"
@@ -44,5 +48,6 @@ case $1 in
   "gh-pr") openGithubPR;;
   "init") createDotfileSymlinks;;
   "ls") listCommands;;
+  "pwd") generatePassword;;
   *) outputError "'$1' command not recognised.";;
 esac
