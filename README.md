@@ -6,7 +6,7 @@
 
 ### Usage
 
-Look at the [alan](https://github.com/revett/dev-env/blob/master/alan) bash script, and use it.
+Look at the [asd](https://github.com/revett/dev-env/blob/master/asd) bash script, and use it.
 
 ------------
 

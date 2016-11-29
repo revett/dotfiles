@@ -1,4 +1,7 @@
 #!/bin/bash
+# Run 'asd' to see outline of usage.
+# Named because typing 'asd' is very easy.
+# Author: https://github.com/revett/dev-env
 
 # Immediately stop script if a single commands fails.
 set -e
@@ -16,6 +19,7 @@ function calculateFilesize {
 	else
 		local arg=-sh
 	fi
+
 	if [[ -n "$@" ]]; then
 		du $arg -- "$@"
 	else
@@ -50,7 +54,7 @@ function generatePassword {
 
 # listCommands outputs a list of all the available commands.
 function listCommands {
-  printf "\e[36mUsage:\e[39m alan <cmd> <args...>\n\n"
+  printf "\e[36mUsage:\e[39m asd <cmd> <args...>\n\n"
   printf "\e[36mCommands:\e[39m\n"
   printf " - dc-exited-containers\n"
   printf " - dc-dangling-images\n"
