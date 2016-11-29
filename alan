@@ -12,6 +12,15 @@ function generateGithubURL {
   git config remote.origin.url | cut -f2 -d. | tr ':' /
 }
 
+function listCommands {
+  printf "Usage: alan <cmd> <args...>\n\n"
+  printf "Commands:\n"
+  printf " - gh-o\n"
+  printf " - gh-pr\n"
+  printf " - init\n"
+  printf " - ls\n"
+}
+
 function openGithubPR {
   open https://github.$(generateGithubURL)/compare/$(git rev-parse --abbrev-ref HEAD)?expand=1
 }
@@ -26,12 +35,14 @@ function outputError {
 }
 
 if [ "$#" -lt 1 ]; then
-  outputError "Illegal number of parameters."
+  listCommands
+  exit 1
 fi
 
 case $1 in
   "gh-o") openGithubURL;;
   "gh-pr") openGithubPR;;
   "init") createDotfileSymlinks;;
+  "ls") listCommands;;
   *) outputError "'$1' command not recognised.";;
 esac
