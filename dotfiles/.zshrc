@@ -15,6 +15,13 @@ source $ZSH/oh-my-zsh.sh
 export HOMEBREW_NO_ANALYTICS=1
 
 # ---
+# ALIASES
+# ---
+
+export DEV_ENV="$HOME/projects/code/github.com/revett/dev-env"
+source $DEV_ENV/alias
+
+# ---
 # GOLANG
 # ---
 
@@ -30,13 +37,6 @@ export PATH="$PATH:$DEV_ENV"
 export PATH="$PATH:/Users/revett/projects/vidsy/infrastructure/scripts"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/Users/revett/.npm-packages/bin"
-
-# ---
-# ALIASES
-# ---
-
-export DEV_ENV="$HOME/projects/code/github.com/revett/dev-env"
-source $DEV_ENV/alias
 
 # ---
 # CHRUBY
