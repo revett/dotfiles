@@ -56,7 +56,6 @@ eval `keychain --eval github_vidsy_mbp`
 
 export NVM_DIR="/Users/revett/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-nvm use
 
 # ---
 # ZSH AUTOCOMPLETE?
