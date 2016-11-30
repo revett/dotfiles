@@ -7,13 +7,42 @@
 set -e
 
 # ---
-# FUNCTIONS
+# PUBLIC FUNCTIONS
 # ---
 
-# calculateFilesize outputs the size of each file and directory in the current
-# directory.
-# Author: https://github.com/jessfraz/dotfiles
-function calculateFilesize {
+function dc_dangling_images {
+  if [ "$1" = "-h" ]; then
+    output_usage "Deletes any Docker image which is in a 'dangling' state."
+    return 0
+  fi
+
+  docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+
+function dc_exited_containers {
+  if [ "$1" = "-h" ]; then
+    output_usage "Deletes any Docker container which is in a 'stopped' state."
+    return 0
+  fi
+
+  docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+}
+
+function dc_old_images {
+  if [ "$1" = "-h" ]; then
+    output_usage "Deletes any Docker image created over 14 days ago."
+    return 0
+  fi
+
+  docker rmi $(docker images | grep 'months ago\|weeks ago' | awk '{print $3}' 2>/dev/null) 2>/dev/null
+}
+
+function fs {
+  if [ "$1" = "-h" ]; then
+    output_usage "Outputs size of each file/directory in current directory."
+    return 0
+  fi
+
   if du -b /dev/null > /dev/null 2>&1; then
 		local arg=-sbh
 	else
@@ -27,86 +56,95 @@ function calculateFilesize {
 	fi
 }
 
-# createDotfileSymlinks creates a number of symlinks to the users home
-# directory, warning; this deletes the existing files.
-function createDotfileSymlinks {
+function gh_o {
+  if [ "$1" = "-h" ]; then
+    output_usage "Opens current git directory's Github web page."
+    return 0
+  fi
+
+  open https://github.$(generate_github_url)
+}
+
+function gh_pr {
+  if [ "$1" = "-h" ]; then
+    output_usage "Opens new Github pull request, comparing current branch to master."
+    return 0
+  fi
+
+  open https://github.$(generate_github_url)/compare/$(git rev-parse --abbrev-ref HEAD)?expand=1
+}
+
+function guid {
+  if [ "$1" = "-h" ]; then
+    output_usage "Outputs a random lowercase GUID/UUID and copies to clipboard."
+    return 0
+  fi
+
+  uuidgen | tr '[:upper:]' '[:lower:]' | pbcopy && pbpaste
+}
+
+function init {
+  if [ "$1" = "-h" ]; then
+    output_usage "Create a number of symlinks to user's home."
+    return 0
+  fi
+
   ln -sf ~/projects/code/github.com/revett/dev-env/dotfiles/.gitconfig ~/.gitconfig
   ln -sf ~/projects/code/github.com/revett/dev-env/dotfiles/.zshrc ~/.zshrc
 }
 
-# generateGithubURL is a git related helper function that creates a Github URL
-# based of the current directory/repo.
-function generateGithubURL {
-  git config remote.origin.url | cut -f2 -d. | tr ':' /
-}
+function pwd {
+  if [ "$1" = "-h" ]; then
+    output_usage "Outputs a random lowercase 30 character string and copies to clipboard."
+    return 0
+  fi
 
-# generateGUID outputs a random GUID/UUID (lowercase) and copies it to the
-# clipboard.
-function generateGUID {
-  uuidgen | tr '[:upper:]' '[:lower:]' | pbcopy && pbpaste
-}
-
-# generatePassword outputs a random 30 character string (lowercase) and copies
-# it to the clipboard.
-function generatePassword {
   dd if=/dev/urandom bs=1 count=30 2>/dev/null | base64 | tr '[:upper:]' '[:lower:]' | pbcopy && pbpaste
 }
 
-# listCommands outputs a list of all the available commands.
-function listCommands {
-  printf "\e[36mUsage:\e[39m asd <cmd> <args...>\n\n"
-  printf "\e[36mCommands:\e[39m\n"
-  printf " - dc-exited-containers\n"
-  printf " - dc-dangling-images\n"
-  printf " - dc-old-images\n"
-  printf " - guid\n"
-  printf " - gh-o\n"
-  printf " - gh-pr\n"
-  printf " - init\n"
-  printf " - ls\n"
-  printf " - pwd\n"
-  printf " - tree\n"
+function tre {
+  if [ "$1" = "-h" ]; then
+    output_usage "Lists structure of directory."
+    return 0
+  fi
+
+  tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
 }
 
-# openGithubPR opens a Github new pull request page in the browser for the
-# current repo, and the current branch when compared against the master branch.
-function openGithubPR {
-  open https://github.$(generateGithubURL)/compare/$(git rev-parse --abbrev-ref HEAD)?expand=1
+# ---
+# PRIVATE FUNCTIONS
+# ---
+
+find_all_functions() {
+  if [ "$1" = "-h" ]; then return 0; fi
+  local functions=`declare -F -p | cut -d " " -f 3`;
+  echo $functions;
 }
 
-# openGithubURL opens the current git repo's Github home page in the browser.
-function openGithubURL {
-  open https://github.$(generateGithubURL)
+generate_github_url() {
+  if [ "$1" = "-h" ]; then return 0; fi
+  git config remote.origin.url | cut -f2 -d. | tr ':' /
 }
 
-# outputError is a helper function to print pretty errors.
-function outputError {
+output_error() {
+  if [ "$1" = "-h" ]; then return 0; fi
   printf "\e[31;4mERROR\e[0m: $1\n"
   exit 1
 }
 
-# removeExitedDockerContainers deletes any Docker containers which is in a
-# 'stopped' state.
-function removeExitedDockerContainers {
-  docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
-}
+output_usage() {
+  if [ "$1" = "-h" ]; then return 0; fi
 
-# removeDanglingDockerImages deletes any Docker image which is in a
-# 'dangling' state.
-function removeDanglingDockerImages {
-  docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
-}
+  local function_name=${FUNCNAME[1]}
+  local function_name_size=${#function_name}
 
-# removeOldDockerImages deletes any Docker image created over 14 days ago.
-function removeOldDockerImages {
-  docker rmi $(docker images | grep 'months ago\|weeks ago' | awk '{print $3}' 2>/dev/null) 2>/dev/null
-}
-
-# showDirectoryTree uses tree to show the structure of a directory. It is
-# color enabled, shows hidden files and ignores the '.git' directory.
-# Author: https://github.com/jessfraz/dotfiles
-function showDirectoryTree {
-  tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
+  if [ $function_name_size -gt 15 ]; then
+    printf "\t$function_name\t$1\n"
+  elif [ $function_name_size -gt 10 ]; then
+    printf "\t$function_name\t\t$1\n"
+  else
+    printf "\t$function_name\t\t\t$1\n"
+  fi
 }
 
 # ---
@@ -114,21 +152,28 @@ function showDirectoryTree {
 # ---
 
 if [ "$#" -lt 1 ]; then
-  listCommands
-  exit 1
+  printf "Usage: asd <cmd> <args...>\n\n"
+  printf "Commands:"
+  printf "\t$function_name\t\t\t$1\n"
+  list_functions=($(find_all_functions));
+  for i in "${list_functions[@]}"
+  do
+     :
+     $i "-h"
+  done
+  exit 0
 fi
 
 case $1 in
-  "dc-exited-containers") removeExitedDockerContainers;;
-  "dc-dangling-images") removeDanglingDockerImages;;
-  "dc-old-images") removeOldDockerImages;;
-  "fs") calculateFilesize;;
-  "gh-o") openGithubURL;;
-  "gh-pr") openGithubPR;;
-  "guid") generateGUID;;
-  "init") createDotfileSymlinks;;
-  "ls") listCommands;;
-  "pwd") generatePassword;;
-  "tree") showDirectoryTree;;
-  *) outputError "'$1' command not recognised.";;
+  "dc_dangling_images") dc_dangling_images $2;;
+  "dc_exited_containers") dc_exited_containers $2;;
+  "dc_old_images") dc_old_images $2;;
+  "fs") fs $2;;
+  "gh_o") gh_o $2;;
+  "gh_pr") gh_pr $2;;
+  "guid") guid $2;;
+  "init") init $2;;
+  "pwd") pwd $2;;
+  "tre") tre $2;;
+  *) output_error "'$1' command not recognised.";;
 esac
