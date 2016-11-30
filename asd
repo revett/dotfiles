@@ -139,11 +139,11 @@ output_usage() {
   local function_name_size=${#function_name}
 
   if [ $function_name_size -gt 15 ]; then
-    printf "\t$function_name\t$1\n"
+    printf "\t$function_name\t\e[37m$1\e[39m\n"
   elif [ $function_name_size -gt 10 ]; then
-    printf "\t$function_name\t\t$1\n"
+    printf "\t$function_name\t\t\e[37m$1\e[39m\n"
   else
-    printf "\t$function_name\t\t\t$1\n"
+    printf "\t$function_name\t\t\t\e[37m$1\e[39m\n"
   fi
 }
 
@@ -152,8 +152,8 @@ output_usage() {
 # ---
 
 if [ "$#" -lt 1 ]; then
-  printf "Usage: asd <cmd> <args...>\n\n"
-  printf "Commands:"
+  printf "\e[36mUsage:\e[39m asd <cmd> <args...>\n\n"
+  printf "\e[36mCommands:\e[39m"
   printf "\t$function_name\t\t\t$1\n"
   list_functions=($(find_all_functions));
   for i in "${list_functions[@]}"
