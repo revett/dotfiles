@@ -11,5 +11,5 @@ Look at the [asd](https://github.com/revett/dev-env/blob/master/asd) bash script
 ------------
 
 <p align="center">
-  <img src="http://emojione.com/wp-content/uploads/assets/emojis/1f575-1f3fd.svg" width="50px" />
+  🕵
 </p>
