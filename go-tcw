@@ -1,0 +1,59 @@
+#! /bin/bash
+#
+# Golang Test Coverage Watcher (go-tcw)
+#
+# - Watches for changes in a given directory.
+# - Runs the unit tests when a change is detected.
+# - Outputs a Golang test coverage file.
+# - Renders this coverage file to HTML.
+
+###
+# Inputs
+###
+
+if [ "$#" -ne 1 ]; then
+  echo "ERROR: directory is required."
+  exit 1
+fi
+
+DIRECTORY=$1
+
+###
+# Constants
+###
+
+COVER_PROFILE="go-tcw.coverage"
+
+###
+# Reset coverage files
+###
+
+printf "go-tcw is starting...\n"
+
+if [ -f $COVER_PROFILE.out ] ; then
+  rm $COVER_PROFILE.out
+fi
+
+if [ -f $COVER_PROFILE.html ] ; then
+  rm $COVER_PROFILE.html
+fi
+
+echo "<h1>go-tcw is starting up...</p>" > $COVER_PROFILE.html
+open $COVER_PROFILE.html
+
+###
+# Start watching
+###
+
+checkSum1=""
+
+while [[ true ]]
+do
+  checkSum2=`find $DIRECTORY -type f \( -iname "*.go" \) -exec md5 {} \;`
+  if [[ $checkSum1 != $checkSum2 ]] ; then
+    go test -covermode=count -coverprofile=$COVER_PROFILE.out $DIRECTORY
+    go tool cover -html=$COVER_PROFILE.out -o=$COVER_PROFILE.html
+    checkSum1=$checkSum2
+  fi
+  sleep 2
+done
