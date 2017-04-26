@@ -30,3 +30,5 @@ br = checkout -b
 dc = diff --cached
 d = diff
 sq = merge --squash
+[core]
+	ignorecase = false
