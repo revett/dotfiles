@@ -93,6 +93,20 @@ function init {
   ln -sf ~/projects/code/github.com/revett/dev-env/dotfiles/.zshrc ~/.zshrc
 }
 
+function live_version {
+  if [ "$1" = "-h" ]; then
+    output_usage "Checks the version of a LIVE Docker image."
+    return 0
+  fi
+
+  if [ "$#" -ne 1 ]; then
+    output_error "must provide single argument, name of Docker image"
+  fi
+
+  docker pull vidsyhq/$1:live
+  docker inspect -f '{{index .ContainerConfig.Labels.version }}' vidsyhq/$1:live
+}
+
 function pwd {
   if [ "$1" = "-h" ]; then
     output_usage "Outputs a random lowercase 30 character string and copies to clipboard."
@@ -173,6 +187,7 @@ case $1 in
   "gh_pr") gh_pr $2;;
   "guid") guid $2;;
   "init") init $2;;
+  "live_version") live_version $2;;
   "pwd") pwd $2;;
   "tre") tre $2;;
   *) output_error "'$1' command not recognised.";;
