@@ -30,5 +30,7 @@ br = checkout -b
 dc = diff --cached
 d = diff
 sq = merge --squash
+edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vscode `f`"
+
 [core]
-	ignorecase = false
+ignorecase = false

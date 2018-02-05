@@ -5,6 +5,7 @@
 export ZSH=/Users/revett/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 HIST_STAMPS="dd/mm/yyyy"
+export HISTCONTROL=ignorespace
 plugins=(git brew bundler chruby docker gem)
 source $ZSH/oh-my-zsh.sh
 
@@ -49,13 +50,6 @@ source /usr/local/share/chruby/chruby.sh
 # ---
 
 eval `keychain --eval github_vidsy_mbp`
-
-# ---
-# NVM
-# ---
-
-export NVM_DIR="/Users/revett/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # ---
 # ZSH AUTOCOMPLETE?
