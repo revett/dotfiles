@@ -89,8 +89,8 @@ function init {
     return 0
   fi
 
-  ln -sf ~/projects/code/github.com/revett/dev-env/dotfiles/.gitconfig ~/.gitconfig
-  ln -sf ~/projects/code/github.com/revett/dev-env/dotfiles/.zshrc ~/.zshrc
+  ln -sf ~/code/other/github.com/revett/dev-env/dotfiles/.gitconfig ~/.gitconfig
+  ln -sf ~/code/other/github.com/revett/dev-env/dotfiles/.zshrc ~/.zshrc
 }
 
 function live_version {
