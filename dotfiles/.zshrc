@@ -25,7 +25,7 @@ export DEV_ENV="/Users/revchar/code/other/github.com/revett/dev-env"
 source $DEV_ENV/alias
 
 # ---
-# GOLANG
+# GO
 # ---
 
 export GOPATH="/Users/revchar/code/go"
@@ -38,6 +38,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:$DEV_ENV"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/Users/revchar/homebrew/bin"
+export PATH=$PATH:/Users/revchar/homebrew/opt/go/libexec/bin
 
 # ---
 # SSH
