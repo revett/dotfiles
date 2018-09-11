@@ -37,6 +37,19 @@ function dc_old_images {
   docker rmi $(docker images | grep 'months ago\|weeks ago' | awk '{print $3}' 2>/dev/null) 2>/dev/null
 }
 
+function email {
+  if [ "$1" = "-h" ]; then
+    output_usage "Generates unique email for service."
+    return 0
+  fi
+
+  if [ "$#" -ne 1 ]; then
+    output_error "must provide single argument, name of service (e.g 'facebook')"
+  fi
+
+  echo "$1@revdex.fastmail.com"
+}
+
 function fs {
   if [ "$1" = "-h" ]; then
     output_usage "Outputs size of each file/directory in current directory."
@@ -182,6 +195,7 @@ case $1 in
   "dc_dangling_images") dc_dangling_images $2;;
   "dc_exited_containers") dc_exited_containers $2;;
   "dc_old_images") dc_old_images $2;;
+  "email") email $2;;
   "fs") fs $2;;
   "gh_o") gh_o $2;;
   "gh_pr") gh_pr $2;;
