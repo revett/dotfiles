@@ -38,7 +38,8 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:$DEV_ENV"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/Users/revchar/homebrew/bin"
-export PATH=$PATH:/Users/revchar/homebrew/opt/go/libexec/bin
+export PATH="$PATH:/Users/revchar/homebrew/opt/go/libexec/bin"
+export PATH="$PATH:/Users/revchar/code/other/github.com/vidsy/infrastructure/scripts"
 
 # ---
 # SSH
