@@ -135,7 +135,7 @@ function tre {
     return 0
   fi
 
-  tree -aC -I '.git|node_modules|vendor' --dirsfirst "$@" | less -FRNX
+  tree -aC -I 'bin|.git|node_modules|vendor' --dirsfirst "$@" | less -FRNX
 }
 
 # ---
