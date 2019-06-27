@@ -31,6 +31,13 @@ source $DEV_ENV/alias
 export GOPATH="/Users/revchar/code/go"
 
 # ---
+# RUBY
+# ---
+
+source $HOME/homebrew/opt/chruby/share/chruby/chruby.sh
+source $HOME/homebrew/opt/chruby/share/chruby/auto.sh
+
+# ---
 # PATH
 # ---
 
@@ -40,6 +47,12 @@ export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/Users/revchar/homebrew/bin"
 export PATH="$PATH:/Users/revchar/homebrew/opt/go/libexec/bin"
 export PATH="$PATH:/Users/revchar/code/other/github.com/vidsy/infrastructure/scripts"
+
+# ---
+# PYTHON 3.7
+# ---
+
+export PATH="$PATH:/Users/revchar/Library/Python/3.7/bin"
 
 # ---
 # SSH
@@ -61,3 +74,11 @@ function vscode {
     open -a "Visual Studio Code" "$argPath"
   fi
 }
+
+# ---
+# NVM
+# ---
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
