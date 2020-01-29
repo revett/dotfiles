@@ -1,6 +1,6 @@
 [user]
 name = revett
-	email = 2796074+revett@users.noreply.github.com
+email = 2796074+revett@users.noreply.github.com
 
 [color "branch"]
 current = yellow reverse
@@ -36,6 +36,6 @@ edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vs
 ignorecase = false
 
 [url "git@github.com:"]
-  insteadOf = "https://github.com/"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
+insteadOf = "https://github.com/"
+pushInsteadOf = "github:"
+pushInsteadOf = "git://github.com/"
