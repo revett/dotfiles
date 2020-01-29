@@ -1,4 +1,4 @@
-<h1 align="center">dev-env</h1>
+<h1 align="center">laptop</h1>
 
 <p align="center">
   Scripts, config and dotfiles shared between my laptops.
