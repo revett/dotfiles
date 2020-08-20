@@ -1,84 +1,79 @@
-# ---
-# ZSH
-# ---
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export ZSH=/Users/revchar/.oh-my-zsh
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/revett/.oh-my-zsh"
+
+# ZSH Theme
 ZSH_THEME="robbyrussell"
-HIST_STAMPS="dd/mm/yyyy"
-export HISTCONTROL=ignorespace
-plugins=(git brew docker)
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# ZSH Plugins
+plugins=(git)
+
+# https://github.com/ohmyzsh/ohmyzsh/issues/6835#issuecomment-390216875
+ZSH_DISABLE_COMPFIX=true
+
 source $ZSH/oh-my-zsh.sh
 
 # ---
-# HOMEBREW
+# User configuration
 # ---
 
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_CASK_OPTS=--require-sha
-export HOMEBREW_NO_INSECURE_REDIRECT=1
+# Default editor
+export EDITOR='vim'
 
 # ---
-# ALIASES
+# Aliases / Functions
 # ---
 
-export DEV_ENV="/Users/revchar/code/other/github.com/revett/dev-env"
-source $DEV_ENV/alias
+# Colours for output
+BLUE='\033[1;34m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
 
-# ---
-# GO
-# ---
+# Searching for files
+qfind () { /usr/bin/find . -name "$@"'*' 2>&1 | grep -v "Operation not permitted" ; }
 
-export GOPATH="/Users/revchar/code/go"
+# Networking
+alias myip='curl ifconfig.co'
 
-# ---
-# RUBY
-# ---
+# Process management
+alias cpu-hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
 
-source $HOME/homebrew/opt/chruby/share/chruby/chruby.sh
-source $HOME/homebrew/opt/chruby/share/chruby/auto.sh
-
-# ---
-# PATH
-# ---
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$PATH:$DEV_ENV"
-export PATH="$PATH:$GOPATH/bin"
-export PATH="$PATH:/Users/revchar/homebrew/bin"
-export PATH="$PATH:/Users/revchar/homebrew/opt/go/libexec/bin"
-export PATH="$PATH:/Users/revchar/code/other/github.com/vidsy/infrastructure/scripts"
-
-# ---
-# PYTHON 3.7
-# ---
-
-export PATH="$PATH:/Users/revchar/Library/Python/3.7/bin"
-
-# ---
-# SSH
-# ---
-
-eval `keychain --eval github_vidsy_mbp`
-
-# ---
-# OPEN VSCODE
-# ---
-
-function vscode {
-  if [[ $# = 0 ]]
-  then
-    open -a "Visual Studio Code"
-  else
-    local argPath="$1"
-    [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
-    open -a "Visual Studio Code" "$argPath"
+# Docker developer environments
+node-dev-env () {
+  local CONTAINER_NAME="node-docker"
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    local REPO_NAME=$(basename `git rev-parse --show-toplevel`)
+    local CONTAINER_NAME="node-docker_$REPO_NAME"
   fi
+
+  if [ $# -eq 0 ]; then
+    echo -e "${BLUE}info${NC}: no port argument passed."
+    echo -e "${BLUE}info${NC}: starting Node development environment..."
+    docker run --rm -it --name $CONTAINER_NAME -v $PWD:/src revett-local-node:latest
+    return 0
+  fi
+
+  if ! [ ${#1} -eq 4 ]; then
+    echo -e "${RED}error${NC}: port argument must be 4 characters" >&2
+    return 1
+  fi
+
+  local CONTAINER_PORT=$1
+
+  re='^[0-9]+$'
+  if ! [[ $CONTAINER_PORT =~ $re ]] ; then
+    echo -e "${RED}error${NC}: port argument is not a number" >&2
+    return 1
+  fi
+
+  echo -e "${BLUE}info${NC}: mapping container port :$CONTAINER_PORT -> :8080"
+  echo -e "${BLUE}info${NC}: starting Node development environment..."
+  docker run --rm -it --name $CONTAINER_NAME -v $PWD:/src -p 8080:$CONTAINER_PORT revett-local-node:latest
 }
 
-# ---
-# NVM
-# ---
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
