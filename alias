@@ -1,7 +1,0 @@
-alias code='cd ~/code/other/github.com'
-alias dc='docker-compose '
-alias dev-env='cd ~/code/other/github.com/revett/dev-env'
-alias dir='basename $(git rev-parse --show-toplevel)'
-alias golang='cd ~/code/go/src'
-alias re-source='source ~/.zshrc'
-alias vidsy='cd ~/code/other/github.com/vidsy'
