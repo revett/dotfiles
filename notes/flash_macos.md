@@ -9,3 +9,5 @@ Checklist for flashing macOS.
 1. Select primary hard drive, and click "Erase"
 1. Name it `Macintosh HD`
 1. Use `APFS` format
+1. Connect to WiFi
+1. Open Reinstall macOS, and follow steps
