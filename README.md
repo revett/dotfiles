@@ -1,6 +1,6 @@
 # dotfiles
 
-🔧 .files, configuration and tooling
+🔧 .files, configuration and tooling.
 
 ## Usage
 
