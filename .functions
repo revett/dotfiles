@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+
+# `asd` outputs all available functions from this file.
+function asd() {
+	f=("o" "gh" "pass" "tre" "zcode" "zbrew")
+	printf '- %s\n' "${f[@]}"
+}
+
+# `gh` opens the current repo in a browser.
+function gh() {
+	if [ -d .git ]; then
+		open `git remote -v | grep fetch | awk '{print $2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//'`| head -n1
+	fi
+}
+
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location.
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
+}
+
+# `pass` generates a random passphrase based password.
+function pass() {
+	N=1
+	if [ "$#" -eq 1 ]; then
+		N=$1
+	fi
+
+	for (( i=1; i<=$N; i++ )); do
+		gshuf -n4 /usr/share/dict/words | tr -s '\n' '-' | sed 's/.$//' | awk '{print tolower($0)}'
+	done
+}
+
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+function tre() {
+	tree -aC -I '.git|node_modules' --dirsfirst "$@" | less -FRNX;
+}
+
+# `zcode` is a wrapper around the VSCode CLI which ensures that a list of
+# installed extensions is kept updated in this repo.
+function zcode() {
+	# Pass arguments to code
+	if [ $# -ne 0 ]; then
+		code "$@"
+	fi
+
+	# Create new extensions backup
+	code --list-extensions --show-versions > ~/.dotfiles/.vscode/.extensions
+}
+
+# `zbrew` is a wrapper around Homebrew which ensures that a Brewfile is kept
+# updated in this repo.
+function zbrew() {
+	# Update
+	brew update
+
+	# Get git repo name, if exists
+	DIR=""
+	if [ -d .git ]; then
+		DIR=$(basename `git rev-parse --show-toplevel`)
+	fi
+
+	# Pass arguments to brew
+	if [ $# -ne 0 ]; then
+		brew "$@"
+	fi
+
+	# Remove existing Brewfile
+	[ -f ~/.dotfiles/Brewfile ] && rm ~/.dotfiles/Brewfile
+
+	# Create new Brewfile
+	brew bundle dump --force --cleanup
+
+	# Move Brewfile to this repo, and delete in working directory
+	if  [ "$DIR" != "dotfiles" ]; then
+		cp -f Brewfile ~/.dotfiles/
+		rm Brewfile
+	fi
+}

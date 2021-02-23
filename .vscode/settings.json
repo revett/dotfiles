@@ -1,0 +1,13 @@
+{
+  "editor.tabSize": 2,
+  "editor.rulers": [80],
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.lineHeight": 20,
+  "editor.minimap.enabled": false,
+  "go.formatTool": "goimports",
+  "explorer.confirmDragAndDrop": false,
+  "window.zoomLevel": 0,
+  "explorer.compactFolders": false,
+  "workbench.colorTheme": "One Dark Pro",
+}
