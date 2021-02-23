@@ -30,6 +30,7 @@ source bootstrap.sh
 | `.gitignore`       | Global git ignore                                               |
 | `karabiner.json`   | [Karabiner](https://karabiner-elements.pqrs.org/) configuration |
 | `mtmr.json`        | [MTMR](https://github.com/Toxblh/MTMR) configuration            |
+| `.vimrc`           | Vim configuration                                               |
 | `.vscode/`         | Directory holding VSCode configuration and extensions list      |
 | `.zshrc`           | Zsh configuration file                                          |
 
