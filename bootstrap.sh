@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Pull latest
-git pull
+git pull origin master
 
 # Symlink files
-for file in .{gitconfig,gitignore,zshrc}; do
+for file in .{gitconfig,gitignore,vimrc,zshrc}; do
   [ -r "$file" ] && ln -sf ~/.dotfiles/$file ~
 done;
 unset file
