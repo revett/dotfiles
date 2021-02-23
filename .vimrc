@@ -53,8 +53,8 @@ nnoremap <leader>k <C-w>j
 nnoremap <leader>h <C-w>h
 nnoremap <leader>l <C-w>l
 nnoremap <leader><leader> <C-w>w
-nnoremap k j
-nnoremap j k
+nnoremap k jzz
+nnoremap j kzz
 
 inoremap <Up> <nop>
 inoremap <Down> <nop>
@@ -86,3 +86,8 @@ autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
   \ quit | endif
 
+" lines after cursor
+set scrolloff=10
+
+" vim-go configuration
+let g:go_metalinter_autosave = 1
