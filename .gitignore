@@ -1,3 +1,10 @@
+# .env files
+.env
+.*.env
+
+# builds
+*.darwin-amd64
+
 # Folder view configuration files
 .DS_Store
 Desktop.ini
@@ -8,4 +15,7 @@ Thumbs.db
 
 # Files that might appear on external disks
 .Spotlight-V100
-.Trashe
+.Trashes
+
+# Output of the go coverage tool
+*.out
