@@ -1,6 +1,10 @@
 " show line numbers
 set number
 
+" natural splitting
+set splitbelow
+set splitright
+
 " set ruler (80 chars)
 set colorcolumn=80
 highlight ColorColumn ctermbg=236
@@ -34,17 +38,28 @@ nnoremap <CR> :noh<CR><CR>
 " show the mathing brackets
 set showmatch
 
+" leader key
+let mapleader = "\<Space>"
+
 " keybindings
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+nnoremap <Space> <nop>
+nnoremap <leader>j <C-w>k
+nnoremap <leader>k <C-w>j
+nnoremap <leader>h <C-w>h
+nnoremap <leader>l <C-w>l
+nnoremap <leader><leader> <C-w>w
+nnoremap k j
+nnoremap j k
+
 inoremap <Up> <nop>
 inoremap <Down> <nop>
 inoremap <Left> <nop>
 inoremap <Right> <nop>
-nnoremap j k
-nnoremap k j
 inoremap <Esc> <nop>
 inoremap jj <Esc>
 
@@ -53,3 +68,21 @@ syntax on
 
 " Fix 200/201 paste bug triggered by jj/esc inoremap
 set t_BE=
+
+" plugins start
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" plugins end
+call plug#end()
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+  \ quit | endif
+
