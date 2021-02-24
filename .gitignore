@@ -19,3 +19,6 @@ Thumbs.db
 
 # Output of the go coverage tool
 *.out
+
+# Swap files
+*.swp
