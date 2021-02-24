@@ -2,8 +2,14 @@
 
 # `asd` outputs all available functions from this file.
 function asd() {
-  f=("o" "gh" "pass" "tre" "zcode" "zbrew")
+  f=("o" "backup-karabiner" "gh" "pass" "tre" "zcode" "zbrew")
   printf '- %s\n' "${f[@]}"
+}
+
+# `backup-karabiner` copies the latest karabiner.json configuration file to
+# this repo.
+function backup-karabiner() {
+  cp ~/.config/karabiner/karabiner.json ~/.dotfiles/
 }
 
 # `gh` opens the current repo in a browser.
