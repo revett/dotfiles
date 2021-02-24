@@ -20,3 +20,4 @@ ln -sf ~/.dotfiles/.vscode/keybindings.json ~/Library/Application\ Support/Code/
 ln -sf ~/.dotfiles/.vscode/settings.json ~/Library/Application\ Support/Code/User/
 
 source ~/.zshrc
+
