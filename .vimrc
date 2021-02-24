@@ -90,4 +90,5 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 set scrolloff=10
 
 " vim-go configuration
+filetype plugin indent on
 let g:go_metalinter_autosave = 1
