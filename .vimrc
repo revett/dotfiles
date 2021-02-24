@@ -1,3 +1,6 @@
+" TODO
+" - New colour theme
+
 " show line numbers
 set number
 
@@ -24,47 +27,28 @@ set autoindent
 
 " Ignore case when searching
 set ignorecase
-set smartcase
-
-" highlight search results (after pressing Enter)
-set hlsearch
-
-" highlight all pattern matches WHILE typing the pattern
-set incsearch
-
-" disable last search highlight by pressing return
-nnoremap <CR> :noh<CR><CR>
-
-" show the mathing brackets
-set showmatch
 
 " leader key
-let mapleader = "\<Space>"
+let mapleader = "§"
 
 " keybindings
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
-nnoremap <Space> <nop>
-nnoremap <leader>j <C-w>k
-nnoremap <leader>k <C-w>j
-nnoremap <leader>h <C-w>h
-nnoremap <leader>l <C-w>l
+nnoremap <leader><up> <C-w>k
+nnoremap <leader><down> <C-w>j
+nnoremap <leader><left> <C-w>h
+nnoremap <leader><right> <C-w>l
 nnoremap <leader><leader> <C-w>w
-nnoremap k jzz
-nnoremap j kzz
 
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Left> <nop>
-inoremap <Right> <nop>
+tnoremap <leader><up> <C-w>k
+tnoremap <leader><down> <C-w>j
+tnoremap <leader><left> <C-w>h
+tnoremap <leader><right> <C-w>l
+tnoremap <leader><leader> <C-w>w
+
 inoremap <Esc> <nop>
-inoremap jj <Esc>
+inoremap <leader> <Esc>
 
-" turn on syntax highlighting
-syntax on
+" refresh NERDTree keybinding
+nmap <leader>r :NERDTreeRefreshRoot
 
 " Fix 200/201 paste bug triggered by jj/esc inoremap
 set t_BE=
@@ -72,23 +56,32 @@ set t_BE=
 " plugins start
 call plug#begin('~/.vim/plugged')
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " plugins end
 call plug#end()
 
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+" Start NERDTree and open cheat sheet under in different split
+autocmd VimEnter * NERDTree | 30split ~/.dotfiles/vim-cheat.md | set syntax=markdown | wincmd l
 
-" Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-  \ quit | endif
+" Open terminal to right in vertical split on startup
+autocmd VimEnter * vertical terminal ++kill=hup
+autocmd VimEnter * vertical resize 100
+autocmd VimEnter * wincmd h
+
+" show hidden files in NERDTree
+let NERDTreeShowHidden=1
 
 " lines after cursor
-set scrolloff=10
+set scrolloff=20
 
 " vim-go configuration
 filetype plugin indent on
 let g:go_metalinter_autosave = 1
+
+" markdown custom highlighting
+hi markdownH1 term=bold ctermfg=33 gui=bold guifg=#0087ff
+hi markdownHeadingDelimiter term=bold ctermfg=33 gui=bold guifg=#0087ff
+
