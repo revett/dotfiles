@@ -10,7 +10,7 @@ done;
 unset file
 
 # Karabiner
-ln -sf ~/.dotfiles/karabiner.json ~/.config/karabiner/
+cp ~/.dotfiles/karabiner.json ~/.config/karabiner/
 
 # MTMR
 ln -sf ~/.dotfiles/mtmr.json ~/Library/Application\ Support/MTMR/items.json
