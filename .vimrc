@@ -1,6 +1,3 @@
-" TODO
-" - New colour theme
-
 " show line numbers
 set number
 
@@ -56,8 +53,12 @@ set t_BE=
 " plugins start
 call plug#begin('~/.vim/plugged')
 
+Plug 'ap/vim-css-color'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'dracula/vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 
 " plugins end
@@ -81,7 +82,12 @@ set scrolloff=20
 filetype plugin indent on
 let g:go_metalinter_autosave = 1
 
-" markdown custom highlighting
-hi markdownH1 term=bold ctermfg=33 gui=bold guifg=#0087ff
-hi markdownHeadingDelimiter term=bold ctermfg=33 gui=bold guifg=#0087ff
+" fix issue with grey background - https://github.com/dracula/vim/issues/96
+" set termguicolors
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
+
+" set up theme
+syntax on
+colorscheme dracula
 
