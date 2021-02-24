@@ -46,7 +46,7 @@ function pass() {
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
 function tre() {
-  tree -aC -I '.git|node_modules' --dirsfirst "$@" | less -FRNX;
+  tree -aC -I '.git|node_modules|.cache' --dirsfirst "$@" | less -FRNX;
 }
 
 # `zcode` is a wrapper around the VSCode CLI which ensures that a list of
