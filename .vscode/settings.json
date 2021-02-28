@@ -1,13 +1,32 @@
 {
-  "editor.tabSize": 2,
+  "editor.lineHeight": 20,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
   "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "editor.lineHeight": 20,
-  "editor.minimap.enabled": false,
   "go.formatTool": "goimports",
-  "explorer.confirmDragAndDrop": false,
+  "vim.cursorStylePerMode.insert": "block-outline",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<Leader>"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<Leader>"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.leader": "§",
+  "vim.mouseSelectionGoesIntoVisualMode": false,
   "window.zoomLevel": 0,
-  "explorer.compactFolders": false,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Dracula",
+  "workbench.panel.defaultLocation": "right"
 }
