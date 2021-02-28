@@ -37,3 +37,4 @@ source bootstrap.sh
 ## Thanks
 
 * [Mathias Bynens](https://mathiasbynens.be) - [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
+* [Flavio Gasperini](https://unsplash.com/@flaviewxvx) for the [wallpaper](https://unsplash.com/photos/GjKPTkhni6Y)
