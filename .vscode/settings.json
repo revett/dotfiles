@@ -1,6 +1,6 @@
 {
-  "editor.lineHeight": 20,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.lineHeight": 20,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [80],
@@ -10,6 +10,11 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "go.formatTool": "goimports",
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"],
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
   "vim.cursorStylePerMode.insert": "block-outline",
   "vim.cursorStylePerMode.normal": "block",
   "vim.insertModeKeyBindings": [
@@ -28,5 +33,6 @@
   "vim.mouseSelectionGoesIntoVisualMode": false,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",
-  "workbench.panel.defaultLocation": "right"
+  "workbench.panel.defaultLocation": "right",
+  "explorer.confirmDelete": false
 }
