@@ -15,6 +15,7 @@ brew "tree"
 brew "yarn"
 cask "1password"
 cask "arq"
+cask "carbon-copy-cloner"
 cask "docker"
 cask "firefox"
 cask "font-source-code-pro"
@@ -35,5 +36,6 @@ cask "visual-studio-code"
 cask "vlc"
 cask "zoom"
 mas "Bear", id: 1091189122
+mas "DaisyDisk", id: 411643860
 mas "Keynote", id: 409183694
 mas "Pages", id: 409201541

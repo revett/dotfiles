@@ -2,8 +2,8 @@ bierner.markdown-preview-github-styles@0.1.6
 bungcip.better-toml@0.3.2
 dracula-theme.theme-dracula@2.22.3
 esbenp.prettier-vscode@5.9.2
-golang.go@0.22.1
+golang.go@0.23.0
 hashicorp.terraform@2.7.0
 heaths.vscode-guid@1.4.20
-redhat.vscode-yaml@0.15.0
+redhat.vscode-yaml@0.16.0
 vscodevim.vim@1.18.9

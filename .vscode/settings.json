@@ -15,21 +15,20 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "vim.cursorStylePerMode.insert": "block-outline",
+  "vim.cursorStylePerMode.insert": "underline",
   "vim.cursorStylePerMode.normal": "block",
   "vim.insertModeKeyBindings": [
     {
-      "before": ["<Leader>"],
+      "before": ["§"],
       "after": ["<Esc>"]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": ["<Leader>"],
+      "before": ["§"],
       "after": ["<Esc>"]
     }
   ],
-  "vim.leader": "§",
   "vim.mouseSelectionGoesIntoVisualMode": false,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",
