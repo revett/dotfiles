@@ -15,6 +15,9 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
+  "[html]": {
+    "editor.defaultFormatter": null
+  },
   "vim.cursorStylePerMode.insert": "underline",
   "vim.cursorStylePerMode.normal": "block",
   "vim.insertModeKeyBindings": [
