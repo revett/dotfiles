@@ -2,7 +2,7 @@
 
 # `asd` outputs all available functions from this file.
 function asd() {
-  f=("o" "backup-karabiner" "gh" "pass" "tre" "zcode" "zbrew")
+  f=("o" "backup-karabiner" "gh" "pass" "tre" "vidsy-email-whitelist" "zcode" "zbrew")
   printf '- %s\n' "${f[@]}"
 }
 
@@ -47,6 +47,27 @@ function pass() {
 # small enough for one screen.
 function tre() {
   tree -aC -I '.git|node_modules|.cache' --dirsfirst "$@" | less -FRNX;
+}
+
+# `vidsy-email-whitelist` generates a GMail filter string from the local
+# txt file called vidsy_email_whitelist.txt
+function vidsy-email-whitelist() {
+  f="$HOME/.dotfiles/vidsy_email_whitelist.txt"
+  r=""
+  i=0
+
+  while IFS= read -r line; do
+    ((i=i+1))
+
+    if [ $i -eq 1 ]; then
+      r="-from:$line"
+      continue
+    fi
+
+    r="$r AND -from:$line"
+  done < "$f"
+
+  echo $r
 }
 
 # `zcode` is a wrapper around the VSCode CLI which ensures that a list of

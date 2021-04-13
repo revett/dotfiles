@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Pull latest
-git pull origin master
+git pull origin main
 
 # Symlink files
 for file in .{gitconfig,gitignore,vimrc,zshrc}; do
@@ -20,4 +20,3 @@ ln -sf ~/.dotfiles/.vscode/keybindings.json ~/Library/Application\ Support/Code/
 ln -sf ~/.dotfiles/.vscode/settings.json ~/Library/Application\ Support/Code/User/
 
 source ~/.zshrc
-
