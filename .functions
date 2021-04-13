@@ -56,18 +56,18 @@ function vidsy-email-whitelist() {
   r=""
   i=0
 
-  while IFS= read -r line; do
+  while IFS= read -r domain; do
     ((i=i+1))
 
     if [ $i -eq 1 ]; then
-      r="-from:$line"
+      r="-$domain"
       continue
     fi
 
-    r="$r AND -from:$line"
+    r="$r -$domain"
   done < "$f"
 
-  echo $r
+  echo "from:($r)"
 }
 
 # `zcode` is a wrapper around the VSCode CLI which ensures that a list of
