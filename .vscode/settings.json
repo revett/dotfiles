@@ -6,6 +6,7 @@
   "editor.rulers": [80],
   "editor.tabSize": 2,
   "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -18,23 +19,7 @@
   "[html]": {
     "editor.defaultFormatter": null
   },
-  "vim.cursorStylePerMode.insert": "underline",
-  "vim.cursorStylePerMode.normal": "block",
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["§"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": ["§"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.mouseSelectionGoesIntoVisualMode": false,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",
-  "workbench.panel.defaultLocation": "right",
-  "explorer.confirmDelete": false
+  "workbench.panel.defaultLocation": "right"
 }
