@@ -25,10 +25,10 @@ set autoindent
 " Ignore case when searching
 set ignorecase
 
-" leader key
+" set leader key
 let mapleader = "§"
 
-" keybindings
+" set pane keybindings
 nnoremap <leader><up> <C-w>k
 nnoremap <leader><down> <C-w>j
 nnoremap <leader><left> <C-w>h
@@ -40,9 +40,6 @@ tnoremap <leader><down> <C-w>j
 tnoremap <leader><left> <C-w>h
 tnoremap <leader><right> <C-w>l
 tnoremap <leader><leader> <C-w>w
-
-inoremap <Esc> <nop>
-inoremap <leader> <Esc>
 
 " refresh NERDTree keybinding
 nmap <leader>r :NERDTreeRefreshRoot
@@ -67,11 +64,6 @@ call plug#end()
 " Start NERDTree and open cheat sheet under in different split
 autocmd VimEnter * NERDTree | 30split ~/.dotfiles/vim-cheat.md | set syntax=markdown | wincmd l
 
-" Open terminal to right in vertical split on startup
-autocmd VimEnter * vertical terminal ++kill=hup
-autocmd VimEnter * vertical resize 100
-autocmd VimEnter * wincmd h
-
 " show hidden files in NERDTree
 let NERDTreeShowHidden=1
 
@@ -90,4 +82,3 @@ let g:dracula_italic = 0
 " set up theme
 syntax on
 colorscheme dracula
-
