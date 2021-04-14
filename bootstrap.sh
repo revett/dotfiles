@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ "$0" = "$BASH_SOURCE" ]; then
+  echo "error: script must be sourced"
+  exit 1
+fi
+
 # Pull latest
 git pull origin main
 
