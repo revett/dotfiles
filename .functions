@@ -14,9 +14,7 @@ function backup-karabiner() {
 
 # `gh` opens the current repo in a browser.
 function gh() {
-  if [ -d .git ]; then
-    open `git remote -v | grep fetch | awk '{print $2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//'`| head -n1
-  fi
+  open `git remote -v | grep fetch | awk '{print $2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//'`
 }
 
 # `o` with no arguments opens the current directory, otherwise opens the given
