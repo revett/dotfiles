@@ -4,12 +4,14 @@
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [80],
+  "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "foam.files.ignore": ["**/_index.md"],
   "go.formatTool": "goimports",
   "go.lintTool": "golangci-lint",
   "go.lintFlags": ["--fast"],
@@ -21,5 +23,13 @@
   },
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",
-  "workbench.panel.defaultLocation": "right"
+  "workbench.panel.defaultLocation": "right",
+  "foam.graph.style": {
+    "lineWidth": 0.2,
+    "particleWidth": 2.0,
+    "node": {
+      "note": "#bd93f9",
+      "placeholder": "#f1fa8c"
+    }
+  }
 }
