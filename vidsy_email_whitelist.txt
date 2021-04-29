@@ -10,6 +10,7 @@ bynder.com
 bytedance.com
 canny.io
 charliehr.com
+circleci.com
 clickup.com
 clubhouse.io
 colt.net
