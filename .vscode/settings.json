@@ -11,7 +11,9 @@
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "foam.files.ignore": ["**/_index.md"],
+  "foam.files.ignore": ["**/_index.md", ".foam/**/*", "node_modules/**/*"],
+  "foam.openDailyNote.directory": "content/scratch/random/",
+  "foam.openDailyNote.filenameFormat": "yy-mm-dd-HHMM",
   "go.formatTool": "goimports",
   "go.lintTool": "golangci-lint",
   "go.lintFlags": ["--fast"],
@@ -28,6 +30,7 @@
     "lineWidth": 0.2,
     "particleWidth": 2.0,
     "node": {
+      "section": "#f1fa8c",
       "note": "#bd93f9",
       "placeholder": "#f1fa8c"
     }

@@ -2,6 +2,7 @@
 1password.com
 agilebits.com
 airtableemail.com
+amazon.de
 amazon.com
 amazonaws.com
 auth0.com

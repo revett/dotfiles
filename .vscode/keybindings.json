@@ -57,5 +57,25 @@
   {
     "key": "ctrl+g",
     "command": "-workbench.action.gotoLine"
+  },
+  {
+    "key": "ctrl+cmd+up",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+up",
+    "command": "-editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+cmd+down",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+down",
+    "command": "-editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
   }
 ]
