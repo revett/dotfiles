@@ -86,6 +86,9 @@ function zbrew() {
   # Update
   brew update
 
+  # Doctor
+  brew doctor
+
   # Get git repo name, if exists
   DIR=""
   if [ -d .git ]; then
@@ -108,4 +111,7 @@ function zbrew() {
     cp -f Brewfile ~/.dotfiles/
     rm Brewfile
   fi
+
+  # Cleanup
+  brew cleanup
 }
