@@ -68,6 +68,11 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
+    "key": "shift+cmd+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
     "key": "shift+alt+up",
     "command": "-editor.action.copyLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
@@ -184,7 +189,7 @@
   {
     "key": "shift+cmd+r",
     "command": "workbench.action.reloadWindow",
-    "when": "isDevelopment"
+    "when": ""
   },
   {
     "key": "alt+cmd+i",
@@ -437,10 +442,6 @@
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "cmd+p",
-    "command": "-workbench.action.quickOpen"
-  },
-  {
     "key": "cmd+f12",
     "command": "-editor.action.goToImplementation",
     "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
@@ -507,10 +508,6 @@
     "key": "shift+f12",
     "command": "-editor.action.goToReferences",
     "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-  },
-  {
-    "key": "shift+cmd+o",
-    "command": "-workbench.action.gotoSymbol"
   },
   {
     "key": "cmd+t",
@@ -1500,6 +1497,10 @@
     "command": "-workbench.action.splitEditor"
   },
   {
+    "key": "cmd+shift+\\",
+    "command": "workbench.action.splitEditor"
+  },
+  {
     "key": "cmd+k cmd+\\",
     "command": "-workbench.action.splitEditorOrthogonal"
   },
@@ -1546,6 +1547,10 @@
   {
     "key": "cmd+k z",
     "command": "-workbench.action.toggleZenMode"
+  },
+  {
+    "key": "alt+z",
+    "command": "workbench.action.toggleZenMode"
   },
   {
     "key": "cmd+k shift+enter",
@@ -2430,11 +2435,6 @@
     "when": "inEditorsPicker && inQuickOpen"
   },
   {
-    "key": "cmd+p",
-    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
-    "when": "inFilesPicker && inQuickOpen"
-  },
-  {
     "key": "ctrl+r",
     "command": "-workbench.action.quickOpenNavigateNextInRecentFilesPicker",
     "when": "inQuickOpen && inRecentFilesPicker"
@@ -3212,6 +3212,11 @@
     "when": "textInputFocus"
   },
   {
+    "key": "alt+down",
+    "command": "cursorPageDown",
+    "when": "textInputFocus"
+  },
+  {
     "key": "shift+pagedown",
     "command": "-cursorPageDownSelect",
     "when": "textInputFocus"
@@ -3219,6 +3224,11 @@
   {
     "key": "pageup",
     "command": "-cursorPageUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+up",
+    "command": "cursorPageUp",
     "when": "textInputFocus"
   },
   {
