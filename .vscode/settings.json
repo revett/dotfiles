@@ -11,7 +11,22 @@
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "foam.files.ignore": ["**/_index.md", ".foam/**/*", "node_modules/**/*"],
+  "foam.files.ignore": [
+    "**/_index.md",
+    ".foam/**/*",
+    ".vscode/**/*",
+    "assets/**/*",
+    "build/**/*",
+    "cmd/**/*",
+    "deployments/**/*",
+    "internal/**/*",
+    "layouts/**/*",
+    "node_modules/**/*",
+    "public/**/*",
+    "resources/**/*",
+    "static/**/*",
+    "themes/**/*"
+  ],
   "foam.openDailyNote.directory": "content/scratch/random/",
   "foam.openDailyNote.filenameFormat": "yy-mm-dd-HHMM",
   "go.formatTool": "goimports",
@@ -34,5 +49,6 @@
       "note": "#bd93f9",
       "placeholder": "#f1fa8c"
     }
-  }
+  },
+  "foam.logging.level": "debug"
 }
