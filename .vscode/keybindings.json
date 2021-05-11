@@ -50,10 +50,6 @@
     "when": "exceptionWidgetVisible"
   },
   {
-    "key": "shift+cmd+w",
-    "command": "-workbench.action.closeWindow"
-  },
-  {
     "key": "cmd+w",
     "command": "-workbench.action.closeWindow",
     "when": "!editorIsOpen && !multipleEditorGroups"
@@ -1607,11 +1603,6 @@
     "when": "config.editor.rename.enablePreview && editorFocus && renameInputVisible"
   },
   {
-    "key": "tab",
-    "command": "-acceptSelectedSuggestion",
-    "when": "suggestWidgetVisible && textInputFocus"
-  },
-  {
     "key": "shift+cmd+l",
     "command": "-addCursorsAtSearchResults",
     "when": "fileMatchOrMatchFocus && searchViewletVisible"
@@ -1708,11 +1699,6 @@
   },
   {
     "key": "shift+escape",
-    "command": "-cancelSelection",
-    "when": "editorHasSelection && textInputFocus"
-  },
-  {
-    "key": "escape",
     "command": "-cancelSelection",
     "when": "editorHasSelection && textInputFocus"
   },
@@ -2062,11 +2048,6 @@
     "when": "suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "escape",
-    "command": "-hideSuggestWidget",
-    "when": "suggestWidgetVisible && textInputFocus"
-  },
-  {
     "key": "alt+down",
     "command": "-history.showNext",
     "when": "historyNavigationEnabled && historyNavigationWidget"
@@ -2100,11 +2081,6 @@
     "key": "tab",
     "command": "-insertSnippet",
     "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
-  },
-  {
-    "key": "tab",
-    "command": "-jumpToNextSnippetPlaceholder",
-    "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
   },
   {
     "key": "shift+tab",
@@ -2347,11 +2323,6 @@
     "when": "editorHasMultipleSelections && textInputFocus"
   },
   {
-    "key": "enter",
-    "command": "-renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
     "key": "cmd+down",
     "command": "-revealReference",
     "when": "listFocus && referenceSearchVisible && !inputFocus"
@@ -2419,10 +2390,6 @@
     "key": "cmd+up",
     "command": "-search.action.focusSearchFromResults",
     "when": "firstMatchFocus && searchViewletVisible"
-  },
-  {
-    "key": "cmd+,",
-    "command": "-workbench.action.openSettings"
   },
   {
     "key": "ctrl+-",
@@ -3350,5 +3317,17 @@
     "key": "shift+enter",
     "command": "-editor.action.previousMatchFindAction",
     "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "alt+s",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "search.action.openEditor"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.action.findInFiles"
   }
 ]

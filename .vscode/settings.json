@@ -31,7 +31,7 @@
   "foam.openDailyNote.filenameFormat": "yy-mm-dd-HHMM",
   "go.formatTool": "goimports",
   "go.lintTool": "golangci-lint",
-  "go.lintFlags": ["--fast"],
+  "go.lintFlags": ["--fast", "--allow-parallel-runners"],
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
