@@ -1,4 +1,6 @@
 {
+  "cSpell.enabledLanguageIds": ["markdown", "plaintext", "text"],
+  "cSpell.language": "en-GB",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.lineHeight": 20,
   "editor.formatOnSave": true,
@@ -27,8 +29,18 @@
     "static/**/*",
     "themes/**/*"
   ],
-  "foam.openDailyNote.directory": "content/scratch/random/",
-  "foam.openDailyNote.filenameFormat": "yy-mm-dd-HHMM",
+  "foam.graph.style": {
+    "lineWidth": 0.2,
+    "particleWidth": 2.0,
+    "node": {
+      "section": "#f1fa8c",
+      "note": "#bd93f9",
+      "placeholder": "#f1fa8c"
+    }
+  },
+  "foam.logging.level": "info",
+  "foam.openDailyNote.directory": "notes/scratch/random/",
+  "foam.openDailyNote.filenameFormat": "yyyy-mm-dd-HHMM",
   "go.formatTool": "goimports",
   "go.lintTool": "golangci-lint",
   "go.lintFlags": ["--fast", "--allow-parallel-runners"],
@@ -40,15 +52,5 @@
   },
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",
-  "workbench.panel.defaultLocation": "right",
-  "foam.graph.style": {
-    "lineWidth": 0.2,
-    "particleWidth": 2.0,
-    "node": {
-      "section": "#f1fa8c",
-      "note": "#bd93f9",
-      "placeholder": "#f1fa8c"
-    }
-  },
-  "foam.logging.level": "debug"
+  "workbench.panel.defaultLocation": "right"
 }
