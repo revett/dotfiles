@@ -1,3 +1,5 @@
+
+
 [user]
   name = revett
   email = 2796074+revett@users.noreply.github.com
@@ -39,7 +41,5 @@
   ignorecase = false
   excludesfile = /Users/revett/.gitignore
 
-[url "git@github.com:"]
-  insteadOf = "https://github.com/"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
