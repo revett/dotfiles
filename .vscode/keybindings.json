@@ -1493,7 +1493,7 @@
     "command": "-workbench.action.splitEditor"
   },
   {
-    "key": "cmd+shift+\\",
+    "key": "alt+s",
     "command": "workbench.action.splitEditor"
   },
   {
@@ -3264,16 +3264,6 @@
     "when": "terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "cmd+t",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "cmd+t",
-    "command": "workbench.action.terminal.focus",
-    "when": "!terminalFocus"
-  },
-  {
     "key": "cmd+i",
     "command": "workbench.action.problems.focus",
     "when": "editorFocus || terminalFocus"
@@ -3319,15 +3309,69 @@
     "when": "editorFocus && findInputFocussed"
   },
   {
-    "key": "alt+s",
-    "command": "workbench.files.action.collapseExplorerFolders"
-  },
-  {
     "key": "shift+cmd+f",
     "command": "search.action.openEditor"
   },
   {
     "key": "shift+cmd+f",
     "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "shift+alt+b",
+    "command": "-extension.applescript.compile",
+    "when": "editorFocus && editorLangId == 'applescript'"
+  },
+  {
+    "key": "shift+alt+r",
+    "command": "-extension.applescript.run",
+    "when": "editorFocus && editorLangId == 'applescript'"
+  },
+  {
+    "key": "y",
+    "command": "-notebook.cell.changeToCode",
+    "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'markup'"
+  },
+  {
+    "key": "enter",
+    "command": "-notebook.cell.edit",
+    "when": "notebookCellListFocused && notebookEditable && !inputFocus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-notebook.cell.execute",
+    "when": "notebookCellListFocused && notebookCellType == 'code' && notebookCellExecutionState == 'failed' || notebookCellExecutionState == 'idle' || notebookCellExecutionState == 'succeeded' && notebookKernelCount > 0"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-notebook.cell.executeAndSelectBelow",
+    "when": "notebookCellListFocused && notebookCellType == 'markup' || notebookCellListFocused && notebookCellType == 'code' && notebookCellExecutionState == 'failed' || notebookCellExecutionState == 'idle' || notebookCellExecutionState == 'succeeded' && notebookKernelCount > 0"
+  },
+  {
+    "key": "alt+enter",
+    "command": "-notebook.cell.executeAndInsertBelow",
+    "when": "notebookCellListFocused && notebookCellType == 'code' && notebookCellExecutionState == 'failed' || notebookCellExecutionState == 'idle' || notebookCellExecutionState == 'succeeded' && notebookKernelCount > 0"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+shift+left",
+    "command": "-editor.action.smartSelect.shrink",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+right",
+    "command": "-editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
   }
 ]

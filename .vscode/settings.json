@@ -2,7 +2,8 @@
   "cSpell.enabledLanguageIds": ["markdown", "plaintext", "text"],
   "cSpell.language": "en-GB",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.lineHeight": 20,
+  "editor.lineHeight": 22,
+  "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [80],
@@ -13,6 +14,7 @@
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "foam.decorations.links.enable": true,
   "foam.files.ignore": [
     "**/_index.md",
     ".foam/**/*",
@@ -50,9 +52,8 @@
   "[html]": {
     "editor.defaultFormatter": null
   },
+  "redhat.telemetry.enabled": false,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",
-  "workbench.panel.defaultLocation": "right",
-  "foam.decorations.links.enable": true,
-  "redhat.telemetry.enabled": false
+  "workbench.panel.defaultLocation": "right"
 }
