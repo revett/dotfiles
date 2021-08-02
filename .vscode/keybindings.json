@@ -3377,5 +3377,9 @@
   {
     "key": "cmd+q",
     "command": "workbench.action.quit"
+  },
+  {
+    "key": "cmd+`",
+    "command": "workbench.action.quickSwitchWindow"
   }
 ]
