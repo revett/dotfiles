@@ -42,6 +42,7 @@
   },
   "foam.openDailyNote.directory": "notes/scratch/daily/",
   "foam.openDailyNote.filenameFormat": "yyyy-mm-dd-HHMM",
+  "git.countBadge": "off",
   "go.formatTool": "goimports",
   "go.lintTool": "golangci-lint",
   "go.lintFlags": ["--fast", "--allow-parallel-runners"],

@@ -9,7 +9,7 @@ Clone the repo and symlink to `~/.dotfiles`:
 ```bash
 git clone git@github.com:revett/dotfiles.git
 cd dotfiles
-ln -sf ~/Projects/github.com/revett/dotfiles ~/.dotfiles
+ln -sf ~/projects/github.com/revett/dotfiles ~/.dotfiles
 ```
 
 Use the bootstrap script to symlink files:

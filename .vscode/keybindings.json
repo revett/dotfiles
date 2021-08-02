@@ -3373,5 +3373,9 @@
     "key": "ctrl+shift+right",
     "command": "-editor.action.smartSelect.expand",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+q",
+    "command": "workbench.action.quit"
   }
 ]
