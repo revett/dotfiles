@@ -18,10 +18,6 @@
     "bordered": false
   },
   {
-    "type": "dnd",
-    "align": "right"
-  },
-  {
     "type": "exitTouchbar",
     "align": "right",
     "bordered": false,
