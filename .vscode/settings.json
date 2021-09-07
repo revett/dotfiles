@@ -52,8 +52,13 @@
   "[html]": {
     "editor.defaultFormatter": null
   },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
   "redhat.telemetry.enabled": false,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",
-  "workbench.panel.defaultLocation": "bottom"
+  "workbench.panel.defaultLocation": "bottom",
+  "workbench.startupEditor": "none"
 }

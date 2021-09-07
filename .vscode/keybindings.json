@@ -3381,5 +3381,9 @@
   {
     "key": "cmd+`",
     "command": "workbench.action.quickSwitchWindow"
+  },
+  {
+    "key": "cmd+o",
+    "command": "workbench.action.openRecent"
   }
 ]
