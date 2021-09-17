@@ -9,7 +9,8 @@ hashicorp.terraform@2.14.0
 heaths.vscode-guid@1.4.20
 marvhen.reflow-markdown@2.1.0
 mechatroner.rainbow-csv@1.9.1
+mohsen1.prettify-json@0.0.3
 ms-azuretools.vscode-docker@1.16.1
 redhat.vscode-yaml@0.22.0
 richie5um2.vscode-sort-json@1.20.0
-streetsidesoftware.code-spell-checker@2.0.4
+streetsidesoftware.code-spell-checker@2.0.5

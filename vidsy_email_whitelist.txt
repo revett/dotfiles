@@ -39,6 +39,7 @@ pepsico.com
 readymag.com
 segment.com
 sentry.io
+shortcut.com
 slack.com
 slackhq.com
 splash.events
