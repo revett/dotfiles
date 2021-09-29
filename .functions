@@ -27,7 +27,7 @@ function email-recruiter-blocklist() {
       continue
     fi
 
-    r="$r $domain"
+    r="$r OR $domain"
   done < "$f"
 
   echo "$r"
