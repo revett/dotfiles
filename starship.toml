@@ -1,0 +1,122 @@
+# Add newline after each prompt
+add_newline = true
+command_timeout = 750
+
+# Replace the success/error characters
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
+# Disable unused modules
+[aws]
+disabled = true
+[battery]
+disabled = true
+[cmake]
+disabled = true
+[cobol]
+disabled = true
+[conda]
+disabled = true
+[crystal]
+disabled = true
+[dart]
+disabled = true
+[deno]
+disabled = true
+[dotnet]
+disabled = true
+[elixir]
+disabled = true
+[elm]
+disabled = true
+[gcloud]
+disabled = true
+[helm]
+disabled = true
+[java]
+disabled = true
+[julia]
+disabled = true
+[kotlin]
+disabled = true
+[lua]
+disabled = true
+[nim]
+disabled = true
+[nix_shell]
+disabled = true
+[ocaml]
+disabled = true
+[openstack]
+disabled = true
+[package]
+disabled = true
+[perl]
+disabled = true
+[php]
+disabled = true
+[purescript]
+disabled = true
+[rlang]
+disabled = true
+[red]
+disabled = true
+[ruby]
+disabled = true
+[rust]
+disabled = true
+[scala]
+disabled = true
+[singularity]
+disabled = true
+[swift]
+disabled = true
+[vagrant]
+disabled = true
+[vlang]
+disabled = true
+[vcsh]
+disabled = true
+[zig]
+disabled = true
+
+# Configure cmd_duration module
+[cmd_duration]
+min_time = 500
+format = "[$duration](bold green)"
+
+# Configure directory module
+[directory]
+truncate_to_repo = false
+
+# Configure git_branch module
+[git_branch]
+symbol = ""
+
+# Configure golang module
+[golang]
+format = "[go$version](yellow) "
+version_format = "${raw}"
+
+# Configure nodejs module
+[nodejs]
+format = "[node$version](yellow) "
+version_format = "${raw}"
+
+# Configure python module
+[python]
+format = "[python$version](yellow) "
+version_format = "${raw}"
+
+# Configure shell module
+[shell]
+bash_indicator = ""
+format = "$indicator"
+unknown_indicator = "?shell"
+disabled = false
+
+# Configure terraform module
+[terraform]
+format = "[terraform$version](yellow) "
+version_format = "${raw}"

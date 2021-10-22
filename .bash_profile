@@ -5,10 +5,12 @@ export CLICOLOR=1
 # Set default editor
 export EDITOR='vim'
 
+# TODO: symlink config to ~
 # Configure prompt
 # https://starship.rs/
 eval "$(starship init bash)"
 
+# TODO: move to aliases.sh
 # Aliases for changing directories
 alias ~='cd $HOME'
 alias dl='cd ~/Downloads'
@@ -23,6 +25,7 @@ alias ggpush='git push origin $(branch)'
 # General purpose aliases
 alias reload='source ~/.bash_profile'
 
+# TODO: move to functions.sh
 # Git helpers
 # https://gist.github.com/DavidToca/3086571
 branch () {
@@ -33,3 +36,5 @@ branch () {
 # Set BSD ls to use coreutils gls
 # https://github.com/sharkdp/vivid#on-macos
 alias ls="gls --color"
+
+# TODO: load other bash scripts
