@@ -1,15 +1,34 @@
 #!/usr/bin/env bash
+#
+# Aliases
+#
+# @author Charlie Revett
 
-# Shortcuts
-alias dl="cd ~/Downloads"
-alias dot="cd ~/.dotfiles"
-alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
-
-# Week number
+# Dates
 alias week='date +%V'
 alias sprint='date +%V'
 
-# IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ifconfig -l | xargs -n1 ipconfig getifaddr"
+# Directories
+alias ~='cd $HOME'
+alias dl='cd ~/Downloads'
+alias dot='cd ~/dotfiles'
+alias dotfiles='cd ~/dotfiles'
+alias dt="cd ~/Desktop"
+alias p='cd ~/projects'
+alias rev='cd ~/projects/github.com/revett'
+alias vid='cd ~/projects/github.com/vidsy'
+
+# General
+alias reload='source ~/.bash_profile'
+
+# Git
+alias ggpull='git pull origin $(branch)'
+alias ggpush='git push origin $(branch)'
+
+# Network
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias localip='ifconfig -l | xargs -n1 ipconfig getifaddr'
+
+# Set BSD ls to use coreutils gls
+# https://github.com/sharkdp/vivid#on-macos
+alias ls='gls --color'
