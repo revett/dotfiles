@@ -1,76 +1,32 @@
 #!/usr/bin/env bash
+#
+# Functions
+#
+# @author Charlie Revett
 
+# TODO: Automate this or get rid of it as rarely used.
 # `asd` outputs all available functions from this file.
-function asd() {
-  f=("o" "backup-karabiner" "gh" "pass" "tre" "email-recruiter-blocklist" "email-vidsy-allowlist" "zcode" "zbrew")
+asd() {
+  f=("branch" "gh" "generate-passphrase" "tre")
   printf '- %s\n' "${f[@]}"
 }
 
-# `backup-karabiner` copies the latest karabiner.json configuration file to
-# this repo.
-function backup-karabiner() {
-  cp ~/.config/karabiner/karabiner.json ~/.dotfiles/
+# `branch` is used within a number of aliases, and returns the branch from the
+# current git directory. Taken from oh-my-zsh.
+# See: https://gist.github.com/DavidToca/3086571
+branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
 }
 
-# `email-recruiter-blocklist` generates a GMail filter string from the local
-# txt file called email/recruiter_blocklist.txt
-function email-recruiter-blocklist() {
-  f="$HOME/.dotfiles/email/recruiter_blocklist.txt"
-  r=""
-  i=0
-
-  while IFS= read -r domain; do
-    ((i=i+1))
-
-    if [ $i -eq 1 ]; then
-      r="$domain"
-      continue
-    fi
-
-    r="$r OR $domain"
-  done < "$f"
-
-  echo "$r"
-}
-
-# `email-vidsy-allowlist` generates a GMail filter string from the local
-# txt file called email/vidsy_allowlist.txt
-function email-vidsy-allowlist() {
-  f="$HOME/.dotfiles/email/vidsy_allowlist.txt"
-  r=""
-  i=0
-
-  while IFS= read -r domain; do
-    ((i=i+1))
-
-    if [ $i -eq 1 ]; then
-      r="-$domain"
-      continue
-    fi
-
-    r="$r -$domain"
-  done < "$f"
-
-  echo "$r"
-}
-
+# TODO: Fix so that `.git` is not URL suffix.
 # `gh` opens the current repo in a browser.
-function gh() {
+gh() {
   open `git remote -v | grep fetch | awk '{print $2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//'`
 }
 
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location.
-function o() {
-  if [ $# -eq 0 ]; then
-    open .;
-  else
-    open "$@";
-  fi;
-}
-
-# `pass` generates a random passphrase based password.
-function pass() {
+# `generate-passphrase` generates a random passphrase based password.
+generate-passphrase() {
   N=1
   if [ "$#" -eq 1 ]; then
     N=$1
@@ -85,54 +41,6 @@ function pass() {
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-function tre() {
+tre() {
   tree -aC -I '.git|node_modules|.cache' --dirsfirst "$@" | less -FRNX;
-}
-
-# `zcode` is a wrapper around the VSCode CLI which ensures that a list of
-# installed extensions is kept updated in this repo.
-function zcode() {
-  # Pass arguments to code
-  if [ $# -ne 0 ]; then
-    code "$@"
-  fi
-
-  # Create new extensions backup
-  code --list-extensions --show-versions > ~/.dotfiles/.vscode/.extensions
-}
-
-# `zbrew` is a wrapper around Homebrew which ensures that a Brewfile is kept
-# updated in this repo.
-function zbrew() {
-  # Update
-  brew update
-
-  # Doctor
-  brew doctor
-
-  # Get git repo name, if exists
-  DIR=""
-  if [ -d .git ]; then
-    DIR=$(basename `git rev-parse --show-toplevel`)
-  fi
-
-  # Pass arguments to brew
-  if [ $# -ne 0 ]; then
-    brew "$@"
-  fi
-
-  # Remove existing Brewfile
-  [ -f ~/.dotfiles/Brewfile ] && rm ~/.dotfiles/Brewfile
-
-  # Create new Brewfile
-  brew bundle dump --force --cleanup
-
-  # Move Brewfile to this repo, and delete in working directory
-  if  [ "$DIR" != "dotfiles" ]; then
-    cp -f Brewfile ~/.dotfiles/
-    rm Brewfile
-  fi
-
-  # Cleanup
-  brew cleanup
 }

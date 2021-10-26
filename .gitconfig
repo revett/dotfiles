@@ -1,24 +1,22 @@
-
-
-[user]
-  name = revett
-  email = 2796074+revett@users.noreply.github.com
-
 [color "branch"]
   current = yellow reverse
   local = yellow
   remote = green
 
 [color "diff"]
-  meta = yellow
   frag = magenta
-  old = red
+  meta = yellow
   new = green
+  old = red
 
 [color "status"]
   added = green
   changed = blue
   untracked = magenta
+
+[core]
+  excludesfile = /Users/revett/dotfiles/.gitignore
+  ignorecase = false
 
 [push]
   default = upstream
@@ -27,19 +25,18 @@
   rebase = false
 
 [alias]
-  log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  st = status
-  s = status
   ch = checkout
   br = checkout -b
-  dc = diff --cached
   d = diff
-  sq = merge --squash
-  edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vscode `f`"
+  dc = diff --cached
+  log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  s = status
+  st = status
 
-[core]
-  ignorecase = false
-  excludesfile = /Users/revett/.gitignore
+[user]
+  email = 2796074+revett@users.noreply.github.com
+  name = revett
 
+# Added to support usage of private Go packages within go.mod
 [url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/

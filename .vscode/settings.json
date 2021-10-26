@@ -1,10 +1,20 @@
 {
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[html]": {
+    "editor.defaultFormatter": null
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
   "cSpell.enabledLanguageIds": ["markdown", "plaintext", "text"],
   "cSpell.language": "en-GB",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.lineHeight": 22,
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
+  "editor.lineHeight": 22,
   "editor.minimap.enabled": false,
   "editor.rulers": [80],
   "editor.tabCompletion": "on",
@@ -33,29 +43,19 @@
   ],
   "foam.graph.style": {
     "lineWidth": 0.2,
-    "particleWidth": 2.0,
     "node": {
-      "section": "#f1fa8c",
       "note": "#bd93f9",
-      "placeholder": "#f1fa8c"
-    }
+      "placeholder": "#f1fa8c",
+      "section": "#f1fa8c"
+    },
+    "particleWidth": 2
   },
   "foam.openDailyNote.directory": "notes/scratch/daily/",
   "foam.openDailyNote.filenameFormat": "yyyy-mm-dd-HHMM",
   "git.countBadge": "off",
   "go.formatTool": "goimports",
+  "go.lintFlags": ["--allow-parallel-runners"],
   "go.lintTool": "golangci-lint",
-  "go.lintFlags": ["--fast", "--allow-parallel-runners"],
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
-  },
-  "[html]": {
-    "editor.defaultFormatter": null
-  },
-  "[terraform]": {
-    "editor.defaultFormatter": "hashicorp.terraform",
-    "editor.formatOnSave": true
-  },
   "redhat.telemetry.enabled": false,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",

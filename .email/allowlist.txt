@@ -2,8 +2,8 @@
 1password.com
 agilebits.com
 airtableemail.com
-amazon.de
 amazon.com
+amazon.de
 amazonaws.com
 auth0.com
 bynder.com
@@ -37,6 +37,7 @@ notion.so
 ohdear.app
 pepsico.com
 readymag.com
+rlc-global.com
 segment.com
 sentry.io
 shortcut.com
