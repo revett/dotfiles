@@ -2,20 +2,26 @@
 
 macOS .files and configuration.
 
-## Usage
+## Install
 
-Clone the repo and symlink to `~/.dotfiles`:
+Clone the repo:
 
-```bash
-git clone git@github.com:revett/dotfiles.git
-cd dotfiles
-ln -sf ~/projects/github.com/revett/dotfiles ~/.dotfiles
+```
+git clone -C $HOME/projects/revett git@github.com:revett/dotfiles.git
 ```
 
-Use the bootstrap script to symlink files:
+Symlink to the home directory:
 
 ```bash
-source bootstrap.sh
+ln -sf ~/projects/github.com/revett/dotfiles ~/dotfiles
+```
+
+## Usage
+
+Symlink the files within the repo:
+
+```
+make run
 ```
 
 ### Email Filtering
