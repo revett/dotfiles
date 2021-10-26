@@ -12,7 +12,7 @@ git clone -C ~/projects/github.com/revett git@github.com:revett/dotfiles.git
 
 Symlink to the home directory:
 
-```bash
+```
 ln -sf ~/projects/github.com/revett/dotfiles ~/dotfiles
 ```
 
