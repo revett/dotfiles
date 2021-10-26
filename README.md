@@ -1,6 +1,6 @@
 # dotfiles
 
-🔧 .files, configuration and tooling.
+macOS .files and configuration.
 
 ## Usage
 
@@ -18,23 +18,13 @@ Use the bootstrap script to symlink files:
 source bootstrap.sh
 ```
 
-## Email Filtering
+### Email Filtering
 
 Used to automatically label unknown external emails within GMail, to reduce
 noise/spam:
 
-```bash
-email-vidsy-allowlist | pbcopy
 ```
-
-```go
-// -1310.io -1password.com -agilebits.com -airtableemail.com -amazon.com ...
-```
-
-Used to automatically dispose of recruiter emails, to reduce noise/spam:
-
-```bash
-email-recruiter-blocklist | pbcopy
+make generate-email-filters
 ```
 
 > **Note** - Wrapping the output in `from:(foo)` will allow the filters to be
@@ -42,4 +32,6 @@ email-recruiter-blocklist | pbcopy
 
 ## Thanks
 
-- [Mathias Bynens](https://mathiasbynens.be) - [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
+- Jeff Geerling - [geerlingguy/dotfiles](https://github.com/geerlingguy/dotfiles)
+- Marko Wallin - [walokra/dotfiles](https://github.com/walokra/dotfiles)
+- Mathias Bynens - [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
