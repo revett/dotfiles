@@ -16,7 +16,7 @@ alias dotfiles='cd ~/dotfiles'
 alias dt="cd ~/Desktop"
 alias p='cd ~/projects'
 alias rev='cd ~/projects/github.com/revett'
-alias vid='cd ~/projects/github.com/vidsy'
+alias work='cd ~/projects/github.com/vidsy'
 
 # General
 alias reload='source ~/.bash_profile'
