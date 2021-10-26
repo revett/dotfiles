@@ -9,7 +9,6 @@ export CLICOLOR=1
 # Set default editor
 export EDITOR='vim'
 
-# TODO: symlink config to ~
 # Configure prompt
 # https://starship.rs/
 eval "$(starship init bash)"
