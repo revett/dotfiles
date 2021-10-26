@@ -7,7 +7,7 @@ macOS .files and configuration.
 Clone the repo:
 
 ```
-git clone -C $HOME/projects/revett git@github.com:revett/dotfiles.git
+git clone -C ~/projects/github.com/revett git@github.com:revett/dotfiles.git
 ```
 
 Symlink to the home directory:
