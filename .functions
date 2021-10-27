@@ -7,7 +7,7 @@
 # TODO: Automate this or get rid of it as rarely used.
 # `asd` outputs all available functions from this file.
 asd() {
-  f=("branch" "gh" "generate-passphrase" "tre")
+  f=("branch" "gh" "generate-passphrase" "gsync" "tre")
   printf '- %s\n' "${f[@]}"
 }
 
@@ -27,14 +27,26 @@ gh() {
 
 # `generate-passphrase` generates a random passphrase based password.
 generate-passphrase() {
-  N=1
+  CHUNKS=4
   if [ "$#" -eq 1 ]; then
-    N=$1
+    CHUNKS=$1
   fi
 
-  for (( i=1; i<=$N; i++ )); do
-    gshuf -n4 /usr/share/dict/words | tr -s '\n' '-' | sed 's/.$//' | awk '{print tolower($0)}'
-  done
+  gshuf -n$CHUNKS /usr/share/dict/words | tr -s '\n' '-' | sed 's/.$//' | awk '{print tolower($0)}'
+}
+
+# `gsync` is a helper function for moving back to the main branch of a repo and
+# updating it with remote.
+gsync() {
+  BRANCH="master"
+
+  if [ `git branch --list main` ]; then
+    BRANCH="main"
+  fi
+
+  git ch $BRANCH
+  git fetch
+  ggpull
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring

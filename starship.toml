@@ -1,15 +1,20 @@
+# See: https://starship.rs/config
+
+# Colors
+# See: https://starship.rs/advanced-config/#style-strings
+# - Terminal colors: black, red, green, blue, yellow, purple, cyan, white
+# - You can optionally prefix these with bright- to get the bright version
+
 # Add newline after each prompt
 add_newline = true
 command_timeout = 750
 
 # Replace the success/error characters
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red)"
+success_symbol = "[➜](green)"
+error_symbol = "[✗](red)"
 
 # Disable unused modules
-[aws]
-disabled = true
 [battery]
 disabled = true
 [cmake]
@@ -81,32 +86,42 @@ disabled = true
 [zig]
 disabled = true
 
+# Configure aws module
+[aws]
+format = '[$symbol($profile )(\($region\) )(\[$duration\])]($style)'
+style = "white"
+symbol = ""
+
 # Configure cmd_duration module
 [cmd_duration]
 min_time = 500
-format = "[$duration](bold green)"
+format = "[$duration](yellow)"
 
 # Configure directory module
 [directory]
+style = "cyan"
 truncate_to_repo = false
 
 # Configure git_branch module
 [git_branch]
+style = "purple"
 symbol = ""
+truncation_length = 36
+truncation_symbol = ""
 
 # Configure golang module
 [golang]
-format = "[go$version](yellow) "
+format = "[go$version](white) "
 version_format = "${raw}"
 
 # Configure nodejs module
 [nodejs]
-format = "[node$version](yellow) "
+format = "[node$version](white) "
 version_format = "${raw}"
 
 # Configure python module
 [python]
-format = "[python$version](yellow) "
+format = "[python$version](white) "
 version_format = "${raw}"
 
 # Configure shell module
@@ -118,5 +133,5 @@ disabled = false
 
 # Configure terraform module
 [terraform]
-format = "[terraform$version](yellow) "
+format = "[terraform$version](white) "
 version_format = "${raw}"
