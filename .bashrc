@@ -2,6 +2,9 @@
 #
 # @author Charlie Revett
 
+# Include installed Go packages within path
+export PATH=/Users/revett/go/bin:$PATH
+
 # Enable colors
 # https://unix.stackexchange.com/questions/2897/clicolor-and-ls-colors-in-bash
 export CLICOLOR=1
