@@ -13,7 +13,7 @@
 # @author Charlie Revett
 
 # TODO: Move this to a separate Github repo.
-f="$HOME/dotfiles/.email/blocklist.txt"
+f="$HOME/dotfiles/email/blocklist.txt"
 r=""
 i=0
 
@@ -35,7 +35,7 @@ done < "$f"
 echo -e "> filter:\n"
 printf -- "$r\n\n"
 
-f="$HOME/dotfiles/.email/allowlist.txt"
+f="$HOME/dotfiles/email/allowlist.txt"
 r=""
 i=0
 
