@@ -80,8 +80,8 @@ gsync() {
   git pull origin $BRANCH
 }
 
-# `tldr` wraps chubin/cheat.sh, and will pipe the resulting sheet in less if it
-# it longer than the height of the terminal.
+# `tldr` wraps chubin/cheat.sh, and will pipe the resulting sheet in to less if
+# it is longer than the height of the terminal.
 # See: https://github.com/chubin/cheat.sh#usage
 tldr() {
   if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
