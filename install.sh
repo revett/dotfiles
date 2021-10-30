@@ -4,6 +4,9 @@
 #
 # @author Charlie Revett
 
+echo "> starting install.sh"
+echo "> creating symlinks"
+
 # Bash
 ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
@@ -21,3 +24,5 @@ ln -sf ~/dotfiles/.vimrc ~/.vimrc
 # VSCode
 ln -sf ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/
 ln -sf ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/
+
+echo "> complete"
