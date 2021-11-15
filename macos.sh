@@ -12,7 +12,7 @@ echo "> setting preferences"
 # ------------------------------
 
 # Set Dock autohide delay to 1000 seconds
-defaults write com.apple.dock autohide-delay -float 1000
+defaults write com.apple.dock autohide-delay -float 2
 
 # Enable Dock autohide
 defaults write com.apple.dock autohide -bool true
@@ -65,7 +65,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 1
 
 # Decrease initial key repeat
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
