@@ -23,6 +23,7 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "foam.decorations.links.enable": true,
+  "foam.edit.linkReferenceDefinitions": "withoutExtensions",
   "foam.files.ignore": [
     "**/_index.md",
     ".foam/**/*",
@@ -54,12 +55,11 @@
   "go.formatTool": "goimports",
   "go.lintFlags": ["--allow-parallel-runners"],
   "go.lintTool": "golangci-lint",
+  "javascript.format.semicolons": "insert",
   "redhat.telemetry.enabled": false,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",
   "workbench.panel.defaultLocation": "bottom",
-  "workbench.startupEditor": "none",
   "workbench.sideBar.location": "right",
-  "foam.edit.linkReferenceDefinitions": "withoutExtensions",
-  "javascript.format.semicolons": "insert"
+  "workbench.startupEditor": "none"
 }
