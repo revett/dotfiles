@@ -2,9 +2,6 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "[html]": {
-    "editor.defaultFormatter": null
-  },
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
     "editor.formatOnSave": true
@@ -61,5 +58,8 @@
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",
   "workbench.panel.defaultLocation": "bottom",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "workbench.sideBar.location": "right",
+  "foam.edit.linkReferenceDefinitions": "withoutExtensions",
+  "javascript.format.semicolons": "insert"
 }
