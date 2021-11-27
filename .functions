@@ -17,8 +17,7 @@ asd() {
   # TODO: improve detail provided in usage
   echo -e "> Use <cmd> -h for usage"
 
-  f=("branch" "gh" "generate-passphrase" "gsync" "tldr" "tre")
-  # printf '- %s\n' "${f[@]}"
+  f=("branch" "find-free-port" "gh" "generate-passphrase" "gsync" "tldr" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
