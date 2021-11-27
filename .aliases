@@ -11,12 +11,14 @@ alias sprint='date +%V'
 # Directories
 alias ~='cd $HOME'
 alias dl='cd ~/Downloads'
-alias dot='cd ~/dotfiles'
 alias dotfiles='cd ~/dotfiles'
 alias dt="cd ~/Desktop"
 alias p='cd ~/projects'
 alias rev='cd ~/projects/github.com/revett'
 alias work='cd ~/projects/github.com/vidsy'
+
+# Docker
+alias container-node='CONTAINER_PORT=$(find-free-port); echo http://localhost:$CONTAINER_PORT; docker run --rm -it -p $CONTAINER_PORT:80 -v $PWD:/home/app -w /home/app -u node node:16.13.0 bash'
 
 # General
 alias reload='source ~/.bash_profile'

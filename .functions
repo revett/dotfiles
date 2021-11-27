@@ -17,8 +17,7 @@ asd() {
   # TODO: improve detail provided in usage
   echo -e "> Use <cmd> -h for usage"
 
-  f=("branch" "gh" "generate-passphrase" "gsync" "tldr" "tre")
-  # printf '- %s\n' "${f[@]}"
+  f=("branch" "find-free-port" "gh" "generate-passphrase" "gsync" "tldr" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -33,6 +32,19 @@ branch() {
 
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo ${ref#refs/heads/}
+}
+
+# `find-free-port` finds a local port that is not in use
+find-free-port() {
+  while true; do
+    random_port=$(( ((RANDOM<<15)|RANDOM) % 49152 + 10000 ))
+    status="$(nc -z 127.0.0.1 $random_port < /dev/null &>/dev/null; echo $?)"
+
+    if [ "${status}" != "0" ]; then
+      echo $random_port
+      return 0
+    fi
+  done
 }
 
 # TODO: Fix so that `.git` is not URL suffix.

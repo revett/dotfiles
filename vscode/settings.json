@@ -2,9 +2,6 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "[html]": {
-    "editor.defaultFormatter": null
-  },
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
     "editor.formatOnSave": true
@@ -26,6 +23,7 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "foam.decorations.links.enable": true,
+  "foam.edit.linkReferenceDefinitions": "withoutExtensions",
   "foam.files.ignore": [
     "**/_index.md",
     ".foam/**/*",
@@ -57,9 +55,11 @@
   "go.formatTool": "goimports",
   "go.lintFlags": ["--allow-parallel-runners"],
   "go.lintTool": "golangci-lint",
+  "javascript.format.semicolons": "insert",
   "redhat.telemetry.enabled": false,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Dracula",
   "workbench.panel.defaultLocation": "bottom",
+  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none"
 }
