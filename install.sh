@@ -22,6 +22,7 @@ ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 
 # VSCode
+# TODO: this did not work
 ln -sf ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/
 ln -sf ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/
 

@@ -11,8 +11,8 @@ echo "> setting preferences"
 # Dock & Menu Bar
 # ------------------------------
 
-# Set Dock autohide delay to 1000 seconds
-defaults write com.apple.dock autohide-delay -float 2
+# Set Dock autohide delay
+defaults write com.apple.dock autohide-delay -float 0.5
 
 # Enable Dock autohide
 defaults write com.apple.dock autohide -bool true

@@ -24,8 +24,8 @@
   "javascript.format.semicolons": "insert",
   "redhat.telemetry.enabled": false,
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "GitHub Dark Default",
   "workbench.panel.defaultLocation": "bottom",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "GitHub Dark Default"
 }

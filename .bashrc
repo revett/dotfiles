@@ -2,6 +2,14 @@
 #
 # @author Charlie Revett
 
+# Silence warning about use of bash over zsh
+# https://support.apple.com/en-gb/HT208050
+# TODO: switch to using zsh
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Include brew packages and apps within path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Include installed Go packages within path
 export PATH=$HOME/go/bin:$PATH
 
@@ -28,10 +36,10 @@ bind 'set completion-ignore-case on'
 bind 'TAB:menu-complete'
 
 # Setup fzf
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
 fi
-source "/usr/local/opt/fzf/shell/key-bindings.bash"
+source "/opt/homebrew/opt/fzf/shell/key-bindings.bash"
 
 # Configure bash history
 # https://blog.sanctum.geek.nz/better-bash-history/
@@ -44,10 +52,6 @@ shopt -s histappend
 if [[ $PROMPT_COMMAND != "history"* ]]; then
   PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 fi
-
-# Enable changing directories without using cd
-# https://unix.stackexchange.com/a/4270
-shopt -s autocd
 
 # Load other bash scripts
 for file in ~/dotfiles/.{functions,aliases}; do
