@@ -2,15 +2,10 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "[terraform]": {
-    "editor.defaultFormatter": "hashicorp.terraform",
-    "editor.formatOnSave": true
-  },
   "cSpell.enabledLanguageIds": ["markdown", "plaintext", "text"],
   "cSpell.language": "en-GB",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "SauceCodePro Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 12,
   "editor.formatOnSave": true,
   "editor.lineHeight": 22,
   "editor.minimap.enabled": false,
@@ -22,35 +17,6 @@
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "foam.decorations.links.enable": true,
-  "foam.edit.linkReferenceDefinitions": "withoutExtensions",
-  "foam.files.ignore": [
-    "**/_index.md",
-    ".foam/**/*",
-    ".vscode/**/*",
-    "assets/**/*",
-    "build/**/*",
-    "cmd/**/*",
-    "deployments/**/*",
-    "internal/**/*",
-    "layouts/**/*",
-    "node_modules/**/*",
-    "public/**/*",
-    "resources/**/*",
-    "static/**/*",
-    "themes/**/*"
-  ],
-  "foam.graph.style": {
-    "lineWidth": 0.2,
-    "node": {
-      "note": "#bd93f9",
-      "placeholder": "#f1fa8c",
-      "section": "#f1fa8c"
-    },
-    "particleWidth": 2
-  },
-  "foam.openDailyNote.directory": "notes/scratch/daily/",
-  "foam.openDailyNote.filenameFormat": "yyyy-mm-dd-HHMM",
   "git.countBadge": "off",
   "go.formatTool": "goimports",
   "go.lintFlags": ["--allow-parallel-runners"],
@@ -58,7 +24,7 @@
   "javascript.format.semicolons": "insert",
   "redhat.telemetry.enabled": false,
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "GitHub Dark Default",
   "workbench.panel.defaultLocation": "bottom",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none"

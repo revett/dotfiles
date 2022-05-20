@@ -54,3 +54,6 @@ for file in ~/dotfiles/.{functions,aliases}; do
   [ -r "$file" ] && source "$file";
 done;
 unset file;
+
+# Load autocomplete for PKM note bash script
+source /Users/revett/projects/github.com/revett/sepias/sepias-completion.bash
