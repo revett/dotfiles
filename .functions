@@ -4,7 +4,6 @@
 #
 # @author Charlie Revett
 
-# TODO: Automate this or get rid of it as rarely used.
 # `asd` outputs all available functions from this file.
 asd() {
   if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
@@ -14,8 +13,6 @@ asd() {
 
   echo "> Available bash functions"
   echo "> See: ~/dotfiles/.functions"
-  # TODO: improve detail provided in usage
-  echo -e "> Use <cmd> -h for usage"
 
   f=("branch" "find-free-port" "gh" "generate-passphrase" "gsync" "tldr" "tre")
   printf -- '  - %s\n' "${f[@]}"

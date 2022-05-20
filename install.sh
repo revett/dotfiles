@@ -9,7 +9,7 @@ echo "> creating symlinks"
 
 # Bash
 ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
 # Git
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
@@ -22,7 +22,6 @@ ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 
 # VSCode
-# TODO: this did not work
 ln -sf ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/
 ln -sf ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/
 

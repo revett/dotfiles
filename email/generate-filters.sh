@@ -12,7 +12,6 @@
 #
 # @author Charlie Revett
 
-# TODO: Move this to a separate Github repo.
 f="$HOME/dotfiles/email/blocklist.txt"
 r=""
 i=0
