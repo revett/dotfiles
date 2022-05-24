@@ -5,6 +5,10 @@
 # Include brew packages and apps within path
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Include Homebrew installed Go
+# TODO: remove when updating to :latest
+export PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
+
 # Enable plugins
 plugins=(git brew)
 
