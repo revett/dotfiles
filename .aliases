@@ -21,7 +21,7 @@ alias work='cd ~/projects/github.com/vidsy'
 alias container-node='CONTAINER_PORT=$(find-free-port); echo http://localhost:$CONTAINER_PORT; docker run --rm -it -p $CONTAINER_PORT:80 -v $PWD:/home/app -w /home/app -u node node:16.13.0 bash'
 
 # General
-alias reload='source ~/.bash_profile'
+alias reload='source ~/.zshrc'
 
 # Git
 alias ggpull='git pull origin $(branch)'
