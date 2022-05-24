@@ -33,6 +33,10 @@ unset file;
 # Completions
 autoload -Uz compinit && compinit
 
+# Tab completion fix capitalisation errors for directories and files
+# https://superuser.com/questions/1092033
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 # Load autocomplete for PKM note bash script
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
