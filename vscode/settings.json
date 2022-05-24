@@ -27,5 +27,6 @@
   "workbench.panel.defaultLocation": "bottom",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "GitHub Dark Default"
+  "workbench.colorTheme": "GitHub Dark Default",
+  "window.newWindowDimensions": "maximized"
 }
