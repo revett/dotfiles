@@ -6,11 +6,6 @@
 
 # `asd` outputs all available functions from this file.
 asd() {
-  if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-    echo "Usage: asd"
-    return 0
-  fi
-
   echo "> Available bash functions"
   echo "> See: ~/dotfiles/.functions"
 
@@ -22,11 +17,6 @@ asd() {
 # current git directory. Taken from oh-my-zsh.
 # See: https://gist.github.com/DavidToca/3086571
 branch() {
-  if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-    echo "Usage: branch"
-    return 0
-  fi
-
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo ${ref#refs/heads/}
 }
@@ -47,21 +37,11 @@ find-free-port() {
 # TODO: Fix so that `.git` is not URL suffix.
 # `gh` opens the current repo in a browser.
 gh() {
-  if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-    echo "Usage: gh"
-    return 0
-  fi
-
   open `git remote -v | grep fetch | awk '{print $2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//'`
 }
 
 # `generate-passphrase` generates a random passphrase based password.
 generate-passphrase() {
-  if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-    echo "Usage: generate-passphrase <chunks>"
-    return 0
-  fi
-
   CHUNKS=4
   if [ "$#" -eq 1 ]; then
     CHUNKS=$1
@@ -73,11 +53,6 @@ generate-passphrase() {
 # `gsync` is a helper function for moving back to the main branch of a repo and
 # updating it with remote.
 gsync() {
-  if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-    echo "Usage: gsync"
-    return 0
-  fi
-
   BRANCH="master"
 
   if [ `git branch --list main` ]; then
@@ -93,11 +68,6 @@ gsync() {
 # it is longer than the height of the terminal.
 # See: https://github.com/chubin/cheat.sh#usage
 tldr() {
-  if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-    echo "Usage: tldr <lang> <query...>"
-    return 0
-  fi
-
   CMD="curl --silent https://cheat.sh/$1"
   QUERY="$(shift 1; IFS="+"; echo "$*")"
   CMD="$CMD/$QUERY"
@@ -121,10 +91,5 @@ tldr() {
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
 tre() {
-  if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-    echo "Usage: tre <path>"
-    return 0
-  fi
-
   tree -aC -I '.git|node_modules|.cache' --dirsfirst "$@" | less -FRNX;
 }

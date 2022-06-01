@@ -5,13 +5,13 @@ bungcip.better-toml@0.3.2
 esbenp.prettier-vscode@9.5.0
 GitHub.github-vscode-theme@6.0.0
 golang.go@0.33.0
-GraphQL.vscode-graphql@0.4.4
+GraphQL.vscode-graphql@0.4.6
 hancel.markdown-image@1.1.22
 hashicorp.terraform@2.22.0
 heaths.vscode-guid@1.4.20
 jinliming2.vscode-go-template@0.2.1
 marvhen.reflow-markdown@2.1.0
-mechatroner.rainbow-csv@2.3.0
+mechatroner.rainbow-csv@2.4.0
 mohsen1.prettify-json@0.0.3
 ms-azuretools.vscode-docker@1.22.0
 PascalReitermann93.vscode-yaml-sort@5.3.1

@@ -19,14 +19,15 @@
   "files.trimTrailingWhitespace": true,
   "git.countBadge": "off",
   "go.formatTool": "goimports",
-  "go.lintFlags": ["--allow-parallel-runners"],
   "go.lintTool": "golangci-lint",
   "javascript.format.semicolons": "insert",
   "redhat.telemetry.enabled": false,
+  "todohighlight.include": ["**/*.md"],
+  "todohighlight.keywords": ["todo-"],
+  "window.newWindowDimensions": "maximized",
   "window.zoomLevel": 0,
+  "workbench.colorTheme": "GitHub Dark Default",
   "workbench.panel.defaultLocation": "bottom",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
-  "workbench.colorTheme": "GitHub Dark Default",
-  "window.newWindowDimensions": "maximized"
+  "workbench.startupEditor": "none"
 }
