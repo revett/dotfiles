@@ -9,6 +9,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # TODO: remove when updating to :latest
 export PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
 
+# https://grpc.io/docs/languages/go/quickstart/
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 # Enable plugins
 plugins=(git brew)
 
