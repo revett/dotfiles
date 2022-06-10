@@ -38,13 +38,14 @@ done;
 unset file;
 
 # Completions
+# https://scriptingosx.com/2019/07/moving-to-zsh-part-5-completions/
 autoload -Uz compinit && compinit
 
 # Tab completion fix capitalisation errors for directories and files
 # https://superuser.com/questions/1092033
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# Load autocomplete for PKM note bash script
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-source /Users/revett/projects/github.com/revett/sepias/sepias-completion.bash
+# Bind Ctrl+A and Ctrl+E to emacs keybindings
+# https://stackoverflow.com/questions/23128353/zsh-shortcut-ctrl-a-not-working
+bindkey "^A" vi-beginning-of-line
+bindkey "^E" vi-end-of-line
