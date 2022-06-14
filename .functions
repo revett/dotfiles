@@ -25,16 +25,15 @@ branch() {
 find-free-port() {
   while true; do
     random_port=$(( ((RANDOM<<15)|RANDOM) % 49152 + 10000 ))
-    status="$(nc -z 127.0.0.1 $random_port < /dev/null &>/dev/null; echo $?)"
+    exists="$(nc -z 127.0.0.1 $random_port < /dev/null &>/dev/null; echo $?)"
 
-    if [ "${status}" != "0" ]; then
+    if [ "${exists}" != "0" ]; then
       echo $random_port
       return 0
     fi
   done
 }
 
-# TODO: Fix so that `.git` is not URL suffix.
 # `gh` opens the current repo in a browser.
 gh() {
   open $(git config remote.origin.url | sed "s/git@\(.*\):\(.*\).git/https:\/\/\1\/\2/")
