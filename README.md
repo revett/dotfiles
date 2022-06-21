@@ -36,6 +36,15 @@ make generate-email-filters
 > **Note** - Wrapping the output in `from:(foo)` will allow the filters to be
 > used as search queries.
 
+## Docker Images
+
+Within `docker/` are a number of wrapper container images for making local
+development simpler.
+
+```
+make build-container-images
+```
+
 ## Thanks
 
 - Jeff Geerling - [geerlingguy/dotfiles](https://github.com/geerlingguy/dotfiles)
