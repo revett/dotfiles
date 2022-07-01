@@ -2,19 +2,37 @@
 #
 # @author Charlie Revett
 
-# Include brew packages and apps within path
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# oh-my-zsh configuration taken from their template .zshrc file (start)
+# See: https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Uncomment one of the following lines to change the auto-update behavior
+zstyle ':omz:update' mode reminder # just remind me to update when it's time
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Disable themes
+ZSH_THEME=""
 
 # Enable plugins
-plugins=(git brew)
+plugins=(brew docker docker-compose git golang)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# Include brew packages and apps within path
+# TODO: Test not having this, come back after experiment
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Add user go binaries to PATH
+export PATH=$PATH:~/go/bin
 
 # Set default editor
-export EDITOR='vim'
-
-# Bind Ctrl+A and Ctrl+E to emacs keybindings
-# https://stackoverflow.com/questions/23128353/zsh-shortcut-ctrl-a-not-working
-bindkey "^A" vi-beginning-of-line
-bindkey "^E" vi-end-of-line
+export EDITOR='code -w'
 
 # Configure prompt
 # https://starship.rs/
@@ -32,10 +50,3 @@ for file in ~/dotfiles/.{functions,aliases}; do
 done;
 unset file;
 
-# Completions
-# https://scriptingosx.com/2019/07/moving-to-zsh-part-5-completions/
-autoload -Uz compinit && compinit
-
-# Tab completion fix capitalisation errors for directories and files
-# https://superuser.com/questions/1092033
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
