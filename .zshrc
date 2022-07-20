@@ -25,8 +25,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # Include brew packages and apps within path
-# TODO: Test not having this, come back after experiment
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Add user go binaries to PATH
 export PATH=$PATH:~/go/bin
