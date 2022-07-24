@@ -24,7 +24,7 @@
   "javascript.format.semicolons": "insert",
   "redhat.telemetry.enabled": false,
   "todohighlight.include": ["**/*.md"],
-  "todohighlight.keywords": ["todo-"],
+  "todohighlight.keywords": ["todo-", "TODO"],
   "window.newWindowDimensions": "maximized",
   "window.zoomLevel": 0,
   "workbench.colorTheme": "GitHub Dark Default",
