@@ -6,6 +6,7 @@
   "cSpell.language": "en-GB",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "SauceCodePro Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 12,
   "editor.formatOnSave": true,
   "editor.lineHeight": 22,
   "editor.minimap.enabled": false,
@@ -23,13 +24,28 @@
   "go.lintTool": "golangci-lint",
   "javascript.format.semicolons": "insert",
   "redhat.telemetry.enabled": false,
-  "todohighlight.include": ["**/*.md"],
-  "todohighlight.keywords": ["todo-", "TODO"],
+  "todohighlight.defaultStyle": {
+    "backgroundColor": "#ff006e",
+    "borderRadius": "3px",
+    "color": "#fff"
+  },
+  "todohighlight.include": [
+    "**/*.go",
+    "**/*.md",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html",
+    "**/*.php",
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "todohighlight.keywords": ["TODO", "todo-", "FIXME", "BUG"],
   "window.newWindowDimensions": "maximized",
   "window.zoomLevel": 0,
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.panel.defaultLocation": "bottom",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
-  "editor.fontSize": 12
+  "workbench.startupEditor": "none"
 }

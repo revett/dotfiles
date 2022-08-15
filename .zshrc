@@ -20,9 +20,12 @@ ZSH_THEME=""
 # Enable plugins
 plugins=(brew docker docker-compose git golang)
 
+# Set up oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# Disable autocorrect in Zsh
+# https://coderwall.com/p/jaoypq/disabling-autocorrect-in-zsh
+unsetopt correct_all
 
 # Include brew packages and apps within path
 eval "$(/opt/homebrew/bin/brew shellenv)"
