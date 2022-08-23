@@ -4,7 +4,7 @@
 #
 # @author Charlie Revett
 
-# https://patorjk.com/software/taag/#p=display&f=Small&t=revett%20-%20go%201.17.11
+# https://patorjk.com/software/taag/#p=display&f=Small&t=revett%20-%20go%201.18.5
 cat ~/ascii.txt
 echo ""
 
