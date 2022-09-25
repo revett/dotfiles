@@ -47,7 +47,7 @@ fi
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
 # Load other bash scripts
-for file in ~/dotfiles/.{functions,aliases}; do
+for file in ~/projects/github.com/revett/dotfiles/.{functions,aliases}; do
   [ -r "$file" ] && source "$file";
 done;
 unset file;
