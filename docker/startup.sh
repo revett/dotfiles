@@ -4,9 +4,15 @@
 #
 # @author Charlie Revett
 
-# https://patorjk.com/software/taag/#p=display&f=Small&t=revett%20-%20go%201.18.5
-cat ~/ascii.txt
-echo ""
+# Output container name
+if command -v go &> /dev/null
+then
+  echo -e "📦 revett/go:latest\n"
+fi
+if command -v node &> /dev/null
+then
+  echo -e "📦 revett/node:latest\n"
+fi
 
 # Output Zsh version
 echo -e "🛂 checking zsh version..."

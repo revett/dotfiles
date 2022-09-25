@@ -25,7 +25,6 @@ USER node
 
 # Configure shell startup
 ADD docker/startup.sh /home/node
-ADD docker/ascii-node.txt /home/node/ascii.txt
 RUN touch ~/.zshrc
 RUN echo 'PATH=$PATH:/usr/local/bin/' >> ~/.zshrc
 RUN echo 'eval "$(starship init zsh)"' >> ~/.zshrc

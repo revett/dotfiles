@@ -1,0 +1,31 @@
+formulae:
+  - ansible
+  - coreutils
+  - ffmpeg
+  - fzf
+  - jq
+  - protobuf
+  - s3cmd
+  - starship
+  - terraform
+  - tree
+  - wget
+casks:
+  - 1password
+  - anki
+  - docker
+  - firefox-developer-edition
+  - font-sauce-code-pro-nerd-font
+  - google-chrome
+  - iterm2
+  - keepingyouawake
+  - postman
+  - rectangle
+  - sequel-ace
+  - slack
+  - spotify
+  - todoist
+  - tresorit
+  - visual-studio-code
+  - vlc
+  - zoom

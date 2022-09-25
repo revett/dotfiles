@@ -23,5 +23,6 @@ Thumbs.db
 # Swap files
 *.swp
 
-# Local TODO list that I keep for the project
-TODO.md
+# hops CLI
+hops
+

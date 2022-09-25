@@ -1,6 +1,6 @@
 # dotfiles
 
-macOS .files and configuration.
+Scripts, CLIs and configuration used for my development environment.
 
 ## Install
 
@@ -10,39 +10,47 @@ Clone the repo:
 git clone -C ~/projects/github.com/revett git@github.com:revett/dotfiles.git
 ```
 
-Symlink to the home directory:
+Create symlinks, and set macOS system preferences:
 
 ```
-ln -sf ~/projects/github.com/revett/dotfiles ~/dotfiles
+make setup
 ```
 
-## Usage
+## Other Projects
 
-Symlink the files within the repo:
-
-```
-make run
-```
-
-### Email Filtering
-
-Used to automatically label unknown external emails within GMail, to reduce
-noise/spam:
-
-```
-make generate-email-filters
-```
-
-> **Note** - Wrapping the output in `from:(foo)` will allow the filters to be
-> used as search queries.
-
-## Docker Images
+### Docker Images
 
 Within `docker/` are a number of wrapper container images for making local
 development simpler.
 
 ```
 make build-container-images
+```
+
+### Email Filtering
+
+Within `email/` is an allowlist and shell script for generating a Gmail filter
+that labels anything not from a trusted domain as `External`; to visually aid
+with noise/spam.
+
+```
+make generate-email-filters
+```
+
+## HomeBrew Package Syncing
+
+> Warning: This is very rough-and-ready.
+
+The `hops` CLI is a simple Go wrapper around the macOS `brew` CLI which uses a
+local `.hops.yml` file for keeping which packages are installed/uninstalled in
+sync.
+
+```
+make build-hops-cli
+```
+
+```
+./hops
 ```
 
 ## Thanks
