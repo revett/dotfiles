@@ -4,46 +4,40 @@ Scripts, CLIs and configuration used for my development environment.
 
 ## Install
 
-Clone the repo:
-
 ```
 git clone -C ~/projects/github.com/revett git@github.com:revett/dotfiles.git
 ```
-
-Create symlinks, and set macOS system preferences:
 
 ```
 make setup
 ```
 
+Clone the repo, create symlinks, and set macOS system preferences.
+
 ## Other Projects
 
 ### Docker Images
-
-Within `docker/` are a number of wrapper container images for making local
-development simpler.
 
 ```
 make build-container-images
 ```
 
-### Email Filtering
+Within `docker/` are a number of wrapper container images for making local
+development simpler.
 
-Within `email/` is an allowlist and shell script for generating a Gmail filter
-that labels anything not from a trusted domain as `External`; to visually aid
-with noise/spam.
+### Email Filtering
 
 ```
 make generate-email-filters
 ```
 
+Within `email/` is an allowlist and shell script for generating a Gmail filter
+that labels anything not from a trusted domain as `External`; to visually aid
+with noise/spam.
+
 ## HomeBrew Package Syncing
 
 > Warning: This is very rough-and-ready.
-
-The `hops` CLI is a simple Go wrapper around the macOS `brew` CLI which uses a
-local `.hops.yml` file for keeping which packages are installed/uninstalled in
-sync.
 
 ```
 make build-hops-cli
@@ -52,6 +46,10 @@ make build-hops-cli
 ```
 ./hops
 ```
+
+The `hops` CLI is a simple Go wrapper around the macOS `brew` CLI which uses a
+local `.hops.yml` file for keeping which packages are installed/uninstalled in
+sync.
 
 ## Thanks
 
