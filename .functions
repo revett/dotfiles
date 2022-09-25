@@ -7,7 +7,7 @@
 # `asd` outputs all available functions from this file.
 asd() {
   echo "> Available bash functions"
-  echo "> See: ~/dotfiles/.functions"
+  echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
   f=("branch" "find-free-port" "gh" "generate-passphrase" "gsync" "tldr" "tre")
   printf -- '  - %s\n' "${f[@]}"
