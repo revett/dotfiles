@@ -1,4 +1,4 @@
-FROM golang:1.18.5
+FROM golang:1.19
 
 # Install Zsh
 RUN apt update
@@ -23,7 +23,6 @@ RUN rm -rf nerd-fonts/
 
 # Configure shell startup
 ADD docker/startup.sh /root
-ADD docker/ascii-go.txt /root/ascii.txt
 RUN touch ~/.zshrc
 RUN echo 'PATH=$PATH:/usr/local/bin/' >> ~/.zshrc
 RUN echo 'eval "$(starship init zsh)"' >> ~/.zshrc
