@@ -27,8 +27,11 @@ source $ZSH/oh-my-zsh.sh
 # https://coderwall.com/p/jaoypq/disabling-autocorrect-in-zsh
 unsetopt correct_all
 
-# Include brew packages and apps within path
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# Apple Silicon only
+if [[ $(uname -m) == 'arm64' ]]; then
+  # Include brew packages and apps within path
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # Add user go binaries to PATH
 export PATH=$PATH:~/go/bin
@@ -40,11 +43,23 @@ export EDITOR='code -w'
 # https://starship.rs/
 eval "$(starship init zsh)"
 
-# Setup fzf
-if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+# Apple Silicon only
+if [[ $(uname -m) == 'arm64' ]]; then
+  # Setup fzf
+  if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+    export PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+  fi
+  source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 fi
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+
+# Intel only
+if [[ $(uname -m) == 'x86_64' ]]; then
+  # Setup fzf
+  if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+    export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+  fi
+  source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+fi
 
 # Load other bash scripts
 for file in ~/projects/github.com/revett/dotfiles/.{functions,aliases}; do
