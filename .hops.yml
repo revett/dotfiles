@@ -1,15 +1,19 @@
 formulae:
-  - ansible
   - coreutils
-  - ffmpeg
   - fzf
-  - jq
+  - git
   - protobuf
   - s3cmd
   - starship
   - terraform
   - tree
   - wget
+taps:
+  - homebrew/bundle
+  - homebrew/cask
+  - homebrew/cask-drivers
+  - homebrew/cask-fonts
+  - homebrew/core
 casks:
   - 1password
   - anki
@@ -17,6 +21,7 @@ casks:
   - firefox-developer-edition
   - font-sauce-code-pro-nerd-font
   - google-chrome
+  - logitech-options
   - iterm2
   - keepingyouawake
   - postman
@@ -24,8 +29,6 @@ casks:
   - sequel-ace
   - slack
   - spotify
-  - todoist
   - tresorit
   - visual-studio-code
   - vlc
-  - zoom
