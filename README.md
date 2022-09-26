@@ -9,14 +9,10 @@ Scripts, CLIs and configuration used for my development environment.
 ## Install
 
 ```
-git clone -C ~/projects/github.com/revett git@github.com:revett/dotfiles.git
-```
-
-```
 make setup
 ```
 
-Clone the repo, create symlinks, and set macOS system preferences.
+Clone/download the repo, create symlinks, and set macOS system preferences.
 
 ## Other Projects
 
