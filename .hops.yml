@@ -13,6 +13,7 @@ taps:
   - homebrew/cask
   - homebrew/cask-drivers
   - homebrew/cask-fonts
+  - homebrew/cask-versions
   - homebrew/core
 casks:
   - 1password
