@@ -9,9 +9,9 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-type (
-	ArgumentsOption func() []string
-)
+// ArgumentsOption is a functional option for controlling what brew subcommand
+// is run for the Exec function.
+type ArgumentsOption func() []string
 
 // Exec allows for any Homebrew CLI command to be run, whilst either printing or
 // returning the output.

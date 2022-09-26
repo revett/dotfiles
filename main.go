@@ -23,6 +23,12 @@ func main() { //nolint:cyclop,funlen
 	}
 	cfg.Log()
 
+	for _, tap := range cfg.Taps {
+		if _, err := brew.Exec(brew.Tap(tap)); err != nil {
+			log.Fatal().Err(err).Send()
+		}
+	}
+
 	installedFormulae, err := brew.Exec(brew.Leaves())
 	if err != nil {
 		log.Fatal().Err(err).Send()
@@ -58,7 +64,7 @@ func main() { //nolint:cyclop,funlen
 		Msgf("%d formulae to install", len(formulaeToInstall))
 
 	if len(formulaeToInstall) > 0 {
-		if _, err := brew.Exec(brew.Install(formulaeToInstall)); err != nil {
+		if _, err := brew.Exec(brew.Install(formulaeToInstall, false)); err != nil {
 			log.Fatal().Err(err).Send()
 		}
 	}
@@ -68,7 +74,7 @@ func main() { //nolint:cyclop,funlen
 		Msgf("%d casks to install", len(casksToInstall))
 
 	if len(casksToInstall) > 0 {
-		if _, err := brew.Exec(brew.Install(casksToInstall)); err != nil {
+		if _, err := brew.Exec(brew.Install(casksToInstall, true)); err != nil {
 			log.Fatal().Err(err).Send()
 		}
 	}
