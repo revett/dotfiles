@@ -7,8 +7,7 @@
 echo "> starting install.sh"
 echo "> creating symlinks"
 
-# Bash
-ln -sf ~/projects/github.com/revett/.bash_profile ~/.bash_profile
+# Shell
 ln -sf ~/projects/github.com/revett/dotfiles/.zshrc ~/.zshrc
 
 # Git
@@ -27,5 +26,9 @@ ln -sf ~/projects/github.com/revett/dotfiles/vscode/settings.json ~/Library/Appl
 
 # Hops
 ln -sf ~/projects/github.com/revett/dotfiles/.hops.yml ~/.hops.yml
+
+# Golang CI Lint
+# https://golangci-lint.run/usage/configuration/
+ln -sf ~/projects/github.com/revett/dotfiles/.golangci.yml ~/.golangci.yml
 
 echo "> complete"
