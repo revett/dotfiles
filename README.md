@@ -35,7 +35,7 @@ Within `email/` is an allowlist and shell script for generating a Gmail filter
 that labels anything not from a trusted domain as `External`; to visually aid
 with noise/spam.
 
-## HomeBrew Package Syncing
+### HomeBrew Package Syncing
 
 > Warning: This is very rough-and-ready.
 
