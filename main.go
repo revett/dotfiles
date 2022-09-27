@@ -5,6 +5,7 @@ import (
 
 	"github.com/revett/dotfiles/internal/brew"
 	"github.com/revett/dotfiles/internal/config"
+	"github.com/revett/dotfiles/internal/prompt"
 	"github.com/revett/dotfiles/internal/slice"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -22,6 +23,10 @@ func main() { //nolint:cyclop,funlen
 		log.Fatal().Err(err).Send()
 	}
 	cfg.Log()
+
+	if err := prompt.Confirm(); err != nil {
+		log.Fatal().Err(err).Send()
+	}
 
 	for _, tap := range cfg.Taps {
 		if _, err := brew.Exec(brew.Tap(tap)); err != nil {
@@ -43,15 +48,19 @@ func main() { //nolint:cyclop,funlen
 	log.Info().Strs("formulae", formulaeToUninstall).
 		Msgf("%d formulae to uninstall", len(formulaeToUninstall))
 
+	casksToUninstall := slice.Diff(installedCasks, cfg.Casks)
+	log.Info().Strs("casks", casksToUninstall).
+		Msgf("%d casks to uninstall", len(casksToUninstall))
+
+	if err := prompt.Confirm(); err != nil {
+		log.Fatal().Err(err).Send()
+	}
+
 	if len(formulaeToUninstall) > 0 {
 		if _, err := brew.Exec(brew.Uninstall(formulaeToUninstall)); err != nil {
 			log.Fatal().Err(err).Send()
 		}
 	}
-
-	casksToUninstall := slice.Diff(installedCasks, cfg.Casks)
-	log.Info().Strs("casks", casksToUninstall).
-		Msgf("%d casks to uninstall", len(casksToUninstall))
 
 	if len(casksToUninstall) > 0 {
 		if _, err := brew.Exec(brew.Uninstall(casksToUninstall)); err != nil {
@@ -63,15 +72,19 @@ func main() { //nolint:cyclop,funlen
 	log.Info().Strs("formulae", formulaeToInstall).
 		Msgf("%d formulae to install", len(formulaeToInstall))
 
+	casksToInstall := slice.Diff(cfg.Casks, installedCasks)
+	log.Info().Strs("casks", casksToInstall).
+		Msgf("%d casks to install", len(casksToInstall))
+
+	if err := prompt.Confirm(); err != nil {
+		log.Fatal().Err(err).Send()
+	}
+
 	if len(formulaeToInstall) > 0 {
 		if _, err := brew.Exec(brew.Install(formulaeToInstall, false)); err != nil {
 			log.Fatal().Err(err).Send()
 		}
 	}
-
-	casksToInstall := slice.Diff(cfg.Casks, installedCasks)
-	log.Info().Strs("casks", casksToInstall).
-		Msgf("%d casks to install", len(casksToInstall))
 
 	if len(casksToInstall) > 0 {
 		if _, err := brew.Exec(brew.Install(casksToInstall, true)); err != nil {
