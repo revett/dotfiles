@@ -11,11 +11,15 @@ build-hops-cli:
 generate-email-filters:
 	./email/generate-filters.sh
 
-# Install all VS Code extensions from extensions.txt
-install-vscode-extensions:
-	cat ~/projects/github.com/revett/dotfiles/vscode/extensions.txt | xargs -n 1 code --install-extension
-
 # Setup command for the repo
 setup:
 	./install.sh
 	./macos.sh
+
+# Install all VS Code extensions from extensions.txt
+vscode-extensions-install:
+	cat ~/projects/github.com/revett/dotfiles/vscode/extensions.txt | xargs -n 1 code --install-extension
+
+# Update the list of installed VS Code extensions
+vscode-extensions-sync:
+	code --list-extensions --show-versions > ~/projects/github.com/revett/dotfiles/vscode/extensions.txt
