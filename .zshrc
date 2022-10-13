@@ -61,6 +61,13 @@ if [[ $(uname -m) == 'x86_64' ]]; then
   source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 fi
 
+# Part of core installation process
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# Set fnm environment variables
+# https://github.com/Schniz/fnm#shell-setup
+eval "$(fnm env --use-on-cd)"
+
 # Load other bash scripts
 for file in ~/projects/github.com/revett/dotfiles/.{functions,aliases}; do
   [ -r "$file" ] && source "$file";

@@ -1,20 +1,29 @@
 formulae:
   - coreutils
+  - docker-compose
+  - fnm
   - fzf
   - git
+  - heroku/brew/heroku
+  - jq
+  - openjdk
   - protobuf
   - s3cmd
+  - spacelift-io/spacelift/spacectl
   - starship
   - terraform
   - tree
   - wget
+  - yarn
 taps:
+  - heroku/brew
   - homebrew/bundle
   - homebrew/cask
   - homebrew/cask-drivers
   - homebrew/cask-fonts
   - homebrew/cask-versions
   - homebrew/core
+  - spacelift-io/spacelift
 casks:
   - 1password
   - anki
@@ -22,6 +31,7 @@ casks:
   - firefox-developer-edition
   - font-sauce-code-pro-nerd-font
   - google-chrome
+  - google-cloud-sdk
   - logitech-options
   - iterm2
   - keepingyouawake

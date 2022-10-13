@@ -8,10 +8,10 @@ EditorConfig.EditorConfig@0.16.4
 esbenp.prettier-vscode@9.9.0
 GitHub.github-vscode-theme@6.3.2
 golang.go@0.35.2
-GraphQL.vscode-graphql@0.7.5
+GraphQL.vscode-graphql@0.7.12
 GraphQL.vscode-graphql-syntax@1.0.4
 hancel.markdown-image@1.1.22
-hashicorp.terraform@2.24.2
+hashicorp.terraform@2.24.3
 heaths.vscode-guid@1.5.0
 jinliming2.vscode-go-template@0.2.1
 marvhen.reflow-markdown@2.1.0
