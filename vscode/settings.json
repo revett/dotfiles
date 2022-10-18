@@ -6,7 +6,6 @@
   "cSpell.language": "en-GB",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "SauceCodePro Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 12,
   "editor.formatOnSave": true,
   "editor.lineHeight": 22,
   "editor.minimap.enabled": false,
@@ -21,9 +20,12 @@
   "git.countBadge": "off",
   "go.formatTool": "goimports",
   "go.lintFlags": ["--allow-parallel-runners"],
+  "go.lintOnSave": "file",
   "go.lintTool": "golangci-lint",
   "javascript.format.semicolons": "insert",
+  "markdown.preview.fontSize": 12,
   "redhat.telemetry.enabled": false,
+  "terminal.integrated.scrollback": 10000,
   "todohighlight.defaultStyle": {
     "backgroundColor": "#ff006e",
     "borderRadius": "3px",
@@ -46,6 +48,5 @@
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.panel.defaultLocation": "bottom",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
-  "terminal.integrated.scrollback": 10000
+  "workbench.startupEditor": "none"
 }
