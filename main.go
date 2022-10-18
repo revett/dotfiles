@@ -11,6 +11,15 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+// TODO
+// - Conditionally run tap
+// - Add support for untap if not on config
+// - Support profiles
+// - Add unit tests
+// - Move out of revett/dotfiles
+// - Check if package names are valid (e.g. "spacelift-io/spacelift/spacectl"
+//   instead of "spacectl")
+
 func main() { //nolint:cyclop,funlen
 	log.Logger = log.Output(
 		zerolog.ConsoleWriter{

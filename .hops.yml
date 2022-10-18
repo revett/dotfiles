@@ -1,12 +1,15 @@
 formulae:
   - coreutils
+  - dbt-labs/dbt/dbt-bigquery
   - docker-compose
   - fnm
   - fzf
   - git
   - heroku/brew/heroku
+  - linear-linear
   - jq
   - openjdk
+  - postgresql@14
   - protobuf
   - s3cmd
   - spacelift-io/spacelift/spacectl
@@ -16,6 +19,7 @@ formulae:
   - wget
   - yarn
 taps:
+  - dbt-labs/dbt
   - heroku/brew
   - homebrew/bundle
   - homebrew/cask
@@ -26,7 +30,6 @@ taps:
   - spacelift-io/spacelift
 casks:
   - 1password
-  - anki
   - docker
   - firefox-developer-edition
   - font-sauce-code-pro-nerd-font
@@ -34,7 +37,6 @@ casks:
   - google-cloud-sdk
   - logitech-options
   - iterm2
-  - keepingyouawake
   - postman
   - rectangle
   - sequel-ace
@@ -42,4 +44,3 @@ casks:
   - spotify
   - tresorit
   - visual-studio-code
-  - vlc

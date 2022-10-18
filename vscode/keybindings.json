@@ -1,5 +1,5 @@
-// Place your key bindings in this file to override the defaults
 [
+  // Disable guid.insert as already used by moving left/right editor tab
   {
     "key": "shift+cmd+[",
     "command": "-guid.insert",
@@ -10,6 +10,8 @@
     "command": "-guid.insertMany",
     "when": "editorTextFocus"
   },
+
+  // Switch to specific editor tab
   {
     "key": "cmd+1",
     "command": "-workbench.action.focusFirstEditorGroup"
@@ -118,6 +120,8 @@
     "key": "cmd+9",
     "command": "-workbench.action.lastEditorInGroup"
   },
+
+  // Multiple cursors within editor
   {
     "key": "ctrl+alt+up",
     "command": "editor.action.insertCursorAbove",
@@ -138,6 +142,8 @@
     "command": "-editor.action.insertCursorBelow",
     "when": "editorTextFocus"
   },
+
+  // Clear terminal
   {
     "key": "cmd+r",
     "command": "workbench.action.terminal.clear",
@@ -148,11 +154,15 @@
     "command": "-workbench.action.terminal.clear",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
+
+  // Reload window
   {
     "key": "cmd+r",
     "command": "-workbench.action.reloadWindow",
     "when": "isDevelopment"
   },
+
+  // Find and replace within current editor window
   {
     "key": "ctrl+cmd+f",
     "command": "-workbench.action.toggleFullScreen",
@@ -168,6 +178,8 @@
     "command": "-editor.action.startFindReplaceAction",
     "when": "editorFocus || editorIsOpen"
   },
+
+  // Open new file in explorer by default
   {
     "key": "cmd+n",
     "command": "-workbench.action.files.newUntitledFile"
@@ -175,5 +187,17 @@
   {
     "key": "cmd+n",
     "command": "explorer.newFile"
+  },
+
+  // Find/replace: do not use enter to go to next/previous
+  {
+    "key": "enter",
+    "command": "-editor.action.nextMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
   }
 ]
