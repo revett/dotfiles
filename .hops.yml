@@ -6,7 +6,6 @@ formulae:
   - fzf
   - git
   - heroku/brew/heroku
-  - linear-linear
   - jq
   - openjdk
   - postgresql@14
@@ -16,6 +15,7 @@ formulae:
   - starship
   - terraform
   - tree
+  - vips
   - wget
   - yarn
 taps:
@@ -35,6 +35,7 @@ casks:
   - font-sauce-code-pro-nerd-font
   - google-chrome
   - google-cloud-sdk
+  - linear-linear
   - logitech-options
   - iterm2
   - postman
