@@ -19,7 +19,7 @@
   "files.trimTrailingWhitespace": true,
   "git.countBadge": "off",
   "go.formatTool": "goimports",
-  "go.lintFlags": ["--allow-parallel-runners", "--verbose"],
+  "go.lintFlags": ["--allow-parallel-runners"],
   "go.lintTool": "golangci-lint",
   "javascript.format.semicolons": "insert",
   "markdown.preview.fontSize": 12,
