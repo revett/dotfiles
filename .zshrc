@@ -64,6 +64,9 @@ fi
 # Part of core installation process
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+# Silence notice from Ginkgo about support
+export ACK_GINKGO_RC=true
+
 # Set fnm environment variables
 # https://github.com/Schniz/fnm#shell-setup
 eval "$(fnm env --use-on-cd)"
