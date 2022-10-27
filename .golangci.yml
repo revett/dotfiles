@@ -7,6 +7,7 @@ linters:
   disable:
     # Note that the typecheck linter does not exist, see: https://github.com/golangci/golangci-lint/issues/2912
     - deadcode # The linter 'deadcode' is deprecated (since v1.49.0) due to: The owner seems to have abandoned the linter.  Replaced by unused.
+    - dupl
     - exhaustive
     - exhaustivestruct
     - exhaustruct
