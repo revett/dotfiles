@@ -1,4 +1,5 @@
 formulae:
+  - autoenv
   - coreutils
   - dbt-labs/dbt/dbt-bigquery
   - docker-compose
