@@ -211,7 +211,12 @@
     "key": "cmd+enter",
     "command": "editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  }
+  },
 
-  // New below! MOVE ME
+  // Open file with cmd+enter in explorer sidebar
+  {
+    "key": "cmd+enter",
+    "command": "explorer.openAndPassFocus",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+  }
 ]

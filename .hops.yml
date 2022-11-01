@@ -37,6 +37,7 @@ casks:
   - google-cloud-sdk
   - linear-linear
   - iterm2
+  - postico
   - postman
   - rectangle
   - sequel-ace
