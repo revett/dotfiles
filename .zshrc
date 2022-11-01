@@ -61,6 +61,10 @@ if [[ $(uname -m) == 'x86_64' ]]; then
   source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 fi
 
+# Set up autoenv
+# https://github.com/hyperupcall/autoenv
+source $(brew --prefix autoenv)/activate.sh
+
 # Part of core installation process
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
