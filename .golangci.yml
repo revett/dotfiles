@@ -47,9 +47,12 @@ linters-settings:
       - "9"
   varnamelen:
     ignore-names:
-      - db
-      - id
-      - tc
+      - db # Database
+      - ev # Event
+      - id # ID
+      - ok # OK
+      - tc # TestCase
+      - tx # Transaction
 run:
   concurrency: 4
   timeout: 60s

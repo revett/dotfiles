@@ -45,6 +45,7 @@
   "todohighlight.keywords": ["TODO", "todo-", "FIXME", "BUG"],
   "window.newWindowDimensions": "maximized",
   "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.editor.closeEmptyGroups": false,
   "workbench.panel.defaultLocation": "bottom",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none"
