@@ -51,6 +51,34 @@ The `hops` CLI is a simple Go wrapper around the macOS `brew` CLI which uses a
 local `.hops.yml` file for keeping which packages are installed/uninstalled in
 sync.
 
+## Host
+
+```
+wget https://raw.githubusercontent.com/revett/dotfiles/main/host/docker-compose.yml
+wget https://raw.githubusercontent.com/revett/dotfiles/main/host/Caddyfile
+wget https://raw.githubusercontent.com/revett/dotfiles/main/host/.dummy-env
+```
+
+```
+mv .dummy-env .env
+```
+
+```
+vi .env
+```
+
+```
+source .env
+```
+
+```
+env | grep MINIFLUX_
+```
+
+```
+docker-compose up -d
+```
+
 ## Thanks
 
 - Jeff Geerling - [geerlingguy/dotfiles](https://github.com/geerlingguy/dotfiles)
