@@ -1,0 +1,29 @@
+version: "3.4"
+services:
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    depends_on:
+      - miniflux
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+  miniflux:
+    image: ghcr.io/miniflux/miniflux
+    container_name: miniflux
+    healthcheck:
+      test: ["CMD", "/usr/bin/miniflux", "-healthcheck", "auto"]
+    environment:
+      - DATABASE_URL=${MINIFLUX_DATABASE_URL}
+      - RUN_MIGRATIONS=1
+      - CREATE_ADMIN=1
+      - ADMIN_USERNAME=${MINIFLUX_ADMIN_USERNAME}
+      - ADMIN_PASSWORD=${MINIFLUX_ADMIN_PASSWORD}
+      - BASE_URL=https://rss.revcd.com
+volumes:
+  caddy_data:
+  caddy_config:

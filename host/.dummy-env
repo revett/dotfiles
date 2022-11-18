@@ -1,0 +1,10 @@
+# Miniflux
+
+# Postgres connection string.
+export MINIFLUX_DATABASE_URL="TODO"
+
+# Username for admin account.
+export MINIFLUX_ADMIN_USERNAME="TODO"
+
+# Password for admin account.
+export MINIFLUX_ADMIN_PASSWORD="TODO"
