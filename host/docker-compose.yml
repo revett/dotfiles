@@ -8,6 +8,7 @@ services:
       - archivebox
       - uptime-kuma
       - miniflux
+    restart: unless-stopped
     ports:
       - 80:80
       - 443:443
@@ -26,7 +27,7 @@ services:
       - PUBLIC_SNAPSHOTS=False
       - BASE_URL=https://archive.revcd.com
     volumes:
-      - ../archivebox:/data
+      - ./archivebox:/data
   miniflux:
     image: ghcr.io/miniflux/miniflux:latest
     container_name: miniflux
@@ -42,11 +43,11 @@ services:
   uptime-kuma:
     image: louislam/uptime-kuma:1
     container_name: uptime-kuma
-    restart: always
+    restart: unless-stopped
     environment:
-      - BASE_URL=https://uptime.revcd.com
+      - BASE_URL=https://status.revcd.com
     volumes:
-      - ../uptime-kuma:/app/data"
+      - uptime-kuma:/app/data
 
   # Utilities
   watchtower:
@@ -58,3 +59,5 @@ services:
 volumes:
   caddy_data:
   caddy_config:
+  uptime-kuma:
+    driver: local

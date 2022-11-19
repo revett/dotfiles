@@ -6,6 +6,6 @@ rss.revcd.com {
   reverse_proxy miniflux:8080
 }
 
-uptime.revcd.com {
+status.revcd.com {
   reverse_proxy uptime-kuma:3001
 }
