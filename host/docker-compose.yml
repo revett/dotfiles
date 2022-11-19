@@ -50,9 +50,17 @@ services:
       - uptime-kuma:/app/data
 
   # Utilities
+  logspout:
+    image: gliderlabs/logspout:latest
+    container_name: logspout
+    restart: unless-stopped
+    command: "syslog+tls://${REVCD_PAPERTRAIL_LOG_DESTINATION}"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
   watchtower:
     image: containrrr/watchtower:latest
     container_name: watchtower
+    restart: unless-stopped
     command: --notifications "slack" --notification-slack-hook-url ${REVCD_WATCHTOWER_SLACK_URL} --schedule "0 0 4 * * *"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

@@ -9,6 +9,11 @@ export REVCD_MINIFLUX_ADMIN_USERNAME="TODO"
 # Password for admin account.
 export REVCD_MINIFLUX_ADMIN_PASSWORD="TODO"
 
+# Papertrail
+
+# Log destination.
+export REVCD_PAPERTRAIL_LOG_DESTINATION="TODO"
+
 # Watchtower
 
 # Slack incoming webhook URL.
