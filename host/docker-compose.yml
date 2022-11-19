@@ -4,14 +4,25 @@ services:
     image: caddy:2
     container_name: caddy
     depends_on:
+      - archivebox
       - miniflux
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
     volumes:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
+  archivebox:
+    image: archivebox/archivebox:latest
+    container_name: archivebox
+    command: server --quick-init 0.0.0.0:8000
+    environment:
+      - PUBLIC_INDEX=False
+      - PUBLIC_SNAPSHOTS=False
+      - BASE_URL=https://archive.revcd.com
+    volumes:
+      - ../archivebox:/data
   miniflux:
     image: ghcr.io/miniflux/miniflux
     container_name: miniflux
