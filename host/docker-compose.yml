@@ -24,7 +24,7 @@ services:
     volumes:
       - ../archivebox:/data
   miniflux:
-    image: ghcr.io/miniflux/miniflux
+    image: ghcr.io/miniflux/miniflux:latest
     container_name: miniflux
     healthcheck:
       test: ["CMD", "/usr/bin/miniflux", "-healthcheck", "auto"]
