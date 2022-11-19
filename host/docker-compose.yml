@@ -29,12 +29,18 @@ services:
     healthcheck:
       test: ["CMD", "/usr/bin/miniflux", "-healthcheck", "auto"]
     environment:
-      - DATABASE_URL=${MINIFLUX_DATABASE_URL}
+      - DATABASE_URL=${REVCD_MINIFLUX_DATABASE_URL}
       - RUN_MIGRATIONS=1
       - CREATE_ADMIN=1
-      - ADMIN_USERNAME=${MINIFLUX_ADMIN_USERNAME}
-      - ADMIN_PASSWORD=${MINIFLUX_ADMIN_PASSWORD}
+      - ADMIN_USERNAME=${REVCD_MINIFLUX_ADMIN_USERNAME}
+      - ADMIN_PASSWORD=${REVCD_MINIFLUX_ADMIN_PASSWORD}
       - BASE_URL=https://rss.revcd.com
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    command: --notifications "slack" --notification-slack-hook-url ${REVCD_WATCHTOWER_SLACK_URL} --schedule "0 0 4 * * *"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 volumes:
   caddy_data:
   caddy_config:
