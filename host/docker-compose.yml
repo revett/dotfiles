@@ -1,10 +1,12 @@
 version: "3.4"
 services:
+  # DNS
   caddy:
     image: caddy:2
     container_name: caddy
     depends_on:
       - archivebox
+      - uptime-kuma
       - miniflux
     ports:
       - 80:80
@@ -13,6 +15,8 @@ services:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
+
+  # Services
   archivebox:
     image: archivebox/archivebox:latest
     container_name: archivebox
@@ -35,6 +39,16 @@ services:
       - ADMIN_USERNAME=${REVCD_MINIFLUX_ADMIN_USERNAME}
       - ADMIN_PASSWORD=${REVCD_MINIFLUX_ADMIN_PASSWORD}
       - BASE_URL=https://rss.revcd.com
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: always
+    environment:
+      - BASE_URL=https://uptime.revcd.com
+    volumes:
+      - ../uptime-kuma:/app/data"
+
+  # Utilities
   watchtower:
     image: containrrr/watchtower:latest
     container_name: watchtower
