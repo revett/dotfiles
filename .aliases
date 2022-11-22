@@ -35,3 +35,6 @@ alias localip='ifconfig -l | xargs -n1 ipconfig getifaddr'
 # Set BSD ls to use coreutils gls
 # https://github.com/sharkdp/vivid#on-macos
 alias ls='gls --color'
+
+# I can't type ginkgo
+alias ginko='ginkgo'
