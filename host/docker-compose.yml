@@ -5,7 +5,6 @@ services:
     image: caddy:2
     container_name: caddy
     depends_on:
-      - archivebox
       - uptime-kuma
       - miniflux
     restart: unless-stopped
@@ -18,16 +17,6 @@ services:
       - caddy_config:/config
 
   # Services
-  archivebox:
-    image: archivebox/archivebox:latest
-    container_name: archivebox
-    command: server --quick-init 0.0.0.0:8000
-    environment:
-      - PUBLIC_INDEX=False
-      - PUBLIC_SNAPSHOTS=False
-      - BASE_URL=https://archive.revcd.com
-    volumes:
-      - ./archivebox:/data
   miniflux:
     image: ghcr.io/miniflux/miniflux:latest
     container_name: miniflux

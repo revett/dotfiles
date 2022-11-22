@@ -1,7 +1,3 @@
-archive.revcd.com {
-  reverse_proxy archivebox:8000
-}
-
 rss.revcd.com {
   reverse_proxy miniflux:8080
 }
