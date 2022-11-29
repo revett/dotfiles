@@ -36,8 +36,9 @@ casks:
   - font-sauce-code-pro-nerd-font
   - google-chrome
   - google-cloud-sdk
-  - linear-linear
   - iterm2
+  - linear-linear
+  - loom
   - postico
   - postman
   - rectangle
