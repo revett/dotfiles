@@ -41,8 +41,8 @@ casks:
   - loom
   - postico
   - postman
+  - raycast
   - rectangle
-  - sequel-ace
   - slack
   - spotify
   - visual-studio-code
