@@ -26,7 +26,7 @@
   "redhat.telemetry.enabled": false,
   "terminal.integrated.scrollback": 10000,
   "todohighlight.defaultStyle": {
-    "backgroundColor": "#ff006e",
+    "backgroundColor": "#f72585",
     "borderRadius": "3px",
     "color": "#fff"
   },
@@ -42,7 +42,15 @@
     "**/*.css",
     "**/*.scss"
   ],
-  "todohighlight.keywords": ["TODO", "todo-", "FIXME", "BUG"],
+  "todohighlight.keywords": [
+    "TODO",
+    "todo-",
+    {
+      "text": "ASK",
+      "backgroundColor": "#b5179e",
+      "color": "#fff"
+    }
+  ],
   "window.newWindowDimensions": "maximized",
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.editor.closeEmptyGroups": false,

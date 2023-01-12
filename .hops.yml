@@ -3,6 +3,7 @@ formulae:
   - coreutils
   - dbt-labs/dbt/dbt-bigquery
   - docker-compose
+  - ffmpeg
   - fnm
   - fzf
   - git
