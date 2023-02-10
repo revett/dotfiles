@@ -6,6 +6,7 @@ formulae:
   - ffmpeg
   - fnm
   - fzf
+  - gh
   - git
   - heroku/brew/heroku
   - jq
@@ -47,4 +48,5 @@ casks:
   - slack
   - spotify
   - todoist
+  - vlc
   - visual-studio-code

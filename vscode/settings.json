@@ -22,6 +22,7 @@
   "go.lintFlags": ["--allow-parallel-runners"],
   "go.lintTool": "golangci-lint",
   "javascript.format.semicolons": "insert",
+  "markdown-pdf.outputDirectory": "/Users/revett/Downloads",
   "markdown.preview.fontSize": 12,
   "redhat.telemetry.enabled": false,
   "terminal.integrated.scrollback": 10000,
@@ -46,9 +47,9 @@
     "TODO",
     "todo-",
     {
-      "text": "ASK",
       "backgroundColor": "#b5179e",
-      "color": "#fff"
+      "color": "#fff",
+      "text": "ASK"
     }
   ],
   "window.newWindowDimensions": "maximized",

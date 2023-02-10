@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "find-free-port" "gh" "generate-passphrase" "gsync" "tldr" "tre")
+  f=("branch" "find-free-port" "gh-open" "generate-passphrase" "gsync" "tldr" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -34,8 +34,8 @@ find-free-port() {
   done
 }
 
-# `gh` opens the current repo in a browser.
-gh() {
+# `gh-open` opens the current repo in a browser.
+gh-open() {
   open $(git config remote.origin.url | sed "s/git@\(.*\):\(.*\).git/https:\/\/\1\/\2/")
 }
 
