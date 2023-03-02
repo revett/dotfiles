@@ -24,6 +24,8 @@
   "javascript.format.semicolons": "insert",
   "markdown-pdf.outputDirectory": "/Users/revett/Downloads",
   "markdown.preview.fontSize": 12,
+  "openInGitHub.useLocalBranch": false,
+  "openInGitHub.useLocalLine": true,
   "redhat.telemetry.enabled": false,
   "terminal.integrated.scrollback": 10000,
   "todohighlight.defaultStyle": {

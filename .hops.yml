@@ -15,6 +15,7 @@ formulae:
   - protobuf
   - s3cmd
   - spacelift-io/spacelift/spacectl
+  - sqlfluff
   - starship
   - terraform
   - tree
