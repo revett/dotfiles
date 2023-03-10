@@ -9,7 +9,7 @@
   "editor.formatOnSave": true,
   "editor.lineHeight": 22,
   "editor.minimap.enabled": false,
-  "editor.rulers": [80],
+  "editor.rulers": [100],
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "explorer.compactFolders": false,
@@ -27,6 +27,7 @@
   "openInGitHub.useLocalBranch": false,
   "openInGitHub.useLocalLine": true,
   "redhat.telemetry.enabled": false,
+  "reflowMarkdown.preferredLineLength": 100,
   "terminal.integrated.scrollback": 10000,
   "todohighlight.defaultStyle": {
     "backgroundColor": "#f72585",
@@ -54,10 +55,7 @@
       "text": "ASK"
     }
   ],
-  "window.newWindowDimensions": "maximized",
   "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.editor.closeEmptyGroups": false,
-  "workbench.panel.defaultLocation": "bottom",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none"
 }

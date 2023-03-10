@@ -126,6 +126,7 @@ version_format = "${raw}"
 
 # Configure shell module
 [shell]
+bash_indicator = ""
 zsh_indicator = ""
 format = "$indicator"
 unknown_indicator = "?shell"
