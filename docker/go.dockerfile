@@ -25,6 +25,7 @@ RUN rm -rf nerd-fonts/
 ADD docker/startup.sh /root
 RUN touch ~/.zshrc
 RUN echo 'PATH=$PATH:/usr/local/bin/' >> ~/.zshrc
+RUN echo 'plugins=(git)' >> ~/.zshrc
 RUN echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 RUN echo '/root/startup.sh' >> ~/.zshrc
 
