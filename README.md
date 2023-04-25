@@ -16,6 +16,16 @@ Clone/download the repo, create symlinks, and set macOS system preferences.
 
 ## Other Projects
 
+### VS Code Extensions
+
+```
+make vscode-extensions-sync
+```
+
+```
+make vscode-extensions-install
+```
+
 ### Docker Images
 
 ```
@@ -24,16 +34,6 @@ make build-container-images
 
 Within `docker/` are a number of wrapper container images for making local
 development simpler.
-
-### Email Filtering
-
-```
-make generate-email-filters
-```
-
-Within `email/` is an allowlist and shell script for generating a Gmail filter
-that labels anything not from a trusted domain as `External`; to visually aid
-with noise/spam.
 
 ### HomeBrew Package Syncing
 

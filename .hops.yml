@@ -34,6 +34,7 @@ taps:
   - spacelift-io/spacelift
 casks:
   - 1password
+  - adobe-creative-cloud
   - docker
   - firefox-developer-edition
   - font-sauce-code-pro-nerd-font

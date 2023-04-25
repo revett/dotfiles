@@ -11,54 +11,90 @@
     "when": "editorTextFocus"
   },
 
-  // Jump between editors 1, 2, and 3.
+  // Jump between editors using CMD+N.
   {
-    "key": "cmd+1", // Top-left terminal.
-    "command": "workbench.action.focusFirstEditorGroup"
+    "key": "ctrl+1",
+    "command": "-workbench.action.openEditorAtIndex1"
   },
   {
-    "key": "cmd+3", // Bottom-left terminal.
-    "command": "workbench.action.focusSecondEditorGroup"
-  },
-  {
-    "key": "cmd+2", // Right editors.
-    "command": "workbench.action.focusThirdEditorGroup"
+    "key": "cmd+1",
+    "command": "workbench.action.openEditorAtIndex1"
   },
   {
     "key": "ctrl+2",
     "command": "-workbench.action.openEditorAtIndex2"
   },
   {
-    "key": "ctrl+1",
-    "command": "-workbench.action.openEditorAtIndex1"
+    "key": "cmd+2",
+    "command": "workbench.action.openEditorAtIndex2"
   },
   {
     "key": "ctrl+3",
     "command": "-workbench.action.openEditorAtIndex3"
   },
   {
+    "key": "cmd+3",
+    "command": "workbench.action.openEditorAtIndex3"
+  },
+  {
     "key": "ctrl+4",
     "command": "-workbench.action.openEditorAtIndex4"
+  },
+  {
+    "key": "cmd+4",
+    "command": "workbench.action.openEditorAtIndex4"
   },
   {
     "key": "ctrl+5",
     "command": "-workbench.action.openEditorAtIndex5"
   },
   {
+    "key": "cmd+5",
+    "command": "workbench.action.openEditorAtIndex5"
+  },
+  {
     "key": "ctrl+6",
     "command": "-workbench.action.openEditorAtIndex6"
+  },
+  {
+    "key": "cmd+6",
+    "command": "workbench.action.openEditorAtIndex6"
   },
   {
     "key": "ctrl+7",
     "command": "-workbench.action.openEditorAtIndex7"
   },
   {
+    "key": "cmd+7",
+    "command": "workbench.action.openEditorAtIndex7"
+  },
+  {
     "key": "ctrl+8",
     "command": "-workbench.action.openEditorAtIndex8"
   },
   {
+    "key": "cmd+8",
+    "command": "workbench.action.openEditorAtIndex8"
+  },
+  {
     "key": "ctrl+9",
     "command": "-workbench.action.openEditorAtIndex9"
+  },
+  {
+    "key": "cmd+9",
+    "command": "workbench.action.openEditorAtIndex9"
+  },
+  {
+    "key": "cmd+1",
+    "command": "-workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "cmd+2",
+    "command": "-workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "key": "cmd+3",
+    "command": "-workbench.action.focusThirdEditorGroup"
   },
   {
     "key": "cmd+4",
@@ -184,21 +220,33 @@
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
   },
 
-  // Use CTRL+CMD+1 or 2 to move editors between a two column view.
-  {
-    "key": "ctrl+cmd+2",
-    "command": "workbench.action.moveEditorToLastGroup"
-  },
-  {
-    "key": "ctrl+cmd+9",
-    "command": "-workbench.action.moveEditorToLastGroup"
-  },
-
   // Follow Markdown link (requires Markdown Memo)
   // https://github.com/svsool/memo/issues/2#issuecomment-861442869
   {
     "key": "cmd+enter",
     "command": "editor.action.openLink",
     "when": "editorTextFocus && resourceExtname == .md"
+  },
+
+  // Map "Source Control" shortcut to work the same as others in the right sidebar.
+  {
+    "key": "shift+cmd+g",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-workbench.action.terminal.findPrevious",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
   }
 ]

@@ -57,5 +57,8 @@
   ],
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "vscode-pets.theme": "forest",
+  "vscode-pets.petType": "dog",
+  "vscode-pets.petColor": "black"
 }
