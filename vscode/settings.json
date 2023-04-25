@@ -26,6 +26,8 @@
   "markdown.preview.fontSize": 12,
   "openInGitHub.useLocalBranch": false,
   "openInGitHub.useLocalLine": true,
+  "projectManager.projectsLocation": "/Users/revett/projects/github.com/revett/dotfiles/vscode",
+  "projectManager.removeCurrentProjectFromList": false,
   "redhat.telemetry.enabled": false,
   "reflowMarkdown.preferredLineLength": 100,
   "terminal.integrated.scrollback": 10000,
@@ -55,10 +57,10 @@
       "text": "ASK"
     }
   ],
+  "vscode-pets.petColor": "black",
+  "vscode-pets.petType": "dog",
+  "vscode-pets.theme": "forest",
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
-  "vscode-pets.theme": "forest",
-  "vscode-pets.petType": "dog",
-  "vscode-pets.petColor": "black"
+  "workbench.startupEditor": "none"
 }
