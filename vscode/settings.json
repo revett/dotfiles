@@ -12,6 +12,14 @@
   "editor.rulers": [100],
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "cmd": "gofumpt -w ${file}",
+        "match": "\\.go$"
+      }
+    ]
+  },
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
