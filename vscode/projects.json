@@ -7,6 +7,13 @@
     "enabled": true
   },
   {
+    "name": "incident-io/dbt",
+    "rootPath": "/Users/revett/projects/github.com/incident-io/dbt",
+    "paths": [],
+    "tags": ["work"],
+    "enabled": true
+  },
+  {
     "name": "incident-io/infrastructure",
     "rootPath": "/Users/revett/projects/github.com/incident-io/infrastructure",
     "paths": [],

@@ -13,7 +13,7 @@ GitHub.github-vscode-theme@6.3.4
 golang.go@0.38.0
 GraphQL.vscode-graphql@0.8.7
 GraphQL.vscode-graphql-syntax@1.1.0
-hancel.markdown-image@1.1.28
+hancel.markdown-image@1.1.29
 hashicorp.terraform@2.26.0
 heaths.vscode-guid@1.7.0
 jinliming2.vscode-go-template@0.2.1
@@ -24,6 +24,7 @@ ms-azuretools.vscode-docker@1.25.0
 onsi.vscode-ginkgo@0.0.1
 PascalReitermann93.vscode-yaml-sort@6.5.2
 redhat.vscode-yaml@1.12.2
+revett.atlas@0.1.0
 richie5um2.vscode-sort-json@1.20.0
 streetsidesoftware.code-spell-checker@2.20.4
 svsool.markdown-memo@0.3.19
