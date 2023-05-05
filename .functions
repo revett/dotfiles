@@ -9,12 +9,12 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "find-free-port" "gh-open" "generate-passphrase" "gsync" "tldr" "tre")
+  f=("branch" "find-free-port" "generate-passphrase" "kontainer-chatui" "tldr" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
-# `branch` is used within a number of aliases, and returns the branch from the
-# current git directory. Taken from oh-my-zsh.
+# `branch` is used within a number of aliases, and returns the branch from the current git
+# directory. Taken from oh-my-zsh.
 # See: https://gist.github.com/DavidToca/3086571
 branch() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
@@ -49,22 +49,34 @@ generate-passphrase() {
   gshuf -n$CHUNKS /usr/share/dict/words | tr -s '\n' '-' | sed 's/.$//' | awk '{print tolower($0)}'
 }
 
-# `gsync` is a helper function for moving back to the main branch of a repo and
-# updating it with remote.
-gsync() {
-  BRANCH="master"
+# `kontainer-chatui` starts a mckaywrigley/chatbot-ui container nicely.
+# See: https://github.com/mckaywrigley/chatbot-ui
+kontainer-chatui() {
+  # Source OPENAI_API_KEY environment variable
+  source /Users/revett/projects/github.com/revett/dotfiles/.env
 
-  if [ `git branch --list main` ]; then
-    BRANCH="main"
-  fi
+  # Stop and remove the existing container, if it exists
+  docker rm -f chatbot-ui || true
 
-  git ch $BRANCH
-  git fetch
-  git pull origin $BRANCH
+  # Start the container
+  docker run -d --rm                    \
+    --name chatbot-ui                   \
+    -p 12150:3000                       \
+    -e OPENAI_API_KEY="$OPENAI_API_KEY" \
+    ghcr.io/mckaywrigley/chatbot-ui:main
+
+  # Wait for container to start up
+  sleep 1
+
+  # Open in browser
+  open http://localhost:12150
+
+  # Remove OPENAI_API_KEY
+  unset OPENAI_API_KEY
 }
 
-# `tldr` wraps chubin/cheat.sh, and will pipe the resulting sheet in to less if
-# it is longer than the height of the terminal.
+# `tldr` wraps chubin/cheat.sh, and will pipe the resulting sheet in to less if it is longer than
+# the height of the terminal.
 # See: https://github.com/chubin/cheat.sh#usage
 tldr() {
   CMD="curl --silent https://cheat.sh/$1"
@@ -85,10 +97,9 @@ tldr() {
   echo "$SHEET"
 }
 
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
-# the `.git` directory, listing directories first. The output gets piped into
-# `less` with options to preserve color and line numbers, unless the output is
-# small enough for one screen.
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git`
+# directory, listing directories first. The output gets piped into `less` with options to preserve
+# color and line numbers, unless the output is small enough for one screen.
 tre() {
   tree -aC -I '.git|node_modules|.cache' --dirsfirst "$@" | less -FRNX;
 }
