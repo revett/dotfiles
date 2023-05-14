@@ -240,13 +240,14 @@
     "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "shift+cmd+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
     "key": "ctrl+shift+g",
     "command": "-workbench.view.scm",
     "when": "workbench.scm.active"
+  },
+
+  // View GPT sidebar.
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.extension.chatgpt-vscode-view-container"
   }
 ]

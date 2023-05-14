@@ -21,29 +21,8 @@
     "enabled": true
   },
   {
-    "name": "icloud/notes",
-    "rootPath": "/Users/revett/Library/Mobile Documents/com~apple~CloudDocs/Notes",
-    "paths": [],
-    "tags": ["personal"],
-    "enabled": true
-  },
-  {
-    "name": "revett/atlas",
-    "rootPath": "/Users/revett/projects/github.com/revett/atlas",
-    "paths": [],
-    "tags": ["personal"],
-    "enabled": true
-  },
-  {
     "name": "revett/dotfiles",
     "rootPath": "/Users/revett/projects/github.com/revett/dotfiles",
-    "paths": [],
-    "tags": ["personal"],
-    "enabled": true
-  },
-  {
-    "name": "revett/revcd.com",
-    "rootPath": "/Users/revett/projects/github.com/revett/revcd.com",
     "paths": [],
     "tags": ["personal"],
     "enabled": true

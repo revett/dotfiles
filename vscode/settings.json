@@ -25,6 +25,8 @@
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "genieai.openai.temperature": 0.5,
+  "genieai.personalizedName": "Jarvis",
   "git.countBadge": "off",
   "go.formatTool": "goimports",
   "go.lintFlags": ["--allow-parallel-runners"],
@@ -65,10 +67,8 @@
       "text": "ASK"
     }
   ],
-  "vscode-pets.petColor": "black",
-  "vscode-pets.petType": "dog",
-  "vscode-pets.theme": "forest",
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false
 }

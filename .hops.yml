@@ -1,5 +1,6 @@
 formulae:
   - autoenv
+  - circleci
   - coreutils
   - dbt-labs/dbt/dbt-bigquery
   - docker-compose
@@ -35,6 +36,7 @@ taps:
 casks:
   - 1password
   - adobe-creative-cloud
+  - battle-net
   - docker
   - firefox-developer-edition
   - font-sauce-code-pro-nerd-font
