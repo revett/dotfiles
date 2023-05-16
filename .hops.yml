@@ -1,6 +1,5 @@
 formulae:
   - autoenv
-  - circleci
   - coreutils
   - dbt-labs/dbt/dbt-bigquery
   - docker-compose
@@ -16,7 +15,6 @@ formulae:
   - protobuf
   - s3cmd
   - spacelift-io/spacelift/spacectl
-  - sqlfluff
   - starship
   - terraform
   - tree
@@ -49,6 +47,7 @@ casks:
   - postman
   - raycast
   - rectangle
+  - sigmaos
   - slack
   - spotify
   - todoist

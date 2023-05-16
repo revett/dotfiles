@@ -5,7 +5,7 @@
   "cSpell.enabledLanguageIds": ["markdown", "plaintext", "text"],
   "cSpell.language": "en-GB",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "SauceCodePro Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "SauceCodePro Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.formatOnSave": true,
   "editor.lineHeight": 22,
   "editor.minimap.enabled": false,
