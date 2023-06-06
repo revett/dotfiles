@@ -23,16 +23,16 @@
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.mustache": "html"
+  },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "genieai.openai.temperature": 0.5,
-  "genieai.personalizedName": "Jarvis",
   "git.countBadge": "off",
   "go.formatTool": "goimports",
   "go.lintFlags": ["--allow-parallel-runners"],
   "go.lintTool": "golangci-lint",
   "javascript.format.semicolons": "insert",
-  "markdown-pdf.outputDirectory": "/Users/revett/Downloads",
   "markdown.preview.fontSize": 12,
   "openInGitHub.useLocalBranch": false,
   "openInGitHub.useLocalLine": true,
@@ -68,7 +68,7 @@
     }
   ],
   "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
-  "workbench.editor.enablePreview": false
+  "workbench.startupEditor": "none"
 }
