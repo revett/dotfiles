@@ -9,6 +9,7 @@ formulae:
   - gh
   - git
   - heroku/brew/heroku
+  - incident-io/taps/catalog-importer
   - jq
   - openjdk
   - postgresql@14
@@ -25,11 +26,9 @@ taps:
   - dbt-labs/dbt
   - heroku/brew
   - homebrew/bundle
-  - homebrew/cask
-  - homebrew/cask-drivers
   - homebrew/cask-fonts
   - homebrew/cask-versions
-  - homebrew/core
+  - incident-io/homebrew-taps
   - spacelift-io/spacelift
 casks:
   - 1password

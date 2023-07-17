@@ -14,6 +14,13 @@
     "enabled": true
   },
   {
+    "name": "incident-io/website",
+    "rootPath": "/Users/revett/projects/github.com/incident-io/website",
+    "paths": [],
+    "tags": ["work"],
+    "enabled": true
+  },
+  {
     "name": "incident-io/infrastructure",
     "rootPath": "/Users/revett/projects/github.com/incident-io/infrastructure",
     "paths": [],
