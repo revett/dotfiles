@@ -245,9 +245,25 @@
     "when": "workbench.scm.active"
   },
 
-  // View GPT sidebar.
+  // Disable emoji shortcuts, for Github Copilot instead.
   {
-    "key": "shift+cmd+g",
-    "command": "workbench.view.extension.chatgpt-vscode-view-container"
+    "key": "cmd+i",
+    "command": "-emojisense.quickEmojiTerminal",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+i",
+    "command": "-emojisense.quickEmoji",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-emojisense.quickEmojitext",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-emojisense.quickEmojitextTerminal",
+    "when": "terminalFocus"
   }
 ]

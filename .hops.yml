@@ -32,6 +32,7 @@ taps:
   - spacelift-io/spacelift
 casks:
   - 1password
+  - arc
   - adobe-creative-cloud
   - battle-net
   - docker
