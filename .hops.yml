@@ -32,7 +32,6 @@ taps:
   - spacelift-io/spacelift
 casks:
   - 1password
-  - arc
   - adobe-creative-cloud
   - battle-net
   - docker
@@ -43,6 +42,7 @@ casks:
   - iterm2
   - linear-linear
   - loom
+  - obsidian
   - postico
   - postman
   - raycast
