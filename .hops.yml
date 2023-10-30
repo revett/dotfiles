@@ -5,6 +5,9 @@ formulae:
   - docker-compose
   - ffmpeg
   - fnm
+  - font-lato
+  - font-noto-sans
+  - font-open-sans
   - fzf
   - gh
   - git

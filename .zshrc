@@ -5,6 +5,10 @@
 # oh-my-zsh configuration taken from their template .zshrc file (start)
 # See: https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
 
+# ---
+# Personal
+# ---
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -23,8 +27,7 @@ plugins=(brew docker docker-compose git golang)
 # Set up oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# Disable autocorrect in Zsh
-# https://coderwall.com/p/jaoypq/disabling-autocorrect-in-zsh
+# Disable autocorrect in Zsh - https://coderwall.com/p/jaoypq/disabling-autocorrect-in-zsh
 unsetopt correct_all
 
 # Apple Silicon only
@@ -39,8 +42,7 @@ export PATH=$PATH:~/go/bin
 # Set default editor
 export EDITOR='code -w'
 
-# Configure prompt
-# https://starship.rs/
+# Configure Starship prompt (https://starship.rs)
 eval "$(starship init zsh)"
 
 # Apple Silicon only
@@ -65,17 +67,28 @@ fi
 # https://github.com/hyperupcall/autoenv
 source $(brew --prefix autoenv)/activate.sh
 
+# Set fnm environment variables
+# https://github.com/Schniz/fnm#shell-setup
+eval "$(fnm env --use-on-cd)"
+
+# ---
+# Work
+# ---
+
 # Part of core installation process
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Silence notice from Ginkgo about support
 export ACK_GINKGO_RC=true
 
-# Set fnm environment variables
-# https://github.com/Schniz/fnm#shell-setup
-eval "$(fnm env --use-on-cd)"
+# Set up GCP authentication
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
+# ---
 # Load other bash scripts
+# ---
+
 for file in ~/projects/github.com/revett/dotfiles/.{functions,aliases}; do
   [ -r "$file" ] && source "$file";
 done;
