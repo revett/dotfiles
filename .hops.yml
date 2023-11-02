@@ -5,9 +5,6 @@ formulae:
   - docker-compose
   - ffmpeg
   - fnm
-  - font-lato
-  - font-noto-sans
-  - font-open-sans
   - fzf
   - gh
   - git
@@ -35,17 +32,17 @@ taps:
   - spacelift-io/spacelift
 casks:
   - 1password
-  - adobe-creative-cloud
-  - battle-net
   - docker
   - firefox-developer-edition
+  - font-lato
+  - font-noto-sans
+  - font-open-sans
   - font-sauce-code-pro-nerd-font
   - google-chrome
   - google-cloud-sdk
   - iterm2
   - linear-linear
   - loom
-  - obsidian
   - postico
   - postman
   - raycast
