@@ -24,7 +24,7 @@ alias kontainer-go='(
 )'
 alias kontainer-node='(
   CONTAINER_PORT=$(find-free-port)
-  docker run --rm -it -p $CONTAINER_PORT:80 -e CONTAINER_PORT=$CONTAINER_PORT -v $PWD:/home/app revett/node:latest
+  docker run --rm -it -p $CONTAINER_PORT:80 -e CONTAINER_PORT=$CONTAINER_PORT -v $PWD:/home/node/app revett/node:latest
 )'
 
 # General
