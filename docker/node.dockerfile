@@ -6,10 +6,10 @@ RUN apt install zsh -y
 RUN apt clean autoclean
 
 # Change working directory for building of image
-WORKDIR /root
+WORKDIR /home/node
 
 # Install Starship
-ADD starship.toml /root/.config/starship.toml
+ADD starship.toml /home/node/.config/starship.toml
 RUN curl https://starship.rs/install.sh --output starship-install.sh
 RUN chmod +x starship-install.sh
 RUN ./starship-install.sh --verbose --force
@@ -31,6 +31,6 @@ RUN echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 RUN echo '~/startup.sh' >> ~/.zshrc
 
 # Change working directory for when container is running
-WORKDIR /home/app
+WORKDIR /home/node/app
 
 ENTRYPOINT ["zsh"]
