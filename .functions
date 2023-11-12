@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "find-free-port" "generate-passphrase" "prgen-markdown --reviews-channel --silent" "tldr" "tre")
+  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "prgen-markdown --reviews-channel --silent" "tldr" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -19,6 +19,21 @@ asd() {
 branch() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo ${ref#refs/heads/}
+}
+
+# `copy-files-for-prompt` copies the contents of the files passed as arguments to the clipboard, with
+# the file names as comments above the contents.
+copy-files-for-prompt() {
+  output=""
+
+  for file in "$@"; do
+    if [[ -f "$file" ]]; then
+      output+="File: \`$file\`\n\n\`\`\`\n$(cat "$file")\n\`\`\`\n\n"
+    fi
+  done
+
+  echo -e "$output" | pbcopy
+  echo "Copied to clipboard."
 }
 
 # `find-free-port` finds a local port that is not in use
