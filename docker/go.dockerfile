@@ -1,4 +1,4 @@
-FROM golang:1.19
+FROM golang:1.21
 
 # Install Zsh
 RUN apt update
