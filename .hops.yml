@@ -8,6 +8,7 @@ formulae:
   - fzf
   - gh
   - git
+  - goose
   - heroku/brew/heroku
   - incident-io/taps/catalog-importer
   - jq
