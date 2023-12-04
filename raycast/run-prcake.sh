@@ -17,5 +17,5 @@
 # @raycast.authorURL https://revcd.com
 
 source /Users/revett/projects/github.com/revett/dotfiles/.functions
-prcake "$1" "$3" "$2"
+prcake "$1" "$2" "$3"
 echo "Approved PR #$1"
