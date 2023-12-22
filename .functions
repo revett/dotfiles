@@ -24,6 +24,11 @@ branch() {
 # `copy-files-for-prompt` copies the contents of the files passed as arguments to the clipboard, with
 # the file names as comments above the contents.
 copy-files-for-prompt() {
+  if [ $# -eq 0 ]; then
+    echo "error: no files are provided"
+    return 1
+  fi
+
   output=""
 
   for file in "$@"; do
@@ -32,6 +37,11 @@ copy-files-for-prompt() {
     fi
   done
 
+  if [[ -z "$output" ]]; then
+    echo "error: no valid files to copy from."
+    return 1
+  fi
+
   echo -e "$output" | pbcopy
   echo "Copied to clipboard."
 }
@@ -39,10 +49,8 @@ copy-files-for-prompt() {
 # `find-free-port` finds a local port that is not in use
 find-free-port() {
   while true; do
-    random_port=$(( ((RANDOM<<15)|RANDOM) % 49152 + 10000 ))
-    exists="$(nc -z 127.0.0.1 $random_port < /dev/null &>/dev/null; echo $?)"
-
-    if [ "${exists}" != "0" ]; then
+    random_port=$(( (RANDOM % 49152) + 10000 ))
+    if ! nc -z 127.0.0.1 $random_port &>/dev/null; then
       echo $random_port
       return 0
     fi
@@ -56,7 +64,12 @@ generate-passphrase() {
     CHUNKS=$1
   fi
 
-  gshuf -n$CHUNKS /usr/share/dict/words | tr -s '\n' '-' | sed 's/.$//' | awk '{print tolower($0)}'
+  if ! command -v gshuf &> /dev/null; then
+    echo "error: gshuf command could not be found."
+    return 1
+  fi
+
+  gshuf -n$CHUNKS /usr/share/dict/words | tr '\n' '-' | sed 's/.$//' | awk '{print tolower($0)}'
 }
 
 # `hops` is used to manage the packages installed via Homebrew. It is a wrapper around the `brew
@@ -109,8 +122,18 @@ hops() {
 #   If REPO_NAME is not provided or is empty, defaults to "core".
 #   If OPTIONAL_MESSAGE is provided, it is added above the cake emoji.
 prcake() {
+  if [ $# -lt 1 ]; then
+    echo "error: PR_NUMBER is required."
+    return 1
+  fi
+
   if ! [[ $1 =~ ^[0-9]+$ ]] || [ $1 -le 0 ]; then
     echo "error: first argument must be a positive integer."
+    return 1
+  fi
+
+  if ! command -v gh &> /dev/null; then
+    echo "error: gh command could not be found."
     return 1
   fi
 
@@ -191,5 +214,10 @@ prgen-markdown() {
 # directory, listing directories first. The output gets piped into `less` with options to preserve
 # color and line numbers, unless the output is small enough for one screen.
 tre() {
+  if ! command -v tree &> /dev/null; then
+      echo "error: tree command could not be found."
+      return 1
+  fi
+
   tree -aC -I '.git|node_modules|.cache' --dirsfirst "$@" | less -FRNX;
 }
