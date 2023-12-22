@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "prcake" "prgen-markdown --reviews-channel --silent" "tldr" "tre")
+  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "prcake" "prgen-markdown" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -141,28 +141,6 @@ prgen-markdown() {
   # Decide which Slack channel to open.
   local slack_channel=$([ $reviews_channel_flag -eq 1 ] && echo "$reviews_channel" || echo "$team_reviews_channel")
   open "$slack_channel"
-}
-
-# `tldr` wraps chubin/cheat.sh, and will pipe the resulting sheet in to less if it is longer than
-# the height of the terminal.
-# See: https://github.com/chubin/cheat.sh#usage
-tldr() {
-  CMD="curl --silent https://cheat.sh/$1"
-  QUERY="$(shift 1; IFS="+"; echo "$*")"
-  CMD="$CMD/$QUERY"
-
-  echo "$CMD"
-
-  SHEET=$($CMD)
-  TERMINAL_LINES=$(tput lines)
-  SHEET_LINES=$(echo "$SHEET" | wc -l)
-
-  if [ "$SHEET_LINES" -gt "$TERMINAL_LINES" ]; then
-    echo "$SHEET" | less -R
-    return 0
-  fi
-
-  echo "$SHEET"
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git`

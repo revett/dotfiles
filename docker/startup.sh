@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 #
-# Script to run on container startup
+# Script to run on container startup.
 #
-# @author Charlie Revett
+# @author Charlie Revett (@revcd).
 
 # Output container name
 if command -v go &> /dev/null

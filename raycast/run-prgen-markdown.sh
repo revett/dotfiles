@@ -6,7 +6,7 @@
 # @raycast.mode silent
 
 # Optional parameters:
-# @raycast.icon 🤖
+# @raycast.icon 📝
 # @raycast.argument1 { "type": "text", "placeholder": "-r|--reviews-channel", "optional": true }
 
 # Documentation:
@@ -16,4 +16,3 @@
 
 source /Users/revett/projects/github.com/revett/dotfiles/.functions
 cd /Users/revett/projects/github.com/incident-io/core && prgen-markdown $1
-echo "🔗 Copied to clipboard"

@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 #
-# Install script for repo
+# Install script for repo.
 #
-# @author Charlie Revett
+# @author Charlie Revett (@revcd).
 
 echo "> starting install.sh"
 echo "> setting machine name"

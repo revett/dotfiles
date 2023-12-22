@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 #
-# Configuring macOS preferences
+# Configuring macOS preferences.
 #
-# @author Charlie Revett
+# @author Charlie Revett (@revcd).
 
 echo "> starting macos.sh"
 echo "> setting preferences"

@@ -1,6 +1,6 @@
 # .bashrc
 #
-# @author Charlie Revett
+# @author Charlie Revett (@revcd).
 
 # oh-my-zsh configuration taken from their template .zshrc file (start)
 # See: https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
@@ -70,6 +70,9 @@ source $(brew --prefix autoenv)/activate.sh
 # Set fnm environment variables
 # https://github.com/Schniz/fnm#shell-setup
 eval "$(fnm env --use-on-cd)"
+
+# Default to a specific version of Node.
+fnm use v18.17.1
 
 # ---
 # Work

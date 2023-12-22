@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
-# Aliases
+# Aliases.
 #
-# @author Charlie Revett
+# @author Charlie Revett (@revcd).
 
 # Dates
 alias week='date +%V'
@@ -16,6 +16,8 @@ alias dt="cd ~/Desktop"
 alias p='cd ~/projects'
 alias rev='cd ~/projects/github.com/revett'
 alias work='cd ~/projects/github.com/incident-io'
+alias side='cd ~/projects/github.com/8thpark'
+alias 8th='side'
 
 # Docker
 alias kontainer-go='(
