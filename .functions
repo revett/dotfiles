@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "hops" "prcake" "prgen-markdown" "tre")
+  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "hops" "prcake" "prcreate" "prgen-markdown" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -148,6 +148,35 @@ prcake() {
 
 :cake:"
   fi
+}
+
+# `prcreate` creates a GitHub pull request using the current branch name.
+prcreate(){
+  if ! command -v gh &> /dev/null; then
+    echo "error: gh command could not be found."
+    return 1
+  fi
+
+  branch_name=$(branch)
+
+  # Define regex pattern for branch format "revett/<string>-<number>-<title>".
+  pattern="revett/(.*)-(.*)-(.*)"
+
+  # Check if branch name matches the pattern.
+  if [[ $branch_name =~ $pattern ]]; then
+    # Extract parts from the branch name using cut commands.
+    string=$(echo $branch_name | cut -d '/' -f 2 | cut -d '-' -f 1 | tr '[:lower:]' '[:upper:]')
+    number=$(echo $branch_name | cut -d '-' -f 2)
+    title=$(echo $branch_name | cut -d '-' -f 3- | tr '-' ' ')
+
+    # Format the title as per requirement
+    formatted_title="${string}-${number} ${title}"
+  else
+    formatted_title=$branch_name
+  fi
+
+  # Use the GitHub CLI to create the pull request.
+  gh pr create --web --title "$formatted_title" --body "- ..."
 }
 
 # `prgen-markdown` creates a markdown string from details about a GitHub pull request.
