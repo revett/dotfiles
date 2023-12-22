@@ -6,46 +6,48 @@
 # See: https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
 
 # ---
-# Personal
+# Personal.
 # ---
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Uncomment one of the following lines to change the auto-update behavior
-zstyle ':omz:update' mode reminder # just remind me to update when it's time
+# Uncomment one of the following lines to change the auto-update behavior.
+zstyle ':omz:update' mode reminder # Just remind me to update when it's time.
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
-# Disable themes
+# Disable themes.
 ZSH_THEME=""
 
-# Enable plugins
+# Enable plugins.
 plugins=(brew docker docker-compose git golang)
 
-# Set up oh-my-zsh
+# Set up oh-my-zsh.
 source $ZSH/oh-my-zsh.sh
 
-# Disable autocorrect in Zsh - https://coderwall.com/p/jaoypq/disabling-autocorrect-in-zsh
+# Disable autocorrect in Zsh.
+# https://coderwall.com/p/jaoypq/disabling-autocorrect-in-zsh
 unsetopt correct_all
 
-# Apple Silicon only
+# Include brew packages and apps within path (Apple Silicon only).
 if [[ $(uname -m) == 'arm64' ]]; then
-  # Include brew packages and apps within path
+
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Add user go binaries to PATH
+# Add user go binaries to PATH.
 export PATH=$PATH:~/go/bin
 
-# Set default editor
+# Set default editor.
 export EDITOR='code -w'
 
-# Configure Starship prompt (https://starship.rs)
+# Configure Starship prompt.
+# https://starship.rs
 eval "$(starship init zsh)"
 
-# Apple Silicon only
+# Setup fzf (Apple Silicon only).
 if [[ $(uname -m) == 'arm64' ]]; then
   # Setup fzf
   if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
@@ -54,20 +56,20 @@ if [[ $(uname -m) == 'arm64' ]]; then
   source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 fi
 
-# Intel only
+# Setup fzf (Intel only).
 if [[ $(uname -m) == 'x86_64' ]]; then
-  # Setup fzf
+
   if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
     export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
   fi
   source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 fi
 
-# Set up autoenv
+# Set up autoenv.
 # https://github.com/hyperupcall/autoenv
 source $(brew --prefix autoenv)/activate.sh
 
-# Set fnm environment variables
+# Set fnm environment variables.
 # https://github.com/Schniz/fnm#shell-setup
 eval "$(fnm env --use-on-cd)"
 
@@ -75,25 +77,24 @@ eval "$(fnm env --use-on-cd)"
 fnm use v18.17.1
 
 # ---
-# Work
+# Work.
 # ---
 
-# Part of core installation process
+# Part of core installation process.
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-# Silence notice from Ginkgo about support
+# Silence notice from Ginkgo about support.
 export ACK_GINKGO_RC=true
 
-# Set up GCP authentication
+# Set up GCP authentication.
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 # ---
-# Load other bash scripts
+# Load other bash scripts.
 # ---
 
 for file in ~/projects/github.com/revett/dotfiles/.{functions,aliases}; do
   [ -r "$file" ] && source "$file";
 done;
 unset file;
-

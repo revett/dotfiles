@@ -8,54 +8,38 @@ Scripts, CLIs and configuration used for my development environment.
 
 ## Install
 
-```
+```bash
 make setup
 ```
 
 Clone/download the repo, create symlinks, and set macOS system preferences.
 
-## Other Projects
+## VS Code Extensions
 
-### VS Code Extensions
+This is now managed via the [`Brewfile`](./Brewfile) and `hops` bash function (see
+[.functions](./.functions)).
 
-```
-make vscode-extensions-sync
-```
+## HomeBrew Package Syncing
 
-```
-make vscode-extensions-install
-```
+This is also now managed via the [`Brewfile`](./Brewfile) and `hops` bash function (see
+[.functions](./.functions)).
 
-### Docker Images
+## Docker Images
 
-```
+```bash
 make build-container-images
 ```
 
-Within `docker/` are a number of wrapper container images for making local
-development simpler.
-
-### HomeBrew Package Syncing
-
-> Warning: This is very rough-and-ready.
-
-```
-make build-hops-cli
-```
-
-```
-./hops
-```
-
-The `hops` CLI is a simple Go wrapper around the macOS `brew` CLI which uses a
-local `.hops.yml` file for keeping which packages are installed/uninstalled in
-sync.
+Within `docker/` are a number of wrapper container images for making local development simpler.
 
 ## Thanks
 
 - Jeff Geerling - [geerlingguy/dotfiles](https://github.com/geerlingguy/dotfiles)
 - Marko Wallin - [walokra/dotfiles](https://github.com/walokra/dotfiles)
 - Mathias Bynens - [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
+- [Christopher Allen](https://github.com/ChristopherA) for his
+  [gist](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f) on Brewfile best
+  practices.
 
 ---
 

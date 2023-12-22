@@ -2,14 +2,14 @@
 #
 # Functions
 #
-# @author Charlie Revett
+# @author Charlie Revett (@revcd).
 
 # `asd` outputs all available functions from this file.
 asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "prcake" "prgen-markdown" "tre")
+  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "hops" "prcake" "prgen-markdown" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -57,6 +57,50 @@ generate-passphrase() {
   fi
 
   gshuf -n$CHUNKS /usr/share/dict/words | tr -s '\n' '-' | sed 's/.$//' | awk '{print tolower($0)}'
+}
+
+# `hops` is used to manage the packages installed via Homebrew. It is a wrapper around the `brew
+# bundle` command, which is used to install packages from a Brewfile. It is used to install and
+# upgrade packages, and to remove packages that are no longer in the Brewfile. It also checks that
+# all packages in the Brewfile are installed.
+hops() {
+  export HOMEBREW_BUNDLE_FILE="~/projects/github.com/revett/dotfiles/Brewfile"
+
+  echo "> Running hops"
+  echo "> Brewfile: $HOMEBREW_BUNDLE_FILE"
+
+  echo "\n> Listing brews in Brewfile"
+  brew bundle list --brews
+
+  echo "\n> Listing casks in Brewfile"
+  brew bundle list --casks
+
+  echo "\n> Listing taps in Brewfile"
+  brew bundle list --taps
+
+  echo "\n> Listing VS Code extensions in Brewfile"
+  brew bundle list --vscode
+
+  echo "\n> Removing packages not in Brewfile"
+  brew bundle cleanup
+
+  # Prompt to continue as this is a destructive action.
+  echo "Press ENTER to proceed with cleanup, any other key to exit:"
+  read confirmation
+  if [ -n "$confirmation" ]; then
+    echo "Exiting without cleanup."
+    return
+  fi
+
+  brew bundle --force cleanup
+
+  echo "\n> Installing and upgrading packages from Brewfile"
+  brew bundle install
+
+  echo "\n> Checking all packages in Brewfile are installed"
+  brew bundle check
+
+  unset HOMEBREW_BUNDLE_FILE
 }
 
 # Function to approve a GitHub PR with an optional message and a cake emoji.
