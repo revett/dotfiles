@@ -31,10 +31,6 @@ linters:
     - wsl
   enable-all: true
 linters-settings:
-  revive:
-    rules:
-      - name: package-comments
-        disabled: true
   gomnd:
     ignored-numbers:
       - "0"
@@ -47,6 +43,14 @@ linters-settings:
       - "7"
       - "8"
       - "9"
+  revive:
+    rules:
+      - name: package-comments
+        disabled: true
+  tagliatelle:
+    case:
+      rules:
+        json: snake
   varnamelen:
     ignore-names:
       - db # Database
