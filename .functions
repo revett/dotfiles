@@ -98,6 +98,7 @@ hops() {
   brew bundle cleanup
 
   # Prompt to continue as this is a destructive action.
+  echo "STOP! Do any of the above packages need to be added to the Brewfile?"
   echo "Press ENTER to proceed with cleanup, any other key to exit:"
   read confirmation
   if [ -n "$confirmation" ]; then
