@@ -77,8 +77,12 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Screen.
 # ------------------------------
 
-# Save screenshots to Downloads folder.
-defaults write com.apple.screencapture location -string "~/Downloads"
+# Save screenshots to specific folder.
+mkdir ~/Pictures/Screenshots
+defaults write com.apple.screencapture location -string "~/Pictures/Screenshots"
+
+# Do not show the thumbnail of a screenshot.
+defaults write com.apple.screencapture show-thumbnail -bool FALSE
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF).
 defaults write com.apple.screencapture type -string "png"
