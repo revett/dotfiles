@@ -241,6 +241,8 @@ prgen-markdown() {
   # Decide which Slack channel to open.
   local slack_channel=$([ $reviews_channel_flag -eq 1 ] && echo "$reviews_channel" || echo "$team_reviews_channel")
   open "$slack_channel"
+
+  echo "Copied to clipboard, opening Slack"
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git`
