@@ -36,11 +36,6 @@ defaults write com.apple.Finder AppleShowAllFiles true
 # Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `Flwv`.
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
-# Enable snap-to-grid for icons on the desktop and in other icon views.
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-
 # ------------------------------
 # General.
 # ------------------------------
