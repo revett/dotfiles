@@ -18,6 +18,7 @@ alias rev='cd ~/projects/github.com/revett'
 alias work='cd ~/projects/github.com/incident-io'
 alias side='cd ~/projects/github.com/8thpark'
 alias 8th='side'
+alias notes='cd /Users/revett/Library/Mobile\ Documents/com~apple~CloudDocs/ethernotes'
 
 # Docker.
 alias kontainer-go='(
