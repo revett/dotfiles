@@ -59,17 +59,20 @@
     "**/*.scss"
   ],
   "todohighlight.keywords": [
-    "TODO",
-    "todo-",
     {
-      "backgroundColor": "#b5179e",
+      "backgroundColor": "#ec4899",
+      "color": "#fff",
+      "text": "TODO"
+    },
+    {
+      "backgroundColor": "#2563eb",
       "color": "#fff",
       "text": "ASK"
     },
     {
-      "backgroundColor": "#d4a373",
-      "color": "#fff",
-      "text": "BREADCRUMB"
+      "backgroundColor": "#fed7aa",
+      "color": "#000000",
+      "text": "BREAD"
     }
   ],
   "workbench.colorTheme": "GitHub Dark Default",
