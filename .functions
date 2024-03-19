@@ -189,7 +189,7 @@ prcreate(){
 #   -r|--reviews-channel: Open the #reviews channel.
 prgen-markdown() {
   # Links to Slack channels.
-  local team_reviews_channel="slack://channel?team=T01DMDZT3PD&id=C057715CH2R"
+  local team_reviews_channel="slack://channel?team=T01DMDZT3PD&id=C05FKBZMTK9"
   local reviews_channel="slack://channel?team=T01DMDZT3PD&id=C02D0H4J65U"
 
   # Flags.
