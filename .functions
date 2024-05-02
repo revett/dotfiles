@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "hops" "prcake" "prcreate" "prgen-markdown" "tre")
+  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "hops" "prcake" "prcreate" "prgen-markdown" "render-bw-frame" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -243,6 +243,43 @@ prgen-markdown() {
   open "$slack_channel"
 
   echo "Copied to clipboard, opening Slack"
+}
+
+# `render-bw-frame` is a function to add a white border to an image and make it square with a black
+# background. The function takes one or more image files as arguments and processes each image
+# file. The processed images are saved in the same directory as the original image files with the
+# suffix `-bw_frame.jpg`.
+render-bw-frame() {
+  # Function to add white border and make the image square with a black background
+  process_image() {
+    local input="$1"
+    local filename=$(basename "$input")
+    local output="${filename%.*}-bw_frame.jpg"
+
+    # Add white border.
+    ffmpeg -i "$input" -vf "pad=iw+180:ih+180:90:90:white" -update 1 -frames:v 1 "${filename%.*}-white_border.jpg"
+
+    # Make the image square with a black background.
+    ffmpeg -i "${filename%.*}-white_border.jpg" -vf "scale=iw*min(3840/iw\,3840/ih):ih*min(3840/iw\,3840/ih),pad=3840:3840:(3840-iw)/2:(3840-ih)/2:color=black" "$output"
+
+    # Remove the intermediate white border image.
+    rm "${filename%.*}-white_border.jpg"
+  }
+
+  # Check if at least one argument is provided.
+  if [ $# -eq 0 ]; then
+    echo "Please provide at least one image file as an argument."
+    return 1
+  fi
+
+  # Process each image file.
+  for image in "$@"; do
+    if [ -f "$image" ]; then
+      process_image "$image"
+    else
+      echo "File not found: $image"
+    fi
+  done
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git`
