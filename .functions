@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "hops" "prcake" "prcreate" "prgen-markdown" "render-bw-frame" "tre")
+  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "hops" "import-kindle-snippets" "prcake" "prcreate" "prgen-markdown" "render-bw-frame" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -115,6 +115,87 @@ hops() {
   brew bundle check
 
   unset HOMEBREW_BUNDLE_FILE
+}
+# `import-kindle-snippets` is used to export Kindle highlights and notes to a Notion database.
+# It checks for the required dependencies, such as Homebrew and Python 3, and ensures they are
+# installed before running. Additionally, it sets up a virtual environment, installs the
+# `kindle2notion` package, and runs the script with the provided Notion authentication token,
+# Notion database ID, and Kindle clippings file. If any required dependencies are missing,
+# it will error out and inform the user to install them.
+import-kindle-snippets() {
+  # Function to print function usage.
+  usage() {
+    echo "usage: import-kindle-snippets -t NOTION_AUTH_TOKEN -d NOTION_DATABASE_ID -f KINDLE_CLIPPINGS_FILE"
+    return 1
+  }
+
+  # Parse command-line arguments.
+  while getopts ":t:d:f:" opt; do
+    case ${opt} in
+      t )
+        notion_auth_token=$OPTARG
+        ;;
+      d )
+        notion_database_id=$OPTARG
+        ;;
+      f )
+        kindle_clippings_file=$OPTARG
+        ;;
+      \? )
+        usage
+        return 1
+        ;;
+    esac
+  done
+
+  # Ensure all arguments are provided.
+  if [ -z "$notion_auth_token" ] || [ -z "$notion_database_id" ] || [ -z "$kindle_clippings_file" ]; then
+    usage
+    return 1
+  fi
+
+  # Check if Python 3 is installed.
+  if ! command -v python3 &> /dev/null; then
+    echo "error: Python 3 is not installed. Please install Python 3 first."
+    return 1
+  fi
+
+  # Create a virtual environment.
+  echo "creating virtual environment..."
+  python3 -m venv kindle2notion-env
+  if [ $? -ne 0 ]; then
+    echo "error: Failed to create virtual environment"
+    return 1
+  fi
+
+  source kindle2notion-env/bin/activate
+  if [ $? -ne 0 ]; then
+    echo "Error: Failed to activate virtual environment"
+    return 1
+  fi
+
+  # Install kindle2notion.
+  echo "installing kindle2notion package..."
+  pip install kindle2notion
+  if [ $? -ne 0 ]; then
+    echo "error: Failed to install kindle2notion"
+    deactivate
+    return 1
+  fi
+
+  # Run the Kindle2Notion script
+  echo "running kindle2notion script..."
+  kindle2notion "$notion_auth_token" "$notion_database_id" "$kindle_clippings_file"
+  if [ $? -ne 0 ]; then
+    echo "error: Failed to run kindle2notion script"
+    deactivate
+    return 1
+  fi
+
+  # Deactivate the virtual environment
+  deactivate
+  echo "Done!"
+  return 0
 }
 
 # Function to approve a GitHub PR with an optional message and a cake emoji.
