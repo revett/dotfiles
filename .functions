@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "hops" "import-kindle-snippets" "prcake" "prcreate" "prgen-markdown" "render-bw-frame" "tre")
+  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "hops" "import-kindle-snippets" "render-bw-frame" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -196,134 +196,6 @@ import-kindle-snippets() {
   deactivate
   echo "Done!"
   return 0
-}
-
-# Function to approve a GitHub PR with an optional message and a cake emoji.
-# Usage:
-#   prcake PR_NUMBER ["OPTIONAL_MESSAGE"] [REPO_NAME]
-#   If REPO_NAME is not provided or is empty, defaults to "core".
-#   If OPTIONAL_MESSAGE is provided, it is added above the cake emoji.
-prcake() {
-  if [ $# -lt 1 ]; then
-    echo "error: PR_NUMBER is required."
-    return 1
-  fi
-
-  if ! [[ $1 =~ ^[0-9]+$ ]] || [ $1 -le 0 ]; then
-    echo "error: first argument must be a positive integer."
-    return 1
-  fi
-
-  if ! command -v gh &> /dev/null; then
-    echo "error: gh command could not be found."
-    return 1
-  fi
-
-  local message=${2:-""}
-  local repo=${3:-core}
-  local pr_url="https://github.com/incident-io/$repo/pull/$1"
-
-  if [ -z "$message" ]; then
-    gh pr review $pr_url --approve --body ":cake:"
-  else
-    gh pr review $pr_url --approve --body "$message
-
-:cake:"
-  fi
-}
-
-# `prcreate` creates a GitHub pull request using the current branch name.
-prcreate(){
-  if ! command -v gh &> /dev/null; then
-    echo "error: gh command could not be found."
-    return 1
-  fi
-
-  branch_name=$(branch)
-
-  # Define regex pattern for branch format "revett/<string>-<number>-<title>".
-  pattern="revett/(.*)-(.*)-(.*)"
-
-  # Check if branch name matches the pattern.
-  if [[ $branch_name =~ $pattern ]]; then
-    # Extract parts from the branch name using cut commands.
-    string=$(echo $branch_name | cut -d '/' -f 2 | cut -d '-' -f 1 | tr '[:lower:]' '[:upper:]')
-    number=$(echo $branch_name | cut -d '-' -f 2)
-    title=$(echo $branch_name | cut -d '-' -f 3- | tr '-' ' ')
-
-    # Capitalize first character of the title.
-    title=$(echo "$title" | sed -e "s/\(.\)/\u\1/")
-
-    # Format the title as per requirement
-    formatted_title="${string}-${number} ${title}"
-  else
-    formatted_title=$branch_name
-  fi
-
-  # Use the GitHub CLI to create the pull request.
-  gh pr create --web --title "$formatted_title" --body "- ..."
-}
-
-# `prgen-markdown` creates a markdown string from details about a GitHub pull request.
-# Flags:
-#   -s|--silent: Silence output.
-#   -r|--reviews-channel: Open the #reviews channel.
-prgen-markdown() {
-  # Links to Slack channels.
-  local team_reviews_channel="slack://channel?team=T01DMDZT3PD&id=C05FKBZMTK9"
-  local reviews_channel="slack://channel?team=T01DMDZT3PD&id=C02D0H4J65U"
-
-  # Flags.
-  local silent_flag=0
-  local reviews_channel_flag=0
-
-  # Check for flags.
-  for arg in "$@"; do
-    case $arg in
-      -s|--silent) # Silence output.
-        silent_flag=1
-        ;;
-      -r|--reviews-channel) # Open the #reviews channel.
-        reviews_channel_flag=1
-        ;;
-    esac
-  done
-
-  # Get data from the GitHub API, via the CLI.
-  local data=$(gh pr view --json title,url,additions,deletions)
-  local additions=$(jq -r '.additions' <<< "$data")
-  local deletions=$(jq -r '.deletions' <<< "$data")
-
-  local lines_changed=$(echo "$additions + $deletions" | bc)
-  if [ $silent_flag -eq 0 ]; then
-    echo "Changes: $lines_changed"
-  fi
-
-  # Conditionally choose an emoji based on the number of lines changed.
-  local emoji=""
-  if [ "$lines_changed" -le 10 ]; then
-    emoji=":tardigrade:"
-  elif [ "$lines_changed" -le 100 ]; then
-    emoji=":bat:"
-  elif [ "$lines_changed" -le 250 ]; then
-    emoji=":wolf:"
-  else
-    emoji=":gorilla:"
-  fi
-
-  local link="$emoji $(jq -r '"[\(.title)](\(.url))"' <<< "$data" | tr -d '\n') cc/ "
-
-  # Copy to clipboard, and output.
-  echo -n "$link" | pbcopy
-  if [ $silent_flag -eq 0 ]; then
-    echo "Output:  $link"
-  fi
-
-  # Decide which Slack channel to open.
-  local slack_channel=$([ $reviews_channel_flag -eq 1 ] && echo "$reviews_channel" || echo "$team_reviews_channel")
-  open "$slack_channel"
-
-  echo "Copied to clipboard, opening Slack"
 }
 
 # `render-bw-frame` is a function to add a white border to an image and make it square with a black

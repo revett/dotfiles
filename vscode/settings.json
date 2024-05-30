@@ -78,5 +78,6 @@
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "github.copilot.editor.enableAutoCompletions": true
 }
