@@ -18,6 +18,7 @@
 # Flags:
 #   -s|--silent: Silence output.
 #   -r|--reviews-channel: Open the #reviews channel.
+# TODO: Update this to be organisation generic, and not linked to incident-io.
 prgen-markdown() {
   # Links to Slack channels.
   local team_reviews_channel="slack://channel?team=T01DMDZT3PD&id=C05FKBZMTK9"

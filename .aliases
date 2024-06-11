@@ -15,9 +15,10 @@ alias dotfiles='cd ~/projects/github.com/revett/dotfiles'
 alias dt="cd ~/Desktop"
 alias p='cd ~/projects'
 alias rev='cd ~/projects/github.com/revett'
-alias work='cd ~/projects/github.com/incident-io'
 alias side='cd ~/projects/github.com/8thpark'
+alias work='side'
 alias 8th='side'
+alias mono='cd ~/projects/github.com/8thpark/mono'
 alias notes='cd /Users/revett/Library/Mobile\ Documents/com~apple~CloudDocs/ethernotes'
 
 # Docker.

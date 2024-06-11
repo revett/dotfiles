@@ -21,6 +21,7 @@
 #   prcake PR_NUMBER ["OPTIONAL_MESSAGE"] [REPO_NAME]
 #   If REPO_NAME is not provided or is empty, defaults to "core".
 #   If OPTIONAL_MESSAGE is provided, it is added above the cake emoji.
+# TODO: Update this to be organisation generic, and not linked to incident-io.
 prcake() {
   if [ $# -lt 1 ]; then
     echo "error: PR_NUMBER is required."

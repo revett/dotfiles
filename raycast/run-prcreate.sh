@@ -14,6 +14,7 @@
 # @raycast.authorURL https://revcd.com
 
 # `prcreate` creates a GitHub pull request using the current branch name.
+# TODO: Update this to be organisation generic, and not linked to incident-io.
 prcreate(){
   if ! command -v gh &> /dev/null; then
     echo "error: gh command could not be found."

@@ -33,7 +33,6 @@ unsetopt correct_all
 
 # Include brew packages and apps within path (Apple Silicon only).
 if [[ $(uname -m) == 'arm64' ]]; then
-
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -75,20 +74,6 @@ eval "$(fnm env --use-on-cd)"
 
 # Default to a specific version of Node.
 fnm use v18.17.1
-
-# ---
-# Work.
-# ---
-
-# Part of core installation process.
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
-# Silence notice from Ginkgo about support.
-export ACK_GINKGO_RC=true
-
-# Set up GCP authentication.
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 # ---
 # Load other bash scripts.
