@@ -1137,7 +1137,7 @@
     },
     "cask": {
       "1password": {
-        "version": "8.10.33",
+        "version": "8.10.34",
         "options": {
           "full_name": "1password"
         }
@@ -1179,7 +1179,7 @@
         }
       },
       "google-chrome": {
-        "version": "125.0.6422.142",
+        "version": "126.0.6478.57",
         "options": {
           "full_name": "google-chrome"
         }
@@ -1191,7 +1191,7 @@
         }
       },
       "iterm2": {
-        "version": "3.5.0",
+        "version": "3.5.1",
         "options": {
           "full_name": "iterm2"
         }
@@ -1284,6 +1284,12 @@
         "version": "latest",
         "options": {
           "full_name": "firefox@developer-edition"
+        }
+      },
+      "arc": {
+        "version": "1.46.0,50665",
+        "options": {
+          "full_name": "arc"
         }
       }
     },
