@@ -39,6 +39,9 @@ fi
 # Add user go binaries to PATH.
 export PATH=$PATH:~/go/bin
 
+# Add Java to path, needed for OpenAPI generation.
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 # Set default editor.
 export EDITOR='code -w'
 
