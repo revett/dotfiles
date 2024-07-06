@@ -1435,6 +1435,12 @@
         "options": {
           "full_name": "sequel-pro"
         }
+      },
+      "sequel-ace": {
+        "version": "4.0.17,20067",
+        "options": {
+          "full_name": "sequel-ace"
+        }
       }
     },
     "vscode": {
