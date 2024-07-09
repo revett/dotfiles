@@ -1413,7 +1413,7 @@
         }
       },
       "firefox@developer-edition": {
-        "version": "128.0b9",
+        "version": "129.0b1",
         "options": {
           "full_name": "firefox@developer-edition"
         }
@@ -1446,6 +1446,12 @@
         "version": "1.76.583666",
         "options": {
           "full_name": "logi-options-plus"
+        }
+      },
+      "calibre": {
+        "version": "7.13.0",
+        "options": {
+          "full_name": "calibre"
         }
       }
     },
@@ -1484,7 +1490,9 @@
       "Tyriar.sort-lines": null,
       "usernamehw.search": null,
       "wayou.vscode-todo-highlight": null,
-      "yoavbls.pretty-ts-errors": null
+      "yoavbls.pretty-ts-errors": null,
+      "irongeek.vscode-env": null,
+      "william-voyek.vscode-nginx": null
     }
   },
   "system": {
