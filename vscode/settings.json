@@ -36,8 +36,6 @@
   "markdown.preview.fontSize": 12,
   "openInGitHub.useLocalBranch": false,
   "openInGitHub.useLocalLine": true,
-  "projectManager.projectsLocation": "/Users/revett/projects/github.com/revett/dotfiles/vscode",
-  "projectManager.removeCurrentProjectFromList": false,
   "redhat.telemetry.enabled": false,
   "reflowMarkdown.preferredLineLength": 100,
   "terminal.integrated.scrollback": 10000,
