@@ -25,7 +25,7 @@ cask "1password"
 cask "adobe-creative-cloud"
 cask "calibre"
 cask "discord"
-cask "docker"
+# cask "docker" # Removed due to: https://github.com/docker/for-mac/issues/7340
 cask "firefox@developer-edition"
 cask "font-lato"
 cask "font-noto-sans"
