@@ -1,6 +1,7 @@
 tap "heroku/brew"
 tap "homebrew/bundle"
 brew "autoenv"
+brew "awscli"
 brew "coreutils"
 brew "docker-compose"
 brew "ffmpeg"
