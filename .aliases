@@ -19,7 +19,8 @@ alias side='cd ~/projects/github.com/8thpark'
 alias work='side'
 alias 8th='side'
 alias mono='cd ~/projects/github.com/8thpark/mono'
-alias notes='cd /Users/revett/Library/Mobile\ Documents/com~apple~CloudDocs/ethernotes'
+alias coz='cd ~/projects/github.com/cityofzion'
+alias dora='cd ~/projects/github.com/cityofzion/dora-server-NeoN3'
 
 # Docker.
 alias kontainer-go='(
@@ -45,6 +46,3 @@ alias localip='ifconfig -l | xargs -n1 ipconfig getifaddr'
 # Set BSD ls to use coreutils gls.
 # https://github.com/sharkdp/vivid#on-macos
 alias ls='gls --color'
-
-# I can't type ginkgo.
-alias ginko='ginkgo'
