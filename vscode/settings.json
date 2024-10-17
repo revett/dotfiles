@@ -77,5 +77,8 @@
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  "github.copilot.editor.enableAutoCompletions": true
+  "github.copilot.editor.enableAutoCompletions": true,
+  "go.lintOnSave": "workspace",
+  "git.autofetch": true,
+  "git.confirmSync": false
 }
