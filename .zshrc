@@ -43,7 +43,7 @@ export PATH=$PATH:~/go/bin
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Set default editor.
-export EDITOR='code -w'
+export EDITOR='cursor -w'
 
 # Configure Starship prompt.
 # https://starship.rs

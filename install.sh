@@ -36,7 +36,7 @@ ln -sf ~/projects/github.com/revett/dotfiles/starship.toml ~/.config/starship.to
 # Vim.
 ln -sf ~/projects/github.com/revett/dotfiles/.vimrc ~/.vimrc
 
-# VSCode.
+# VS Code / Cursor.
 ln -sf ~/projects/github.com/revett/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/
 ln -sf ~/projects/github.com/revett/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/
 

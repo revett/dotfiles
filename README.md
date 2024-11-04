@@ -14,7 +14,7 @@ make setup
 
 Clone/download the repo, create symlinks, and set macOS system preferences.
 
-## VS Code Extensions
+## VS Code (Cursor) Extensions
 
 This is now managed via the [`Brewfile`](./Brewfile) and `hops` bash function (see
 [.functions](./.functions)).

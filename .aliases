@@ -46,3 +46,6 @@ alias localip='ifconfig -l | xargs -n1 ipconfig getifaddr'
 # Set BSD ls to use coreutils gls.
 # https://github.com/sharkdp/vivid#on-macos
 alias ls='gls --color'
+
+# Alias the old VS Code command to use Cursor.
+alias code='cursor'

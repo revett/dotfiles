@@ -91,7 +91,7 @@ hops() {
   echo "\n> Listing taps in Brewfile"
   brew bundle list --taps
 
-  echo "\n> Listing VS Code extensions in Brewfile"
+  echo "\n> Listing VS Code (Cursor) extensions in Brewfile"
   brew bundle list --vscode
 
   echo "\n> Removing packages not in Brewfile"
