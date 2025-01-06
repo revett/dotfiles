@@ -270,15 +270,5 @@
     "key": "shift+cmd+a",
     "command": "-notification.acceptPrimaryAction",
     "when": "notificationFocus || notificationToastsVisible"
-  },
-
-  // GitHub Copilot.
-  {
-    "key": "shift+cmd+a",
-    "command": "workbench.panel.chat.view.copilot.focus"
-  },
-  {
-    "key": "alt+cmd+space",
-    "command": "workbench.action.openQuickChat.copilot"
   }
 ]

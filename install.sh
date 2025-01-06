@@ -16,7 +16,7 @@ ln -sf ~/projects/github.com/revett/dotfiles/.gitignore ~/.gitignore
 
 # Ghostty.
 mkdir -p ~/.config/ghostty
-ln -sf ~/projects/github.com/revett/dotfiles/ghostty ~/.config/ghostty/config
+ln -sf ~/projects/github.com/revett/dotfiles/ghostty.toml ~/.config/ghostty/config
 
 # Starship.
 ln -sf ~/projects/github.com/revett/dotfiles/starship.toml ~/.config/starship.toml
