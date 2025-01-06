@@ -12,25 +12,10 @@ alias sprint='date +%V'
 alias ~='cd $HOME'
 alias dl='cd ~/Downloads'
 alias dotfiles='cd ~/projects/github.com/revett/dotfiles'
-alias dt="cd ~/Desktop"
-alias p='cd ~/projects'
 alias rev='cd ~/projects/github.com/revett'
 alias side='cd ~/projects/github.com/8thpark'
-alias work='side'
 alias 8th='side'
 alias mono='cd ~/projects/github.com/8thpark/mono'
-alias coz='cd ~/projects/github.com/cityofzion'
-alias dora='cd ~/projects/github.com/cityofzion/dora-server-NeoN3'
-
-# Docker.
-alias kontainer-go='(
-  CONTAINER_PORT=$(find-free-port)
-  docker run --rm -it -p $CONTAINER_PORT:80 -e CONTAINER_PORT=$CONTAINER_PORT -v $PWD:/home/app revett/go:latest
-)'
-alias kontainer-node='(
-  CONTAINER_PORT=$(find-free-port)
-  docker run --rm -it -p $CONTAINER_PORT:80 -e CONTAINER_PORT=$CONTAINER_PORT -v $PWD:/home/node/app revett/node:latest
-)'
 
 # General.
 alias reload='source ~/.zshrc'
@@ -40,8 +25,8 @@ alias ggpull='git pull origin $(branch)'
 alias ggpush='git push origin $(branch)'
 
 # Network.
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias localip='ifconfig -l | xargs -n1 ipconfig getifaddr'
+alias ip='localip'
 
 # Set BSD ls to use coreutils gls.
 # https://github.com/sharkdp/vivid#on-macos

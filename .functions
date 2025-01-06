@@ -116,6 +116,7 @@ hops() {
 
   unset HOMEBREW_BUNDLE_FILE
 }
+
 # `import-kindle-snippets` is used to export Kindle highlights and notes to a Notion database.
 # It checks for the required dependencies, such as Homebrew and Python 3, and ensures they are
 # installed before running. Additionally, it sets up a virtual environment, installs the

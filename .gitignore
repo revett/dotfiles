@@ -22,7 +22,3 @@ Thumbs.db
 
 # Swap files
 *.swp
-
-# Used to set the machine name
-# See: https://apple.stackexchange.com/questions/287760/set-the-hostname-computer-name-for-macos
-machine_name.txt

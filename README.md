@@ -24,14 +24,6 @@ This is now managed via the [`Brewfile`](./Brewfile) and `hops` bash function (s
 This is also now managed via the [`Brewfile`](./Brewfile) and `hops` bash function (see
 [.functions](./.functions)).
 
-## Docker Images
-
-```bash
-make build-container-images
-```
-
-Within `docker/` are a number of wrapper container images for making local development simpler.
-
 ## Thanks
 
 - Jeff Geerling - [geerlingguy/dotfiles](https://github.com/geerlingguy/dotfiles)
