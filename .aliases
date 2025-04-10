@@ -13,8 +13,7 @@ alias ~='cd $HOME'
 alias dl='cd ~/Downloads'
 alias dotfiles='cd ~/projects/github.com/revett/dotfiles'
 alias rev='cd ~/projects/github.com/revett'
-alias side='cd ~/projects/github.com/8thpark'
-alias 8th='side'
+alias 8th='cd ~/projects/github.com/8thpark'
 alias mono='cd ~/projects/github.com/8thpark/mono'
 
 # General.
@@ -31,6 +30,3 @@ alias ip='localip'
 # Set BSD ls to use coreutils gls.
 # https://github.com/sharkdp/vivid#on-macos
 alias ls='gls --color'
-
-# Alias the old VS Code command to use Cursor.
-alias code='cursor'

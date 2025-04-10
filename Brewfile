@@ -1,32 +1,33 @@
-tap "hashicorp/tap"
+# Taps.
+
 tap "homebrew/bundle"
+
+# Packages.
+
 brew "autoenv"
-brew "awscli"
 brew "coreutils"
 brew "docker-compose"
-brew "fnm"
-brew "fzf"
+brew "fnm" # Manage Node versions.
+brew "fzf" # Terminal fuzzy finder.
 brew "gh"
 brew "git"
-brew "golang-migrate"
-brew "goose"
-brew "goreleaser"
-brew "hashicorp/tap/terraform"
+brew "goose" # Go database migration CLI for 8thpark/mono.
 brew "jq"
 brew "openjdk"
 brew "python@3.10"
 brew "starship"
 brew "tree"
-brew "mockery"
 brew "prettier"
 brew "wget"
 brew "yarn"
+
+# Casks.
+
 cask "1password"
 cask "1password-cli"
 cask "adobe-creative-cloud"
 cask "calibre"
 cask "cursor"
-cask "discord"
 cask "docker"
 cask "firefox@developer-edition"
 cask "font-lato"
@@ -34,9 +35,9 @@ cask "font-noto-sans"
 cask "font-open-sans"
 cask "font-sauce-code-pro-nerd-font"
 cask "ghostty"
+cask "godot"
 cask "google-chrome"
 cask "iina"
-cask "insomnia"
 cask "loom"
 cask "postico"
 cask "raycast"
@@ -45,7 +46,10 @@ cask "screen-studio"
 cask "slack"
 cask "spotify"
 cask "todoist"
-cask "visual-studio-code"
+cask "visual-studio-code" # Needed for Cursor extensions to install via Brewfile.
+
+# Cursor Extensions.
+
 vscode "yoavbls.pretty-ts-errors"
 vscode "albert.TabOut"
 vscode "bierner.emojisense"
@@ -59,7 +63,6 @@ vscode "esbenp.prettier-vscode"
 vscode "fabiospampinato.vscode-open-in-github"
 vscode "GitHub.github-vscode-theme"
 vscode "golang.go"
-vscode "hancel.markdown-image"
 vscode "jinliming2.vscode-go-template"
 vscode "marvhen.reflow-markdown"
 vscode "mechatroner.rainbow-csv"
@@ -70,7 +73,6 @@ vscode "redhat.vscode-yaml"
 vscode "richie5um2.vscode-sort-json"
 vscode "tamasfe.even-better-toml"
 vscode "Tyriar.sort-lines"
-vscode "usernamehw.search"
 vscode "irongeek.vscode-env"
 vscode "wayou.vscode-todo-highlight"
 vscode "william-voyek.vscode-nginx"
