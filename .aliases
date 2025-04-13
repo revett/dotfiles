@@ -10,7 +10,6 @@ alias sprint='date +%V'
 
 # Directories.
 alias ~='cd $HOME'
-alias dl='cd ~/Downloads'
 alias dotfiles='cd ~/projects/github.com/revett/dotfiles'
 alias rev='cd ~/projects/github.com/revett'
 alias 8th='cd ~/projects/github.com/8thpark'

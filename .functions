@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "copy-files-for-prompt" "find-free-port" "generate-passphrase" "hops" "render-bw-frame" "tre")
+  f=("branch" "copy-files-for-prompt" "dlyt" "find-free-port" "generate-passphrase" "hops" "render-bw-frame" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -44,6 +44,42 @@ copy-files-for-prompt() {
 
   echo -e "$output" | pbcopy
   echo "Copied to clipboard."
+}
+
+# `dlyt` downloads a YouTube video to ~/Movies/YouTube, organised by channel
+# and named with the upload date (YYYYMMDD). Downloads in 1080p.
+# Requires: yt-dlp, ffmpeg (for merging formats)
+# Usage: dl-yt <youtube_url>
+dlyt() {
+  # Check for yt-dlp dependency
+  if ! command -v yt-dlp &> /dev/null; then
+    echo "error: yt-dlp command not found." >&2
+    echo "Install via Homebrew: brew install yt-dlp ffmpeg" >&2
+    return 1
+  fi
+
+  # Check for URL argument
+  if [ -z "$1" ]; then
+    echo "error: No YouTube URL provided." >&2
+    echo "Usage: dl-yt <youtube_url>" >&2
+    return 1
+  fi
+
+  local url="$1"
+  # Use $HOME for reliability in scripts
+  local output_dir="$HOME/Movies/YouTube"
+  # Format: <OutputDir>/<ChannelName>/<YYYYMMDD> - <VideoTitle>.<Ext>
+  local output_template="$output_dir/%(channel)s/%(upload_date)s - %(title)s.%(ext)s"
+  # Select best 1080p video + best audio, fallback to best pre-merged 1080p
+  local format_spec='bestvideo[height=1080]+bestaudio/best[height=1080]'
+
+  echo "> Downloading YouTube video:"
+  echo "  URL: $url"
+  echo "  Quality: 1080p"
+  echo "  Output: $output_template"
+
+  # Execute yt-dlp. It handles directory creation and prints progress/errors.
+  yt-dlp -f "$format_spec" -o "$output_template" "$url"
 }
 
 # `find-free-port` finds a local port that is not in use

@@ -7,6 +7,7 @@ tap "homebrew/bundle"
 brew "autoenv"
 brew "coreutils"
 brew "docker-compose"
+brew "ffmpeg" # Needed by Raycast "yt-dlp" extension.
 brew "fnm" # Manage Node versions.
 brew "fzf" # Terminal fuzzy finder.
 brew "gh"
@@ -20,6 +21,7 @@ brew "tree"
 brew "prettier"
 brew "wget"
 brew "yarn"
+brew "yt-dlp"
 
 # Casks.
 

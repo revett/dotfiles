@@ -25,8 +25,8 @@ ln -sf ~/projects/github.com/revett/dotfiles/starship.toml ~/.config/starship.to
 ln -sf ~/projects/github.com/revett/dotfiles/.vimrc ~/.vimrc
 
 # Cursor.
-ln -sf ~/projects/github.com/revett/dotfiles/cursor/keybindings.json ~/Library/Application\ Support/Code/User/
-ln -sf ~/projects/github.com/revett/dotfiles/cursor/settings.json ~/Library/Application\ Support/Code/User/
+ln -sf ~/projects/github.com/revett/dotfiles/cursor/keybindings.json ~/Library/Application\ Support/Cursor/User/
+ln -sf ~/projects/github.com/revett/dotfiles/cursor/settings.json ~/Library/Application\ Support/Cursor/User/
 
 # Golang CI Lint.
 # https://golangci-lint.run/usage/configuration/
