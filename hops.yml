@@ -1,0 +1,57 @@
+brewfile: /Users/revett/Brewfile
+machines:
+  shared:
+    taps:
+      - homebrew/bundle
+    formulae:
+      - autoenv
+      - coreutils
+      - fnm
+      - fzf
+      - gh
+      - git
+      - jq
+      - openjdk
+      - python@3.10
+      - starship
+      - tree
+      - prettier
+      - wget
+      - yarn
+    casks:
+      - 1password
+      - cursor
+      - firefox@developer-edition
+      - font-lato
+      - font-noto-sans
+      - font-open-sans
+      - font-sauce-code-pro-nerd-font
+      - ghostty
+      - google-chrome
+      - raycast
+      - spotify
+      - todoist
+      - visual-studio-code
+  personal:
+    taps:
+      - oven-sh/bun
+    formulae:
+      - bun
+      - docker-compose
+      - ffmpeg
+      - goose
+      - goreleaser
+      - yt-dlp
+    casks:
+      - 1password-cli
+      - adobe-creative-cloud
+      - calibre
+      - docker
+      - godot
+      - iina
+      - postico
+      - screen-studio
+  work:
+    casks:
+      - loom
+      - slack

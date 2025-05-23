@@ -27,6 +27,10 @@ plugins=(brew docker docker-compose git golang)
 # Set up oh-my-zsh.
 source $ZSH/oh-my-zsh.sh
 
+# Set where hops.yml is located.
+# https://github.com/revett/hops
+export HOPS_CONFIG="$HOME/projects/github.com/revett/dotfiles/hops.yml"
+
 # Disable autocorrect in Zsh.
 # https://coderwall.com/p/jaoypq/disabling-autocorrect-in-zsh
 unsetopt correct_all
