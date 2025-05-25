@@ -22,16 +22,35 @@ machines:
       - 1password
       - cursor
       - firefox@developer-edition
-      - font-lato
-      - font-noto-sans
-      - font-open-sans
       - font-sauce-code-pro-nerd-font
       - ghostty
       - google-chrome
       - raycast
       - spotify
       - todoist
-      - visual-studio-code
+    cursor:
+      - yoavbls.pretty-ts-errors
+      - albert.tabout
+      - bierner.markdown-preview-github-styles
+      - bradlc.vscode-tailwindcss
+      - dbaeumer.vscode-eslint
+      - editorconfig.editorconfig
+      - emeraldwalk.runonsave
+      - esbenp.prettier-vscode
+      - fabiospampinato.vscode-open-in-github
+      - github.github-vscode-theme
+      - golang.go
+      - jinliming2.vscode-go-template
+      - marvhen.reflow-markdown
+      - mechatroner.rainbow-csv
+      - mohsen1.prettify-json
+      - pascalreitermann93.vscode-yaml-sort
+      - redhat.vscode-yaml
+      - richie5um2.vscode-sort-json
+      - tamasfe.even-better-toml
+      - tyriar.sort-lines
+      - irongeek.vscode-env
+      - wayou.vscode-todo-highlight
   personal:
     taps:
       - oven-sh/bun
@@ -39,8 +58,6 @@ machines:
       - bun
       - docker-compose
       - ffmpeg
-      - goose
-      - goreleaser
       - yt-dlp
     casks:
       - 1password-cli

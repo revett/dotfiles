@@ -82,9 +82,6 @@ eval "$(fnm env --use-on-cd)"
 # Default to a specific version of Node.
 fnm use v18.17.1
 
-# Manage Cursor extensions via Brewfile.
-export HOMEBREW_BREWFILE_CURSOR=1
-
 # ---
 # Load other bash scripts.
 # ---
