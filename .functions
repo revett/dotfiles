@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "copy-files-for-prompt" "dlyt" "find-free-port" "generate-passphrase" "hops" "render-bw-frame" "tre")
+  f=("branch" "copy-files-for-prompt" "dff-staged-changes" "dlyt" "render-bw-frame" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -46,6 +46,48 @@ copy-files-for-prompt() {
   echo "Copied to clipboard."
 }
 
+# `dff-staged-changes` copies the current git branch name, all other commits on the feature branch,
+# and the staged diff to clipboard in a formatted way for pasting into Raycast or other tools.
+dff-staged-changes() {
+  # Check if we're in a git repository.
+  if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    echo "error: not in a git repository"
+    return 1
+  fi
+
+  # Get the current branch name.
+  local current_branch=$(branch)
+  if [ -z "$current_branch" ]; then
+    echo "error: could not determine current branch"
+    return 1
+  fi
+
+  # Check if there are staged changes.
+  if ! git diff --cached --quiet; then
+    local staged_diff=$(git diff --cached) # Get the staged diff
+
+    # Get all the existing commits on the feature branch (excluding merge commits).
+    local recent_commits=$(git log main..HEAD --no-merges)
+
+    # Format the output.
+    local output="Branch: \`$current_branch\`\n\n"
+
+    if [ -n "$recent_commits" ]; then
+      output+="Existing commits on feature branch:\n\n"
+      output+="\`\`\`\n$recent_commits\n\`\`\`\n\n"
+    fi
+
+    output+="Staged changes:\n\n"
+    output+="\`\`\`diff\n$staged_diff\n\`\`\`"
+
+    echo -e "$output" | pbcopy # Copy to clipboard.
+  else
+    echo "error: no staged changes found"
+    echo "Use 'git add' to stage changes first"
+    return 1
+  fi
+}
+
 # `dlyt` downloads a YouTube video to ~/Movies/YouTube, organised by channel
 # and named with the upload date (YYYYMMDD). Downloads in 1080p.
 # Requires: yt-dlp, ffmpeg (for merging formats)
@@ -80,77 +122,6 @@ dlyt() {
 
   # Execute yt-dlp. It handles directory creation and prints progress/errors.
   yt-dlp -f "$format_spec" -o "$output_template" "$url"
-}
-
-# `find-free-port` finds a local port that is not in use
-find-free-port() {
-  while true; do
-    random_port=$(( (RANDOM % 49152) + 10000 ))
-    if ! nc -z 127.0.0.1 $random_port &>/dev/null; then
-      echo $random_port
-      return 0
-    fi
-  done
-}
-
-# `generate-passphrase` generates a random passphrase based password.
-generate-passphrase() {
-  CHUNKS=4
-  if [ "$#" -eq 1 ]; then
-    CHUNKS=$1
-  fi
-
-  if ! command -v gshuf &> /dev/null; then
-    echo "error: gshuf command could not be found."
-    return 1
-  fi
-
-  gshuf -n$CHUNKS /usr/share/dict/words | tr '\n' '-' | sed 's/.$//' | awk '{print tolower($0)}'
-}
-
-# `hops` is used to manage the packages installed via Homebrew. It is a wrapper around the `brew
-# bundle` command, which is used to install packages from a Brewfile. It is used to install and
-# upgrade packages, and to remove packages that are no longer in the Brewfile. It also checks that
-# all packages in the Brewfile are installed.
-hops() {
-  export HOMEBREW_BUNDLE_FILE="~/projects/github.com/revett/dotfiles/Brewfile"
-
-  echo "> Running hops"
-  echo "> Brewfile: $HOMEBREW_BUNDLE_FILE"
-
-  echo "\n> Listing brews in Brewfile"
-  brew bundle list --brews
-
-  echo "\n> Listing casks in Brewfile"
-  brew bundle list --casks
-
-  echo "\n> Listing taps in Brewfile"
-  brew bundle list --taps
-
-  echo "\n> Listing Cursor extensions in Brewfile"
-  brew bundle list --vscode
-
-  echo "\n> Removing packages not in Brewfile"
-  brew bundle cleanup
-
-  # Prompt to continue as this is a destructive action.
-  echo "STOP! Do any of the above packages need to be added to the Brewfile?"
-  echo "Press ENTER to proceed with cleanup, any other key to exit:"
-  read confirmation
-  if [ -n "$confirmation" ]; then
-    echo "Exiting without cleanup."
-    return
-  fi
-
-  brew bundle --force cleanup
-
-  echo "\n> Installing and upgrading packages from Brewfile"
-  brew bundle install
-
-  echo "\n> Checking all packages in Brewfile are installed"
-  brew bundle check
-
-  unset HOMEBREW_BUNDLE_FILE
 }
 
 # `render-bw-frame` is a function to add a white border to an image and make it square with a black
