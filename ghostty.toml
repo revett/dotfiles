@@ -2,7 +2,7 @@
 
 font-family = "SauceCodePro Nerd Font Mono"
 font-size = 14
-theme = "Nocturnal Winter"
+theme = "GitHub-Dark-Default"
 
 # Needed for cursor style to be applied correctly.
 shell-integration-features = "no-cursor"
