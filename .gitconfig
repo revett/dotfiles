@@ -17,21 +17,36 @@
 [core]
   excludesfile = /Users/revett/dotfiles/.gitignore
   ignorecase = false
+  autocrlf = input
+  editor = cursor --wait
+  pager = less -FRX
 
 [push]
-  default = upstream
+  default = simple
 
 [pull]
   rebase = false
 
+[fetch]
+  prune = true
+
+[branch]
+  autosetupmerge = always
+
+[merge]
+  tool = cursor
+
 [alias]
   ch = checkout
+  co = checkout
   br = checkout -b
   d = diff
   dc = diff --cached
   log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   s = status
   st = status
+  cm = commit -m
+  unstage = restore --staged .
 
 [user]
   email = 2796074+revett@users.noreply.github.com

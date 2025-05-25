@@ -155,13 +155,6 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
 
-  // Reload window.
-  {
-    "key": "cmd+r",
-    "command": "-workbench.action.reloadWindow",
-    "when": "isDevelopment"
-  },
-
   // Find and replace within current editor window.
   {
     "key": "ctrl+cmd+f",
@@ -220,14 +213,6 @@
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
   },
 
-  // Follow Markdown link (requires Markdown Memo)
-  // https://github.com/svsool/memo/issues/2#issuecomment-861442869
-  {
-    "key": "cmd+enter",
-    "command": "editor.action.openLink",
-    "when": "editorTextFocus && resourceExtname == .md"
-  },
-
   // Map "Source Control" shortcut to work the same as others in the right sidebar.
   {
     "key": "shift+cmd+g",
@@ -271,6 +256,9 @@
     "command": "-notification.acceptPrimaryAction",
     "when": "notificationFocus || notificationToastsVisible"
   },
+
+  // Cursor AI shortcuts.
+
   {
     "key": "cmd+i",
     "command": "composerMode.agent"

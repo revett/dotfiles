@@ -28,11 +28,13 @@
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
   "git.countBadge": "off",
   "go.formatTool": "goimports",
   "go.lintFlags": ["--allow-parallel-runners"],
+  "go.lintOnSave": "workspace",
   "go.lintTool": "golangci-lint",
-  "javascript.format.semicolons": "insert",
   "markdown.preview.fontSize": 12,
   "openInGitHub.useLocalBranch": false,
   "openInGitHub.useLocalLine": true,
@@ -76,8 +78,5 @@
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
-  "go.lintOnSave": "workspace",
-  "git.autofetch": true,
-  "git.confirmSync": false
+  "workbench.startupEditor": "none"
 }
