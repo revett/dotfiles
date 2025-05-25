@@ -15,15 +15,13 @@ Scripts, CLIs and configuration used for my development environment.
 
 Clone/download the repo, create symlinks, and set macOS system preferences.
 
-## Cursor Extensions
+## Cursor
 
-This is now managed via the [`Brewfile`](./Brewfile) and `hops` bash function (see
-[.functions](./.functions)).
+Managed using the [hops](https://github.com/revett/hops) tool, see [hops.yml](./hops.yml).
 
-## HomeBrew Package Syncing
+## HomeBrew
 
-This is also now managed via the [`Brewfile`](./Brewfile) and `hops` bash function (see
-[.functions](./.functions)).
+Managed using the [hops](https://github.com/revett/hops) tool, see [hops.yml](./hops.yml).
 
 ## Thanks
 
@@ -32,4 +30,4 @@ This is also now managed via the [`Brewfile`](./Brewfile) and `hops` bash functi
 - Mathias Bynens - [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [Christopher Allen](https://github.com/ChristopherA) for his
   [gist](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f) on Brewfile best
-  practices.
+  practices
