@@ -1,138 +1,49 @@
 # See: https://starship.rs/config
 
-# Colors
-# See: https://starship.rs/advanced-config/#style-strings
-# - Terminal colors: black, red, green, blue, yellow, purple, cyan, white
-# - You can optionally prefix these with bright- to get the bright version
+# ---
+# General Configuration
+# ---
 
-# Add newline after each prompt
 add_newline = true
 command_timeout = 750
 
-# Replace the success/error characters
 [character]
 success_symbol = "[➜](green)"
 error_symbol = "[✗](red)"
 
-# Disable unused modules
-[battery]
-disabled = true
-[cmake]
-disabled = true
-[cobol]
-disabled = true
-[conda]
-disabled = true
-[crystal]
-disabled = true
-[dart]
-disabled = true
-[deno]
-disabled = true
-[dotnet]
-disabled = true
-[elixir]
-disabled = true
-[elm]
-disabled = true
-[gcloud]
-disabled = true
-[helm]
-disabled = true
-[java]
-disabled = true
-[julia]
-disabled = true
-[kotlin]
-disabled = true
-[lua]
-disabled = true
-[nim]
-disabled = true
-[nix_shell]
-disabled = true
-[ocaml]
-disabled = true
-[openstack]
-disabled = true
+# ---
+# Disable Modules
+# ---
+
 [package]
 disabled = true
-[perl]
-disabled = true
-[php]
-disabled = true
-[purescript]
-disabled = true
-[rlang]
-disabled = true
-[red]
-disabled = true
-[ruby]
-disabled = true
-[rust]
-disabled = true
-[scala]
-disabled = true
-[singularity]
-disabled = true
-[swift]
-disabled = true
-[vagrant]
-disabled = true
-[vlang]
-disabled = true
-[vcsh]
-disabled = true
-[zig]
-disabled = true
 
-# Configure aws module
-[aws]
-format = '[$symbol($profile )(\($region\) )(\[$duration\])]($style)'
-style = "white"
-symbol = ""
+# ---
+# Configure Modules
+# ---
 
-# Configure cmd_duration module
+[bun]
+format = "[bun-v$version](white) "
+version_format = "${raw}"
+
 [cmd_duration]
-min_time = 500
 format = "[$duration](yellow)"
+min_time = 250
 
-# Configure directory module
 [directory]
 style = "cyan"
 truncate_to_repo = false
 
-# Configure git_branch module
 [git_branch]
 style = "purple"
 symbol = ""
 truncation_length = 36
 truncation_symbol = ""
 
-# Configure golang module
 [golang]
-format = "[go$version](white) "
+format = "[go-v$version](white) "
 version_format = "${raw}"
 
-# Configure nodejs module
 [nodejs]
-format = "[node$version](white) "
-version_format = "${raw}"
-
-# Configure python module
-[python]
-format = "[python$version](white) "
-version_format = "${raw}"
-
-# Configure shell module
-[shell]
-bash_indicator = ""
-zsh_indicator = ""
-format = "$indicator"
-unknown_indicator = "?shell"
-disabled = false
-
-# Configure terraform module
-[terraform]
-format = "[terraform$version](white) "
+format = "[node-v$version](white) "
 version_format = "${raw}"
