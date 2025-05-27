@@ -71,5 +71,6 @@ machines:
   work:
     casks:
       - granola
+      - linear-linear
       - loom
       - slack
