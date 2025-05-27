@@ -2,8 +2,6 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "cSpell.enabledLanguageIds": ["markdown", "plaintext", "text"],
-  "cSpell.language": "en-GB",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "SauceCodePro Nerd Font, monospace",
   "editor.formatOnSave": true,
@@ -77,6 +75,5 @@
   ],
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.editor.enablePreview": false,
-  "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none"
+  "workbench.sideBar.location": "right"
 }
