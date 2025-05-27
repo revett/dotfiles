@@ -72,6 +72,6 @@ machines:
     casks:
       - granola
       - linear-linear
-      - loom
       - slack
+      # - https://supercut.ai
       - tuple
