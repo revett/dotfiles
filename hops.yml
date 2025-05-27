@@ -74,3 +74,4 @@ machines:
       - linear-linear
       - loom
       - slack
+      - tuple
