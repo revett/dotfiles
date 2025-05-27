@@ -22,6 +22,11 @@ disabled = true
 # Configure Modules
 # ---
 
+[aws]
+format = '[$symbol($profile )(\($region\) )(\[$duration\])]($style)'
+style = "white"
+symbol = ""
+
 [bun]
 format = "[bun-v$version](white) "
 version_format = "${raw}"
