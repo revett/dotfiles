@@ -77,10 +77,15 @@ source $(brew --prefix autoenv)/activate.sh
 
 # Set fnm environment variables.
 # https://github.com/Schniz/fnm#shell-setup
-eval "$(fnm env --use-on-cd)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Default to a specific version of Node.
-fnm use v18.17.1
+fnm use v22.14.0
+
+# Add libpq to PATH if it is installed, a requirement of team-plain/services.
+if [ -d "/opt/homebrew/opt/libpq/bin" ]; then
+  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+fi
 
 # ---
 # Load other bash scripts.

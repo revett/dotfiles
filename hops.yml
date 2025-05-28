@@ -67,6 +67,8 @@ machines:
       - postico
       - screen-studio
   work:
+    formulae:
+      - libpq # Requirement of team-plain/services.
     casks:
       - granola
       - linear-linear
