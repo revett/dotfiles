@@ -14,6 +14,7 @@ alias dotfiles='cd ~/projects/github.com/revett/dotfiles'
 alias rev='cd ~/projects/github.com/revett'
 alias 8th='cd ~/projects/github.com/8thpark'
 alias mono='cd ~/projects/github.com/8thpark/mono'
+alias work='cd ~/projects/github.com/team-plain'
 
 # General.
 alias reload='source ~/.zshrc'
