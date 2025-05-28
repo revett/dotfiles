@@ -34,6 +34,7 @@
   "go.lintOnSave": "workspace",
   "go.lintTool": "golangci-lint",
   "markdown.preview.fontSize": 12,
+  "openInGitHub.remote.branch": "main",
   "openInGitHub.useLocalBranch": false,
   "openInGitHub.useLocalLine": true,
   "redhat.telemetry.enabled": false,

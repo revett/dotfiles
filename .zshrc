@@ -64,7 +64,7 @@ fi
 
 # Setup fzf (Intel only).
 if [[ $(uname -m) == 'x86_64' ]]; then
-
+  # Include brew packages and apps within path.
   if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
     export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
   fi
@@ -82,9 +82,18 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 # Default to a specific version of Node.
 fnm use v22.14.0
 
+# ---
+# Work.
+# ---
+
 # Add libpq to PATH if it is installed, a requirement of team-plain/services.
 if [ -d "/opt/homebrew/opt/libpq/bin" ]; then
   export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+fi
+
+# Source aliases and functions within team-plain/toolbox.
+if [[ -d "/Users/revett/projects/github.com/team-plain/toolbox" ]]; then
+  source "/Users/revett/projects/github.com/team-plain/toolbox/index.sh"
 fi
 
 # ---
