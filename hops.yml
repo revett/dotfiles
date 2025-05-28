@@ -69,6 +69,7 @@ machines:
       - screen-studio
   work:
     formulae:
+      - awscli # Requirement of team-plain/toolbox.
       - libpq # Requirement of team-plain/services.
     casks:
       - granola
