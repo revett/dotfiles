@@ -74,6 +74,7 @@ machines:
     casks:
       - granola
       - linear-linear
+      - logi-options+
       - slack
       - tuple
       # - https://supercut.ai → Not yet on Homebrew.
