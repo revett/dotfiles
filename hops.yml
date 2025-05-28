@@ -1,8 +1,6 @@
 brewfile: /Users/revett/Brewfile
 machines:
   shared:
-    taps:
-      - homebrew/bundle
     formulae:
       - autoenv
       - coreutils
@@ -73,5 +71,5 @@ machines:
       - granola
       - linear-linear
       - slack
-      # - https://supercut.ai
       - tuple
+      # - https://supercut.ai → Not yet on Homebrew.
