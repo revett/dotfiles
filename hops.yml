@@ -29,6 +29,7 @@ machines:
     cursor:
       - yoavbls.pretty-ts-errors
       - albert.tabout
+      - bierner.markdown-emoji
       - bierner.markdown-preview-github-styles
       - bradlc.vscode-tailwindcss
       - dbaeumer.vscode-eslint
