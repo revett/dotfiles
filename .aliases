@@ -30,3 +30,6 @@ alias ip='localip'
 # Set BSD ls to use coreutils gls.
 # https://github.com/sharkdp/vivid#on-macos
 alias ls='gls --color'
+
+# Work.
+alias pn='pnpm'
