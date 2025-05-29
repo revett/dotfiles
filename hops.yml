@@ -23,6 +23,7 @@ machines:
       - font-sauce-code-pro-nerd-font
       - ghostty
       - google-chrome
+      - logi-options+
       - raycast
       - spotify
       - todoist
@@ -75,7 +76,6 @@ machines:
     casks:
       - granola
       - linear-linear
-      - logi-options+
       - slack
       - tuple
       # - https://supercut.ai → Not yet on Homebrew
