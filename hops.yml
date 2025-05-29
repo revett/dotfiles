@@ -55,17 +55,16 @@ machines:
       - oven-sh/bun
     formulae:
       - bun
-      - docker-compose
       - ffmpeg
       - yt-dlp
     casks:
       - 1password-cli
       - adobe-creative-cloud
       - calibre
-      - docker
       - godot
       - iina
       - postico
+      - private-internet-access
       - screen-studio
   work:
     formulae:

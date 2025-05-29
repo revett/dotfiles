@@ -22,7 +22,7 @@ ENABLE_CORRECTION="true"
 ZSH_THEME=""
 
 # Enable plugins.
-plugins=(brew docker docker-compose git golang)
+plugins=(brew git golang)
 
 # Set up oh-my-zsh.
 source $ZSH/oh-my-zsh.sh
