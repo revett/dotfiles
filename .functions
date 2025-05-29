@@ -2,7 +2,7 @@
 #
 # Functions
 #
-# @author Charlie Revett (@revcd).
+# @author Charlie Revett (@revcd)
 
 # `asd` outputs all available functions from this file.
 asd() {
@@ -49,27 +49,27 @@ copy-files-for-prompt() {
 # `dff-staged-changes` copies the current git branch name, all other commits on the feature branch,
 # and the staged diff to clipboard in a formatted way for pasting into Raycast or other tools.
 dff-staged-changes() {
-  # Check if we're in a git repository.
+  # Check if we're in a git repository
   if ! git rev-parse --git-dir > /dev/null 2>&1; then
     echo "error: not in a git repository"
     return 1
   fi
 
-  # Get the current branch name.
+  # Get the current branch name
   local current_branch=$(branch)
   if [ -z "$current_branch" ]; then
     echo "error: could not determine current branch"
     return 1
   fi
 
-  # Check if there are staged changes.
+  # Check if there are staged changes
   if ! git diff --cached --quiet; then
     local staged_diff=$(git diff --cached) # Get the staged diff
 
-    # Get all the existing commits on the feature branch (excluding merge commits).
+    # Get all the existing commits on the feature branch (excluding merge commits)
     local recent_commits=$(git log main..HEAD --no-merges)
 
-    # Format the output.
+    # Format the output
     local output="Branch: \`$current_branch\`\n\n"
 
     if [ -n "$recent_commits" ]; then
@@ -80,7 +80,7 @@ dff-staged-changes() {
     output+="Staged changes:\n\n"
     output+="\`\`\`diff\n$staged_diff\n\`\`\`"
 
-    echo -e "$output" | pbcopy # Copy to clipboard.
+    echo -e "$output" | pbcopy # Copy to clipboard
   else
     echo "error: no staged changes found"
     echo "Use 'git add' to stage changes first"
@@ -120,7 +120,7 @@ dlyt() {
   echo "  Quality: 1080p"
   echo "  Output: $output_template"
 
-  # Execute yt-dlp. It handles directory creation and prints progress/errors.
+  # Execute yt-dlp. It handles directory creation and prints progress/errors
   yt-dlp -f "$format_spec" -o "$output_template" "$url"
 }
 
@@ -135,23 +135,23 @@ render-bw-frame() {
     local filename=$(basename "$input")
     local output="${filename%.*}-bw_frame.jpg"
 
-    # Add white border.
+    # Add white border
     ffmpeg -i "$input" -vf "pad=iw+180:ih+180:90:90:white" -update 1 -frames:v 1 "${filename%.*}-white_border.jpg"
 
-    # Make the image square with a black background.
+    # Make the image square with a black background
     ffmpeg -i "${filename%.*}-white_border.jpg" -vf "scale=iw*min(3840/iw\,3840/ih):ih*min(3840/iw\,3840/ih),pad=3840:3840:(3840-iw)/2:(3840-ih)/2:color=black" "$output"
 
-    # Remove the intermediate white border image.
+    # Remove the intermediate white border image
     rm "${filename%.*}-white_border.jpg"
   }
 
-  # Check if at least one argument is provided.
+  # Check if at least one argument is provided
   if [ $# -eq 0 ]; then
     echo "Please provide at least one image file as an argument."
     return 1
   fi
 
-  # Process each image file.
+  # Process each image file
   for image in "$@"; do
     if [ -f "$image" ]; then
       process_image "$image"

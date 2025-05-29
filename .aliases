@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #
-# Aliases.
+# Aliases
 #
-# @author Charlie Revett (@revcd).
+# @author Charlie Revett (@revcd)
 
-# Dates.
+# Dates
 alias week='date +%V'
 alias sprint='date +%V'
 
-# Directories.
+# Directories
 alias ~='cd $HOME'
 alias dotfiles='cd ~/projects/github.com/revett/dotfiles'
 alias rev='cd ~/projects/github.com/revett'
@@ -16,20 +16,20 @@ alias 8th='cd ~/projects/github.com/8thpark'
 alias mono='cd ~/projects/github.com/8thpark/mono'
 alias work='cd ~/projects/github.com/team-plain'
 
-# General.
+# General
 alias reload='source ~/.zshrc'
 
-# Git.
+# Git
 alias ggpull='git pull origin $(branch)'
 alias ggpush='git push origin $(branch)'
 
-# Network.
+# Network
 alias localip='ifconfig -l | xargs -n1 ipconfig getifaddr'
 alias ip='localip'
 
-# Set BSD ls to use coreutils gls.
+# Set BSD ls to use coreutils gls
 # https://github.com/sharkdp/vivid#on-macos
 alias ls='gls --color'
 
-# Work.
+# Work
 alias pn='pnpm'
