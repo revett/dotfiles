@@ -97,6 +97,9 @@ if [[ -d "/Users/revett/projects/github.com/team-plain/toolbox" ]]; then
   aws-set-profile dev-charlie-admin
 fi
 
+# Disable corepack automatically pinning by adding `packageManager` to `package.json`.
+export COREPACK_ENABLE_AUTO_PIN=0
+
 # ---
 # Load other bash scripts.
 # ---
