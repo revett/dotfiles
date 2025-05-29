@@ -39,7 +39,6 @@ machines:
       - esbenp.prettier-vscode
       - fabiospampinato.vscode-open-in-github
       - github.github-vscode-theme
-      - golang.go
       - jinliming2.vscode-go-template
       - marvhen.reflow-markdown
       - mechatroner.rainbow-csv
@@ -67,6 +66,9 @@ machines:
       - postico
       - private-internet-access
       - screen-studio
+    cursor:
+      - golang.go
+      - rust-lang.rust-analyzer
   work:
     formulae:
       - awscli # Requirement of team-plain/toolbox
