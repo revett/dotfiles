@@ -45,6 +45,11 @@ symbol = ""
 truncation_length = 36
 truncation_symbol = "…"
 
+[git_status]
+ahead = '↑'
+behind = '↓'
+diverged = '↕'
+
 [golang]
 format = "[go-v$version](white) "
 version_format = "${raw}"

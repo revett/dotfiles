@@ -22,7 +22,7 @@
   pager = less -FRX
 
 [push]
-  default = simple
+  default = upstream
 
 [pull]
   rebase = false
