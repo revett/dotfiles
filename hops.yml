@@ -69,12 +69,14 @@ machines:
       - screen-studio
   work:
     formulae:
-      - awscli # Requirement of team-plain/toolbox.
-      - libpq # Requirement of team-plain/services.
+      - awscli # Requirement of team-plain/toolbox
+      - libpq # Requirement of team-plain/services
+      - mkcert # Requirement of team-plain/support-app
+      - nss # Requirement of team-plain/support-app
     casks:
       - granola
       - linear-linear
       - logi-options+
       - slack
       - tuple
-      # - https://supercut.ai → Not yet on Homebrew.
+      # - https://supercut.ai → Not yet on Homebrew
