@@ -91,9 +91,10 @@ if [ -d "/opt/homebrew/opt/libpq/bin" ]; then
   export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 fi
 
-# Source aliases and functions within team-plain/toolbox.
+# Source aliases and functions within team-plain/toolbox, and set default AWS profile.
 if [[ -d "/Users/revett/projects/github.com/team-plain/toolbox" ]]; then
   source "/Users/revett/projects/github.com/team-plain/toolbox/index.sh"
+  aws-set-profile dev-charlie-admin
 fi
 
 # ---
