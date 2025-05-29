@@ -77,10 +77,10 @@ source $(brew --prefix autoenv)/activate.sh
 
 # Set fnm environment variables.
 # https://github.com/Schniz/fnm#shell-setup
-eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(fnm env --corepack-enabled --use-on-cd --resolve-engines --shell zsh)"
 
 # Default to a specific version of Node.
-fnm use v22.14.0
+fnm use 22
 
 # ---
 # Work.
