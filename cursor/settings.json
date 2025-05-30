@@ -3,7 +3,7 @@
     "editor.defaultFormatter": "golang.go"
   },
   "editor.fontFamily": "SauceCodePro Nerd Font, monospace",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.lineHeight": 22,
   "editor.minimap.enabled": false,
   "editor.rulers": [
@@ -12,12 +12,32 @@
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "emeraldwalk.runonsave": {
+    "autoClearConsole": true,
     "commands": [
+      // Run gofumpt for Go projects
       {
         "cmd": "gofumpt -w ${file}",
-        "match": "\\.go$"
+        "match": "\\.go$",
+        "message": "[gofumpt] formatting file",
+        "showElapsed": true
+      },
+      // Work: Run biome to lint and fix the specific file
+      {
+        "cmd": "pnpm exec biome check --write ${file}",
+        "match": "github\\.com/team-plain.*\\.ts$",
+        "message": "[biome] formatting file",
+        "showElapsed": true
+      },
+      {
+        "cmd": "pnpm exec biome lint ${file} --fix",
+        "match": "github\\.com/team-plain.*\\.ts$",
+        "message": "[biome] linting file",
+        "showElapsed": true
       }
-    ]
+    ],
+    "message": "[start]",
+    "messageAfter": "[complete]",
+    "showElapsed": true
   },
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
@@ -36,13 +56,13 @@
   ],
   "go.lintOnSave": "workspace",
   "go.lintTool": "golangci-lint",
-  "javascript.preferGoToSourceDefinition": true,
   "markdown.preview.fontSize": 12,
   "openInGitHub.remote.branch": "main",
   "openInGitHub.useLocalBranch": false,
   "openInGitHub.useLocalLine": true,
   "redhat.telemetry.enabled": false,
   "reflowMarkdown.preferredLineLength": 100,
+  "task.allowAutomaticTasks": "on",
   "terminal.integrated.scrollback": 10000,
   "todohighlight.defaultStyle": {
     "backgroundColor": "#f72585",
@@ -79,7 +99,7 @@
     }
   ],
   "typescript.preferGoToSourceDefinition": true,
-  "typescript.tsserver.maxTsServerMemory": 16384, // 16GB
+  "typescript.tsserver.maxTsServerMemory": 4096, // TODO: 4GB but should be much higher
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "right"

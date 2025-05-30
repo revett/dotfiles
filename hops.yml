@@ -32,14 +32,10 @@ machines:
       - albert.tabout
       - bierner.markdown-emoji
       - bierner.markdown-preview-github-styles
-      - bradlc.vscode-tailwindcss
-      - dbaeumer.vscode-eslint
       - editorconfig.editorconfig
       - emeraldwalk.runonsave
-      - esbenp.prettier-vscode
       - fabiospampinato.vscode-open-in-github
       - github.github-vscode-theme
-      - jinliming2.vscode-go-template
       - marvhen.reflow-markdown
       - mechatroner.rainbow-csv
       - mohsen1.prettify-json
@@ -67,6 +63,10 @@ machines:
       - private-internet-access
       - screen-studio
     cursor:
+      - bradlc.vscode-tailwindcss
+      - dbaeumer.vscode-eslint
+      - esbenp.prettier-vscode
+      - jinliming2.vscode-go-template
       - golang.go
       - rust-lang.rust-analyzer
   work:
