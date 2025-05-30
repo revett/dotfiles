@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "copy-files-for-prompt" "dff-staged-changes" "dlyt" "render-bw-frame" "tre")
+  f=("branch" "copy-files-for-prompt" "dff-staged-changes" "dlyt" "pr-diff" "render-bw-frame" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -122,6 +122,52 @@ dlyt() {
 
   # Execute yt-dlp. It handles directory creation and prints progress/errors
   yt-dlp -f "$format_spec" -o "$output_template" "$url"
+}
+
+# `pr-diff` copies the current git branch name and the complete PR diff (all changes in the feature
+# branch compared to main) to clipboard in a formatted way for code review by LLMs.
+pr-diff() {
+  local base_branch="${1:-main}"
+
+  # Check if we're in a git repository.
+  if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    echo "error: not in a git repository"
+    return 1
+  fi
+
+  # Get the current branch name.
+  local current_branch=$(branch)
+  if [ -z "$current_branch" ]; then
+    echo "error: could not determine current branch"
+    return 1
+  fi
+
+  # Check if the base branch exists.
+  if ! git rev-parse --verify "$base_branch" > /dev/null 2>&1; then
+    echo "error: base branch '$base_branch' does not exist"
+    return 1
+  fi
+
+  # Check if there are any changes between branches.
+  if git diff --quiet "$base_branch"..."$current_branch"; then
+    echo "error: no changes found between '$base_branch' and '$current_branch'"
+    return 1
+  fi
+
+  # Get the list of changed files.
+  local changed_files=$(git diff --name-status "$base_branch"..."$current_branch")
+
+  # Get the complete diff.
+  local pr_diff=$(git diff "$base_branch"..."$current_branch")
+
+  # Format the output.
+  local output="Branch: \`$current_branch\` (compared to \`$base_branch\`)\n\n"
+  output+="Files changed:\n\n"
+  output+="\`\`\`\n$changed_files\n\`\`\`\n\n"
+  output+="Complete diff:\n\n"
+  output+="\`\`\`diff\n$pr_diff\n\`\`\`"
+
+  echo -e "$output" | pbcopy # Copy to clipboard.
 }
 
 # `render-bw-frame` is a function to add a white border to an image and make it square with a black
