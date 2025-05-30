@@ -11,6 +11,9 @@ cursor-style = "block"
 window-padding-x = 12
 window-padding-y = 12
 
+window-inherit-working-directory = false
+working-directory = "/Users/revett/projects/github.com"
+
 # Keybindings
 
 keybind = cmd+r=clear_screen

@@ -81,3 +81,5 @@ machines:
       - slack
       - tuple
       # - https://supercut.ai → Not yet on Homebrew
+    cursor:
+      - vitest.explorer
