@@ -99,7 +99,6 @@
     }
   ],
   "typescript.preferGoToSourceDefinition": true,
-  "typescript.tsserver.maxTsServerMemory": 4096, // TODO: 4GB but should be much higher
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "right"
