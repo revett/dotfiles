@@ -1,10 +1,11 @@
 {
   "[go]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "SauceCodePro Nerd Font, monospace",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.lineHeight": 22,
   "editor.minimap.enabled": false,
   "editor.rulers": [100],
