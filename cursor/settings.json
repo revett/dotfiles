@@ -1,14 +1,14 @@
 {
   "[go]": {
-    "editor.defaultFormatter": "golang.go",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "golang.go"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "SauceCodePro Nerd Font, monospace",
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.lineHeight": 22,
   "editor.minimap.enabled": false,
-  "editor.rulers": [100],
+  "editor.rulers": [
+    100
+  ],
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "emeraldwalk.runonsave": {
@@ -31,9 +31,12 @@
   "git.confirmSync": false,
   "git.countBadge": "off",
   "go.formatTool": "goimports",
-  "go.lintFlags": ["--allow-parallel-runners"],
+  "go.lintFlags": [
+    "--allow-parallel-runners"
+  ],
   "go.lintOnSave": "workspace",
   "go.lintTool": "golangci-lint",
+  "javascript.preferGoToSourceDefinition": true,
   "markdown.preview.fontSize": 12,
   "openInGitHub.remote.branch": "main",
   "openInGitHub.useLocalBranch": false,
@@ -75,6 +78,8 @@
       "text": "BREAD"
     }
   ],
+  "typescript.preferGoToSourceDefinition": true,
+  "typescript.tsserver.maxTsServerMemory": 16384, // 16GB
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "right"
