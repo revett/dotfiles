@@ -94,7 +94,13 @@ fi
 # Add libpq to PATH if it is installed, a requirement of team-plain/services
 if [ -d "/opt/homebrew/opt/libpq/bin" ]; then
   export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-  export NODE_OPTIONS="--max-old-space-size=32768" # 32GB for TS compilation in team-plain/services
+
+  # 32GB for TS compilation in team-plain/services
+  export NODE_OPTIONS="--max-old-space-size=32768"
+
+  # Make TS compilation faster by using efficient file watching
+  export TSC_NONPOLLING_WATCHER=true
+  export TSC_WATCHFILE=UseFsEvents
 fi
 
 # Source aliases and functions within team-plain/toolbox, and set default AWS profile
