@@ -266,14 +266,10 @@
     "key": "cmd+l",
     "command": "composerMode.chat"
   },
-  {
-    "key": "shift+cmd+t",
-    "command": "-workbench.action.reopenClosedEditor"
-  },
 
   // Open Terminal using `CMD+SHIFT+...` pattern
   {
-    "key": "shift+cmd+t",
+    "key": "shift+cmd+c",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
@@ -281,6 +277,11 @@
     "key": "ctrl+`",
     "command": "-workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
   },
 
   // Open source control view using `CMD+SHIFT+...` pattern
