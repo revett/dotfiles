@@ -1,5 +1,5 @@
 [
-  // Disable guid.insert as already used by moving left/right editor tab.
+  // Disable guid.insert as already used by moving left/right editor tab
   {
     "key": "shift+cmd+[",
     "command": "-guid.insert",
@@ -11,7 +11,7 @@
     "when": "editorTextFocus"
   },
 
-  // Jump between editors using CMD+N.
+  // Jump between editors using CMD+N
   {
     "key": "ctrl+1",
     "command": "-workbench.action.openEditorAtIndex1"
@@ -121,7 +121,7 @@
     "command": "-workbench.action.lastEditorInGroup"
   },
 
-  // Multiple cursors within editor.
+  // Multiple cursors within editor
   {
     "key": "ctrl+alt+up",
     "command": "editor.action.insertCursorAbove",
@@ -143,7 +143,7 @@
     "when": "editorTextFocus"
   },
 
-  // Clear terminal.
+  // Clear terminal
   {
     "key": "cmd+r",
     "command": "workbench.action.terminal.clear",
@@ -155,7 +155,7 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
 
-  // Find and replace within current editor window.
+  // Find and replace within current editor window
   {
     "key": "ctrl+cmd+f",
     "command": "-workbench.action.toggleFullScreen",
@@ -182,7 +182,7 @@
     "command": "explorer.newFile"
   },
 
-  // Find/replace: do not use enter to go to next/previous.
+  // Find/replace: do not use enter to go to next/previous
   {
     "key": "enter",
     "command": "-editor.action.nextMatchFindAction",
@@ -194,7 +194,7 @@
     "when": "editorFocus && findInputFocussed"
   },
 
-  // Disable new line on cmd+enter, and instead reveal definition.
+  // Disable new line on cmd+enter, and instead reveal definition
   {
     "key": "cmd+enter",
     "command": "-editor.action.insertLineAfter",
@@ -206,14 +206,14 @@
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
 
-  // Open file with cmd+enter in explorer sidebar.
+  // Open file with cmd+enter in explorer sidebar
   {
     "key": "cmd+enter",
     "command": "explorer.openAndPassFocus",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
   },
 
-  // Map "Source Control" shortcut to work the same as others in the right sidebar.
+  // Map "Source Control" shortcut to work the same as others in the right sidebar
   {
     "key": "shift+cmd+g",
     "command": "-editor.action.previousMatchFindAction",
@@ -230,7 +230,7 @@
     "when": "workbench.scm.active"
   },
 
-  // Disable emoji shortcuts, for Github Copilot instead.
+  // Disable emoji shortcuts, for Github Copilot instead
   {
     "key": "cmd+i",
     "command": "-emojisense.quickEmojiTerminal",
@@ -257,8 +257,7 @@
     "when": "notificationFocus || notificationToastsVisible"
   },
 
-  // Cursor AI shortcuts.
-
+  // Cursor AI shortcuts
   {
     "key": "cmd+i",
     "command": "composerMode.agent"
@@ -266,5 +265,21 @@
   {
     "key": "cmd+l",
     "command": "composerMode.chat"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "-workbench.action.reopenClosedEditor"
+  },
+
+  // Open Terminal using `CMD+SHIFT+...` pattern
+  {
+    "key": "shift+cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   }
 ]
