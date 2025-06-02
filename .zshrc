@@ -95,8 +95,8 @@ fi
 if [ -d "/opt/homebrew/opt/libpq/bin" ]; then
   export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-  # 32GB for TS compilation in team-plain/services
-  export NODE_OPTIONS="--max-old-space-size=32768"
+  # 12GB for TS compilation in team-plain/services
+  export NODE_OPTIONS="--max-old-space-size=12288"
 
   # Make TS compilation faster by using efficient file watching
   export TSC_NONPOLLING_WATCHER=true
