@@ -30,9 +30,6 @@
 [fetch]
   prune = true
 
-[branch]
-  autosetupmerge = always
-
 [merge]
   tool = cursor
 

@@ -63,6 +63,7 @@ machines:
       - private-internet-access
       - screen-studio
     cursor:
+      - biomejs.biome
       - bradlc.vscode-tailwindcss
       - dbaeumer.vscode-eslint
       - esbenp.prettier-vscode

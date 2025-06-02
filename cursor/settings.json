@@ -2,6 +2,10 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
   "editor.fontFamily": "SauceCodePro Nerd Font, monospace",
   "editor.formatOnSave": false,
   "editor.lineHeight": 22,
