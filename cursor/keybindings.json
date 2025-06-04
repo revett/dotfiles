@@ -297,5 +297,17 @@
   {
     "key": "shift+cmd+s",
     "command": "workbench.view.scm"
+  },
+
+  // Add dedicated keybind for clearing an existing chat within the AI sidebar panel
+  {
+    "key": "ctrl+l",
+    "command": "composer.createNewWithPrevContext",
+    "when": "composerFocused || focusedView =~ /^workbench.panel.aichat.view/"
+  },
+  {
+    "key": "cmd+n",
+    "command": "-composer.createNewWithPrevContext",
+    "when": "composerFocused || focusedView =~ /^workbench.panel.aichat.view/"
   }
 ]
