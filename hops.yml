@@ -1,8 +1,11 @@
 brewfile: /Users/revett/Brewfile
 machines:
   shared:
+    taps:
+      - aviator-co/tap
     formulae:
       - autoenv
+      - av
       - coreutils
       - fnm
       - fzf
