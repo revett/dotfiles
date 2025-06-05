@@ -33,3 +33,4 @@ alias ls='gls --color'
 
 # Work
 alias pn='pnpm'
+alias btop-memory='btop --config ~/projects/github.com/revett/dotfiles/btop-memory.conf'

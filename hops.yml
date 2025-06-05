@@ -6,6 +6,7 @@ machines:
     formulae:
       - autoenv
       - av
+      - btop
       - coreutils
       - fnm
       - fzf
@@ -30,6 +31,7 @@ machines:
       - raycast
       - spotify
       - todoist
+      - yaak
     cursor:
       - yoavbls.pretty-ts-errors
       - albert.tabout
