@@ -116,13 +116,6 @@ fi
 export COREPACK_ENABLE_AUTO_PIN=0
 
 # ---
-# Both
-# ---
-
-# Auto-sync ~/notes via rclone at a regular interval
-sync-notes
-
-# ---
 # Load other bash scripts
 # ---
 
@@ -130,3 +123,10 @@ for file in ~/projects/github.com/revett/dotfiles/.{functions,aliases}; do
   [ -r "$file" ] && source "$file";
 done;
 unset file;
+
+# ---
+# Post-setup
+# ---
+
+# Auto-sync ~/notes via rclone at a regular interval, required at end as from .functions
+sync-notes
