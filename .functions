@@ -9,8 +9,54 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("branch" "copy-files-for-prompt" "dff-staged-changes" "dlyt" "pr-diff" "render-bw-frame" "tre")
+  f=("ai-diff-pr" "branch" "copy-files-for-prompt" "dlyt" "render-bw-frame" "sync-notes" "tre")
   printf -- '  - %s\n' "${f[@]}"
+}
+
+# `ai-diff-pr` copies the current git branch name and the complete PR diff (all changes in the feature
+# branch compared to main) to clipboard in a formatted way for code review by LLMs.
+ai-diff-pr() {
+  local base_branch="${1:-main}"
+
+  # Check if we're in a git repository.
+  if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    echo "error: not in a git repository"
+    return 1
+  fi
+
+  # Get the current branch name.
+  local current_branch=$(branch)
+  if [ -z "$current_branch" ]; then
+    echo "error: could not determine current branch"
+    return 1
+  fi
+
+  # Check if the base branch exists.
+  if ! git rev-parse --verify "$base_branch" > /dev/null 2>&1; then
+    echo "error: base branch '$base_branch' does not exist"
+    return 1
+  fi
+
+  # Check if there are any changes between branches.
+  if git diff --quiet "$base_branch"..."$current_branch"; then
+    echo "error: no changes found between '$base_branch' and '$current_branch'"
+    return 1
+  fi
+
+  # Get the list of changed files.
+  local changed_files=$(git diff --name-status "$base_branch"..."$current_branch")
+
+  # Get the complete diff.
+  local pr_diff=$(git diff "$base_branch"..."$current_branch")
+
+  # Format the output.
+  local output="Branch: \`$current_branch\` (compared to \`$base_branch\`)\n\n"
+  output+="Files changed:\n\n"
+  output+="\`\`\`\n$changed_files\n\`\`\`\n\n"
+  output+="Complete diff:\n\n"
+  output+="\`\`\`diff\n$pr_diff\n\`\`\`"
+
+  echo -e "$output" | pbcopy # Copy to clipboard.
 }
 
 # `branch` is used within a number of aliases, and returns the branch from the current git
@@ -124,52 +170,6 @@ dlyt() {
   yt-dlp -f "$format_spec" -o "$output_template" "$url"
 }
 
-# `pr-diff` copies the current git branch name and the complete PR diff (all changes in the feature
-# branch compared to main) to clipboard in a formatted way for code review by LLMs.
-pr-diff() {
-  local base_branch="${1:-main}"
-
-  # Check if we're in a git repository.
-  if ! git rev-parse --git-dir > /dev/null 2>&1; then
-    echo "error: not in a git repository"
-    return 1
-  fi
-
-  # Get the current branch name.
-  local current_branch=$(branch)
-  if [ -z "$current_branch" ]; then
-    echo "error: could not determine current branch"
-    return 1
-  fi
-
-  # Check if the base branch exists.
-  if ! git rev-parse --verify "$base_branch" > /dev/null 2>&1; then
-    echo "error: base branch '$base_branch' does not exist"
-    return 1
-  fi
-
-  # Check if there are any changes between branches.
-  if git diff --quiet "$base_branch"..."$current_branch"; then
-    echo "error: no changes found between '$base_branch' and '$current_branch'"
-    return 1
-  fi
-
-  # Get the list of changed files.
-  local changed_files=$(git diff --name-status "$base_branch"..."$current_branch")
-
-  # Get the complete diff.
-  local pr_diff=$(git diff "$base_branch"..."$current_branch")
-
-  # Format the output.
-  local output="Branch: \`$current_branch\` (compared to \`$base_branch\`)\n\n"
-  output+="Files changed:\n\n"
-  output+="\`\`\`\n$changed_files\n\`\`\`\n\n"
-  output+="Complete diff:\n\n"
-  output+="\`\`\`diff\n$pr_diff\n\`\`\`"
-
-  echo -e "$output" | pbcopy # Copy to clipboard.
-}
-
 # `render-bw-frame` is a function to add a white border to an image and make it square with a black
 # background. The function takes one or more image files as arguments and processes each image
 # file. The processed images are saved in the same directory as the original image files with the
@@ -205,6 +205,52 @@ render-bw-frame() {
       echo "File not found: $image"
     fi
   done
+}
+
+# `sync-notes` syncs ~/notes to Fastmail via rclone if not synced recently.
+sync-notes() {
+  # Exit early if ~/notes hasn't been setup yet.
+  if [[ ! -d ~/notes ]]; then
+    return 0
+  fi
+
+  # Check if rclone is installed
+  if ! command -v rclone &> /dev/null; then
+    echo "error: rclone not installed"
+    return 0
+  fi
+
+  # Check if fastmail remote is configured
+  if ! rclone listremotes | grep -q "fastmail:"; then
+    echo "error: fastmail remote not configured in rclone"
+    return 1
+  fi
+
+  # Check last sync time (using a simple timestamp file)
+  local sync_file=~/.rclone_notes_last_sync_at
+  local now=$(date +%s)
+  local last_sync=0
+
+  if [[ -f $sync_file ]]; then
+    last_sync=$(cat $sync_file)
+  fi
+
+  local hours_since_sync=$(( (now - last_sync) / 3600 ))
+
+  if [[ $hours_since_sync -lt 1 ]]; then
+    return 0
+  fi
+
+  echo "> ~/notes last sync $hours_since_sync hours ago (over 1h)"
+  echo "> syncing ~/notes via rclone"
+
+  if rclone sync ~/notes fastmail:notes; then
+    echo $now > $sync_file
+    echo "> complete"
+  else
+    echo "error: sync failed"
+    return 1
+  fi
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git`

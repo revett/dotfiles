@@ -116,6 +116,13 @@ fi
 export COREPACK_ENABLE_AUTO_PIN=0
 
 # ---
+# Both
+# ---
+
+# Auto-sync ~/notes via rclone at a regular interval
+sync-notes
+
+# ---
 # Load other bash scripts
 # ---
 
