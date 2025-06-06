@@ -123,10 +123,3 @@ for file in ~/projects/github.com/revett/dotfiles/.{functions,aliases}; do
   [ -r "$file" ] && source "$file";
 done;
 unset file;
-
-# ---
-# Post-setup
-# ---
-
-# Auto-sync ~/notes via rclone at a regular interval, required at end as from .functions
-sync-notes

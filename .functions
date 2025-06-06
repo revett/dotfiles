@@ -9,7 +9,7 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("ai-diff-pr" "branch" "copy-files-for-prompt" "dlyt" "render-bw-frame" "sync-notes" "tre")
+  f=("ai-diff-pr" "branch" "copy-files-for-prompt" "dlyt" "render-bw-frame" "tre")
   printf -- '  - %s\n' "${f[@]}"
 }
 
@@ -205,52 +205,6 @@ render-bw-frame() {
       echo "File not found: $image"
     fi
   done
-}
-
-# `sync-notes` syncs ~/notes to Fastmail via rclone if not synced recently.
-sync-notes() {
-  # Exit early if ~/notes hasn't been setup yet.
-  if [[ ! -d ~/notes ]]; then
-    return 0
-  fi
-
-  # Check if rclone is installed
-  if ! command -v rclone &> /dev/null; then
-    echo "error: rclone not installed"
-    return 0
-  fi
-
-  # Check if fastmail remote is configured
-  if ! rclone listremotes | grep -q "fastmail:"; then
-    echo "error: fastmail remote not configured in rclone"
-    return 1
-  fi
-
-  # Check last sync time (using a simple timestamp file)
-  local sync_file=~/.rclone_notes_last_sync_at
-  local now=$(date +%s)
-  local last_sync=0
-
-  if [[ -f $sync_file ]]; then
-    last_sync=$(cat $sync_file)
-  fi
-
-  local hours_since_sync=$(( (now - last_sync) / 3600 ))
-
-  if [[ $hours_since_sync -lt 1 ]]; then
-    return 0
-  fi
-
-  echo "> ~/notes last sync $hours_since_sync hours ago (over 1h)"
-  echo "> syncing ~/notes via rclone"
-
-  if rclone sync ~/notes fastmail:notes; then
-    echo $now > $sync_file
-    echo "> complete"
-  else
-    echo "error: sync failed"
-    return 1
-  fi
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git`
