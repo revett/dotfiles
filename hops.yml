@@ -15,6 +15,7 @@ machines:
       - jq
       - openjdk
       - python@3.10
+      - rclone
       - starship
       - tree
       - prettier
@@ -41,6 +42,7 @@ machines:
       - emeraldwalk.runonsave
       - fabiospampinato.vscode-open-in-github
       - github.github-vscode-theme
+      - kortina.vscode-markdown-notes
       - marvhen.reflow-markdown
       - mechatroner.rainbow-csv
       - mohsen1.prettify-json
@@ -51,6 +53,7 @@ machines:
       - tyriar.sort-lines
       - irongeek.vscode-env
       - wayou.vscode-todo-highlight
+      - yzhang.markdown-all-in-one
   personal:
     taps:
       - oven-sh/bun
