@@ -38,6 +38,7 @@ machines:
       - albert.tabout
       - bierner.markdown-emoji
       - bierner.markdown-preview-github-styles
+      - davidanson.vscode-markdownlint
       - editorconfig.editorconfig
       - emeraldwalk.runonsave
       - fabiospampinato.vscode-open-in-github
