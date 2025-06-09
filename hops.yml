@@ -89,7 +89,6 @@ machines:
       - granola
       - linear-linear
       - notion
-      - reflect
       - stats # Keep track of RAM usage because of TS compilation
       - slack
       - tuple
