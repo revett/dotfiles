@@ -115,6 +115,15 @@ fi
 # Disable corepack automatically pinning by adding `packageManager` to `package.json`
 export COREPACK_ENABLE_AUTO_PIN=0
 
+# Setup pnpm global binaries
+if [ -d "$HOME/Library/pnpm" ]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+  case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
+fi
+
 # ---
 # Load other bash scripts
 # ---
