@@ -86,6 +86,7 @@ machines:
       - mkcert # Requirement of team-plain/support-app
       - nss # Requirement of team-plain/support-app
     casks:
+      - aqua-voice
       - granola
       - linear-linear
       - notion
