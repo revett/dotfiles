@@ -1,3 +1,5 @@
+<img src="./terminal.png" width="100%" alt="Neon mushrooms surround old computer" />
+
 # dotfiles
 
 Configuration used for my development environment.
@@ -11,13 +13,11 @@ Configuration used for my development environment.
 
 Clone/download the repo, create symlinks, and set macOS system preferences.
 
-## HomeBrew
+## Homebrew
 
-Managed using the [hops](https://github.com/revett/hops) tool, see [hops.yml](./hops.yml).
-
-## Cursor
-
-Managed using the [hops](https://github.com/revett/hops) tool, see [hops.yml](./hops.yml).
+I wrote [revett/hops](https://github.com/revett/hops) as a lightweight CLI to wrap `brew bundle`
+commands to help with managing installing packages across work/personal machines, see
+[hops.yml](./hops.yml).
 
 ## Thanks
 
