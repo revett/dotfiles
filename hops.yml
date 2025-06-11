@@ -1,4 +1,5 @@
 brewfile: /Users/revett/Brewfile
+reminder: 7
 machines:
   shared:
     taps:
