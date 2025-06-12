@@ -35,10 +35,10 @@ machines:
       - todoist
       - yaak
     cursor:
-      - yoavbls.pretty-ts-errors
       - albert.tabout
       - bierner.markdown-emoji
       - bierner.markdown-preview-github-styles
+      - biomejs.biome
       - davidanson.vscode-markdownlint
       - editorconfig.editorconfig
       - emeraldwalk.runonsave
@@ -55,6 +55,7 @@ machines:
       - tyriar.sort-lines
       - irongeek.vscode-env
       - wayou.vscode-todo-highlight
+      - yoavbls.pretty-ts-errors
       - yzhang.markdown-all-in-one
   personal:
     taps:
@@ -73,7 +74,6 @@ machines:
       - private-internet-access
       - screen-studio
     cursor:
-      - biomejs.biome
       - bradlc.vscode-tailwindcss
       - dbaeumer.vscode-eslint
       - esbenp.prettier-vscode

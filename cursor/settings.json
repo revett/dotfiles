@@ -1,6 +1,11 @@
 {
   "[go]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.biome": "explicit",
@@ -23,19 +28,6 @@
         "cmd": "gofumpt -w ${file}",
         "match": "\\.go$",
         "message": "[gofumpt] formatting file",
-        "showElapsed": true
-      },
-      // Work: Run biome to lint and fix the specific file
-      {
-        "cmd": "pnpm exec biome check --write ${file}",
-        "match": "github\\.com/team-plain.*\\.ts$",
-        "message": "[biome] formatting file",
-        "showElapsed": true
-      },
-      {
-        "cmd": "pnpm exec biome lint ${file} --fix",
-        "match": "github\\.com/team-plain.*\\.ts$",
-        "message": "[biome] linting file",
         "showElapsed": true
       }
     ],
