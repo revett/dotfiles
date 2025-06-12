@@ -127,6 +127,9 @@ if [ -d "$HOME/Library/pnpm" ]; then
   esac
 fi
 
+# Default internal CLI format to JSON
+export PLAIN_CLI_FORMAT="json"
+
 # ---
 # Load other bash scripts
 # ---
