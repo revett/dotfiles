@@ -75,11 +75,8 @@ machines:
       - screen-studio
     cursor:
       - bradlc.vscode-tailwindcss
-      - dbaeumer.vscode-eslint
-      - esbenp.prettier-vscode
       - jinliming2.vscode-go-template
       - golang.go
-      - rust-lang.rust-analyzer
   work:
     formulae:
       - awscli # Requirement of team-plain/toolbox
