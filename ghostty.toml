@@ -1,7 +1,9 @@
 # Configuration
 
+
 font-family = "SauceCodePro Nerd Font Mono"
-font-size = 14
+font-size = 12
+adjust-cell-height = "20%"
 theme = "GitHub-Dark-Default"
 
 # Needed for cursor style to be applied correctly

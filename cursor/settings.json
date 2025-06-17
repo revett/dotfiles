@@ -22,7 +22,8 @@
   },
   "editor.fontFamily": "SauceCodePro Nerd Font, monospace",
   "editor.formatOnSave": false,
-  "editor.lineHeight": 22,
+  "editor.lineHeight": 26,
+  "editor.fontSize": 12,
   "editor.minimap.enabled": false,
   "editor.rulers": [
     100
