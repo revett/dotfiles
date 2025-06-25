@@ -32,7 +32,7 @@ machines:
       - logi-options+
       - raycast
       - spotify
-      - todoist
+      - todoist-app
       - yaak
     cursor:
       - albert.tabout
