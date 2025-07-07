@@ -16,14 +16,15 @@
     "editor.formatOnSave": true
   },
   "cursor.cpp.disabledLanguages": [],
+  "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
     "source.fixAll.biome": "explicit",
     "source.organizeImports.biome": "explicit"
   },
   "editor.fontFamily": "SauceCodePro Nerd Font, monospace",
+  "editor.fontSize": 12,
   "editor.formatOnSave": false,
   "editor.lineHeight": 26,
-  "editor.fontSize": 12,
   "editor.minimap.enabled": false,
   "editor.rulers": [
     100
