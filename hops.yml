@@ -85,7 +85,6 @@ machines:
       - nss # Requirement of team-plain/support-app
     casks:
       - aqua-voice
-      - claude
       - granola
       - linear-linear
       - notion
