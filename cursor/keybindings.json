@@ -309,5 +309,33 @@
     "key": "cmd+n",
     "command": "-composer.createNewWithPrevContext",
     "when": "composerFocused || focusedView =~ /^workbench.panel.aichat.view/"
+  },
+
+  // Running tests
+  {
+    "key": "cmd+; f",
+    "command": "-testing.runCurrentFile",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+; c",
+    "command": "-testing.runAtCursor",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+[IntlBackslash]",
+    "command": "testing.runAtCursor"
+  },
+  {
+    "key": "shift+alt+[IntlBackslash]",
+    "command": "testing.runCurrentFile"
+  },
+  {
+    "key": "cmd+; l",
+    "command": "-testing.reRunLastRun"
+  },
+  {
+    "key": "shift+alt+r",
+    "command": "testing.reRunLastRun"
   }
 ]
