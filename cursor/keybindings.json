@@ -1,341 +1,312 @@
 [
-  // Disable guid.insert as already used by moving left/right editor tab
-  {
-    "key": "shift+cmd+[",
-    "command": "-guid.insert",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+alt+cmd+[",
-    "command": "-guid.insertMany",
-    "when": "editorTextFocus"
-  },
+	// Jump between editors using CMD+N instead of CTRL+N
+	{
+		"key": "ctrl+1",
+		"command": "-workbench.action.openEditorAtIndex1"
+	},
+	{
+		"key": "cmd+1",
+		"command": "workbench.action.openEditorAtIndex1"
+	},
+	{
+		"key": "ctrl+2",
+		"command": "-workbench.action.openEditorAtIndex2"
+	},
+	{
+		"key": "cmd+2",
+		"command": "workbench.action.openEditorAtIndex2"
+	},
+	{
+		"key": "ctrl+3",
+		"command": "-workbench.action.openEditorAtIndex3"
+	},
+	{
+		"key": "cmd+3",
+		"command": "workbench.action.openEditorAtIndex3"
+	},
+	{
+		"key": "ctrl+4",
+		"command": "-workbench.action.openEditorAtIndex4"
+	},
+	{
+		"key": "cmd+4",
+		"command": "workbench.action.openEditorAtIndex4"
+	},
+	{
+		"key": "ctrl+5",
+		"command": "-workbench.action.openEditorAtIndex5"
+	},
+	{
+		"key": "cmd+5",
+		"command": "workbench.action.openEditorAtIndex5"
+	},
+	{
+		"key": "ctrl+6",
+		"command": "-workbench.action.openEditorAtIndex6"
+	},
+	{
+		"key": "cmd+6",
+		"command": "workbench.action.openEditorAtIndex6"
+	},
+	{
+		"key": "ctrl+7",
+		"command": "-workbench.action.openEditorAtIndex7"
+	},
+	{
+		"key": "cmd+7",
+		"command": "workbench.action.openEditorAtIndex7"
+	},
+	{
+		"key": "ctrl+8",
+		"command": "-workbench.action.openEditorAtIndex8"
+	},
+	{
+		"key": "cmd+8",
+		"command": "workbench.action.openEditorAtIndex8"
+	},
+	{
+		"key": "ctrl+9",
+		"command": "-workbench.action.openEditorAtIndex9"
+	},
+	{
+		"key": "cmd+9",
+		"command": "workbench.action.openEditorAtIndex9"
+	},
+	{
+		"key": "cmd+1",
+		"command": "-workbench.action.focusFirstEditorGroup"
+	},
+	{
+		"key": "cmd+2",
+		"command": "-workbench.action.focusSecondEditorGroup"
+	},
+	{
+		"key": "cmd+3",
+		"command": "-workbench.action.focusThirdEditorGroup"
+	},
+	{
+		"key": "cmd+4",
+		"command": "-workbench.action.focusFourthEditorGroup"
+	},
+	{
+		"key": "cmd+5",
+		"command": "-workbench.action.focusFifthEditorGroup"
+	},
+	{
+		"key": "cmd+6",
+		"command": "-workbench.action.focusSixthEditorGroup"
+	},
+	{
+		"key": "cmd+7",
+		"command": "-workbench.action.focusSeventhEditorGroup"
+	},
+	{
+		"key": "cmd+8",
+		"command": "-workbench.action.focusEighthEditorGroup"
+	},
+	{
+		"key": "cmd+9",
+		"command": "-workbench.action.lastEditorInGroup"
+	},
 
-  // Jump between editors using CMD+N
-  {
-    "key": "ctrl+1",
-    "command": "-workbench.action.openEditorAtIndex1"
-  },
-  {
-    "key": "cmd+1",
-    "command": "workbench.action.openEditorAtIndex1"
-  },
-  {
-    "key": "ctrl+2",
-    "command": "-workbench.action.openEditorAtIndex2"
-  },
-  {
-    "key": "cmd+2",
-    "command": "workbench.action.openEditorAtIndex2"
-  },
-  {
-    "key": "ctrl+3",
-    "command": "-workbench.action.openEditorAtIndex3"
-  },
-  {
-    "key": "cmd+3",
-    "command": "workbench.action.openEditorAtIndex3"
-  },
-  {
-    "key": "ctrl+4",
-    "command": "-workbench.action.openEditorAtIndex4"
-  },
-  {
-    "key": "cmd+4",
-    "command": "workbench.action.openEditorAtIndex4"
-  },
-  {
-    "key": "ctrl+5",
-    "command": "-workbench.action.openEditorAtIndex5"
-  },
-  {
-    "key": "cmd+5",
-    "command": "workbench.action.openEditorAtIndex5"
-  },
-  {
-    "key": "ctrl+6",
-    "command": "-workbench.action.openEditorAtIndex6"
-  },
-  {
-    "key": "cmd+6",
-    "command": "workbench.action.openEditorAtIndex6"
-  },
-  {
-    "key": "ctrl+7",
-    "command": "-workbench.action.openEditorAtIndex7"
-  },
-  {
-    "key": "cmd+7",
-    "command": "workbench.action.openEditorAtIndex7"
-  },
-  {
-    "key": "ctrl+8",
-    "command": "-workbench.action.openEditorAtIndex8"
-  },
-  {
-    "key": "cmd+8",
-    "command": "workbench.action.openEditorAtIndex8"
-  },
-  {
-    "key": "ctrl+9",
-    "command": "-workbench.action.openEditorAtIndex9"
-  },
-  {
-    "key": "cmd+9",
-    "command": "workbench.action.openEditorAtIndex9"
-  },
-  {
-    "key": "cmd+1",
-    "command": "-workbench.action.focusFirstEditorGroup"
-  },
-  {
-    "key": "cmd+2",
-    "command": "-workbench.action.focusSecondEditorGroup"
-  },
-  {
-    "key": "cmd+3",
-    "command": "-workbench.action.focusThirdEditorGroup"
-  },
-  {
-    "key": "cmd+4",
-    "command": "-workbench.action.focusFourthEditorGroup"
-  },
-  {
-    "key": "cmd+5",
-    "command": "-workbench.action.focusFifthEditorGroup"
-  },
-  {
-    "key": "cmd+6",
-    "command": "-workbench.action.focusSixthEditorGroup"
-  },
-  {
-    "key": "cmd+7",
-    "command": "-workbench.action.focusSeventhEditorGroup"
-  },
-  {
-    "key": "cmd+8",
-    "command": "-workbench.action.focusEighthEditorGroup"
-  },
-  {
-    "key": "cmd+9",
-    "command": "-workbench.action.lastEditorInGroup"
-  },
+	// Multiple cursors within editor
+	{
+		"key": "ctrl+alt+up",
+		"command": "editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+cmd+up",
+		"command": "-editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+down",
+		"command": "editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+cmd+down",
+		"command": "-editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
 
-  // Multiple cursors within editor
-  {
-    "key": "ctrl+alt+up",
-    "command": "editor.action.insertCursorAbove",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+cmd+up",
-    "command": "-editor.action.insertCursorAbove",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+down",
-    "command": "editor.action.insertCursorBelow",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+cmd+down",
-    "command": "-editor.action.insertCursorBelow",
-    "when": "editorTextFocus"
-  },
+	// Clear terminal
+	{
+		"key": "cmd+r",
+		"command": "workbench.action.terminal.clear",
+		"when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "cmd+k",
+		"command": "-workbench.action.terminal.clear",
+		"when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+	},
 
-  // Clear terminal
-  {
-    "key": "cmd+r",
-    "command": "workbench.action.terminal.clear",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+k",
-    "command": "-workbench.action.terminal.clear",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
+	// Find and replace within current editor window
+	{
+		"key": "ctrl+cmd+f",
+		"command": "-workbench.action.toggleFullScreen",
+		"when": "!isIOS"
+	},
+	{
+		"key": "ctrl+cmd+f",
+		"command": "editor.action.startFindReplaceAction",
+		"when": "editorFocus || editorIsOpen"
+	},
+	{
+		"key": "alt+cmd+f",
+		"command": "-editor.action.startFindReplaceAction",
+		"when": "editorFocus || editorIsOpen"
+	},
 
-  // Find and replace within current editor window
-  {
-    "key": "ctrl+cmd+f",
-    "command": "-workbench.action.toggleFullScreen",
-    "when": "!isIOS"
-  },
-  {
-    "key": "ctrl+cmd+f",
-    "command": "editor.action.startFindReplaceAction",
-    "when": "editorFocus || editorIsOpen"
-  },
-  {
-    "key": "alt+cmd+f",
-    "command": "-editor.action.startFindReplaceAction",
-    "when": "editorFocus || editorIsOpen"
-  },
+	// Find/replace: do not use enter to go to next/previous
+	{
+		"key": "enter",
+		"command": "-editor.action.nextMatchFindAction",
+		"when": "editorFocus && findInputFocussed"
+	},
+	{
+		"key": "shift+enter",
+		"command": "-editor.action.previousMatchFindAction",
+		"when": "editorFocus && findInputFocussed"
+	},
 
-  // Open new file in explorer by default.
-  {
-    "key": "cmd+n",
-    "command": "-workbench.action.files.newUntitledFile"
-  },
-  {
-    "key": "cmd+n",
-    "command": "explorer.newFile"
-  },
+	// Disable new line on cmd+enter, and instead reveal definition
+	{
+		"key": "cmd+enter",
+		"command": "-editor.action.insertLineAfter",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "cmd+enter",
+		"command": "editor.action.revealDefinition",
+		"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+	},
 
-  // Find/replace: do not use enter to go to next/previous
-  {
-    "key": "enter",
-    "command": "-editor.action.nextMatchFindAction",
-    "when": "editorFocus && findInputFocussed"
-  },
-  {
-    "key": "shift+enter",
-    "command": "-editor.action.previousMatchFindAction",
-    "when": "editorFocus && findInputFocussed"
-  },
+	// Open file with cmd+enter in explorer sidebar
+	{
+		"key": "cmd+enter",
+		"command": "explorer.openAndPassFocus",
+		"when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+	},
 
-  // Disable new line on cmd+enter, and instead reveal definition
-  {
-    "key": "cmd+enter",
-    "command": "-editor.action.insertLineAfter",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "cmd+enter",
-    "command": "editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
+	// Map "Source Control" shortcut to work the same as others in the right sidebar
+	{
+		"key": "shift+cmd+g",
+		"command": "-editor.action.previousMatchFindAction",
+		"when": "editorFocus"
+	},
+	{
+		"key": "shift+cmd+g",
+		"command": "-workbench.action.terminal.findPrevious",
+		"when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "ctrl+shift+g",
+		"command": "-workbench.view.scm",
+		"when": "workbench.scm.active"
+	},
 
-  // Open file with cmd+enter in explorer sidebar
-  {
-    "key": "cmd+enter",
-    "command": "explorer.openAndPassFocus",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
-  },
+	// Cursor AI shortcuts
+	{
+		"key": "cmd+l",
+		"command": "composerMode.chat"
+	},
+	{
+		"key": "cmd+i",
+		"command": "composerMode.agent"
+	},
+	{
+		"key": "shift+cmd+l",
+		"command": "composer.createNew"
+	},
+	{
+		"key": "cmd+n",
+		"command": "-composer.createNewWithPrevContext",
+		"when": "composerFocused || focusedView =~ /^workbench.panel.aichat.view/"
+	},
+	{
+		"key": "shift+cmd+i",
+		"command": "-composer.newAgentChat"
+	},
 
-  // Map "Source Control" shortcut to work the same as others in the right sidebar
-  {
-    "key": "shift+cmd+g",
-    "command": "-editor.action.previousMatchFindAction",
-    "when": "editorFocus"
-  },
-  {
-    "key": "shift+cmd+g",
-    "command": "-workbench.action.terminal.findPrevious",
-    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
+	// Open Terminal using `CMD+SHIFT+...` pattern
+	{
+		"key": "shift+cmd+c",
+		"command": "workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active"
+	},
+	{
+		"key": "ctrl+`",
+		"command": "-workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active"
+	},
+	{
+		"key": "shift+cmd+c",
+		"command": "-workbench.action.terminal.openNativeConsole",
+		"when": "!terminalFocus"
+	},
 
-  // Disable emoji shortcuts, for Github Copilot instead
-  {
-    "key": "cmd+i",
-    "command": "-emojisense.quickEmojiTerminal",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "cmd+i",
-    "command": "-emojisense.quickEmoji",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+cmd+i",
-    "command": "-emojisense.quickEmojitext",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+cmd+i",
-    "command": "-emojisense.quickEmojitextTerminal",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "shift+cmd+a",
-    "command": "-notification.acceptPrimaryAction",
-    "when": "notificationFocus || notificationToastsVisible"
-  },
-
-  // Cursor AI shortcuts
-  {
-    "key": "cmd+i",
-    "command": "composerMode.agent"
-  },
-  {
-    "key": "cmd+l",
-    "command": "composerMode.chat"
-  },
-
-  // Open Terminal using `CMD+SHIFT+...` pattern
-  {
-    "key": "shift+cmd+c",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "ctrl+`",
-    "command": "-workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "shift+cmd+c",
-    "command": "-workbench.action.terminal.openNativeConsole",
-    "when": "!terminalFocus"
-  },
-
-  // Open source control view using `CMD+SHIFT+...` pattern
-  {
-    "key": "shift+cmd+s",
-    "command": "-workbench.action.files.saveAs"
-  },
-  {
-    "key": "shift+cmd+s",
-    "command": "-workbench.action.files.saveLocalFile",
-    "when": "remoteFileDialogVisible"
-  },
-  {
-    "key": "shift+cmd+s",
-    "command": "workbench.view.scm"
-  },
-
-  // Add dedicated keybind for clearing an existing chat within the AI sidebar panel
-  {
-    "key": "ctrl+l",
-    "command": "composer.createNewWithPrevContext",
-    "when": "composerFocused || focusedView =~ /^workbench.panel.aichat.view/"
-  },
-  {
-    "key": "cmd+n",
-    "command": "-composer.createNewWithPrevContext",
-    "when": "composerFocused || focusedView =~ /^workbench.panel.aichat.view/"
-  },
-
-  // Running tests
-  {
-    "key": "cmd+; f",
-    "command": "-testing.runCurrentFile",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "cmd+; c",
-    "command": "-testing.runAtCursor",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+[IntlBackslash]",
-    "command": "testing.runAtCursor"
-  },
-  {
-    "key": "shift+alt+[IntlBackslash]",
-    "command": "testing.runCurrentFile"
-  },
-  {
-    "key": "cmd+; l",
-    "command": "-testing.reRunLastRun"
-  },
-  {
-    "key": "shift+alt+r",
-    "command": "testing.reRunLastRun"
-  }
+	// Running tests
+	{
+		"key": "f1",
+		"command": "testing.runCurrentFile"
+	},
+	{
+		"key": "f2",
+		"command": "testing.runAtCursor"
+	},
+	{
+		"key": "f3",
+		"command": "testing.reRunLastRun"
+	},
+	{
+		"key": "cmd+; f",
+		"command": "-testing.runCurrentFile",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+; c",
+		"command": "-testing.runAtCursor",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+; l",
+		"command": "-testing.reRunLastRun"
+	},
+	{
+		"key": "f1",
+		"command": "-workbench.action.showCommands"
+	},
+	{
+		"key": "shift+f2",
+		"command": "editor.action.rename",
+		"when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "f2",
+		"command": "-editor.action.rename",
+		"when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "f3",
+		"command": "-editor.action.nextMatchFindAction",
+		"when": "editorFocus"
+	},
+	{
+		"key": "f3",
+		"command": "-workbench.action.terminal.findNext",
+		"when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+	},
+	{
+		"key": "f3",
+		"command": "-list.find",
+		"when": "listFocus && listSupportsFind"
+	},
+	{
+		"key": "f3",
+		"command": "-list.find.replInputFocus",
+		"when": "view == 'workbench.panel.repl.view'"
+	}
 ]

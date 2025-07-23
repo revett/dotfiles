@@ -1,113 +1,109 @@
 {
-  "[go]": {
-    "editor.defaultFormatter": "golang.go",
-    "editor.formatOnSave": true
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "biomejs.biome",
-    "editor.formatOnSave": true
-  },
-  "[json]": {
-    "editor.defaultFormatter": "biomejs.biome",
-    "editor.formatOnSave": true
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome",
-    "editor.formatOnSave": true
-  },
-  "cursor.composer.shouldChimeAfterChatFinishes": true,
-  "cursor.cpp.disabledLanguages": [],
-  "editor.accessibilitySupport": "off",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.biome": "explicit",
-    "source.organizeImports.biome": "explicit"
-  },
-  "editor.fontFamily": "SauceCodePro Nerd Font, monospace",
-  "editor.fontSize": 12,
-  "editor.formatOnSave": false,
-  "editor.lineHeight": 26,
-  "editor.minimap.enabled": false,
-  "editor.rulers": [
-    100
-  ],
-  "editor.tabCompletion": "on",
-  "editor.tabSize": 2,
-  "emeraldwalk.runonsave": {
-    "autoClearConsole": true,
-    "commands": [
-      // Run gofumpt for Go projects
-      {
-        "cmd": "gofumpt -w ${file}",
-        "match": "\\.go$",
-        "message": "[gofumpt] formatting file",
-        "showElapsed": true
-      }
-    ],
-    "message": "[start]",
-    "messageAfter": "[complete]",
-    "showElapsed": true
-  },
-  "explorer.compactFolders": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "files.associations": {
-    "*.mustache": "html"
-  },
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "git.autofetch": true,
-  "git.confirmSync": false,
-  "git.countBadge": "off",
-  "go.formatTool": "goimports",
-  "go.lintFlags": [
-    "--allow-parallel-runners"
-  ],
-  "go.lintOnSave": "workspace",
-  "go.lintTool": "golangci-lint",
-  "markdown.preview.fontSize": 12,
-  "openInGitHub.remote.branch": "main",
-  "openInGitHub.useLocalBranch": false,
-  "openInGitHub.useLocalLine": true,
-  "redhat.telemetry.enabled": false,
-  "reflowMarkdown.preferredLineLength": 100,
-  "task.allowAutomaticTasks": "on",
-  "terminal.integrated.scrollback": 10000,
-  "todohighlight.defaultStyle": {
-    "backgroundColor": "#f72585",
-    "borderRadius": "3px",
-    "color": "#fff"
-  },
-  "todohighlight.include": [
-    "**/*.go",
-    "**/*.md",
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.html",
-    "**/*.php",
-    "**/*.css",
-    "**/*.scss"
-  ],
-  "todohighlight.keywords": [
-    {
-      "backgroundColor": "#ec4899",
-      "color": "#fff",
-      "text": "TODO"
-    },
-    {
-      "backgroundColor": "#2563eb",
-      "color": "#fff",
-      "text": "ASK"
-    },
-    {
-      "backgroundColor": "#fed7aa",
-      "color": "#000000",
-      "text": "BREAD"
-    }
-  ],
-  "typescript.preferGoToSourceDefinition": true,
-  "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.editor.enablePreview": false,
-  "workbench.sideBar.location": "right"
+	"[go]": {
+		"editor.defaultFormatter": "golang.go",
+		"editor.formatOnSave": true
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true
+	},
+	"cursor.composer.shouldChimeAfterChatFinishes": true,
+	"cursor.cpp.disabledLanguages": [],
+	"editor.accessibilitySupport": "off",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit",
+		"source.organizeImports.biome": "explicit"
+	},
+	"editor.fontFamily": "SauceCodePro Nerd Font, monospace",
+	"editor.fontSize": 12,
+	"editor.formatOnSave": false,
+	"editor.lineHeight": 26,
+	"editor.minimap.enabled": false,
+	"editor.rulers": [100],
+	"editor.tabCompletion": "on",
+	"editor.tabSize": 2,
+	"emeraldwalk.runonsave": {
+		"autoClearConsole": true,
+		"commands": [
+			// Run gofumpt for Go projects
+			{
+				"cmd": "gofumpt -w ${file}",
+				"match": "\\.go$",
+				"message": "[gofumpt] formatting file",
+				"showElapsed": true
+			}
+		],
+		"message": "[start]",
+		"messageAfter": "[complete]",
+		"showElapsed": true
+	},
+	"explorer.compactFolders": false,
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	"files.associations": {
+		"*.mustache": "html"
+	},
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"git.autofetch": true,
+	"git.confirmSync": false,
+	"git.countBadge": "off",
+	"go.formatTool": "goimports",
+	"go.lintFlags": ["--allow-parallel-runners"],
+	"go.lintOnSave": "workspace",
+	"go.lintTool": "golangci-lint",
+	"markdown.preview.fontSize": 12,
+	"openInGitHub.remote.branch": "main",
+	"openInGitHub.useLocalBranch": false,
+	"openInGitHub.useLocalLine": true,
+	"redhat.telemetry.enabled": false,
+	"reflowMarkdown.preferredLineLength": 100,
+	"task.allowAutomaticTasks": "on",
+	"terminal.integrated.scrollback": 10000,
+	"todohighlight.defaultStyle": {
+		"backgroundColor": "#f72585",
+		"borderRadius": "3px",
+		"color": "#fff"
+	},
+	"todohighlight.include": [
+		"**/*.go",
+		"**/*.md",
+		"**/*.js",
+		"**/*.jsx",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.html",
+		"**/*.php",
+		"**/*.css",
+		"**/*.scss"
+	],
+	"todohighlight.keywords": [
+		{
+			"backgroundColor": "#ec4899",
+			"color": "#fff",
+			"text": "TODO"
+		},
+		{
+			"backgroundColor": "#2563eb",
+			"color": "#fff",
+			"text": "ASK"
+		},
+		{
+			"backgroundColor": "#fed7aa",
+			"color": "#000000",
+			"text": "BREAD"
+		}
+	],
+	"typescript.preferGoToSourceDefinition": true,
+	"workbench.colorTheme": "GitHub Dark Default",
+	"workbench.editor.enablePreview": false,
+	"workbench.sideBar.location": "right"
 }
