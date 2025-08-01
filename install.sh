@@ -28,6 +28,9 @@ ln -sf ~/projects/github.com/revett/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/projects/github.com/revett/dotfiles/cursor/keybindings.json ~/Library/Application\ Support/Cursor/User/
 ln -sf ~/projects/github.com/revett/dotfiles/cursor/settings.json ~/Library/Application\ Support/Cursor/User/
 
+# Claude
+ln -sf ~/projects/github.com/revett/dotfiles/claude.json ~/.claude/settings.json
+
 # Golang CI Lint
 # https://golangci-lint.run/usage/configuration/
 ln -sf ~/projects/github.com/revett/dotfiles/.golangci.yml ~/.golangci.yml

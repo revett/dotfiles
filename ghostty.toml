@@ -20,3 +20,4 @@ working-directory = "/Users/revett/projects/github.com"
 
 keybind = cmd+r=clear_screen
 keybind = cmd+shift+r=reset
+keybind = shift+enter=text:\n
