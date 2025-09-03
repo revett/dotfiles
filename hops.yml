@@ -4,11 +4,13 @@ machines:
   shared:
     taps:
       - aviator-co/tap
+      - oven-sh/bun
     formulae:
       - autoenv
       - av
       - biome
       - btop
+      - bun
       - coreutils
       - fnm
       - fzf
@@ -60,10 +62,7 @@ machines:
       - yoavbls.pretty-ts-errors
       - yzhang.markdown-all-in-one
   personal:
-    taps:
-      - oven-sh/bun
     formulae:
-      - bun
       - ffmpeg
       - yt-dlp
     casks:
