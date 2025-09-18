@@ -89,6 +89,7 @@ machines:
       - granola
       - linear-linear
       - notion
+      - session-manager-plugin # AWS CLI session manager used at Plain
       - stats # Keep track of RAM usage because of TS compilation
       - slack
       - tuple
