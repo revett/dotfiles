@@ -34,6 +34,7 @@ machines:
       - ghostty
       - google-chrome
       - logi-options+
+      - postico
       - raycast
       - spotify
       - todoist-app
@@ -71,7 +72,6 @@ machines:
       - calibre
       - godot
       - iina
-      - postico
       - private-internet-access
       - screen-studio
     cursor:
