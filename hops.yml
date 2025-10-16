@@ -3,13 +3,10 @@ reminder: 7
 machines:
   shared:
     taps:
-      - aviator-co/tap
       - oven-sh/bun
     formulae:
       - autoenv
-      - av
       - biome
-      - btop
       - bun
       - coreutils
       - fnm
@@ -19,7 +16,6 @@ machines:
       - jq
       - openjdk
       - python@3.10
-      - rclone
       - starship
       - tree
       - prettier
@@ -63,14 +59,10 @@ machines:
       - yoavbls.pretty-ts-errors
       - yzhang.markdown-all-in-one
   personal:
-    formulae:
-      - ffmpeg
-      - yt-dlp
     casks:
       - 1password-cli
       - adobe-creative-cloud
       - calibre
-      - godot
       - iina
       - private-internet-access
       - screen-studio
@@ -85,8 +77,6 @@ machines:
       - mkcert # Requirement of team-plain/support-app
       - nss # Requirement of team-plain/support-app
     casks:
-      - aqua-voice
-      - granola
       - linear-linear
       - notion
       - session-manager-plugin # AWS CLI session manager used at Plain

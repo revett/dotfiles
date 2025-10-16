@@ -49,9 +49,6 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # Set default editor
 export EDITOR='cursor -w'
 
-# Add aviator-co/av tab completion
-source <(av completion zsh)
-
 # Configure Starship prompt
 # https://starship.rs
 eval "$(starship init zsh)"
