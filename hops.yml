@@ -62,6 +62,7 @@ machines:
     casks:
       - 1password-cli
       - adobe-creative-cloud
+      - anki
       - calibre
       - iina
       - private-internet-access
