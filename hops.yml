@@ -95,4 +95,5 @@ machines:
       - tuple
       # - https://supercut.ai → Not yet on Homebrew
     cursor:
+      - hashicorp.terraform
       - vitest.explorer
