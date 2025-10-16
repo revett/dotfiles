@@ -76,6 +76,7 @@ machines:
       - libpq # Requirement of team-plain/services
       - mkcert # Requirement of team-plain/support-app
       - nss # Requirement of team-plain/support-app
+      - terraform
     casks:
       - linear-linear
       - notion
