@@ -29,6 +29,7 @@ machines:
       - font-sauce-code-pro-nerd-font
       - ghostty
       - google-chrome
+      - granola
       - logi-options+
       - postico
       - raycast
