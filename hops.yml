@@ -70,6 +70,7 @@ machines:
       - private-internet-access
       - screen-studio
     cursor:
+      - astro-build.astro-vscode
       - bradlc.vscode-tailwindcss
       - jinliming2.vscode-go-template
       - golang.go
