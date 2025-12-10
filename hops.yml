@@ -24,6 +24,7 @@ machines:
     casks:
       - 1password
       - 1password-cli
+      - claude-code
       - cursor
       - firefox@developer-edition
       - font-sauce-code-pro-nerd-font
