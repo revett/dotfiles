@@ -64,13 +64,10 @@ machines:
       - yzhang.markdown-all-in-one
   personal:
     casks:
-      - 1password-cli
       - adobe-creative-cloud
-      - anki
       - calibre
       - iina
       - private-internet-access
-      - screen-studio
     cursor:
       - astro-build.astro-vscode
       - bradlc.vscode-tailwindcss
@@ -84,6 +81,7 @@ machines:
       - nss # Requirement of team-plain/support-app
       - terraform
     casks:
+      - clocker
       - linear-linear
       - session-manager-plugin # AWS CLI session manager used at Plain
       - stats # Keep track of RAM usage because of TS compilation
