@@ -71,6 +71,7 @@ machines:
     cursor:
       - astro-build.astro-vscode
       - bradlc.vscode-tailwindcss
+      - expo.vscode-expo-tools
       - jinliming2.vscode-go-template
       - golang.go
   work:
