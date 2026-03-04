@@ -32,7 +32,6 @@ machines:
       - ghostty
       - google-chrome
       - granola
-      - logi-options+
       - notion
       - postico
       - raycast
