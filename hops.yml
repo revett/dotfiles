@@ -15,10 +15,10 @@ machines:
       - git
       - jq
       - openjdk
+      - prettier
       - python@3.10
       - starship
       - tree
-      - prettier
       - wget
       - yarn
     casks:
@@ -48,6 +48,7 @@ machines:
       - emeraldwalk.runonsave
       - fabiospampinato.vscode-open-in-github
       - github.github-vscode-theme
+      - irongeek.vscode-env
       - kortina.vscode-markdown-notes
       - marvhen.reflow-markdown
       - mechatroner.rainbow-csv
@@ -57,7 +58,6 @@ machines:
       - richie5um2.vscode-sort-json
       - tamasfe.even-better-toml
       - tyriar.sort-lines
-      - irongeek.vscode-env
       - wayou.vscode-todo-highlight
       - yoavbls.pretty-ts-errors
       - yzhang.markdown-all-in-one
@@ -71,8 +71,8 @@ machines:
       - astro-build.astro-vscode
       - bradlc.vscode-tailwindcss
       - expo.vscode-expo-tools
-      - jinliming2.vscode-go-template
       - golang.go
+      - jinliming2.vscode-go-template
   work:
     formulae:
       - awscli # Requirement of team-plain/toolbox
@@ -84,8 +84,8 @@ machines:
       - clocker
       - linear-linear
       - session-manager-plugin # AWS CLI session manager used at Plain
-      - stats # Keep track of RAM usage because of TS compilation
       - slack
+      - stats # Keep track of RAM usage because of TS compilation
       - tuple
       # - https://supercut.ai → Not yet on Homebrew
     cursor:
