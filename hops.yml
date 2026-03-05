@@ -33,11 +33,13 @@ machines:
       - google-chrome
       - granola
       - notion
-      - postico
+      - postico # This is Postico 2
       - raycast
       - spotify
+      - superset
       - todoist-app
       - yaak
+      # - https://logitech.com/en-gb/software/logi-options-plus → Not yet on Homebrew
     cursor:
       - albert.tabout
       - bierner.markdown-emoji
@@ -81,12 +83,12 @@ machines:
       - nss # Requirement of team-plain/support-app
       - terraform
     casks:
-      - clocker
       - linear-linear
       - session-manager-plugin # AWS CLI session manager used at Plain
       - slack
       - stats # Keep track of RAM usage because of TS compilation
       - tuple
+      # - clocker → Installed via macOS store due to new releases living there
       # - https://supercut.ai → Not yet on Homebrew
     cursor:
       - hashicorp.terraform
