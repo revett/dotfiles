@@ -88,7 +88,6 @@ machines:
       - slack
       - stats # Keep track of RAM usage because of TS compilation
       - tuple
-      - wowup
       # - clocker → Installed via macOS store due to new releases living there
       # - https://supercut.ai → Not yet on Homebrew
     cursor:
