@@ -69,6 +69,7 @@ machines:
       - calibre
       - iina
       - private-internet-access
+      - sublime-text
     cursor:
       - astro-build.astro-vscode
       - bradlc.vscode-tailwindcss
