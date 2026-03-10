@@ -90,5 +90,5 @@ machines:
       # - clocker → Installed via macOS store due to new releases living there
       # - https://supercut.ai → Not yet on Homebrew
     cursor:
-      - hashicorp.terraform
+      - ms-vscode.vscode-typescript-next # → From Jesus' PR: team-plain/services/6736
       - vitest.explorer
