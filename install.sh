@@ -29,7 +29,9 @@ ln -sf ~/projects/github.com/revett/dotfiles/cursor/keybindings.json ~/Library/A
 ln -sf ~/projects/github.com/revett/dotfiles/cursor/settings.json ~/Library/Application\ Support/Cursor/User/
 
 # Claude
-ln -sf ~/projects/github.com/revett/dotfiles/claude.json ~/.claude/settings.json
+ln -sf ~/projects/github.com/revett/dotfiles/claude/claude.json ~/.claude/settings.json
+mkdir -p ~/.claude/hooks/peon-ping
+ln -sf ~/projects/github.com/revett/dotfiles/claude/peon-ping-hook.json ~/.claude/hooks/peon-ping/config.json
 
 # Golang CI Lint
 # https://golangci-lint.run/usage/configuration/

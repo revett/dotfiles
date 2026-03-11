@@ -33,4 +33,4 @@ alias ls='gls --color'
 
 # Work
 alias pn='pnpm'
-alias btop-memory='btop --config ~/projects/github.com/revett/dotfiles/btop-memory.conf'
+alias plain:services:nuke='pn clean:dist && pn install && pn run gen:monorepo && pn typecheck:services'
