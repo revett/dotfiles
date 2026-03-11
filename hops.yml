@@ -4,6 +4,7 @@ machines:
   shared:
     taps:
       - oven-sh/bun
+      - peonping/tap
     formulae:
       - autoenv
       - biome
@@ -15,6 +16,7 @@ machines:
       - git
       - jq
       - openjdk
+      - peonping/tap/peon-ping
       - prettier
       - python@3.10
       - starship
