@@ -2,7 +2,7 @@
 	"default_pack": "peon",
 	"volume": 0.5,
 	"enabled": true,
-	"desktop_notifications": true,
+	"desktop_notifications": false,
 	"categories": {
 		"session.start": true,
 		"task.acknowledge": false,
