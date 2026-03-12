@@ -4,5 +4,12 @@
 
 OWNER=$(basename "$(dirname "$PEON_CWD")")
 REPO=$(basename "$PEON_CWD")
-EVENT=$(echo "$PEON_HOOK_EVENT" | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g')
+# Remap event names
+case "$PEON_HOOK_EVENT" in
+  Stop)              EVENT="Done" ;;
+  SessionStart)      EVENT="Start" ;;
+  SessionEnd)        EVENT="End" ;;
+  PermissionRequest) EVENT="Permission" ;;
+  *)                 EVENT=$(echo "$PEON_HOOK_EVENT" | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g') ;;
+esac
 echo "${OWNER}.${REPO} - ${EVENT}"
