@@ -33,4 +33,6 @@ alias ls='gls --color'
 
 # Work
 alias pn='pnpm'
+alias plain:infra:run='aws-login && pn install && pn start'
 alias plain:services:nuke='pn clean:dist && pn install && pn run gen:monorepo && pn typecheck:services'
+alias plain:services:run='pn install && pn run dev'
