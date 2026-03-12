@@ -30,7 +30,7 @@
 	"notification_position": "bottom-center",
 	"notification_dismiss_seconds": 3,
 	"notification_title_override": "",
-	"notification_title_script": "./claude/peon-ping-title.sh",
+	"notification_title_script": "~/projects/github.com/revett/dotfiles/claude/peon-ping-title.sh",
 	"project_name_map": {},
 	"trainer": {
 		"enabled": false,
