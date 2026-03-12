@@ -92,5 +92,5 @@ machines:
       # - clocker → Installed via macOS store due to new releases living there
       # - https://supercut.ai → Not yet on Homebrew
     cursor:
-      - ms-vscode.vscode-typescript-next # → From Jesus' PR: team-plain/services/6736
+      - typescriptteam.native-preview # Needed for tsgo support
       - vitest.explorer
