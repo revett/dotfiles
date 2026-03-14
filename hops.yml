@@ -77,6 +77,8 @@ machines:
       - expo.vscode-expo-tools
       - golang.go
       - jinliming2.vscode-go-template
+      - rust-lang.rust-analyzer
+      - tauri-apps.tauri-vscode
   work:
     formulae:
       - awscli # Requirement of team-plain/toolbox
