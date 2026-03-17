@@ -27,19 +27,26 @@ githelp() {
   echo "> See: ~/projects/github.com/revett/dotfiles/.aliases, ~/projects/github.com/revett/dotfiles/.functions"
   alias | grep "='git " | sed "s/^/  - /"
   echo "  - gpush → Force push current branch (blocks main)"
+  echo "  - gpush --yolo → Regular push on main (side projects)"
   echo "> Flows:"
   echo "  - gfo → grebase → gpush"
 }
 
 # `gpush` is a function to push the current branch to the remote repository. It will force push
-# the branch if the current branch is not main.
+# the branch if the current branch is not main. It will also allow for a `--yolo` flag to bypass
+# the main branch check.
 gpush() {
   if [ "$(branch)" = "main" ]; then
-    echo "error: don't force push main"
+    if [ "$1" = "--yolo" ]; then
+      git push
+      return
+    fi
+    echo "error: don't force push main (use gpush --yolo)"
     return 1
   fi
   git push --force-with-lease --set-upstream origin "$(branch)"
 }
+
 
 # `render-bw-frame` is a function to add a white border to an image and make it square with a black
 # background. The function takes one or more image files as arguments and processes each image
