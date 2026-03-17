@@ -22,7 +22,6 @@ machines:
       - starship
       - tree
       - wget
-      - yarn
     casks:
       - 1password
       - 1password-cli

@@ -6,7 +6,6 @@
 
 # Dates
 alias week='date +%V'
-alias sprint='date +%V'
 
 # Directories
 alias ~='cd $HOME'
@@ -20,8 +19,22 @@ alias work='cd ~/projects/github.com/team-plain'
 alias reload='source ~/.zshrc'
 
 # Git
-alias ggpull='git pull origin $(branch)'
-alias ggpush='git push origin $(branch)'
+# gcb new-feature → gaa → gcom → gpush
+# gfo → grebase → gpush
+# gpull
+# gaa → grestore → gd
+alias gst='git status'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gaa='git add --all'
+alias gcom='git commit'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gfo='git fetch origin'
+alias glog='git log --oneline --decorate --graph'
+alias grebase='git rebase origin/main'
+alias grestore='git restore --staged .'
+alias gpull='git pull --rebase'
 
 # Network
 alias localip='ifconfig -l | xargs -n1 ipconfig getifaddr'

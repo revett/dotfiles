@@ -9,54 +9,8 @@ asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
 
-  f=("ai-diff-pr" "branch" "copy-files-for-prompt" "dlyt" "render-bw-frame" "tre")
+  f=("branch" "githelp" "gpush" "render-bw-frame" "tre")
   printf -- '  - %s\n' "${f[@]}"
-}
-
-# `ai-diff-pr` copies the current git branch name and the complete PR diff (all changes in the feature
-# branch compared to main) to clipboard in a formatted way for code review by LLMs.
-ai-diff-pr() {
-  local base_branch="${1:-main}"
-
-  # Check if we're in a git repository.
-  if ! git rev-parse --git-dir > /dev/null 2>&1; then
-    echo "error: not in a git repository"
-    return 1
-  fi
-
-  # Get the current branch name.
-  local current_branch=$(branch)
-  if [ -z "$current_branch" ]; then
-    echo "error: could not determine current branch"
-    return 1
-  fi
-
-  # Check if the base branch exists.
-  if ! git rev-parse --verify "$base_branch" > /dev/null 2>&1; then
-    echo "error: base branch '$base_branch' does not exist"
-    return 1
-  fi
-
-  # Check if there are any changes between branches.
-  if git diff --quiet "$base_branch"..."$current_branch"; then
-    echo "error: no changes found between '$base_branch' and '$current_branch'"
-    return 1
-  fi
-
-  # Get the list of changed files.
-  local changed_files=$(git diff --name-status "$base_branch"..."$current_branch")
-
-  # Get the complete diff.
-  local pr_diff=$(git diff "$base_branch"..."$current_branch")
-
-  # Format the output.
-  local output="Branch: \`$current_branch\` (compared to \`$base_branch\`)\n\n"
-  output+="Files changed:\n\n"
-  output+="\`\`\`\n$changed_files\n\`\`\`\n\n"
-  output+="Complete diff:\n\n"
-  output+="\`\`\`diff\n$pr_diff\n\`\`\`"
-
-  echo -e "$output" | pbcopy # Copy to clipboard.
 }
 
 # `branch` is used within a number of aliases, and returns the branch from the current git
@@ -67,107 +21,24 @@ branch() {
   echo ${ref#refs/heads/}
 }
 
-# `copy-files-for-prompt` copies the contents of the files passed as arguments to the clipboard, with
-# the file names as comments above the contents.
-copy-files-for-prompt() {
-  if [ $# -eq 0 ]; then
-    echo "error: no files are provided"
-    return 1
-  fi
-
-  output=""
-
-  for file in "$@"; do
-    if [[ -f "$file" ]]; then
-      output+="File: \`$file\`\n\n\`\`\`\n$(cat "$file")\n\`\`\`\n\n"
-    fi
-  done
-
-  if [[ -z "$output" ]]; then
-    echo "error: no valid files to copy from."
-    return 1
-  fi
-
-  echo -e "$output" | pbcopy
-  echo "Copied to clipboard."
+# `githelp` is a function to show the available Git aliases and functions.
+githelp() {
+  echo "> Available Git aliases"
+  echo "> See: ~/projects/github.com/revett/dotfiles/.aliases, ~/projects/github.com/revett/dotfiles/.functions"
+  alias | grep "='git " | sed "s/^/  - /"
+  echo "  - gpush → Force push current branch (blocks main)"
+  echo "> Flows:"
+  echo "  - gfo → grebase → gpush"
 }
 
-# `dff-staged-changes` copies the current git branch name, all other commits on the feature branch,
-# and the staged diff to clipboard in a formatted way for pasting into Raycast or other tools.
-dff-staged-changes() {
-  # Check if we're in a git repository
-  if ! git rev-parse --git-dir > /dev/null 2>&1; then
-    echo "error: not in a git repository"
+# `gpush` is a function to push the current branch to the remote repository. It will force push
+# the branch if the current branch is not main.
+gpush() {
+  if [ "$(branch)" = "main" ]; then
+    echo "error: don't force push main"
     return 1
   fi
-
-  # Get the current branch name
-  local current_branch=$(branch)
-  if [ -z "$current_branch" ]; then
-    echo "error: could not determine current branch"
-    return 1
-  fi
-
-  # Check if there are staged changes
-  if ! git diff --cached --quiet; then
-    local staged_diff=$(git diff --cached) # Get the staged diff
-
-    # Get all the existing commits on the feature branch (excluding merge commits)
-    local recent_commits=$(git log main..HEAD --no-merges)
-
-    # Format the output
-    local output="Branch: \`$current_branch\`\n\n"
-
-    if [ -n "$recent_commits" ]; then
-      output+="Existing commits on feature branch:\n\n"
-      output+="\`\`\`\n$recent_commits\n\`\`\`\n\n"
-    fi
-
-    output+="Staged changes:\n\n"
-    output+="\`\`\`diff\n$staged_diff\n\`\`\`"
-
-    echo -e "$output" | pbcopy # Copy to clipboard
-  else
-    echo "error: no staged changes found"
-    echo "Use 'git add' to stage changes first"
-    return 1
-  fi
-}
-
-# `dlyt` downloads a YouTube video to ~/Movies/YouTube, organised by channel
-# and named with the upload date (YYYYMMDD). Downloads in 1080p.
-# Requires: yt-dlp, ffmpeg (for merging formats)
-# Usage: dl-yt <youtube_url>
-dlyt() {
-  # Check for yt-dlp dependency
-  if ! command -v yt-dlp &> /dev/null; then
-    echo "error: yt-dlp command not found." >&2
-    echo "Install via Homebrew: brew install yt-dlp ffmpeg" >&2
-    return 1
-  fi
-
-  # Check for URL argument
-  if [ -z "$1" ]; then
-    echo "error: No YouTube URL provided." >&2
-    echo "Usage: dl-yt <youtube_url>" >&2
-    return 1
-  fi
-
-  local url="$1"
-  # Use $HOME for reliability in scripts
-  local output_dir="$HOME/Movies/YouTube"
-  # Format: <OutputDir>/<ChannelName>/<YYYYMMDD> - <VideoTitle>.<Ext>
-  local output_template="$output_dir/%(channel)s/%(upload_date)s - %(title)s.%(ext)s"
-  # Select best 1080p video + best audio, fallback to best pre-merged 1080p
-  local format_spec='bestvideo[height=1080]+bestaudio/best[height=1080]'
-
-  echo "> Downloading YouTube video:"
-  echo "  URL: $url"
-  echo "  Quality: 1080p"
-  echo "  Output: $output_template"
-
-  # Execute yt-dlp. It handles directory creation and prints progress/errors
-  yt-dlp -f "$format_spec" -o "$output_template" "$url"
+  git push --force-with-lease --set-upstream origin "$(branch)"
 }
 
 # `render-bw-frame` is a function to add a white border to an image and make it square with a black

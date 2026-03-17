@@ -1,4 +1,4 @@
-# .bashrc
+# .zshrc
 #
 # @author Charlie Revett (@revcd)
 
@@ -22,7 +22,7 @@ ENABLE_CORRECTION="true"
 ZSH_THEME=""
 
 # Enable plugins
-plugins=(brew git golang)
+plugins=()
 
 # Set up oh-my-zsh
 source $ZSH/oh-my-zsh.sh

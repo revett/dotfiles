@@ -15,7 +15,7 @@
   untracked = magenta
 
 [core]
-  excludesfile = /Users/revett/dotfiles/.gitignore
+  excludesfile = /Users/revett/projects/github.com/revett/dotfiles/.gitignore
   ignorecase = false
   autocrlf = input
   editor = cursor --wait
@@ -25,25 +25,13 @@
   default = upstream
 
 [pull]
-  rebase = false
+  rebase = true
 
 [fetch]
   prune = true
 
 [merge]
   tool = cursor
-
-[alias]
-  ch = checkout
-  co = checkout
-  br = checkout -b
-  d = diff
-  dc = diff --cached
-  log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  s = status
-  st = status
-  cm = commit -m
-  unstage = restore --staged .
 
 [user]
   email = 2796074+revett@users.noreply.github.com
