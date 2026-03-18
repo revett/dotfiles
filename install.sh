@@ -32,6 +32,9 @@ ln -sf ~/projects/github.com/revett/dotfiles/cursor/settings.json ~/Library/Appl
 # Claude
 ln -sf ~/projects/github.com/revett/dotfiles/claude/claude.json ~/.claude/settings.json
 ln -sf ~/projects/github.com/revett/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
+mkdir -p ~/.claude/hooks
+ln -sf ~/projects/github.com/revett/dotfiles/claude/notify.sh ~/.claude/hooks/notify.sh
+ln -sf ~/projects/github.com/revett/dotfiles/claude/claude-icon.png ~/.claude/hooks/claude-icon.png
 mkdir -p ~/.config/agent-safehouse
 ln -sf ~/projects/github.com/revett/dotfiles/claude/agent-safehouse-overrides.sb ~/.config/agent-safehouse/local-overrides.sb
 

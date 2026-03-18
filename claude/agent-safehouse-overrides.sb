@@ -1,2 +1,8 @@
 ;; Local overrides for Agent Safehouse
 ;; Symlinked from ~/projects/github.com/revett/dotfiles
+
+;; Allow osascript to send macOS notifications (used by Claude hooks)
+(allow mach-lookup
+  (global-name "com.apple.hiservices-xpcservice")
+  (global-name "com.apple.usernoted.daemon_client")
+  (global-name "com.apple.UNCUserNotification"))
