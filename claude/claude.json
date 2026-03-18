@@ -1,155 +1,44 @@
 {
-	"$schema": "https://json.schemastore.org/claude-code-settings.json",
-	"permissions": {
-		"allow": [
-			"Bash(awk *)",
-			"Bash(biome *)",
-			"Bash(bun *)",
-			"Bash(cat *)",
-			"Bash(curl *)",
-			"Bash(find *)",
-			"Bash(grep *)",
-			"Bash(git diff *)",
-			"Bash(git log *)",
-			"Bash(git status)",
-			"Bash(head *)",
-			"Bash(jq *)",
-			"Bash(ls *)",
-			"Bash(make *)",
-			"Bash(pnpm run *)",
-			"Bash(sed *)",
-			"Bash(sort *)",
-			"Bash(tail *)",
-			"Bash(wc *)",
-			"Bash(which *)",
-			"Edit",
-			"MultiEdit",
-			"WebFetch",
-			"WebSearch",
-			"Write"
-		]
-	},
-	"alwaysThinkingEnabled": true,
-	"showTurnDuration": true,
-	"feedbackSurveyState": {
-		"lastShownTime": 1754056697258
-	},
-	"hooks": {
-		"SessionStart": [
-			{
-				"matcher": "",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "/Users/revett/.claude/hooks/peon-ping/peon.sh",
-						"timeout": 10
-					}
-				]
-			}
-		],
-		"SessionEnd": [
-			{
-				"matcher": "",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "/Users/revett/.claude/hooks/peon-ping/peon.sh",
-						"timeout": 10,
-						"async": true
-					}
-				]
-			}
-		],
-		"SubagentStart": [
-			{
-				"matcher": "",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "/Users/revett/.claude/hooks/peon-ping/peon.sh",
-						"timeout": 10,
-						"async": true
-					}
-				]
-			}
-		],
-		"UserPromptSubmit": [
-			{
-				"matcher": "",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "/Users/revett/.claude/hooks/peon-ping/peon.sh",
-						"timeout": 10,
-						"async": true
-					}
-				]
-			}
-		],
-		"Stop": [
-			{
-				"matcher": "",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "/Users/revett/.claude/hooks/peon-ping/peon.sh",
-						"timeout": 10,
-						"async": true
-					}
-				]
-			}
-		],
-		"Notification": [
-			{
-				"matcher": "",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "/Users/revett/.claude/hooks/peon-ping/peon.sh",
-						"timeout": 10,
-						"async": true
-					}
-				]
-			}
-		],
-		"PermissionRequest": [
-			{
-				"matcher": "",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "/Users/revett/.claude/hooks/peon-ping/peon.sh",
-						"timeout": 10,
-						"async": true
-					}
-				]
-			}
-		],
-		"PostToolUseFailure": [
-			{
-				"matcher": "Bash",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "/Users/revett/.claude/hooks/peon-ping/peon.sh",
-						"timeout": 10,
-						"async": true
-					}
-				]
-			}
-		],
-		"PreCompact": [
-			{
-				"matcher": "",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "/Users/revett/.claude/hooks/peon-ping/peon.sh",
-						"timeout": 10,
-						"async": true
-					}
-				]
-			}
-		]
-	}
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "deny": [
+      "Bash(git push*)",
+      "Bash(git remote add*)",
+      "Bash(git remote remove*)",
+      "Bash(git remote set-url*)",
+      "Bash(npm publish*)",
+      "Bash(yarn publish*)",
+      "Bash(pnpm publish*)",
+      "Bash(gh release*)",
+      "Bash(gh pr create*)",
+      "Bash(gh issue create*)",
+      "Bash(gh issue close*)",
+      "Bash(gh issue edit*)",
+      "Bash(gh api*)"
+    ]
+  },
+  "bypassPermissionsModeAccepted": true,
+  "skipDangerousModePermissionPrompt": true,
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "showTurnDuration": true,
+  "feedbackSurveyState": {
+    "lastShownTime": 1754056697258
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmux rename-workspace \"\ud83d\udc68\u200d\ud83c\udf3e $GH_REPO_SLUG - Hello there...\""
+          }
+        ]
+      }
+    ]
+  }
 }

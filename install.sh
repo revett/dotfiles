@@ -31,8 +31,9 @@ ln -sf ~/projects/github.com/revett/dotfiles/cursor/settings.json ~/Library/Appl
 
 # Claude
 ln -sf ~/projects/github.com/revett/dotfiles/claude/claude.json ~/.claude/settings.json
-mkdir -p ~/.claude/hooks/peon-ping
-ln -sf ~/projects/github.com/revett/dotfiles/claude/peon-ping-hook.json ~/.claude/hooks/peon-ping/config.json
+ln -sf ~/projects/github.com/revett/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
+mkdir -p ~/.config/agent-safehouse
+ln -sf ~/projects/github.com/revett/dotfiles/claude/agent-safehouse-overrides.sb ~/.config/agent-safehouse/local-overrides.sb
 
 # Golang CI Lint
 # https://golangci-lint.run/usage/configuration/

@@ -3,8 +3,8 @@ reminder: 7
 machines:
   shared:
     taps:
+      - manaflow-ai/cmux
       - oven-sh/bun
-      - peonping/tap
     formulae:
       - biome
       - bun
@@ -16,7 +16,6 @@ machines:
       - git
       - jq
       - openjdk
-      - peonping/tap/peon-ping
       - python@3.13
       - starship
       - tree
@@ -25,10 +24,10 @@ machines:
       - 1password-cli
       - claude
       - claude-code
+      - cmux
       - cursor
       - firefox@developer-edition
       - font-sauce-code-pro-nerd-font
-      - ghostty
       - google-chrome
       - granola
       - handy
@@ -80,6 +79,7 @@ machines:
   work:
     formulae:
       - awscli # Requirement of team-plain/toolbox
+      - eugene1g/safehouse/agent-safehouse
       - libpq # Requirement of team-plain/services
       - mkcert # Requirement of team-plain/support-app
       - nss # Requirement of team-plain/support-app

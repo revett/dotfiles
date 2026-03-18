@@ -19,6 +19,13 @@ branch() {
   echo ${ref#refs/heads/}
 }
 
+# `cmuxhelp` is a function to show the available cmux aliases.
+cmuxhelp() {
+  echo "> Available cmux aliases"
+  echo "> See: ~/projects/github.com/revett/dotfiles/.aliases, ~/projects/github.com/revett/dotfiles/.functions"
+  alias | grep "='cmux " | sed "s/^/  - /"
+}
+
 # `githelp` is a function to show the available Git aliases and functions.
 githelp() {
   echo "> Available Git aliases"
@@ -28,6 +35,33 @@ githelp() {
   echo "  - gpush --yolo → Regular push on main (side projects)"
   echo "> Flows:"
   echo "  - gfo → grebase → gpush"
+}
+
+# `gh-repo-slug` returns the GitHub owner/repo slug (e.g. "revett/dotfiles") for the current git
+# repository, derived from the origin remote URL. Supports both SSH and HTTPS remotes.
+gh-repo-slug() {
+  local url
+  url=$(git remote get-url origin 2>/dev/null) || {
+    echo "error: not a git repository or no origin remote" >&2
+    return 1
+  }
+
+  local slug
+  case "$url" in
+    git@github.com:*)
+      slug="${url#git@github.com:}"
+      ;;
+    https://github.com/*)
+      slug="${url#https://github.com/}"
+      ;;
+    *)
+      echo "error: origin is not a github.com remote" >&2
+      return 1
+      ;;
+  esac
+
+  slug="${slug%.git}"
+  echo "$slug"
 }
 
 # `gpush` is a function to push the current branch to the remote repository. It will force push
