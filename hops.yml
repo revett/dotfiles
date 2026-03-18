@@ -33,6 +33,7 @@ machines:
       - ghostty
       - google-chrome
       - granola
+      - handy
       - notion
       - postico # This is Postico 2
       - raycast
