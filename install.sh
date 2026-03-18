@@ -35,6 +35,7 @@ ln -sf ~/projects/github.com/revett/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.m
 mkdir -p ~/.claude/hooks
 ln -sf ~/projects/github.com/revett/dotfiles/claude/notify.sh ~/.claude/hooks/notify.sh
 ln -sf ~/projects/github.com/revett/dotfiles/claude/claude-icon.png ~/.claude/hooks/claude-icon.png
+ln -sf ~/projects/github.com/revett/dotfiles/claude/peon-work-work.mp3 ~/.claude/hooks/peon-work-work.mp3
 mkdir -p ~/.config/agent-safehouse
 ln -sf ~/projects/github.com/revett/dotfiles/claude/agent-safehouse-overrides.sb ~/.config/agent-safehouse/local-overrides.sb
 
