@@ -25,6 +25,7 @@ alias reload='source ~/.zshrc'
 # gaa → grestore → gd
 alias gst='git status'
 alias gco='git checkout'
+alias gcm='git checkout main'
 alias gcb='git checkout -b'
 alias gaa='git add --all'
 alias gcom='git commit'

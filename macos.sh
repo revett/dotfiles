@@ -73,7 +73,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # ------------------------------
 
 # Save screenshots to specific folder
-mkdir ~/Pictures/Screenshots
+mkdir -p ~/Pictures/Screenshots
 defaults write com.apple.screencapture location -string "~/Pictures/Screenshots"
 
 # Do not show the thumbnail of a screenshot

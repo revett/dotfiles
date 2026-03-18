@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
-#
+set -euo pipefail
+
 # Install script for repo
 #
 # @author Charlie Revett (@revcd)

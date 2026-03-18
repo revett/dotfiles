@@ -15,14 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Uncomment one of the following lines to change the auto-update behavior
 zstyle ':omz:update' mode reminder # Just remind me to update when it's time
 
-# Uncomment the following line to enable command auto-correction
-ENABLE_CORRECTION="true"
-
 # Disable themes
 ZSH_THEME=""
-
-# Enable plugins
-plugins=()
 
 # Set up oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -30,10 +24,6 @@ source $ZSH/oh-my-zsh.sh
 # Set where hops.yml is located
 # https://github.com/revett/hops
 export HOPS_CONFIG="$HOME/projects/github.com/revett/dotfiles/hops.yml"
-
-# Disable autocorrect in Zsh
-# https://coderwall.com/p/jaoypq/disabling-autocorrect-in-zsh
-unsetopt correct_all
 
 # Include brew packages and apps within path (Apple Silicon only)
 if [[ $(uname -m) == 'arm64' ]]; then
@@ -53,34 +43,19 @@ export EDITOR='cursor -w'
 # https://starship.rs
 eval "$(starship init zsh)"
 
-# Setup fzf (Apple Silicon only)
-if [[ $(uname -m) == 'arm64' ]]; then
-  # Setup fzf
-  if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-    export PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-  fi
-  source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
-fi
+# Setup fzf (keybindings and fuzzy completion)
+eval "$(fzf --zsh)"
 
-# Setup fzf (Intel only)
-if [[ $(uname -m) == 'x86_64' ]]; then
-  # Include brew packages and apps within path
-  if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-    export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
-  fi
-  source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-fi
-
-# Set up autoenv
-# https://github.com/hyperupcall/autoenv
-source $(brew --prefix autoenv)/activate.sh
+# Set up direnv
+# https://direnv.net/docs/hook.html
+eval "$(direnv hook zsh)"
 
 # Set fnm environment variables
 # https://github.com/Schniz/fnm#shell-setup
 eval "$(fnm env --corepack-enabled --use-on-cd --resolve-engines --shell zsh)"
 
 # Default to a specific version of Node
-fnm use 22
+fnm use 24
 
 # Load rust environment if installed
 if [ -f "$HOME/.cargo/env" ]; then

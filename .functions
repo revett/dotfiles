@@ -8,9 +8,7 @@
 asd() {
   echo "> Available bash functions"
   echo "> See: ~/projects/github.com/revett/dotfiles/.functions"
-
-  f=("branch" "githelp" "gpush" "render-bw-frame" "tre")
-  printf -- '  - %s\n' "${f[@]}"
+  grep '^[a-z].*()' ~/projects/github.com/revett/dotfiles/.functions | grep -v '^asd' | sed 's/() {//' | sed 's/^/  - /'
 }
 
 # `branch` is used within a number of aliases, and returns the branch from the current git
