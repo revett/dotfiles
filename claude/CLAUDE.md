@@ -45,6 +45,10 @@ Task MUST be under 40 characters. Keep the task description short and specific, 
 When in doubt, rename. The first tool call of every response should be `cmux rename-workspace`
 unless the current title is already accurate.
 
+## Tools
+
+- Do NOT use `git` or `gh` commands to make write actions
+
 ## Me
 
 - I am Charlie, on the Agents team at Plain, with Andrew (@ab) and Emanuel (@emanuel)

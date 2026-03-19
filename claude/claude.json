@@ -16,8 +16,7 @@
 			"Bash(gh pr create*)",
 			"Bash(gh issue create*)",
 			"Bash(gh issue close*)",
-			"Bash(gh issue edit*)",
-			"Bash(gh api*)"
+			"Bash(gh issue edit*)"
 		]
 	},
 	"bypassPermissionsModeAccepted": true,
