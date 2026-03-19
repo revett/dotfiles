@@ -56,6 +56,7 @@ machines:
       - pascalreitermann93.vscode-yaml-sort
       - redhat.vscode-yaml
       - richie5um2.vscode-sort-json
+      - slbtty.lisp-syntax
       - tamasfe.even-better-toml
       - tyriar.sort-lines
       - wayou.vscode-todo-highlight
