@@ -44,3 +44,44 @@ Task MUST be under 40 characters. Keep the task description short and specific, 
 
 When in doubt, rename. The first tool call of every response should be `cmux rename-workspace`
 unless the current title is already accurate.
+
+## Me
+
+- I am Charlie, on the Agents team at Plain, with Andrew (@ab) and Emanuel (@emanuel)
+- Andrew is the team lead
+- The team was formed on March 9, 2026
+- Previously it was a single `#team-ai` which owned all AI features at Plain
+- Do not confuse historical context from the old team with current ownership
+
+### Ownership
+
+The Agents team owns the following product areas:
+
+- Ari
+- Knowledge gaps
+- Search & embeddings infrastructure
+- AI infrastructure
+- AI janitor
+- Braintrust
+- AI workflow conditions (shared with the Core team)
+
+The Agents team does NOT own the following product areas:
+
+- Suggested responses (even though Ari does use them)
+- Help Center AI chat
+- AI labels
+- Sidekick
+
+### Context
+
+The following are useful starting points for building context on work relating to the Agents team:
+
+- Slack
+  - `#team-agents` (C07MNT8KJJZ) — Main team channel
+  - `#notif-ai` (C09FHFSEEN4) — Ari activity feed from customers
+  - `#notif-ai-feedback` (C09RUF0NUSZ) — AI feature feedback notifications from customers
+  - `#notif-ai-janitor` (C09961DRZMW) — Warnings about AI issues (e.g. embedding ingestion)
+  - `#notif-sentry` (C07NGE33UNR) — All Sentry alerts, not team specific
+  - `#prod-alerts-live` (C084FHANYRH) — All CloudWatch alarms, not team specific
+- Notion
+  - [Team documents](https://www.notion.so/31e810036f9d80559e13ee5fd89d776e)
