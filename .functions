@@ -19,6 +19,19 @@ branch() {
   echo ${ref#refs/heads/}
 }
 
+# `ccr` starts a read-only Claude Code session inside Agent Safehouse. Edit, Write, and
+# NotebookEdit tools are disabled to prevent file modifications.
+ccr() {
+  clear
+  safe claude --dangerously-skip-permissions --disallowedTools "Edit,Write,NotebookEdit" "$@"
+}
+
+# `ccw` starts a Claude Code session inside Agent Safehouse with full tool access.
+ccw() {
+  clear
+  safe claude --dangerously-skip-permissions "$@"
+}
+
 # `cmuxhelp` is a function to show the available cmux aliases.
 cmuxhelp() {
   echo "> Available cmux aliases"
@@ -115,6 +128,22 @@ render-bw-frame() {
       echo "File not found: $image"
     fi
   done
+}
+
+# `safe` wraps a command inside Agent Safehouse. Grants read-only access to Claude config and
+# dotfiles, read-write access to the current directory, and passes through environment variables
+# needed by cmux and GitHub tooling.
+safe() {
+  GH_REPO_SLUG="$(gh-repo-slug 2>/dev/null || echo "")" \
+    safehouse \
+      --add-dirs-ro="$HOME/.claude" \
+      --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
+      --add-dirs="$HOME/Library/Application Support/cmux" \
+      --add-dirs="$HOME/Library/Caches/io.sentry" \
+      --add-dirs="$(pwd)" \
+      --env-pass="CMUX_WORKSPACE_ID,GH_REPO_SLUG" \
+      --append-profile="$SAFEHOUSE_APPEND_PROFILE" \
+      "$@"
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git`

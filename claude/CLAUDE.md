@@ -48,6 +48,7 @@ unless the current title is already accurate.
 ## Tools
 
 - Do NOT use `git` or `gh` commands to make write actions
+- Avoid making write actions with MCP tools, if you must then check with me first
 
 ## Me
 

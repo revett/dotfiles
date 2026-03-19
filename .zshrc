@@ -102,25 +102,8 @@ fi
 # Default internal CLI format to JSON
 export PLAIN_CLI_FORMAT="json"
 
-# Configure Agent Safehouse
-# `cmux` and `Library/Caches` needed to allow Claude to use `cmux` CLI
+# Configure Agent Safehouse, see .functions for bash functions related to safehouse()
 SAFEHOUSE_APPEND_PROFILE="$HOME/.config/agent-safehouse/local-overrides.sb"
-safe() {
-  GH_REPO_SLUG="$(gh-repo-slug 2>/dev/null || echo "")" \
-    safehouse \
-      --add-dirs-ro="$HOME/.claude" \
-      --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
-      --add-dirs="$HOME/Library/Application Support/cmux" \
-      --add-dirs="$HOME/Library/Caches/io.sentry" \
-      --add-dirs="$(pwd)" \
-      --env-pass="CMUX_WORKSPACE_ID,GH_REPO_SLUG" \
-      --append-profile="$SAFEHOUSE_APPEND_PROFILE" \
-      "$@"
-}
-cclaude() {
-  clear
-  safe claude --dangerously-skip-permissions "$@"
-}
 
 # ---
 # Load other bash scripts
