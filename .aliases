@@ -53,4 +53,4 @@ alias plain:services:run='pn install && pn run dev'
 
 # cmux
 alias cmux-move-workspace='cmux reorder-workspace --workspace $CMUX_WORKSPACE_ID --index 0'
-alias cmux-reset-workspace-title='cmux rename-workspace --workspace $CMUX_WORKSPACE_ID "$(gh-repo-slug)"'
+alias cmux-reset-workspace-title='cmux rename-workspace --workspace $CMUX_WORKSPACE_ID "$(gh-repo-slug 2>/dev/null || basename "$PWD")"'
