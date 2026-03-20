@@ -49,6 +49,8 @@ unless the current title is already accurate.
 
 - Do NOT use `git` or `gh` commands to make write actions
 - Avoid making write actions with MCP tools, if you must then check with me first
+- When using any Granola tools to fetch meetings/calls for context, bias towards using the raw
+  transcript over the generated notes
 
 ## Me
 
