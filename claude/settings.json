@@ -22,7 +22,7 @@
 	"bypassPermissionsModeAccepted": true,
 	"skipDangerousModePermissionPrompt": true,
 	"alwaysThinkingEnabled": true,
-	"effortLevel": "max",
+	"effortLevel": "high",
 	"showTurnDuration": true,
 	"autoMemoryEnabled": false,
 	"feedbackSurveyState": {
