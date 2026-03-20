@@ -47,9 +47,9 @@ alias ls='gls --color'
 
 # Work
 alias pn='pnpm'
-alias plain:infra:run='aws-login && pn install && pn start'
+alias plain:infra:run='aws-login dev-charlie-admin && pn install && pn start'
 alias plain:services:nuke='clear && pn clean:dist && pn install && pn run format:fix && pn run lint:fix && pn run gen:monorepo && pn typecheck:services'
-alias plain:services:run='pn install && pn run dev'
+alias plain:services:run='pn install && aws-login dev-charlie-admin && pn run dev'
 
 # cmux
 alias cmux-move-workspace='cmux reorder-workspace --workspace $CMUX_WORKSPACE_ID --index 0'

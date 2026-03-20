@@ -29,15 +29,18 @@ ln -sf ~/projects/github.com/revett/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/projects/github.com/revett/dotfiles/cursor/keybindings.json ~/Library/Application\ Support/Cursor/User/
 ln -sf ~/projects/github.com/revett/dotfiles/cursor/settings.json ~/Library/Application\ Support/Cursor/User/
 
-# Claude
-ln -sf ~/projects/github.com/revett/dotfiles/claude/claude.json ~/.claude/settings.json
-ln -sf ~/projects/github.com/revett/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
-mkdir -p ~/.claude/hooks
-ln -sf ~/projects/github.com/revett/dotfiles/claude/notify.sh ~/.claude/hooks/notify.sh
-ln -sf ~/projects/github.com/revett/dotfiles/claude/claude-icon.png ~/.claude/hooks/claude-icon.png
-ln -sf ~/projects/github.com/revett/dotfiles/claude/peon-work-work.mp3 ~/.claude/hooks/peon-work-work.mp3
+# Claude — mirror claude/ into ~/.claude/
+CLAUDE_SRC=~/projects/github.com/revett/dotfiles/claude
+find "$CLAUDE_SRC" -type f | while read -r src; do
+  rel="${src#$CLAUDE_SRC/}"
+  dest="$HOME/.claude/$rel"
+  mkdir -p "$(dirname "$dest")"
+  ln -sf "$src" "$dest"
+done
+
+# Agent Safehouse
 mkdir -p ~/.config/agent-safehouse
-ln -sf ~/projects/github.com/revett/dotfiles/claude/agent-safehouse-overrides.sb ~/.config/agent-safehouse/local-overrides.sb
+ln -sf ~/projects/github.com/revett/dotfiles/agent-safehouse-overrides.sb ~/.config/agent-safehouse/local-overrides.sb
 
 # Golang CI Lint
 # https://golangci-lint.run/usage/configuration/
