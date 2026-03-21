@@ -1,54 +1,55 @@
 {
-	"$schema": "https://json.schemastore.org/claude-code-settings.json",
-	"env": {
-		"CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-	},
-	"permissions": {
-		"deny": [
-			"Bash(git push*)",
-			"Bash(git remote add*)",
-			"Bash(git remote remove*)",
-			"Bash(git remote set-url*)",
-			"Bash(npm publish*)",
-			"Bash(yarn publish*)",
-			"Bash(pnpm publish*)",
-			"Bash(gh release*)",
-			"Bash(gh pr create*)",
-			"Bash(gh issue create*)",
-			"Bash(gh issue close*)",
-			"Bash(gh issue edit*)"
-		]
-	},
-	"bypassPermissionsModeAccepted": true,
-	"skipDangerousModePermissionPrompt": true,
-	"alwaysThinkingEnabled": true,
-	"effortLevel": "high",
-	"showTurnDuration": true,
-	"autoMemoryEnabled": false,
-	"feedbackSurveyState": {
-		"lastShownTime": 1754056697258
-	},
-	"hooks": {
-		"SessionStart": [
-			{
-				"matcher": "startup",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "cmux rename-workspace \"\ud83d\udc68\u200d\ud83c\udf3e $GH_REPO_SLUG - Hello there...\""
-					}
-				]
-			}
-		],
-		"Stop": [
-			{
-				"hooks": [
-					{
-						"type": "command",
-						"command": "~/.claude/hooks/notify.sh"
-					}
-				]
-			}
-		]
-	}
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "deny": [
+      "Bash(git push*)",
+      "Bash(git remote add*)",
+      "Bash(git remote remove*)",
+      "Bash(git remote set-url*)",
+      "Bash(npm publish*)",
+      "Bash(yarn publish*)",
+      "Bash(pnpm publish*)",
+      "Bash(gh release*)",
+      "Bash(gh pr create*)",
+      "Bash(gh issue create*)",
+      "Bash(gh issue close*)",
+      "Bash(gh issue edit*)"
+    ]
+  },
+  "model": "opus",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmux rename-workspace \"👨‍🌾 $GH_REPO_SLUG - Hello there...\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notify.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "autoMemoryEnabled": false,
+  "skipDangerousModePermissionPrompt": true,
+  "bypassPermissionsModeAccepted": true,
+  "showTurnDuration": true,
+  "feedbackSurveyState": {
+    "lastShownTime": 1754056697258
+  }
 }
