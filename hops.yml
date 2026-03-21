@@ -64,6 +64,9 @@ machines:
       - yoavbls.pretty-ts-errors
       - yzhang.markdown-all-in-one
   personal:
+    formulae:
+      - ffmpeg # Used for revett/kino
+      - yt-dlp # Used for revett/kino
     casks:
       - adobe-creative-cloud
       - calibre
