@@ -65,9 +65,11 @@ machines:
     casks:
       - adobe-creative-cloud
       - calibre
+      - claude
       - iina
       - private-internet-access
       - sublime-text
+      - transmission
     cursor:
       - astro-build.astro-vscode
       - bradlc.vscode-tailwindcss
