@@ -70,6 +70,15 @@ When creating or editing Notion documents (via MCP tools):
 - Do not use horizontal rules / dividers
 - Follow all rules from the "Writing Style" section above
 
+### Linear
+
+If asked to create a ticket/issue in our/the backlog, then:
+
+- Create for `ARI` team
+- Ticket should have no backlog
+- Ticket should be in "Backlog" status
+- Avoid describing the solution/implementation in the ticket description
+
 ## Me
 
 - I am Charlie, on the Agents team at Plain, with Andrew (@ab) and Emanuel (@emanuel)
