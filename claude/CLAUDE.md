@@ -45,12 +45,30 @@ Task MUST be under 40 characters. Keep the task description short and specific, 
 When in doubt, rename. The first tool call of every response should be `cmux rename-workspace`
 unless the current title is already accurate.
 
+## Writing Style
+
+- Never use em dashes (—), use commas, periods, semicolons, parentheses, or the "→" arrow instead
+- Do not hyphenate compound modifiers (write "production grade" not "production-grade", "real time"
+  not "real-time" etc)
+- Use bold sparingly, most text should be unformatted, do not bold phrases for emphasis in every
+  paragraph
+- Use title case for all headings (e.g. "Getting Started with Agents" not "Getting started with
+  agents")
+
 ## Tools
 
 - Do NOT use `git` or `gh` commands to make write actions
 - Avoid making write actions with MCP tools, if you must then check with me first
 - When using any Granola tools to fetch meetings/calls for context, bias towards using the raw
   transcript over the generated notes
+
+### Notion
+
+When creating or editing Notion documents (via MCP tools):
+
+- Always include a table of contents at the top of the document
+- Do not use horizontal rules / dividers
+- Follow all rules from the "Writing Style" section above
 
 ## Me
 
@@ -84,11 +102,11 @@ The Agents team does NOT own the following product areas:
 The following are useful starting points for building context on work relating to the Agents team:
 
 - Slack
-  - `#team-agents` (C07MNT8KJJZ) — Main team channel
-  - `#notif-ai` (C09FHFSEEN4) — Ari activity feed from customers
-  - `#notif-ai-feedback` (C09RUF0NUSZ) — AI feature feedback notifications from customers
-  - `#notif-ai-janitor` (C09961DRZMW) — Warnings about AI issues (e.g. embedding ingestion)
-  - `#notif-sentry` (C07NGE33UNR) — All Sentry alerts, not team specific
-  - `#prod-alerts-live` (C084FHANYRH) — All CloudWatch alarms, not team specific
+  - `#team-agents` (C07MNT8KJJZ) → Main team channel
+  - `#notif-ai` (C09FHFSEEN4) → Ari activity feed from customers
+  - `#notif-ai-feedback` (C09RUF0NUSZ) → AI feature feedback notifications from customers
+  - `#notif-ai-janitor` (C09961DRZMW) → Warnings about AI issues (e.g. embedding ingestion)
+  - `#notif-sentry` (C07NGE33UNR) → All Sentry alerts, not team specific
+  - `#prod-alerts-live` (C084FHANYRH) → All CloudWatch alarms, not team specific
 - Notion
   - [Team documents](https://www.notion.so/31e810036f9d80559e13ee5fd89d776e)
