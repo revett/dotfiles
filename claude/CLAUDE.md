@@ -78,6 +78,7 @@ If asked to create a ticket/issue in our/the backlog, then:
 - Ticket should have no backlog
 - Ticket should be in "Backlog" status
 - Avoid describing the solution/implementation in the ticket description
+- Do not set a priority, unless explicitly asked
 
 ## Me
 
