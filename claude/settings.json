@@ -19,7 +19,6 @@
       "Bash(gh issue edit*)"
     ]
   },
-  "model": "opus",
   "hooks": {
     "SessionStart": [
       {
