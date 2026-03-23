@@ -19,9 +19,9 @@ Always loop. Sleep 60s between checks. Stop conditions:
 
 Check all in parallel using subagents. Do not skip any.
 
-1. **Pipeline**: check run status via `gh run view <run-id> -R team-plain/services`
-2. **Sentry**: new or escalating issues in the last 15 minutes
-3. **Datadog**: ERROR logs in the last 15 minutes, all services
+1. **Pipeline**: Check run status via `gh run view <run-id> -R team-plain/services`
+2. **Sentry**: New or escalating issues in the last 15 minutes
+3. **Datadog**: `ERROR` logs in the last 15 minutes, all services
 4. **Slack** (last 30 min of each):
    - `#prod-alerts-live` (C084FHANYRH)
    - `#notif-sentry` (C07NGE33UNR)
@@ -44,5 +44,8 @@ Check all in parallel using subagents. Do not skip any.
 | Slack AI feed | ✅ / ⚠️ / ❌ | <brief summary> |
 ```
 
-✅ clean, ⚠️ pre-existing only, ❌ new issues possibly caused by the deploy. Be concise;
-summarize, do not dump raw logs.
+- ✅ Clean
+- ⚠️ Pre-existing only
+- ❌ New issues possibly caused by the deploy
+
+Be concise; summarize, do not dump raw logs.
