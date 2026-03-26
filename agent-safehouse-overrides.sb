@@ -10,3 +10,7 @@
 ;; Allow writing to ~/Downloads (used by invoice generation)
 (allow file-write*
   (home-subpath "/Downloads"))
+
+;; Allow writing to ~/.diffity (used by diffity diff viewer)
+(allow file-write*
+  (home-subpath "/.diffity"))

@@ -134,12 +134,25 @@ render-bw-frame() {
 # dotfiles, read-write access to the current directory, and passes through environment variables
 # needed by cmux and GitHub tooling.
 safe() {
+  # Print if diffity CLI is out of date
+  DIFFITY_LOCAL="$(diffity --version)"
+  DIFFITY_LATEST="$(npm view diffity version)"
+  if [[ -n "$DIFFITY_LOCAL" && -n "$DIFFITY_LATEST" && "$DIFFITY_LOCAL" != "$DIFFITY_LATEST" ]]
+  then
+    echo "╭───────────────────────────────────────────╮"
+    echo "│  diffity $DIFFITY_LOCAL → $DIFFITY_LATEST update available   │"
+    echo "│  run: npm install -g diffity              │"
+    echo "╰───────────────────────────────────────────╯"
+    echo ""
+  fi
+
   GH_REPO_SLUG="$(gh-repo-slug 2>/dev/null || echo "")" \
     safehouse \
       --add-dirs-ro="$HOME/.claude" \
       --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
       --add-dirs="$HOME/Library/Application Support/cmux" \
       --add-dirs="$HOME/Library/Caches/io.sentry" \
+      --add-dirs="$HOME/.diffity" \
       --add-dirs="$(pwd)" \
       --env-pass="CMUX_WORKSPACE_ID,GH_REPO_SLUG" \
       --append-profile="$SAFEHOUSE_APPEND_PROFILE" \
