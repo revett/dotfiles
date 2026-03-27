@@ -1,16 +1,18 @@
 ---
-name: baker
+name: sherpa
 description: Open the diffity diff viewer, fix comments, or explain local changes
 user-invocable: true
 ---
 
-# Baker
+# Sherpa
 
 GitHub style diff viewer for local changes. Three modes based on arguments:
 
-- `/baker` → Open viewer for all local changes (staged + unstaged)
-- `/baker fix` → Read open comments and make the fixes
-- `/baker explain` → Walkthrough of local changes file by file
+- `/sherpa` → Open viewer for all local changes (staged + unstaged)
+- `/sherpa fix` → Read open comments and make the fixes
+- `/sherpa explain` → Guided walkthrough of local changes
+
+Speed is critical. Minimise tool calls, parallelise where possible, and avoid unnecessary steps.
 
 ## Prerequisites
 
@@ -30,8 +32,10 @@ For each open thread, skip general comments (filePath `__general__`) and threads
 comment is an agent question awaiting user response. Comments phrased as questions (e.g. "should we
 add X?") are requests, not questions; make the change.
 
-Read the comment body and the full source file for context. Make the requested change using the Edit
-tool. Mark done with:
+Read all source files for open threads in parallel. Make all fixes, then resolve all threads. Do not
+alternate between reading, editing, and resolving one at a time.
+
+Mark done with:
 
 ```bash
 diffity agent resolve <id> --summary "Fixed: <description>"
@@ -46,8 +50,8 @@ changes connect), not by file or alphabetical order.
 
 Tours require a tree session (not a diff session). Run `diffity list --json` to check. If no tree
 session is running (ref `__tree__`), start one with `diffity tree --no-open --new` using
-`run_in_background: true`, wait 2 seconds. Get the diff with `git diff` and `git diff --cached`.
-Read all changed files fully.
+`run_in_background: true`, wait 2 seconds. Get the diff with `git diff` and `git diff --cached` in
+parallel. Read all changed files in parallel.
 
 Start the tour with:
 
@@ -56,17 +60,22 @@ diffity agent tour-start --topic "<3-6 word title>" --body "<overview>" --json`
 ```
 
 The body is step 0, shown before any code. Write a concise overview: what the changes accomplish,
-which files are involved, and how they connect.
+why they were made, which files are involved, and how they connect.
 
-Add steps in logical order with
+Add steps in logical order with:
 
 ```bash
 diffity agent tour-step --tour <id> --file <path> --line <start> --end-line <end> --body "<explanation>" --annotation "<3-6 word label>" --json`
 ```
 
-Explain why the code changed, not just what changed. Use goto links for cross references
-(`` [`name`](goto:path/to/file.ts:line) ``) and focus links for large ranges
-(`[label](focus:startLine-endLine)`).
+For each step, cover both what changed and why. Infer the motivation from the surrounding code,
+commit context, and the shape of the diff. If the reason is ambiguous, say so rather than guessing.
+
+Flag high risk changes with a ⚠️ prefix in the annotation. Use your judgement based on the context
+of the codebase and the nature of the change to determine what qualifies as high risk.
+
+Use goto links for cross references (`` [`name`](goto:path/to/file.ts:line) ``) and focus links for
+large ranges (`[label](focus:startLine-endLine)`).
 
 Finish with:
 
