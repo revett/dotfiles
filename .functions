@@ -98,6 +98,8 @@ gcai() {
   fi
 
   git commit -m "$msg"
+  echo "> done"
+  echo ""
   echo ""
   git log -1 --stat HEAD
 }
