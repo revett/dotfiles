@@ -6,6 +6,11 @@ set -euo pipefail
 # @author Charlie Revett (@revcd)
 
 echo "> starting install.sh"
+
+echo "> installing global npm packages"
+mkdir -p ~/.diffity
+npm install -g diffity
+
 echo "> creating symlinks"
 
 # Shell
