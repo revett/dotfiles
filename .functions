@@ -30,13 +30,13 @@ ccl() {
 # NotebookEdit tools are disabled to prevent file modifications.
 ccr() {
   clear
-  safe claude --effort max --model opus[1m] --dangerously-skip-permissions --disallowedTools "Edit,Write,NotebookEdit" "$@"
+  safe claude --effort max --model opus --dangerously-skip-permissions --disallowedTools "Edit,Write,NotebookEdit" "$@"
 }
 
 # `ccw` starts a Claude Code session inside Agent Safehouse with full tool access.
 ccw() {
   clear
-  safe claude --effort max --model opus[1m] --dangerously-skip-permissions "$@"
+  safe claude --effort max --model opus --dangerously-skip-permissions "$@"
 }
 
 # `cmuxhelp` is a function to show the available cmux aliases.
