@@ -46,74 +46,14 @@ cmuxhelp() {
   alias | grep "='cmux " | sed "s/^/  - /"
 }
 
-# `gcai` is a function to generate a git commit message for staged changes using Claude, then prompt
-# for confirmation before committing. Single sentence, capitalised first word, no trailing period.
-gcai() {
-  gst
-
-  local diff
-  diff=$(git diff --staged)
-
-  if [[ -z "$diff" ]]; then
-    echo "> error: no staged changes" >&2
-    return 1
-  fi
-
-  local model="haiku"
-  echo "> generating commit via claude (model: $model)"
-  local msg
-  msg=$(echo "$diff" | safe claude -p \
-    "Write a git commit message for these staged changes. \
-    Single sentence only, no prefix (no feat:, fix:, chore: etc). \
-    First word must be capitalised. \
-    No trailing period. \
-    Output only the commit message, nothing else." \
-    --model "$model")
-
-  if [[ -z "$msg" ]]; then
-    echo "> error: failed to generate commit message" >&2
-    return 1
-  fi
-
-  if ! vared -p "> commit: " msg; then
-    echo ""
-    echo "> aborted"
-    return 1
-  fi
-
-  if [[ -z "$msg" ]]; then
-    echo "> error: commit message is empty" >&2
-    return 1
-  fi
-
-  if [[ "$msg" == *$'\n'* ]]; then
-    echo "> error: commit message must be a single line" >&2
-    return 1
-  fi
-
-  local max_length=72
-  if [[ ${#msg} -gt $max_length ]]; then
-    echo "> error: commit message exceeds $max_length characters (${#msg})" >&2
-    return 1
-  fi
-
-  git commit -m "$msg"
-  echo "> done"
-  echo ""
-  echo ""
-  git log -1 --stat HEAD
-}
-
 # `githelp` is a function to show the available Git aliases and functions.
 githelp() {
   echo "> Available Git aliases"
   echo "> See: ~/projects/github.com/revett/dotfiles/.aliases, ~/projects/github.com/revett/dotfiles/.functions"
   alias | grep "='git " | sed "s/^/  - /"
-  echo "  - gcai → Generate commit message via Claude, then commit"
   echo "  - gpush → Force push current branch (blocks main)"
   echo "  - gpush --yolo → Regular push on main (side projects)"
   echo "> Flows:"
-  echo "  - gaa → gcai → gpush"
   echo "  - gfo → grebase → gpush"
 }
 

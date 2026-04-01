@@ -19,7 +19,6 @@ alias work='cd ~/projects/github.com/team-plain'
 alias reload='source ~/.zshrc'
 
 # Git
-# gcb new-feature → gaa → gcai → gpush
 # gfo → grebase → gpush
 # gpull
 # gaa → grestore → gd

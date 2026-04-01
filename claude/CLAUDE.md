@@ -90,7 +90,7 @@ unless the current title is already accurate.
 Projects in Charlie's Todoist are structured as a priority hierarchy to aid how his brain works and
 behaves:
 
-1. 🔴 **Remove** → Comes first, always; less before more
+1. 🔴 **Remove** → Comes first, always; close, cancel, declutter, let go, less before more
 2. 🟡 **Upgrade** → Comes next, make what you already have better, don't reach for something new
    until you've improved what's already there
 3. 🟢 **Add** → Comes last, only bring in new things once you've simplified and upgraded, new things
@@ -133,6 +133,13 @@ Three labels, mapped to energy and availability, not importance:
 - Never use the description field
 - Context about the task is to be added as a comment
 - Personal and work tasks never mix across projects, if it is ambiguous, ask Charlie
+- Always bias towards actively using priorities when creating or updating tasks
+
+#### Acquisition Rule
+
+- Buying or acquiring things never belongs in 🔴 Remove
+- Improving something already owned → 🟡 Upgrade
+- Introducing something new → 🟢 Add
 
 #### Workflow
 
