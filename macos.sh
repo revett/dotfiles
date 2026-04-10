@@ -2,7 +2,7 @@
 #
 # Configuring macOS preferences
 #
-# @author Charlie Revett (@revcd)
+# @author Charlie Revett
 
 echo "> starting macos.sh"
 echo "> setting preferences"

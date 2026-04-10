@@ -120,7 +120,6 @@ When creating or editing Notion documents (via MCP tools):
 If asked to create a ticket/issue in our/the backlog, then:
 
 - Create for `ARI` team
-- Ticket should have no backlog
 - Ticket should be in "Backlog" status
 - Avoid describing the solution/implementation in the ticket description
 - Do not set a priority, unless explicitly asked

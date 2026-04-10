@@ -2,7 +2,7 @@
 #
 # Aliases
 #
-# @author Charlie Revett (@revcd)
+# @author Charlie Revett
 
 # Dates
 alias week='date +%V'
@@ -41,7 +41,6 @@ alias localip='ifconfig -l | xargs -n1 ipconfig getifaddr'
 alias ip='localip'
 
 # Set BSD ls to use coreutils gls
-# https://github.com/sharkdp/vivid#on-macos
 alias ls='gls --color'
 
 # Work

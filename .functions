@@ -2,7 +2,7 @@
 #
 # Functions
 #
-# @author Charlie Revett (@revcd)
+# @author Charlie Revett
 
 # `asd` outputs all available functions from this file.
 asd() {

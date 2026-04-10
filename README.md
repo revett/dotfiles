@@ -1,4 +1,4 @@
-<img src="./terminal.png" width="100%" alt="Neon mushrooms surround old computer" />
+<img src="./banner.jpg" width="100%" alt="Uncle Iroh doing his thing" />
 
 # dotfiles
 

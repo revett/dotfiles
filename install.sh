@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Install script for repo
 #
-# @author Charlie Revett (@revcd)
+# @author Charlie Revett
 
 echo "> starting install.sh"
 
@@ -46,9 +46,5 @@ done
 # Agent Safehouse
 mkdir -p ~/.config/agent-safehouse
 ln -sf ~/projects/github.com/revett/dotfiles/agent-safehouse-overrides.sb ~/.config/agent-safehouse/local-overrides.sb
-
-# Golang CI Lint
-# https://golangci-lint.run/usage/configuration/
-ln -sf ~/projects/github.com/revett/dotfiles/.golangci.yml ~/.golangci.yml
 
 echo "> complete"

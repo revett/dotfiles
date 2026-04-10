@@ -1,6 +1,6 @@
 # .zshrc
 #
-# @author Charlie Revett (@revcd)
+# @author Charlie Revett
 
 # oh-my-zsh configuration taken from their template .zshrc file (start)
 # See: https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
