@@ -1,3 +1,9 @@
+---
+name: check-deploy
+description: Monitor team-plain/services after a merge to main. Checks pipeline, Sentry, Datadog, and Slack for issues.
+user-invocable: true
+---
+
 # Check Deploy
 
 Monitor `team-plain/services` after a merge to main. PR number is required; ask if not provided.

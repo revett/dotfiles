@@ -1,6 +1,6 @@
 ---
 name: sherpa
-description: Open the diffity diff viewer, fix comments, or explain local changes
+description: Explore, fix, and explain local changes (using diffity CLI).
 user-invocable: true
 ---
 
