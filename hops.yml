@@ -39,6 +39,7 @@ machines:
       - raycast
       - spotify
       - todoist-app
+      - whatsapp
       - yaak
       # - https://logitech.com/en-gb/software/logi-options-plus → Not yet on Homebrew
     cursor:
