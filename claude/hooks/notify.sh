@@ -1,12 +1,25 @@
 #!/usr/bin/env bash
 
-# Claude Code hook notification script.
-# Shows a macOS notification when Claude has finished.
+# Claude Code Stop hook. Updates cmux sidebar status, sends a cmux notification, and plays a sound.
 
 INPUT=$(cat)
 
 CWD=$(echo "$INPUT" | jq -r '.cwd // ""')
-REPO=$(cd "$CWD" && git remote get-url origin 2>/dev/null | sed 's|.*github\.com[:/]||; s|\.git$||' || basename "$CWD")
+PROJECTS_BASE="$HOME/projects/github.com/"
 
+if [[ "$CWD" == ${PROJECTS_BASE}* ]]; then
+  REL="${CWD#$PROJECTS_BASE}"
+  if [[ "$REL" == */* ]]; then
+    OWNER="${REL%%/*}"
+    REST="${REL#*/}"
+    REPO="$OWNER/${REST%%/*}"
+  else
+    REPO="👨‍🌾 Workspace"
+  fi
+else
+  REPO="👨‍🌾 Workspace"
+fi
+
+cmux set-status claude 'Claude → Done!' --icon checkmark.circle --color "#05df72"
 afplay "$HOME/.claude/hooks/peon-work-work.mp3" &
 osascript -e "display notification \"Done\" with title \"$REPO\""

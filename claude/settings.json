@@ -20,6 +20,26 @@
     ]
   },
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff'"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmux set-status claude 'Claude → Working...' --icon bolt --color '#fdc700'"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [

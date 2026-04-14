@@ -152,6 +152,11 @@ if [[ -n "$CMUX_WORKSPACE_ID" ]]; then
   # Register as a zsh chpwd hook, and run once for the initial working directory
   chpwd_functions+=(_cmux_chpwd_rename)
   _cmux_chpwd_rename
+
+  # Set default Claude status in the sidebar (replaced by Claude Code hooks when a session starts)
+  if ! cmux list-status 2>/dev/null | grep -q '^claude='; then
+    cmux set-status claude "Chilling" --icon moon.zzz --color "#c27aff" > /dev/null
+  fi
 fi
 
 # ---
