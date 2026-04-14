@@ -1,15 +1,28 @@
 ---
-name: todoist
-description: Todoist task management rules, project structure, labels, and workflow conventions for Charlie's monotropic cognitive style.
+name: tasks
+description: Personal task management rules, project structure, labels, and workflow conventions for Charlie's monotropic cognitive style.
 user-invocable: false
 ---
 
-# Todoist (Tasks)
+# Tasks
+
+## Scope
+
+This skill, and all associated actions (search, retrieval, creation, updates, etc) are strictly
+limited to the following Todoist projects:
+
+- Inbox
+- 🔴 Remove
+- 🟡 Upgrade
+- 🟢 Add
+- ⚙️ Rituals
+- 🤝 Social
+
+Do not interact with tasks in any other project.
 
 ## Philosophy
 
-Projects in Charlie's Todoist are structured as a priority hierarchy to aid how his brain works and
-behaves:
+Projects are structured as a priority hierarchy to aid how Charlie's brain works and behaves:
 
 1. 🔴 **Remove** → Comes first, always; close, cancel, declutter, let go, less before more
 2. 🟡 **Upgrade** → Comes next, make what you already have better, don't reach for something new
@@ -18,7 +31,8 @@ behaves:
    earn their place
 4. ⚙️ **Rituals** → The recurring scaffolding, habits and routines that hold daily life together,
    these aren't tasks to complete; they're patterns to maintain
-5. 💼 **Work** → Kept strictly separate, work doesn't bleed into the personal system
+5. 🤝 **Social** → Relationships, communication, and social commitments; phone calls, messages,
+   plans with people
 
 ## Brain
 
@@ -53,7 +67,6 @@ Three labels, mapped to energy and availability, not importance:
   concise and scannable, the title is the action
 - Never use the description field
 - Context about the task is to be added as a comment
-- Personal and work tasks never mix across projects, if it is ambiguous, ask Charlie
 - Always bias towards actively using priorities when creating or updating tasks
 
 ## Acquisition Rule

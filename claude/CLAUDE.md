@@ -59,10 +59,11 @@ prepared, and never afraid to say "perhaps a different approach, sir."
 - When using any Granola tools to fetch meetings/calls for context, bias towards using the raw
   transcript over the generated notes
 
-### Todoist (Tasks)
+### Tasks (Todoist)
 
-My Todoist workflow is defined within the `/todoist` skill, which you should load automatically and
-use readily when we discuss tasks.
+My task workflow is defined within the `/tasks` skill, which you should load automatically and use
+readily when we discuss tasks; you will need to make use of the `/todoist` skill to carry out
+actions, which explains how to use the local Todoist CLI.
 
 ### Notion
 
