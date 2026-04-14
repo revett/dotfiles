@@ -7,7 +7,9 @@
   (global-name "com.apple.usernoted.daemon_client")
   (global-name "com.apple.UNCUserNotification"))
 
-;; Allow writing to ~/Downloads (used by invoice generation)
+;; Allow reading and writing to ~/Downloads (used by invoice generation and accessing images etc)
+(allow file-read*
+  (home-subpath "/Downloads"))
 (allow file-write*
   (home-subpath "/Downloads"))
 

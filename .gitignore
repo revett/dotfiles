@@ -22,3 +22,6 @@ Thumbs.db
 
 # Swap files
 *.swp
+
+# Machine type file to differentiate between work and personal machines
+MACHINE_TYPE.txt

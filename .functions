@@ -141,18 +141,6 @@ render-bw-frame() {
 # dotfiles, read-write access to the current directory, and passes through environment variables
 # needed by cmux and GitHub tooling.
 safe() {
-  # Print if diffity CLI is out of date
-  DIFFITY_LOCAL="$(diffity --version)"
-  DIFFITY_LATEST="$(npm view diffity version)"
-  if [[ -n "$DIFFITY_LOCAL" && -n "$DIFFITY_LATEST" && "$DIFFITY_LOCAL" != "$DIFFITY_LATEST" ]]
-  then
-    echo "╭───────────────────────────────────────────╮"
-    echo "│  diffity $DIFFITY_LOCAL → $DIFFITY_LATEST update available   │"
-    echo "│  run: npm install -g diffity              │"
-    echo "╰───────────────────────────────────────────╯"
-    echo ""
-  fi
-
   GH_REPO_SLUG="$(gh-repo-slug 2>/dev/null || echo "")" \
     safehouse \
       --add-dirs-ro="$HOME/.claude" \
@@ -171,8 +159,8 @@ safe() {
 # color and line numbers, unless the output is small enough for one screen.
 tre() {
   if ! command -v tree &> /dev/null; then
-      echo "error: tree command could not be found."
-      return 1
+    echo "error: tree command could not be found."
+    return 1
   fi
 
   tree -aC -I '.git|node_modules|.cache' --dirsfirst "$@" | less -FRNX;

@@ -12,8 +12,6 @@ alias ~='cd $HOME'
 alias dotfiles='cd ~/projects/github.com/revett/dotfiles'
 alias rev='cd ~/projects/github.com/revett'
 alias 8th='cd ~/projects/github.com/8thpark'
-alias mono='cd ~/projects/github.com/8thpark/mono'
-alias work='cd ~/projects/github.com/team-plain'
 
 # General
 alias reload='source ~/.zshrc'
@@ -43,12 +41,22 @@ alias ip='localip'
 # Set BSD ls to use coreutils gls
 alias ls='gls --color'
 
-# Work
-alias pn='pnpm'
-alias plain:infra:run='aws-login dev-charlie-admin && pn install && pn start'
-alias plain:services:nuke='clear && pn clean:dist && pn install && pn run format:fix && pn run lint:fix && pn run gen:monorepo && pn typecheck:services'
-alias plain:services:run='pn install && aws-login dev-charlie-admin && pn run dev'
+# ---
+# Personal
+# ---
 
-# cmux
-alias cmux-move-workspace='cmux reorder-workspace --workspace $CMUX_WORKSPACE_ID --index 0'
-alias cmux-reset-workspace-title='clear &&cmux rename-workspace --workspace $CMUX_WORKSPACE_ID "$(gh-repo-slug 2>/dev/null || basename "$PWD")"'
+if [[ "$DOTFILES_MACHINE_TYPE" == "PERSONAL" ]]; then
+  alias mono='cd ~/projects/github.com/8thpark/mono'
+fi
+
+# ---
+# Work
+# ---
+
+if [[ "$DOTFILES_MACHINE_TYPE" == "WORK" ]]; then
+  alias work='cd ~/projects/github.com/team-plain'
+  alias pn='pnpm'
+  alias plain:infra:run='aws-login dev-charlie-admin && pn install && pn start'
+  alias plain:services:nuke='clear && pn clean:dist && pn install && pn run format:fix && pn run lint:fix && pn run gen:monorepo && pn typecheck:services'
+  alias plain:services:run='pn install && aws-login dev-charlie-admin && pn run dev'
+fi

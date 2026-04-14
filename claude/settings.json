@@ -20,17 +20,6 @@
     ]
   },
   "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "startup",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cmux rename-workspace \"👨‍🌾 $GH_REPO_SLUG - Hello there...\""
-          }
-        ]
-      }
-    ],
     "Stop": [
       {
         "hooks": [
@@ -43,7 +32,6 @@
     ]
   },
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "bypassPermissionsModeAccepted": true,
