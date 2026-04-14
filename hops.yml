@@ -6,7 +6,6 @@ machines:
       - eugene1g/safehouse
       - manaflow-ai/cmux
       - oven-sh/bun
-      - steipete/tap
     formulae:
       - agent-safehouse
       - biome
@@ -26,7 +25,6 @@ machines:
       - 1password-cli
       - claude-code
       - cmux
-      - codexbar
       - cursor
       - firefox@developer-edition
       - font-sauce-code-pro-nerd-font
@@ -86,7 +84,6 @@ machines:
       - libpq # Requirement of team-plain/services
       - mkcert # Requirement of team-plain/support-app
       - nss # Requirement of team-plain/support-app
-      - terraform
     casks:
       - linear-linear
       - session-manager-plugin # AWS CLI session manager used at Plain
