@@ -52,6 +52,7 @@ eval "$(direnv hook zsh)"
 eval "$(fnm env --corepack-enabled --use-on-cd --resolve-engines --shell zsh)"
 
 # Default to a specific version of Node
+fnm default 24
 fnm use 24
 
 # Check if `hops apply` needs to be run
