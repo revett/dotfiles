@@ -23,19 +23,14 @@ branch() {
 # effort level to reduce cost when working from my personal account.
 ccl() {
   clear
+  cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
   safe claude --effort high --model opusplan --dangerously-skip-permissions "$@"
-}
-
-# `ccr` starts a read-only Claude Code session inside Agent Safehouse. Edit, Write, and
-# NotebookEdit tools are disabled to prevent file modifications.
-ccr() {
-  clear
-  safe claude --effort max --model opus --dangerously-skip-permissions --disallowedTools "Edit,Write,NotebookEdit" "$@"
 }
 
 # `ccw` starts a Claude Code session inside Agent Safehouse with full tool access.
 ccw() {
   clear
+  cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
   safe claude --effort max --model opus --dangerously-skip-permissions "$@"
 }
 

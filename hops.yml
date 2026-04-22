@@ -88,6 +88,7 @@ machines:
       - linear-linear
       - session-manager-plugin # AWS CLI session manager used at Plain
       - slack
+      - sonos
       - tuple
       # - clocker → Installed via macOS store due to new releases living there
       # - https://supercut.ai → Not yet on Homebrew
