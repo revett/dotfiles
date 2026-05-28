@@ -132,14 +132,14 @@ render-bw-frame() {
   done
 }
 
-# `safe` wraps a command inside Agent Safehouse. Grants read-only access to Claude config and
-# dotfiles, read-write access to the current directory, and passes through environment variables
-# needed by cmux and GitHub tooling.
+# `safe` wraps a command inside Agent Safehouse, granting specific access to parts of the machine.
 safe() {
   GH_REPO_SLUG="$(gh-repo-slug 2>/dev/null || echo "")" \
     safehouse \
+      --enable=shell-init,cloud-credentials,1password \
       --add-dirs-ro="$HOME/.claude" \
       --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
+      --add-dirs-ro="$HOME/projects/github.com/team-plain" \
       --add-dirs="$HOME/projects/github.com/revett/agent-scratchpad" \
       --add-dirs="$HOME/Library/Application Support/cmux" \
       --add-dirs="$HOME/Library/Caches/io.sentry" \
