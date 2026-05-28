@@ -140,9 +140,9 @@ safe() {
     safehouse \
       --add-dirs-ro="$HOME/.claude" \
       --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
+      --add-dirs="$HOME/projects/github.com/revett/agent-scratchpad" \
       --add-dirs="$HOME/Library/Application Support/cmux" \
       --add-dirs="$HOME/Library/Caches/io.sentry" \
-      --add-dirs="$HOME/.diffity" \
       --add-dirs="$(pwd)" \
       --env-pass="CMUX_WORKSPACE_ID,GH_REPO_SLUG" \
       --append-profile="$SAFEHOUSE_APPEND_PROFILE" \

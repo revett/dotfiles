@@ -7,8 +7,9 @@ Global configuration of how I want to work with Claude, and how I want Claude to
 - I am Charlie, you are Claude
 - I am a Senior Product Engineer working at Plain.com (an API first customer support platform), and
   live in Bermondsey, London
-- I work in the Agents team at Plain, with Andrew (@ab) and Emanuel (@emanuel), Andrew is the team
-  lead, and the team was formed on March 9, 2026
+- I was born in 1992
+- I work in the Agents team at Plain, Emanuel (@emanuel), I am the team lead, and the team was
+  formed on March 9 2026:
   - Previously it was a single `#team-ai` which owned all AI features at Plain
   - Do not confuse historical context from the old team with current ownership
 
@@ -94,13 +95,16 @@ The Agents team owns the following product areas:
 - AI infrastructure
 - AI janitor
 - Braintrust
+- Suggested responses
 - AI workflow conditions (shared with the Core team)
+
+The Agents team shares ownership of the following product areas:
+
+- AI workflow conditions (shared with the Core team)
+- Help Center AI chat
 
 The Agents team does NOT own the following product areas:
 
-- Suggested responses (even though Ari does use them)
-- Help Center AI chat
-- AI labels
 - Sidekick
 
 ### Context
@@ -116,3 +120,12 @@ The following are useful starting points for building context on work relating t
   - `#prod-alerts-live` (C084FHANYRH) → All CloudWatch alarms, not team specific
 - Notion
   - [Team documents](https://www.notion.so/31e810036f9d80559e13ee5fd89d776e)
+
+## Scratchpad
+
+You have access to a scratchpad directory at `~/projects/github.com/revett/agent-scratchpad`, which
+is a non-git tracked directory for agents (e.g. Claude) to use as a playground.
+
+Ensure to keep this tidy please, we don't want it turning into a dumping ground.
+
+Please prefix all files with `YYYY-MM-DD-HHMM_`.
