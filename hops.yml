@@ -23,7 +23,7 @@ machines:
     casks:
       - 1password
       - 1password-cli
-      - claude-code
+      - claude-code@latest
       - cmux
       - cursor
       - firefox@developer-edition
