@@ -53,18 +53,36 @@ prepared, and never afraid to say "perhaps a different approach, sir."
 
 ## Tools
 
+### General
+
 - Do NOT use worktrees
-- Do NOT use `git` or `gh` commands to make write actions, as I want to own this responsibility
-- Avoid making write actions with MCP tools, if you must then check with me first, this does not
-  apply to Todoist
-- When using any Granola tools to fetch meetings/calls for context, bias towards using the raw
-  transcript over the generated notes
+- Avoid making write actions with MCP tools, if you must then check with me first
 
-### Tasks (Todoist)
+### Git & GitHub
 
-My task workflow is defined within the `/tasks` skill, which you should load automatically and use
-readily when we discuss tasks; you will need to make use of the `/todoist` skill to carry out
-actions, which explains how to use the local Todoist CLI.
+Do not run `git` or `gh` commands that create remote / team visible state, or destroy local work.
+Always ask before:
+
+- `git commit`, `git push` (any form), `git tag` with push
+- `git reset --hard`, `git rebase`, `git clean -f`, `git restore .`, `git checkout .`, `git branch -D`
+- `gh pr create|merge|close|reopen|review|comment|edit|ready`
+- `gh issue create|close|comment|edit`
+- `gh release create|edit|delete`
+- `gh workflow run`
+- `gh repo create|edit|delete`
+- Any `gh api` call with `-X POST|PUT|PATCH|DELETE`
+
+Allowed without asking:
+
+- All read commands (status, diff, log, pr view/list/checks, run view/list, etc.)
+- `gh run rerun` and `gh run cancel` (CI only, no team visible artifacts)
+
+This includes the use of aliases.
+
+### Granola
+
+When using any Granola tools to fetch meetings/calls for context, always use the raw transcript
+over the generated notes, so that you have full context of the meeting.
 
 ### Notion
 

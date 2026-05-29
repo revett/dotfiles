@@ -19,6 +19,22 @@ I wrote [revett/hops](https://github.com/revett/hops) as a lightweight CLI to wr
 commands to help with managing installing packages across work/personal machines, see
 [hops.yml](./hops.yml).
 
+## Todo
+
+- [ ] HTML explainer skill
+- [ ] Move Claude to create draft PR using `/pr-desc` skill and improve skill
+- [ ] Experiment and utilise @mattpocock's skills
+- [ ] Reduce complexity and length of Claude context and skills
+- [ ] Fix failing CI skill
+- [ ] Address GitHub PR comments skill
+- [ ] Add default output (i.e. in chat) destination for Claude
+- [ ] Add preferred output format (i.e. ranked, scored, grouped etc) for Claude
+- [ ] Update `permissions.deny` list for Claude
+- [ ] Set up status line for Claude
+- [ ] Improve cmux status tracking of Claude within sidebar
+- [ ] Handle deleting empty skill directories within `install.sh`
+- [ ] Remove old skill marketplaces
+
 ## Thanks
 
 - Jeff Geerling - [geerlingguy/dotfiles](https://github.com/geerlingguy/dotfiles)
