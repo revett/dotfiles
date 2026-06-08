@@ -4,7 +4,6 @@ machines:
   shared:
     taps:
       - eugene1g/safehouse
-      - manaflow-ai/cmux
       - oven-sh/bun
     formulae:
       - agent-safehouse
