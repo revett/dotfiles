@@ -1,7 +1,6 @@
 ---
 name: check-deploy
 description: Babysit and monitor deploy, by checking for issues with and after a deploy
-user-invocable: true
 ---
 
 # Task
