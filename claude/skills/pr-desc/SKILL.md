@@ -9,24 +9,21 @@ user-invocable: true
 Write a very concise title and description for a GitHub pull request for the current branch. Open
 the output as a temporary editable HTML tab in the browser, using `data:text/html,<html>...</html>`.
 
-## Title
+Title format:
 
 ```text
 <area> → <short_description>
 Ari → Remove search queries from logs
 ```
 
-## Description
-
-Must be in markdown, and include the following sections:
+Description must be in markdown, and include the following sections:
 
 1. Problem
-1. Changes
-1. Why
+2. Changes
+3. Why
 
-- Talk at a high level, don't go in to implementation details, that is what the code is for
-- Bias towards brevity, and use bullet points where appropriate
-- Do not use emojis
-- Bullet points should only ever be a single sentence, feel free to lean on commas and semicolons to
-  make them longer, and do not use full stops at the end of each bullet point
-- Do not include ticket numbers in the description
+Talk at a high level, don't go in to implementation details, that is what the code is for. Bias
+towards brevity, and use bullet points where appropriate. Do not use emojis. Bullet points should
+only ever be a single sentence, feel free to lean on commas and semicolons to make them longer, and
+do not use full stops at the end of each bullet point. Do not include ticket numbers in the
+description
