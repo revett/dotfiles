@@ -1,6 +1,6 @@
 ---
 name: check-deploy
-description: Monitor team-plain/services after a merge to main. Checks pipeline, Sentry, Datadog, and Slack for issues.
+description: Babysit and monitor deploy, by checking for issues with and after a deploy
 user-invocable: true
 ---
 

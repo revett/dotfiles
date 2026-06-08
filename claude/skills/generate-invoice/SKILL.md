@@ -1,6 +1,6 @@
 ---
 name: generate-invoice
-description: Generate a PDF invoice and save it to ~/Downloads. Use when the user asks to create, generate, or make an invoice.
+description: Generate a PDF invoice and save it to ~/Downloads
 user-invocable: true
 ---
 
