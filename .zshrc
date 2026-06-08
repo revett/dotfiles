@@ -2,9 +2,6 @@
 #
 # @author Charlie Revett
 
-# oh-my-zsh configuration taken from their template .zshrc file (start)
-# See: https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
-
 # ---
 # Shared
 # ---
@@ -12,20 +9,7 @@
 # Shared path to dotfiles repo
 export DOTFILES_PATH="$HOME/projects/github.com/revett/dotfiles"
 
-# Path to your oh-my-zsh installation
-export ZSH="$HOME/.oh-my-zsh"
-
-# Uncomment one of the following lines to change the auto-update behavior
-zstyle ':omz:update' mode reminder # Just remind me to update when it's time
-
-# Disable themes
-ZSH_THEME=""
-
-# Set up oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
-# Set where hops.yml is located
-# https://github.com/revett/hops
+# Set where hops.yml is located → https://github.com/revett/hops
 export HOPS_CONFIG="$DOTFILES_PATH/hops.yml"
 
 # Include brew packages and apps within path (Apple Silicon only)
@@ -33,22 +17,26 @@ if [[ $(uname -m) == 'arm64' ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Initialise zsh completions (previously handled by oh-my-zsh), put Homebrew's completion functions
+# on fpath first, then run compinit once
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+autoload -Uz compinit && compinit
+
 # Set default editor
 export EDITOR='cursor -w'
 
-# Configure Starship prompt
-# https://starship.rs
+# Configure Starship prompt → https://starship.rs
 eval "$(starship init zsh)"
 
 # Setup fzf (keybindings and fuzzy completion)
 eval "$(fzf --zsh)"
 
-# Set up direnv
-# https://direnv.net/docs/hook.html
+# Set up direnv → https://direnv.net/docs/hook.html
 eval "$(direnv hook zsh)"
 
-# Set fnm environment variables
-# https://github.com/Schniz/fnm#shell-setup
+# Set fnm environment variables → https://github.com/Schniz/fnm#shell-setup
 eval "$(fnm env --corepack-enabled --use-on-cd --resolve-engines --shell zsh)"
 
 # Default to a specific version of Node

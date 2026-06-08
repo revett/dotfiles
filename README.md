@@ -22,10 +22,6 @@ commands to help with managing installing packages across work/personal machines
 ## Todo
 
 - [ ] HTML explainer skill
-- [ ] Move Claude to create draft PR using `/pr-desc` skill and improve skill
-- [ ] Experiment and utilise @mattpocock's skills
-- [ ] Reduce complexity and length of Claude context and skills
-- [ ] Fix failing CI skill
 - [ ] Address GitHub PR comments skill
 - [ ] Add default output (i.e. in chat) destination for Claude
 - [ ] Add preferred output format (i.e. ranked, scored, grouped etc) for Claude
