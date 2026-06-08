@@ -68,9 +68,9 @@ done
 # Agent Safehouse
 # ---
 
-# The agent-scratchpad directory is a non-git tracked directory for agents (e.g. Claude) to use as a
-# scratchpad or playground.
-mkdir -p ~/projects/github.com/revett/agent-scratchpad
+# The scratchpad directory is a non-git tracked directory for agents (e.g. Claude) to use as a
+# playground.
+mkdir -p ~/projects/scratchpad
 mkdir -p ~/.config/agent-safehouse
 ln -sf ~/projects/github.com/revett/dotfiles/agent-safehouse-overrides.sb ~/.config/agent-safehouse/local-overrides.sb
 

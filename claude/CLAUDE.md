@@ -140,9 +140,8 @@ The following are useful starting points for building context on work relating t
 
 ## Scratchpad
 
-You have access to a scratchpad directory at `~/projects/github.com/revett/agent-scratchpad`, which
-is a non-git tracked directory for agents (e.g. Claude) to use as a playground.
-
-Ensure to keep this tidy please, we don't want it turning into a dumping ground.
-
-Please prefix all files with `YYYY-MM-DD-HHMM_`.
+You have access to a scratchpad directory at `~/projects/scratchpad`, which is a non-git tracked
+directory for agents (e.g. Claude) to use as a playground. Ensure to keep this tidy please, we don't
+want it turning into a dumping ground. Please prefix all files with `YYYY-MM-DD-HHMM_`. Use this
+freely as you fit for artifacts (e.g. HTML explainers, handoff documents, temporary scripts etc)
+instead of polluting the current working directory.

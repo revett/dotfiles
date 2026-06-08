@@ -20,15 +20,15 @@ branch() {
 }
 
 # `ccl` starts a lighweight Claude Code session inside Agent Safehouse, using a cheaper model and
-# effort level to reduce cost when working from my personal account.
+# effort level to reduce cost.
 ccl() {
   clear
   cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
-  safe claude --effort high --model opusplan --dangerously-skip-permissions "$@"
+  safe claude --effort high --model sonnet --dangerously-skip-permissions "$@"
 }
 
-# `ccw` starts a Claude Code session inside Agent Safehouse with full tool access.
-ccw() {
+# `cc` starts a Claude Code session inside Agent Safehouse with full tool access.
+cc() {
   clear
   cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
   safe claude --effort max --model opus --dangerously-skip-permissions "$@"
@@ -96,13 +96,19 @@ gpush() {
 
 # `safe` wraps a command inside Agent Safehouse, granting specific access to parts of the machine.
 safe() {
+  # On work machine, grant read-only access to the team-plain monorepo
+  local -a work_mounts=()
+  if [[ "$DOTFILES_MACHINE_TYPE" == "WORK" ]]; then
+    work_mounts+=(--add-dirs-ro="$HOME/projects/github.com/team-plain")
+  fi
+
   GH_REPO_SLUG="$(gh-repo-slug 2>/dev/null || echo "")" \
     safehouse \
       --enable=shell-init,cloud-credentials,1password \
       --add-dirs-ro="$HOME/.claude" \
       --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
-      --add-dirs-ro="$HOME/projects/github.com/team-plain" \
-      --add-dirs="$HOME/projects/github.com/revett/agent-scratchpad" \
+      "${work_mounts[@]}" \
+      --add-dirs="$HOME/projects/scratchpad" \
       --add-dirs="$HOME/Library/Application Support/cmux" \
       --add-dirs="$HOME/Library/Caches/io.sentry" \
       --add-dirs="$(pwd)" \
