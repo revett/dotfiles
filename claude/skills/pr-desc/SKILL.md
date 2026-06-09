@@ -25,4 +25,6 @@ Talk at a high level, don't go in to implementation details, that is what the co
 towards brevity, and use bullet points where appropriate. Do not use emojis. Bullet points should
 only ever be a single sentence, feel free to lean on commas and semicolons to make them longer, and
 do not use full stops at the end of each bullet point. Do not include ticket numbers in the
-description. The first word of each bullet point should be capitalised.
+description. The first word of each bullet point should be capitalised. Make use of inline code
+blocks to highlight parts of a bullet point where appropriate. Avoid using hyphenated compound
+modifiers (write "production grade" not "production-grade", "real time" not "real-time" etc).
