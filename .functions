@@ -23,7 +23,7 @@ branch() {
 cc() {
   clear
   cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
-  safe claude --effort max --model opus --dangerously-skip-permissions "$@"
+  safe claude --effort xhigh --model opus --dangerously-skip-permissions "$@"
 }
 
 # `ccf` starts a Claude Code session inside Agent Safehouse with full tool access, using the fable
