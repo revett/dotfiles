@@ -5,6 +5,10 @@
 		"claudeCodeIntegration": false,
 		"suppressSubagentNotifications": true
 	},
+	"notifications": {
+		"sound": "custom_file",
+		"customSoundFilePath": "/Users/revett/.claude/hooks/pop.mp3"
+	},
 	"terminal": {
 		"autoResumeAgentSessions": true
 	}
