@@ -151,6 +151,10 @@ if [[ -n "$CMUX_WORKSPACE_ID" ]]; then
   if ! cmux list-status 2>/dev/null | grep -q '^claude='; then
     cmux set-status claude "Chilling" --icon moon.zzz --color "#c27aff" > /dev/null
   fi
+
+  # Disable cmux's native Claude Code hook injection, sidebar status is driven by
+  # our own hooks instead (see claude/settings.json and claude/hooks/notify.sh)
+  export CMUX_CLAUDE_HOOKS_DISABLED=1
 fi
 
 # ---

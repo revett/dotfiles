@@ -120,7 +120,7 @@ safe() {
       --add-dirs="$HOME/.local/state/cmux" \
       --add-dirs="$HOME/Library/Caches/io.sentry" \
       --add-dirs="$(pwd)" \
-      --env-pass="CMUX_WORKSPACE_ID,CMUX_SURFACE_ID,CMUX_SOCKET_PATH,GH_REPO_SLUG" \
+      --env-pass="CMUX_WORKSPACE_ID,CMUX_SURFACE_ID,CMUX_SOCKET_PATH,CMUX_CLAUDE_HOOKS_DISABLED,GH_REPO_SLUG" \
       --append-profile="$SAFEHOUSE_APPEND_PROFILE" \
       "$@"
 }
