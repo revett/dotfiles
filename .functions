@@ -19,19 +19,27 @@ branch() {
   echo ${ref#refs/heads/}
 }
 
+# `cc` starts a Claude Code session inside Agent Safehouse with full tool access.
+cc() {
+  clear
+  cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
+  safe claude --effort max --model opus --dangerously-skip-permissions "$@"
+}
+
+# `ccf` starts a Claude Code session inside Agent Safehouse with full tool access, using the fable
+# model.
+ccf() {
+  clear
+  cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
+  safe claude --effort max --model fable --dangerously-skip-permissions "$@"
+}
+
 # `ccl` starts a lighweight Claude Code session inside Agent Safehouse, using a cheaper model and
 # effort level to reduce cost.
 ccl() {
   clear
   cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
   safe claude --effort high --model sonnet --dangerously-skip-permissions "$@"
-}
-
-# `cc` starts a Claude Code session inside Agent Safehouse with full tool access.
-cc() {
-  clear
-  cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
-  safe claude --effort max --model opus --dangerously-skip-permissions "$@"
 }
 
 # `cmuxhelp` is a function to show the available cmux aliases.
