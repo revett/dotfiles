@@ -39,6 +39,13 @@ CLAUDE_SRC=~/projects/github.com/revett/dotfiles/claude
 # the source propagate cleanly on re-install
 find ~/.claude -type l -lname "$CLAUDE_SRC/*" -delete 2>/dev/null || true
 
+# Prune empty directories left behind when files are deleted or renamed in the
+# source (e.g. removed skills), scoped to mirror-managed subtrees so app-owned
+# state elsewhere in ~/.claude is untouched
+for dir in "$CLAUDE_SRC"/*/; do
+  find "$HOME/.claude/$(basename "$dir")" -mindepth 1 -type d -empty -delete 2>/dev/null || true
+done
+
 # Mirror claude/ into ~/.claude/
 find "$CLAUDE_SRC" -type f | while read -r src; do
   rel="${src#$CLAUDE_SRC/}"
