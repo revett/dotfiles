@@ -15,4 +15,5 @@ ensure to wait for pending checks to complete before investigating/rerunning. Us
 efficient in your work. Keep the reader updated on your progress as you babysit. Make use of loops
 to check and then sleep for 30s (max) between checks. Use ASCII tables and diagrams if relevant.
 Your job is never to fix issues, only to find and highlight them. Default to being loud and direct.
-The point of this skill is to allow Charlie to focus on other tasks whilst you babysit.
+The point of this skill is to allow Charlie to focus on other tasks whilst you babysit. Stop when
+you are happy that the deployment is a success, or the PR has green CI checks.

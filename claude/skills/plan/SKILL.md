@@ -13,4 +13,6 @@ for example to a Linear ticket, if one was not provided then fail fast and say s
 where appropriate to be efficient in your work. Keep the reader updated on your progress as you
 compile the document. Do not be agreeable, strong opinions are welcome, the document should serve as
 a surface for discussion and decision making. If it makes sense to update and use an existing
-artifact, then do so.
+artifact, then do so. If you deem it necessary, give Charlie instructions to fetch data/context that
+isn't possible to gather via tools, such as running a database query, taking a screenshot, running
+an internal CLI command, or running an ad-hoc script that you wrote.
