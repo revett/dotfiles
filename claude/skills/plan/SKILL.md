@@ -12,4 +12,5 @@ the document with low context. Use the scratchpad to save the artifact. The subj
 for example to a Linear ticket, if one was not provided then fail fast and say so. Use subagents
 where appropriate to be efficient in your work. Keep the reader updated on your progress as you
 compile the document. Do not be agreeable, strong opinions are welcome, the document should serve as
-a surface for discussion and decision making.
+a surface for discussion and decision making. If it makes sense to update and use an existing
+artifact, then do so.

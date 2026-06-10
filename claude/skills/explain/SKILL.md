@@ -15,3 +15,4 @@ progress as you compile the document. The subject could also be something else, 
 thread that the reader is looking to understand. Use available tools where appropriate to help you
 build context and understanding to better compile the document. The point of this skill is to allow
 Charlie to focus on many tasks at once, and then come back to a task to understand/review changes.
+If it makes sense to update and use an existing artifact, then do so.
