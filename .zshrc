@@ -136,11 +136,11 @@ if [[ -n "$CMUX_WORKSPACE_ID" ]]; then
         local owner="${rel%%/*}"
         local rest="${rel#*/}"
         local repo="${rest%%/*}"
-        cmux rename-workspace "$owner/$repo" > /dev/null
+        cmux workspace rename "$CMUX_WORKSPACE_ID" --title "$owner/$repo" > /dev/null
         return
       fi
     fi
-    cmux rename-workspace "👨‍🌾 Workspace" > /dev/null
+    cmux workspace rename "$CMUX_WORKSPACE_ID" --title "👨‍🌾 Workspace" > /dev/null
   }
 
   # Register as a zsh chpwd hook, and run once for the initial working directory

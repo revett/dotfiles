@@ -22,7 +22,7 @@ branch() {
 # `cc` starts a Claude Code session inside Agent Safehouse with full tool access.
 cc() {
   clear
-  cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
+  cmux set-status claude 'Ready' --icon sparkle --color '#51a2ff' > /dev/null
   safe claude --effort xhigh --model opus --dangerously-skip-permissions "$@"
 }
 
@@ -30,7 +30,7 @@ cc() {
 # model.
 ccf() {
   clear
-  cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
+  cmux set-status claude 'Ready' --icon sparkle --color '#51a2ff' > /dev/null
   safe claude --effort xhigh --model fable --dangerously-skip-permissions "$@"
 }
 
@@ -38,7 +38,7 @@ ccf() {
 # effort level to reduce cost.
 ccl() {
   clear
-  cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
+  cmux set-status claude 'Ready' --icon sparkle --color '#51a2ff' > /dev/null
   safe claude --effort high --model sonnet --dangerously-skip-permissions "$@"
 }
 

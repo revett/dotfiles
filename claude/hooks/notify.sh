@@ -2,5 +2,5 @@
 
 # Claude Code Stop hook. Updates cmux sidebar status and plays a sound.
 
-cmux set-status claude 'Claude → Done!' --icon checkmark.circle --color "#05df72"
+cmux set-status claude 'Done' --icon checkmark.circle --color "#05df72"
 afplay "$HOME/.claude/hooks/pop.mp3" &

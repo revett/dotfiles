@@ -25,7 +25,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cmux set-status claude 'Claude → Working...' --icon bolt --color '#fdc700'"
+            "command": "cmux set-status claude 'Working' --icon bolt --color '#fdc700'"
           }
         ]
       }
