@@ -34,7 +34,7 @@ ln -sf ~/projects/github.com/revett/dotfiles/cursor/settings.json ~/Library/Appl
 # CMUX
 
 mkdir -p ~/.config/cmux
-ln -sf ~/projects/github.com/revett/dotfiles/cmux.json ~/.config/cmux/cmux.json
+ln -sf ~/projects/github.com/revett/dotfiles/cmux/config.json ~/.config/cmux/cmux.json
 
 # Claude
 
