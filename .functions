@@ -31,7 +31,7 @@ cc() {
 ccf() {
   clear
   cmux set-status claude 'Claude → Ready' --icon sparkle --color '#51a2ff' > /dev/null
-  safe claude --effort max --model fable --dangerously-skip-permissions "$@"
+  safe claude --effort xhigh --model fable --dangerously-skip-permissions "$@"
 }
 
 # `ccl` starts a lighweight Claude Code session inside Agent Safehouse, using a cheaper model and
