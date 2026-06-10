@@ -48,6 +48,12 @@ hops reminder
 # Configure Agent Safehouse, see .functions for bash functions related to safehouse()
 SAFEHOUSE_APPEND_PROFILE="$HOME/.config/agent-safehouse/local-overrides.sb"
 
+# Put the cmux CLI on PATH (cmux only injects it into terminals it launches, so restored/resumed
+# sessions and /bin/sh hooks otherwise can't find it)
+if [ -d "/Applications/cmux.app/Contents/Resources/bin" ]; then
+  export PATH="/Applications/cmux.app/Contents/Resources/bin:$PATH"
+fi
+
 # ---
 # Check MACHINE_TYPE.txt and set environment variable accordingly
 # ---

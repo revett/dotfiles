@@ -31,6 +31,11 @@ ln -sf ~/projects/github.com/revett/dotfiles/starship.toml ~/.config/starship.to
 ln -sf ~/projects/github.com/revett/dotfiles/cursor/keybindings.json ~/Library/Application\ Support/Cursor/User/
 ln -sf ~/projects/github.com/revett/dotfiles/cursor/settings.json ~/Library/Application\ Support/Cursor/User/
 
+# CMUX
+
+mkdir -p ~/.config/cmux
+ln -sf ~/projects/github.com/revett/dotfiles/cmux.json ~/.config/cmux/cmux.json
+
 # Claude
 
 CLAUDE_SRC=~/projects/github.com/revett/dotfiles/claude

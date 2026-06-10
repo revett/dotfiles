@@ -117,10 +117,10 @@ safe() {
       --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
       "${work_mounts[@]}" \
       --add-dirs="$HOME/projects/scratchpad" \
-      --add-dirs="$HOME/Library/Application Support/cmux" \
+      --add-dirs="$HOME/.local/state/cmux" \
       --add-dirs="$HOME/Library/Caches/io.sentry" \
       --add-dirs="$(pwd)" \
-      --env-pass="CMUX_WORKSPACE_ID,GH_REPO_SLUG" \
+      --env-pass="CMUX_WORKSPACE_ID,CMUX_SURFACE_ID,CMUX_SOCKET_PATH,GH_REPO_SLUG" \
       --append-profile="$SAFEHOUSE_APPEND_PROFILE" \
       "$@"
 }
