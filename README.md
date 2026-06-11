@@ -22,13 +22,11 @@ commands to help with managing installing packages across work/personal machines
 ## Todo
 
 - [ ] HTML explainer skill
-- [ ] Address GitHub PR comments skill
-- [ ] Add default output (i.e. in chat) destination for Claude
-- [ ] Add preferred output format (i.e. ranked, scored, grouped etc) for Claude
 - [ ] Update `permissions.deny` list for Claude
 - [ ] Set up status line for Claude
-- [ ] Improve cmux status tracking of Claude within sidebar
-- [ ] Handle deleting empty skill directories within `install.sh`
+- [ ] Add loop based web UI for managing sessions
+- [ ] Add artifact tracking within cmux dock
+- [ ] Add ticket ID / PR number to cmux sidebar
 - [ ] Remove old skill marketplaces
 
 ## Thanks
