@@ -4,6 +4,7 @@ machines:
   shared:
     taps:
       - eugene1g/safehouse
+      - manaflow-ai/cmux
       - oven-sh/bun
     formulae:
       - agent-safehouse
@@ -28,7 +29,6 @@ machines:
       - firefox@developer-edition
       - font-sauce-code-pro-nerd-font
       - google-chrome
-      - granola
       - handy
       - notion
       - postico # This is Postico 2
@@ -37,7 +37,6 @@ machines:
       - todoist-app
       - whatsapp
       - yaak
-      # - https://logitech.com/en-gb/software/logi-options-plus → Not yet on Homebrew
     cursor:
       - albert.tabout
       - bierner.markdown-emoji
@@ -60,9 +59,6 @@ machines:
       - yoavbls.pretty-ts-errors
       - yzhang.markdown-all-in-one
   personal:
-    formulae:
-      - ffmpeg # Used for revett/kino
-      - yt-dlp # Used for revett/kino
     casks:
       - adobe-creative-cloud
       - calibre
@@ -72,9 +68,7 @@ machines:
       - sublime-text
       - transmission
     cursor:
-      - astro-build.astro-vscode
       - bradlc.vscode-tailwindcss
-      - expo.vscode-expo-tools
       - golang.go
       - jinliming2.vscode-go-template
   work:
@@ -84,10 +78,10 @@ machines:
       - mkcert # Requirement of team-plain/support-app
       - nss # Requirement of team-plain/support-app
     casks:
-      - linear-linear
+      - granola
+      - linear
       - session-manager-plugin # AWS CLI session manager used at Plain
       - slack
-      - sonos
       - tuple
       # - clocker → Installed via macOS store due to new releases living there
       # - https://supercut.ai → Not yet on Homebrew
