@@ -28,6 +28,9 @@ commands to help with managing installing packages across work/personal machines
 - [ ] Add artifact tracking within cmux dock
 - [ ] Add ticket ID / PR number to cmux sidebar
 - [ ] Remove old skill marketplaces
+- [ ] Fix why cmux workspace rename does not work for `~/projects/scratchpad`
+- [ ] Add alias for `~/projects/scratchpad`
+- [ ] Add `ll` back from oh-my-zsh
 
 ## Thanks
 
