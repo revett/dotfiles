@@ -30,6 +30,7 @@ machines:
       - font-sauce-code-pro-nerd-font
       - google-chrome
       - handy
+      - logi-options+
       - notion
       - postico # This is Postico 2
       - raycast
