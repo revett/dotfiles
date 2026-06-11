@@ -3,8 +3,6 @@ name: pr
 description: Generate a very concise PR title and description for the current branch
 ---
 
-# Task
-
 Write a very concise title and description for a GitHub pull request for the current branch. Open
 the output as a temporary editable HTML tab in Safari on completion.
 

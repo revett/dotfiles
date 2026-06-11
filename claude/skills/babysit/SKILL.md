@@ -3,8 +3,6 @@ name: babysit
 description: Babysit either a deploy or CI checks on an open PR
 ---
 
-# Task
-
 You are responsible for babysitting either a deployment or an open PR. For a deployment, you will be
 given a GitHub PR URL or PR number, and you are tasked with monitoring the deployment, then checking
 for issues after the change hits production and sees real usage, use available tools to help you

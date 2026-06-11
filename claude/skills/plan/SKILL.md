@@ -3,8 +3,6 @@ name: plan
 description: Investigate a problem and create a plan as a HTML document
 ---
 
-# Task
-
 Exhaustively investigate the given subject, then deeply think about the problem space, then come up
 with a plan as to how to solve it. Create a single HTML page to explain your investigation,
 thinking, plan, and recommendations. Open it in Safari on completion. Assume the reader is coming to

@@ -3,8 +3,6 @@ name: explain
 description: Create a single HTML page to explain the given subject
 ---
 
-# Task
-
 Exhaustively understand the given subject, then deeply think about it, and then create a single HTML
 page to explain your understanding to the reader. Most commonly the subject will either be the
 changes on the current branch where the reader is looking to understand the changes made by an
