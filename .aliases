@@ -12,9 +12,11 @@ alias ~='cd $HOME'
 alias dotfiles='cd ~/projects/github.com/revett/dotfiles'
 alias rev='cd ~/projects/github.com/revett'
 alias 8th='cd ~/projects/github.com/8thpark'
+alias scratchpad='cd ~/projects/scratchpad'
 
 # General
 alias reload='source ~/.zshrc'
+alias ll='gls -lh --color'
 
 # Git
 # gfo → grebase → gpush
