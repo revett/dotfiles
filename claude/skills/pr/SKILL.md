@@ -4,7 +4,10 @@ description: Generate a very concise PR title and description for the current br
 ---
 
 Write a very concise title and description for a GitHub pull request for the current branch. Open
-the output as a temporary editable HTML tab in Safari on completion.
+the output as a temporary editable HTML tab in Safari on completion. The UI design can be light
+mode, with a single line input for the title, and a multiline input for the description expanded so
+that you can see the entire description without scrolling, and two buttons to copy each to the
+clipboard, and the title of the HTML page should be the PR number and ticket number if available.
 
 Title format:
 

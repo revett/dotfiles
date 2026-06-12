@@ -76,7 +76,7 @@ Allowed without asking:
 - All read commands (status, diff, log, pr view/list/checks, run view/list, etc.)
 - `gh run rerun` and `gh run cancel` (CI only, no team visible artifacts)
 
-This includes the use of aliases.
+This includes the use of aliases. Ensure to use my `gcb` alias for creating new branches.
 
 ### Granola
 
