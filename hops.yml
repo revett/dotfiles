@@ -16,6 +16,7 @@ machines:
       - fzf
       - gh
       - git
+      - hugo
       - jq
       - python@3.13
       - starship
