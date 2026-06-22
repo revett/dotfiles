@@ -12,7 +12,7 @@ alias ~='cd $HOME'
 alias dotfiles='cd ~/projects/github.com/revett/dotfiles'
 alias rev='cd ~/projects/github.com/revett'
 alias 8th='cd ~/projects/github.com/8thpark'
-alias scratchpad='cd ~/projects/scratchpad'\
+alias scratchpad='cd ~/projects/scratchpad'
 alias icloud='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
 
 # General
