@@ -115,6 +115,7 @@ safe() {
       --enable=shell-init,cloud-credentials,1password \
       --add-dirs-ro="$HOME/.claude" \
       --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
+      --add-dirs-ro="/Applications/cmux.app" \
       "${work_mounts[@]}" \
       --add-dirs="$HOME/projects/scratchpad" \
       --add-dirs="$HOME/.local/state/cmux" \
