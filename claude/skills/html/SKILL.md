@@ -22,5 +22,11 @@ comprehension, not decorate it.
 
 Save the artifact to the scratchpad and open it in Safari on completion. Use subagents where it
 makes you more efficient, and keep the reader updated on progress. If it makes sense to update and
-reuse an existing artifact, do so. Use light theme when working during the day, and dark theme when
-working at night.
+reuse an existing artifact, do so.
+
+Use light theme when working during the day, and dark theme when working at night. Feel free to make
+it subtly solarpunk themed if you like, get creative.
+
+Critically must start the page with <meta charset="utf-8"> before any other markup. The file is
+opened over `file://` with no server charset header, so without this Safari falls back to a legacy
+encoding and any non-ASCII characters.
