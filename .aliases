@@ -44,6 +44,9 @@ alias ip='localip'
 # Set BSD ls to use coreutils gls
 alias ls='gls --color'
 
+# Love2D
+alias love='/Applications/love.app/Contents/MacOS/love'
+
 # ---
 # Personal
 # ---

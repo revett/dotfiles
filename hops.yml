@@ -18,8 +18,10 @@ machines:
       - git
       - hugo
       - jq
+      - luacheck
       - python@3.13
       - starship
+      - stylua
       - tree
     casks:
       - 1password
@@ -35,6 +37,7 @@ machines:
       - notion
       - postico # This is Postico 2
       - raycast
+      - screen-studio
       - spotify
       - todoist-app
       - whatsapp
