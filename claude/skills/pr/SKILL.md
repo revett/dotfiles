@@ -12,8 +12,8 @@ clipboard, and the title of the HTML page should be the PR number and ticket num
 Title format:
 
 ```text
-<area> → <short_description>
-Ari → Remove search queries from logs
+[TICKET_NUMBER] <area> → <short_description>
+[ARI-1884] Knowledge Sources → Remove search queries from logs
 ```
 
 Description must be in markdown, and include the following sections:
@@ -29,3 +29,6 @@ do not use full stops at the end of each bullet point. Do not include ticket num
 description. The first word of each bullet point should be capitalised. Make use of inline code
 blocks to highlight parts of a bullet point where appropriate. Avoid using hyphenated compound
 modifiers (write "production grade" not "production-grade", "real time" not "real-time" etc).
+
+Before the start of the "Problem" section of the description, there should be a line that reads
+"Resolves [TICKET_NUMBER](TICKET_URL)", with a link to the Linear ticket, and a newline under it.
