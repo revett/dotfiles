@@ -35,6 +35,7 @@ machines:
       - handy
       - logi-options+
       - notion
+      - obsidian
       - postico # This is Postico 2
       - raycast
       - screen-studio
