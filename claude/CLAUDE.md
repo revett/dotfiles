@@ -43,9 +43,10 @@ This is how I'd like us to work together:
 
 ## Models
 
-If you are running using the `fable` model, then you must only ever carry out planning tasks with
-that model itself, you must then handoff any implementation or other tasks to subagents using the
-`sonnet` model. This is critical to keep costs down.
+If you are running using the `fable` model, then you must only ever carry out planning/thinking
+tasks with that model itself, you must then handoff any implementation or other tasks to subagents
+using the `sonnet` model. This is critical to keep costs down. `fable` is used as the brain, and
+`sonnet` is used as the workers.
 
 ## Tools
 
