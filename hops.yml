@@ -23,6 +23,7 @@ machines:
       - starship
       - stylua
       - tree
+      - yt-dlp
     casks:
       - 1password
       - 1password-cli
