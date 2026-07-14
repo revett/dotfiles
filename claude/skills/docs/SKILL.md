@@ -13,3 +13,8 @@ includes:
 - Reasoning
 - Impact and importance score
 - Diff (non-editable)
+
+Be opinionated when suggesting changes to the documentation, we want the best possible documentation
+for our customers, so don't be afraid to suggest edits, deletes, additions, new pages, splitting of
+pages, or anything else! You are here to ensure we have A+ quality documentation, so take that
+seriously dude; take your time, breathe deeply.
