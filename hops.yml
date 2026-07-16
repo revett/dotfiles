@@ -16,12 +16,9 @@ machines:
       - fzf
       - gh
       - git
-      - hugo
       - jq
-      - luacheck
       - python@3.13
       - starship
-      - stylua
       - tree
       - yt-dlp
     casks:
@@ -59,7 +56,6 @@ machines:
       - pascalreitermann93.vscode-yaml-sort
       - redhat.vscode-yaml
       - richie5um2.vscode-sort-json
-      - slbtty.lisp-syntax
       - tamasfe.even-better-toml
       - tyriar.sort-lines
       - wayou.vscode-todo-highlight
@@ -87,11 +83,9 @@ machines:
     casks:
       - granola
       - linear
-      - session-manager-plugin # AWS CLI session manager used at Plain
+      - session-manager-plugin
       - slack
       - tuple
-      # - clocker → Installed via macOS store due to new releases living there
-      # - https://supercut.ai → Not yet on Homebrew
     cursor:
       - typescriptteam.native-preview # Needed for tsgo support
       - vitest.explorer
