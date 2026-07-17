@@ -41,12 +41,18 @@ This is how I'd like us to work together:
 - Use title case for all headings (e.g. "Getting Started with Agents" not "Getting started with
   agents")
 
-## Models
+## Orchestrator Pattern
 
-If you are running using the `fable` model, then you must only ever carry out planning/thinking
-tasks with that model itself, you must then handoff any implementation or other tasks to subagents
-using the `sonnet` model. This is critical to keep costs down. `fable` is used as the brain, and
-`sonnet` is used as the workers.
+If you are running using a more powerful model, such as `fable` or `opus`, then make use of the
+orchestrator pattern. As you are running using a powerful model, you are therefore the orchestrator,
+and the brains of the operation. Make use of subagents to carry out work, if you are confident in
+YOU using your powerful brain to fully spec out the work, so subagents can just execute on it. There
+is nuance here, and I'm relying on you to use your judgement correctly, as we do not want less
+powerful subagents thinking or reasoning, we want them executing on the work you have fully spec'd
+out, purely as workers. Subagents should make use of the `sonnet` model, and do not have to be used,
+again this is your judgement call. I like this pattern, as it allows you to use your powerful brain
+to spec out the work, and then handoff to subagents to execute on it in parallel, whilst also
+allowing me to continue talking to you in the main chat, and to keep costs down.
 
 ## Tools
 
