@@ -29,6 +29,7 @@ machines:
       - cursor
       - firefox@developer-edition
       - font-sauce-code-pro-nerd-font
+      - font-space-mono
       - google-chrome
       - handy
       - logi-options+
@@ -72,7 +73,6 @@ machines:
       - claude
       - iina
       - private-internet-access
-      - sublime-text
       - transmission
     cursor:
       - bradlc.vscode-tailwindcss
