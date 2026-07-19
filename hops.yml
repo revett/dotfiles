@@ -62,6 +62,10 @@ machines:
       - yoavbls.pretty-ts-errors
       - yzhang.markdown-all-in-one
   personal:
+    formulae:
+      - colima
+      - docker
+      - docker-compose
     casks:
       - adobe-creative-cloud
       - calibre

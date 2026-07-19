@@ -67,4 +67,8 @@ mkdir -p ~/projects/scratchpad
 mkdir -p ~/.config/agent-safehouse
 ln -sf ~/projects/github.com/revett/dotfiles/agent-safehouse-overrides.sb ~/.config/agent-safehouse/local-overrides.sb
 
+# Obsidian
+
+mkdir -p ~/obsidian
+
 echo "> complete"
