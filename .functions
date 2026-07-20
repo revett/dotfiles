@@ -112,7 +112,7 @@ safe() {
 
   GH_REPO_SLUG="$(gh-repo-slug 2>/dev/null || echo "")" \
     safehouse \
-      --enable=shell-init,cloud-credentials,1password \
+      --enable=shell-init,cloud-credentials,1password,docker \
       --add-dirs-ro="$HOME/.claude" \
       --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
       --add-dirs-ro="/Applications/cmux.app" \
