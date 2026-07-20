@@ -5,6 +5,7 @@
   },
   "permissions": {
     "deny": [
+      "Bash(git commit*)",
       "Bash(git push*)",
       "Bash(git remote add*)",
       "Bash(git remote remove*)",
@@ -46,10 +47,12 @@
     "command": "~/.claude/statusline.sh"
   },
   "alwaysThinkingEnabled": true,
+  "tui": "default",
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
-  "bypassPermissionsModeAccepted": true,
   "showTurnDuration": true,
+  "bypassPermissionsModeAccepted": true,
+  "disableAutoMode": "disable",
   "feedbackSurveyState": {
     "lastShownTime": 1754056697258
   }
