@@ -5,15 +5,53 @@ description: Surface weekly LinkedIn post ideas from my recent work
 
 # Instructions
 
-Find things worth posting about on LinkedIn from what I've actually been doing lately.
+- Find things worth posting about on LinkedIn from what I've actually been doing lately
+- Look back over the window I name (default 4 weeks) and pull from GitHub (both work and personal),
+  Slack (my own messages and threads I'm active in, as well as my team channel), and, if useful,
+  recent meetings (use raw Granola transcripts for context), Linear tickets, and Notion documents
+- Basically build from sources you deem relevant so that you have a comprehensive context of what
+  I've been doing
+- Only include personal GitHub activity that sits within public repositories
+- Hunt for the genuinely interesting; a technical challenge and how we cracked it, a product or
+  strategy bet, a team or leadership moment, a surprising learning, a strong opinion
+- Skip the routine
+- Return a ranked, scored shortlist of ideas as a new local HTML artifact
+- Each idea should be a short explainer on why it would land; leaning casual, authentic and specific
+- Ideas only, do not write the posts
 
-Look back over the window I name (default 4 weeks) and pull from GitHub (both work and personal),
-Slack (my own messages and threads I'm active in, as well as my team channel), and, if useful,
-recent meetings (use raw Granola transcripts for context), Linear tickets, and Notion documents.
-Basically build from sources you deem relevant so that you have a comprehensive context of what I've
-been doing. Only include personal GitHub activity that sits within public repositories. Hunt for the
-genuinely interesting; a technical challenge and how we cracked it, a product or strategy bet, a
-team or leadership moment, a surprising learning, a strong opinion. Skip the routine.
+## Critical
 
-Return a ranked, scored shortlist of ideas, each a one line hook plus a sentence on why it would
-land, leaning casual and authentic. Ideas only. Do not write the posts.
+- Do not be agreeable, strong opinions are welcome
+- Use subagents if relevant to be more effective in your task
+- If creating a local artifact, ensure to save it to the [scratchpad](~/projects/scratchpad)
+- Feel free to update and use an existing artifact if that makes sense
+- If helpful to your task, ask Charlie to fetch data/context manually for you, where you lack access
+- Keep Charlie updated on your progress as you complete the task
+- Always use a light theme when creating HTML artifacts
+- After creating/updating a local HTML artifact, ensure to always open it within cmux (see below)
+- Use available tools (where appropriate) to help build context and a better understanding
+- If applicable, include a sticky ToC sidebar, left of the main content that scrolls with the page
+
+### Opening in Browser
+
+Open with `new-surface`, never `cmux open`. Follow the following process for opening correctly:
+
+```bash
+command -v cmux >/dev/null 2>&1 && [ -n "$CMUX_WORKSPACE_ID" ] || exit 0
+
+# Target pane = the one not running this session. Never hardcode, refs shift per session.
+target=""
+for p in $(cmux list-panes --workspace "$CMUX_WORKSPACE_ID" | grep -o 'pane:[0-9]*'); do
+  cmux list-pane-surfaces --workspace "$CMUX_WORKSPACE_ID" --pane "$p" --id-format both 2>/dev/null \
+    | grep -qi "$CMUX_SURFACE_ID" || { target="$p"; break; }
+done
+
+cmux new-surface --type browser --pane "$target" --url "file://$abs" \
+  --focus false --workspace "$CMUX_WORKSPACE_ID"
+# → OK surface:209 pane:2 workspace:2   (trust this line, not the exit code)
+```
+
+- Empty `$target` means one pane; use `cmux new-pane --type browser --direction left --url <url>`
+- `file://` needs an absolute path
+- Close only what you opened: `cmux close-surface --surface <ref>`
+- `surface:2` and `pane:2` are unrelated sequences

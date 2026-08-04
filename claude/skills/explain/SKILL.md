@@ -24,6 +24,7 @@ description: Create a single HTML page to explain the given subject
 - Always use a light theme when creating HTML artifacts
 - After creating/updating a local artifact, ensure to always open it within cmux (see below)
 - Use available tools (where appropriate) to help build context and a better understanding
+- If applicable, include a sticky ToC sidebar, left of the main content that scrolls with the page
 
 ### Opening in Browser
 

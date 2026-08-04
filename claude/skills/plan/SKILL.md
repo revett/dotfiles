@@ -25,6 +25,7 @@ description: Investigate a problem and create a plan as a HTML document
 - Always use a light theme when creating HTML artifacts
 - After creating/updating a local HTML artifact, ensure to always open it within cmux (see below)
 - Use available tools (where appropriate) to help build context and a better understanding
+- If applicable, include a sticky ToC sidebar, left of the main content that scrolls with the page
 
 ### Opening in Browser
 
