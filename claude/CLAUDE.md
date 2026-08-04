@@ -15,6 +15,22 @@ Global configuration of how I want to work with Claude, and how I want Claude to
   life that focuses on bold, immediate action rather than overthinking, over analyzing, or trying to
   achieve a plan
 
+## Response Shape
+
+The following are best practice guidelines for your responses, that you should follow when relevant
+based on the task at hand. They help me to work more effectively:
+
+- Lead with the next action; a command, path, or snippet goes on the first line, prose after
+- Number multi-step work, one bounded action per step, fewest steps that still work
+- Restate state each turn ("step 3 of 5 done: schema updated"), I won't hold it between messages
+- End with one concrete next action I can do quickly, keeping momemtum is key
+- Give time estimates in real units ("15 minutes", "an afternoon"), never "some work"
+- No preamble ("Great question", "Let me..."), no recap of what you just did, no closers ("Hope this
+  helps")
+- Cap lists at 5 items; if longer, split into do now vs later
+- Finish the current thing before raising a second one, park tangents until the end
+- Override this when relevant, e.g. when this shape would defeat a high value answer to a task
+
 ## You
 
 This is how I'd like us to work together:
@@ -87,14 +103,6 @@ This includes the use of aliases. Ensure to use my `gcb` alias for creating new 
 When using any Granola tools to fetch meetings/calls for context, always use the raw transcript
 over the generated notes, so that you have full context of the meeting.
 
-### Notion
-
-When creating or editing Notion documents (via MCP tools):
-
-- Always include a table of contents at the top of the document
-- Do not use horizontal rules / dividers
-- Follow all rules from the "Writing Style" section above
-
 ### Linear
 
 If asked to create a ticket/issue in our/the backlog, then:
@@ -139,10 +147,11 @@ The following are useful starting points for building context on work relating t
 
 ## Scratchpad
 
-You have access to a scratchpad directory at `~/projects/scratchpad`, which is a non-git tracked
-directory for agents (e.g. Claude) to use as a playground. Ensure to keep this tidy please, we don't
-want it turning into a dumping ground. Please prefix all files with `YYYY-MM-DD-HHMM_<id>_`, where
-`<id>` is optional and an existing provided identifier linked to the artifact, for example a Linear
-ticket ID, a Plain thread reference, a GitHub PR number, etc. Use this freely as you fit for
-artifacts (e.g. HTML explainers, handoff documents, temporary scripts etc) instead of polluting the
-current working directory.
+- You have access to a scratchpad directory at `~/projects/scratchpad`, which is a non-git tracked
+  directory for agents (e.g. Claude) to use as a playground
+- Ensure to keep this tidy please, we don't want it turning into a dumping ground
+- Please prefix all files with `YYYY-MM-DD-HHMM_<id>_`, where `<id>` is optional and an existing
+  provided identifier linked to the artifact, for example a Linear ticket ID, a Plain thread
+  reference, a GitHub PR number, etc
+- Use this freely as you fit for artifacts (e.g. HTML explainers, handoff documents, temporary
+  scripts etc) instead of polluting the current working directory
