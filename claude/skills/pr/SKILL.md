@@ -3,11 +3,17 @@ name: pr
 description: Generate a very concise PR title and description for the current branch
 ---
 
-Write a very concise title and description for a GitHub pull request for the current branch. Open
-the output as a temporary editable HTML tab in Safari on completion. The UI design can be light
-mode, with a single line input for the title, and a multiline input for the description expanded so
-that you can see the entire description without scrolling, and two buttons to copy each to the
-clipboard, and the title of the HTML page should be the PR number and ticket number if available.
+# Instructions
+
+Write a very concise title and description for a GitHub pull request for the current branch. Do not
+write any HTML. The page already exists at `~/.claude/skills/pr/template.html`; you only fill in
+three placeholders:
+
+1. Copy the template to `~/projects/scratchpad/`, named `YYYY-MM-DD-HHMM_<ticket>_pr.html`, dropping
+   the `<ticket>` part if there is no ticket
+2. In the copy, replace `__PAGE_TITLE__` with the PR number and ticket number if available,
+   `__TITLE__` with the PR title, and `__DESCRIPTION__` with the markdown description
+3. Open it in the browser using `open`
 
 Title format:
 

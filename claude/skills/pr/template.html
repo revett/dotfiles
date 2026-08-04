@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>__PAGE_TITLE__</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f6f7;
+        --panel: #ffffff;
+        --border: #d8d8dc;
+        --text: #16161a;
+        --muted: #6b6b73;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 32px 24px 64px;
+        background: var(--bg);
+        color: var(--text);
+        font: 14px/1.5 ui-sans-serif, -apple-system, "Helvetica Neue", sans-serif;
+      }
+
+      main {
+        max-width: 860px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      label {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--panel);
+        color: var(--text);
+        font-family: inherit;
+        font-size: 14px;
+        line-height: 1.6;
+        resize: vertical;
+      }
+
+      textarea {
+        font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        font-size: 13px;
+        overflow: hidden;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: 2px solid var(--text);
+        outline-offset: -1px;
+      }
+
+      button {
+        padding: 6px 12px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--panel);
+        color: var(--text);
+        font: inherit;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #ececef;
+      }
+
+      button[data-copied="true"] {
+        background: var(--text);
+        border-color: var(--text);
+        color: #ffffff;
+      }
+
+      #title-source {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="row">
+          <label for="title">Title</label>
+          <button type="button" data-copy="title">Copy</button>
+        </div>
+        <input id="title" spellcheck="false" />
+      </section>
+
+      <section>
+        <div class="row">
+          <label for="body">Description</label>
+          <button type="button" data-copy="body">Copy</button>
+        </div>
+        <textarea id="body" spellcheck="false">__DESCRIPTION__</textarea>
+      </section>
+    </main>
+
+    <!-- The title lives in a textarea so it never needs attribute quoting. -->
+    <textarea id="title-source">__TITLE__</textarea>
+
+    <script>
+      const title = document.getElementById("title");
+      const body = document.getElementById("body");
+
+      title.value = document.getElementById("title-source").value.trim();
+      body.value = body.value.trim();
+
+      function fit() {
+        body.style.height = "auto";
+        body.style.height = body.scrollHeight + 2 + "px";
+      }
+
+      fit();
+      body.addEventListener("input", fit);
+
+      async function copy(field) {
+        try {
+          await navigator.clipboard.writeText(field.value);
+        } catch {
+          // The clipboard API is not guaranteed on a file:// origin.
+          field.select();
+          document.execCommand("copy");
+        }
+      }
+
+      for (const button of document.querySelectorAll("[data-copy]")) {
+        button.addEventListener("click", async () => {
+          await copy(button.dataset.copy === "title" ? title : body);
+          button.dataset.copied = "true";
+          button.textContent = "Copied";
+          setTimeout(() => {
+            button.dataset.copied = "false";
+            button.textContent = "Copy";
+          }, 1200);
+        });
+      }
+    </script>
+  </body>
+</html>

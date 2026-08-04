@@ -3,6 +3,8 @@ name: linkedin
 description: Surface weekly LinkedIn post ideas from my recent work
 ---
 
+# Instructions
+
 Find things worth posting about on LinkedIn from what I've actually been doing lately. Look back
 over the window I name (default 4 weeks) and pull from GitHub (both work and personal), Slack (my
 own messages and threads I'm active in, as well as my team channel), and, if useful, recent meetings

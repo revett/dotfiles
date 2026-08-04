@@ -3,6 +3,8 @@ name: html
 description: Create a single self-contained HTML artifact instead of a long markdown reply
 ---
 
+# Instructions
+
 Create one self contained HTML page that explains, compares, demonstrates, or lets the reader
 manipulate the subject more effectively than a wall of markdown would. Reach for this whenever
 spatial layout, hierarchy, side-by-side comparison, a diagram, lightweight interaction, or a
@@ -28,6 +30,6 @@ Always use a light theme, and feel free to make it subtly solarpunk themed if yo
 creative. Always include a sticky sidebar with a table of contents, on the left of the main page
 content that scrolls with the page.
 
-Critically must start the page with <meta charset="utf-8"> before any other markup. The file is
+Critically must start the page with `<meta charset="utf-8">` before any other markup. The file is
 opened over `file://` with no server charset header, so without this Safari falls back to a legacy
 encoding and any non-ASCII characters.
