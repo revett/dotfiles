@@ -5,14 +5,47 @@ description: Investigate a problem and create a plan as a HTML document
 
 # Instructions
 
-Exhaustively investigate the given subject, then deeply think about the problem space, then come up
-with a plan as to how to solve it. Create a single HTML page to explain your investigation,
-thinking, plan, and recommendations. Open it in Safari on completion. Assume the reader is coming to
-the document with low context. Use the scratchpad to save the artifact. The subject will be a URL,
-for example to a Linear ticket, if one was not provided then fail fast and say so. Use subagents
-where appropriate to be efficient in your work. Keep the reader updated on your progress as you
-compile the document. Do not be agreeable, strong opinions are welcome, the document should serve as
-a surface for discussion and decision making. If it makes sense to update and use an existing
-artifact, then do so. If you deem it necessary, give Charlie instructions to fetch data/context that
-isn't possible to gather via tools, such as running a database query, taking a screenshot, running
-an internal CLI command, or running an ad-hoc script that you wrote.
+- Exhaustively investigate the given subject
+- Think deeply about the problem space and domain
+- Come up with a plan as to how to solve it
+- Output a single local HTLM page to explain your investigation, thinking, plan, and recommendations
+- Charlie should provide the subject of the plan (e.g. Linear ticket), if not then fail fast
+- Assume the reader is coming to the document with low context
+- Start the document at a simpler high level, then adding depth and complexity as it continues
+- The document should serve as a surface for discussion and decision making
+
+## Critical
+
+- Do not be agreeable, strong opinions are welcome
+- Use subagents if relevant to be more effective in your task
+- If creating a local artifact, ensure to save it to the [scratchpad](~/projects/scratchpad)
+- Feel free to update and use an existing artifact if that makes sense
+- If helpful to your task, ask Charlie to fetch data/context manually for you, where you lack access
+- Keep Charlie updated on your progress as you complete the task
+- Always use a light theme when creating HTML artifacts
+- After creating/updating a local HTML artifact, ensure to always open it within cmux (see below)
+- Use available tools (where appropriate) to help build context and a better understanding
+
+### Opening in Browser
+
+Open with `new-surface`, never `cmux open`. Follow the following process for opening correctly:
+
+```bash
+command -v cmux >/dev/null 2>&1 && [ -n "$CMUX_WORKSPACE_ID" ] || exit 0
+
+# Target pane = the one not running this session. Never hardcode, refs shift per session.
+target=""
+for p in $(cmux list-panes --workspace "$CMUX_WORKSPACE_ID" | grep -o 'pane:[0-9]*'); do
+  cmux list-pane-surfaces --workspace "$CMUX_WORKSPACE_ID" --pane "$p" --id-format both 2>/dev/null \
+    | grep -qi "$CMUX_SURFACE_ID" || { target="$p"; break; }
+done
+
+cmux new-surface --type browser --pane "$target" --url "file://$abs" \
+  --focus false --workspace "$CMUX_WORKSPACE_ID"
+# → OK surface:209 pane:2 workspace:2   (trust this line, not the exit code)
+```
+
+- Empty `$target` means one pane; use `cmux new-pane --type browser --direction left --url <url>`
+- `file://` needs an absolute path
+- Close only what you opened: `cmux close-surface --surface <ref>`
+- `surface:2` and `pane:2` are unrelated sequences

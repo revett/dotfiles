@@ -8,6 +8,11 @@ Instructions for working in this project only.
 - Don't sit in the cave and try to hack your way out of it, just ask for help
 - E.g. parts of this file are outdated due updates to cmux, we should update them together
 
+## SKILLs
+
+- Ensure that (if present) the `## Critical` and `### Opening in Browser` sections in `SKILL.md`
+  files are concistent across the repo
+
 ## cmux
 
 Read what version of cmux is installed by running:
@@ -24,7 +29,6 @@ defaults read /Applications/cmux.app/Contents/Info.plist CFBundleShortVersionStr
 - `install.sh` symlinks `cmux/config.json` to `~/.config/cmux/cmux.json`
 - cmux will use verbose per binding object format if changes are made by hand, do not use that
   format, use plain strings (e.g. `"cmd+,"` or `""`) instead
-
 
 ### Keybindings
 

@@ -5,14 +5,16 @@ description: Create a single self-contained HTML artifact instead of a long mark
 
 # Instructions
 
-Create one self contained HTML page that explains, compares, demonstrates, or lets the reader
-manipulate the subject more effectively than a wall of markdown would. Reach for this whenever
-spatial layout, hierarchy, side-by-side comparison, a diagram, lightweight interaction, or a
-copy/export button would materially help. Common shapes: an explainer or walkthrough, an approach
-comparison with tradeoffs, a code review aid, a plan with milestones and risks, a design or
-component sheet, a clickable prototype, an inline SVG diagram, a slide deck, a report or postmortem,
-or a small editor that exports markdown/JSON/config. Don't use it when the answer is short, purely
-factual, or the reader asked for markdown.
+Create one self-contained local light theme HTML page that explains, compares, demonstrates, or lets
+the reader manipulate the subject more effectively than a wall of markdown would. Reach for this
+whenever spatial layout, hierarchy, side-by-side comparison, a diagram, lightweight interaction, or
+a copy/export button would materially help.
+
+Common shapes: an explainer or walkthrough, an approach comparison with tradeoffs, a code review
+aid, a plan with milestones and risks, a design or component sheet, a clickable prototype, an inline
+SVG diagram, a slide deck, a report or postmortem, or a small editor that exports
+markdown/JSON/config. Don't use it when the answer is short, purely factual, or the reader asked for
+markdown.
 
 Keep everything inline (CSS and JS), no CDNs, fonts, build steps, or network access; it must open
 straight from disk. Keep the JavaScript small and purposeful, use semantic HTML, and make it work on
