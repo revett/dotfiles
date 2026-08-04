@@ -8,7 +8,7 @@ description: Propose changes to Plain's docs based on changes on the current bra
 - Look at the changes on the current branch (local and remote)
 - Then look through Plain's documentation using [Help Center](https://help.plain.com/llms.txt)
 - See if there are any obvious changes that need to be made to the documentation given the changes
-- Output a single local HTLM page to explain your investigation, thinking, plan, and recommendations
+- Output a single local HTML page to explain your investigation, thinking, plan, and recommendations
 - It should be a list of necessary changes, where each change is a section, which includes:
 
 ```plaintext
@@ -31,7 +31,7 @@ description: Propose changes to Plain's docs based on changes on the current bra
 - If helpful to your task, ask Charlie to fetch data/context manually for you, where you lack access
 - Keep Charlie updated on your progress as you complete the task
 - Always use a light theme when creating HTML artifacts
-- After creating/updating a local artifact, ensure to always open it within cmux (see below)
+- After creating/updating a local HTML artifact, ensure to always open it within cmux (see below)
 - Use available tools (where appropriate) to help build context and a better understanding
 - If applicable, include a sticky ToC sidebar, left of the main content that scrolls with the page
 
@@ -40,6 +40,8 @@ description: Propose changes to Plain's docs based on changes on the current bra
 Open with `new-surface`, never `cmux open`. Follow the following process for opening correctly:
 
 ```bash
+abs="/absolute/path/to/artifact.html" # the file you just created or updated
+
 command -v cmux >/dev/null 2>&1 && [ -n "$CMUX_WORKSPACE_ID" ] || exit 0
 
 # Target pane = the one not running this session. Never hardcode, refs shift per session.

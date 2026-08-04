@@ -13,7 +13,7 @@ three placeholders:
    the `<ticket>` part if there is no ticket
 2. In the copy, replace `__PAGE_TITLE__` with the PR number and ticket number if available,
    `__TITLE__` with the PR title, and `__DESCRIPTION__` with the markdown description
-3. Open it in the browser using `open`
+3. Open the copy in the browser (see "Opening in Browser" below)
 
 Title format:
 
@@ -57,6 +57,8 @@ Before the start of the "Problem" section of the description, there should be a 
 Open with `new-surface`, never `cmux open`. Follow the following process for opening correctly:
 
 ```bash
+abs="/absolute/path/to/artifact.html" # the file you just created or updated
+
 command -v cmux >/dev/null 2>&1 && [ -n "$CMUX_WORKSPACE_ID" ] || exit 0
 
 # Target pane = the one not running this session. Never hardcode, refs shift per session.

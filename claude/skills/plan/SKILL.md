@@ -8,7 +8,7 @@ description: Investigate a problem and create a plan as a HTML document
 - Exhaustively investigate the given subject
 - Think deeply about the problem space and domain
 - Come up with a plan as to how to solve it
-- Output a single local HTLM page to explain your investigation, thinking, plan, and recommendations
+- Output a single local HTML page to explain your investigation, thinking, plan, and recommendations
 - Charlie should provide the subject of the plan (e.g. Linear ticket), if not then fail fast
 - Assume the reader is coming to the document with low context
 - Start the document at a simpler high level, then adding depth and complexity as it continues
@@ -32,6 +32,8 @@ description: Investigate a problem and create a plan as a HTML document
 Open with `new-surface`, never `cmux open`. Follow the following process for opening correctly:
 
 ```bash
+abs="/absolute/path/to/artifact.html" # the file you just created or updated
+
 command -v cmux >/dev/null 2>&1 && [ -n "$CMUX_WORKSPACE_ID" ] || exit 0
 
 # Target pane = the one not running this session. Never hardcode, refs shift per session.

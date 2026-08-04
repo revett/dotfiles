@@ -6,7 +6,7 @@ description: Create a single HTML page to explain the given subject
 # Instructions
 
 - Exhaustively understand the given subject, then deeply think about it
-- Output a single local HTLM page to explain your investigation, thinking, plan, and recommendations
+- Output a single local HTML page to explain your investigation, thinking, plan, and recommendations
 - Charlie should provide the subject of the plan (e.g. Linear ticket), if not then fail fast
 - Most commonly the subject will either be the changes on the current branch, or a GitHub PR
 - Subject can be anything, for example a Slack thread that the reader is looking to understand
@@ -22,7 +22,7 @@ description: Create a single HTML page to explain the given subject
 - If helpful to your task, ask Charlie to fetch data/context manually for you, where you lack access
 - Keep Charlie updated on your progress as you complete the task
 - Always use a light theme when creating HTML artifacts
-- After creating/updating a local artifact, ensure to always open it within cmux (see below)
+- After creating/updating a local HTML artifact, ensure to always open it within cmux (see below)
 - Use available tools (where appropriate) to help build context and a better understanding
 - If applicable, include a sticky ToC sidebar, left of the main content that scrolls with the page
 
@@ -31,6 +31,8 @@ description: Create a single HTML page to explain the given subject
 Open with `new-surface`, never `cmux open`. Follow the following process for opening correctly:
 
 ```bash
+abs="/absolute/path/to/artifact.html" # the file you just created or updated
+
 command -v cmux >/dev/null 2>&1 && [ -n "$CMUX_WORKSPACE_ID" ] || exit 0
 
 # Target pane = the one not running this session. Never hardcode, refs shift per session.

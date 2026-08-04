@@ -37,6 +37,8 @@ description: Surface weekly LinkedIn post ideas from my recent work
 Open with `new-surface`, never `cmux open`. Follow the following process for opening correctly:
 
 ```bash
+abs="/absolute/path/to/artifact.html" # the file you just created or updated
+
 command -v cmux >/dev/null 2>&1 && [ -n "$CMUX_WORKSPACE_ID" ] || exit 0
 
 # Target pane = the one not running this session. Never hardcode, refs shift per session.

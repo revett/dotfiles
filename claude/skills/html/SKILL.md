@@ -14,7 +14,6 @@ description: Create a single self-contained HTML artifact instead of a long mark
   inline SVG diagram, a slide deck, a report or postmortem, or a small editor that exports
   markdown/JSON/config
 - Don't use it when the answer is short, purely factual, or the reader asked for markdown
-
 - Keep everything inline (CSS and JS), no CDNs, fonts, build steps, or network access; it must open
   straight from disk
 - Keep the JavaScript small and purposeful, use semantic HTML, and make it work on narrow screens
@@ -24,9 +23,10 @@ description: Create a single self-contained HTML artifact instead of a long mark
 - If state is editable, include a copy or export button that returns something useful
 - Use distinctive design for reader facing artifacts and stay functional for internal engineering
   ones; design should serve comprehension, not decorate it
-- Critically must start the page with `<meta charset="utf-8">` before any other markup
+- Critically, `<meta charset="utf-8">` must be the first element inside `<head>`, before the title,
+  any styles, or any other markup
 - The file is opened over `file://` with no server charset header, so without this Safari falls back
-  to a legacy encoding and any non-ASCII characters
+  to a legacy encoding and any non-ASCII characters render as mojibake
 
 ## Critical
 
@@ -46,6 +46,8 @@ description: Create a single self-contained HTML artifact instead of a long mark
 Open with `new-surface`, never `cmux open`. Follow the following process for opening correctly:
 
 ```bash
+abs="/absolute/path/to/artifact.html" # the file you just created or updated
+
 command -v cmux >/dev/null 2>&1 && [ -n "$CMUX_WORKSPACE_ID" ] || exit 0
 
 # Target pane = the one not running this session. Never hardcode, refs shift per session.
@@ -64,4 +66,3 @@ cmux new-surface --type browser --pane "$target" --url "file://$abs" \
 - `file://` needs an absolute path
 - Close only what you opened: `cmux close-surface --surface <ref>`
 - `surface:2` and `pane:2` are unrelated sequences
-
