@@ -127,20 +127,21 @@ fi
 if [[ -n "$CMUX_WORKSPACE_ID" ]]; then
   # Auto rename the workspace based on the current directory. When inside a project directory,
   # extracts the owner/repo slug from the path, e.g. ~/projects/github.com/team-plain/services
-  # resolves to "team-plain/services". Falls back to "👨‍🌾 Workspace" outside of projects.
+  # resolves to "team-plain/services". Outside of a project the title is left alone: every shell in
+  # a workspace shares one CMUX_WORKSPACE_ID, and this runs on shell startup as well as on cd, so
+  # writing a fallback title here lets any shell that starts outside a project (a new tab, a resumed
+  # agent surface, cmux's replacement terminal) clobber the title the project shell set.
   _cmux_chpwd_rename() {
     local projects_base="$HOME/projects/github.com/"
-    if [[ "$PWD" == ${projects_base}* ]]; then
-      local rel="${PWD#$projects_base}"
-      if [[ "$rel" == */* ]]; then
-        local owner="${rel%%/*}"
-        local rest="${rel#*/}"
-        local repo="${rest%%/*}"
-        cmux workspace rename "$CMUX_WORKSPACE_ID" --title "$owner/$repo" > /dev/null
-        return
-      fi
-    fi
-    cmux workspace rename "$CMUX_WORKSPACE_ID" --title "👨‍🌾 Workspace" > /dev/null
+    [[ "$PWD" == ${projects_base}* ]] || return
+
+    local rel="${PWD#$projects_base}"
+    [[ "$rel" == */* ]] || return
+
+    local owner="${rel%%/*}"
+    local rest="${rel#*/}"
+    local repo="${rest%%/*}"
+    cmux workspace rename "$CMUX_WORKSPACE_ID" --title "$owner/$repo" > /dev/null
   }
 
   # Register as a zsh chpwd hook, and run once for the initial working directory
