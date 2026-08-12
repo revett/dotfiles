@@ -79,7 +79,7 @@
 			"hideFind": "",
 			"increaseWorkspaceTerminalFontSize": "cmd+=",
 			"jumpToUnread": "cmd+shift+u",
-			"markOldestUnreadAndJumpNext": "",
+			"markOldestUnreadAndJumpNext": "ctrl+cmd+u",
 			"markWorkspaceDone": "",
 			"markdownZoomIn": "",
 			"markdownZoomOut": "",
@@ -149,7 +149,7 @@
 			"toggleSidebar": "",
 			"toggleSplitZoom": "cmd+shift+enter",
 			"toggleTerminalCopyMode": "",
-			"toggleUnread": "",
+			"toggleUnread": "opt+cmd+u",
 			"triggerFlash": "",
 			"useSelectionForFind": ""
 		}

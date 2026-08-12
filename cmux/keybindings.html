@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Keybindings</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --fg: #16181d;
+        --muted: #6b7280;
+        --line: #e5e7eb;
+        --key-bg: #f4f4f5;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #16181d;
+          --fg: #e8e8ea;
+          --muted: #8b909c;
+          --line: #2a2d35;
+          --key-bg: #22252c;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 3rem 1.5rem 5rem;
+        background: var(--bg);
+        color: var(--fg);
+        font: 15px/1.5 ui-sans-serif, -apple-system, system-ui, sans-serif;
+      }
+      main { max-width: 40rem; margin: 0 auto; }
+      h1 { font-size: 1.4rem; margin: 0 0 2.5rem; }
+      h2 {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin: 2.5rem 0 0.5rem;
+        font-weight: 600;
+      }
+      section:first-of-type h2 { margin-top: 0; }
+      table { width: 100%; border-collapse: collapse; }
+      td { padding: 0.55rem 0; border-bottom: 1px solid var(--line); }
+      td:last-child { text-align: right; white-space: nowrap; }
+      kbd {
+        display: inline-block;
+        min-width: 1.75rem;
+        margin-left: 0.25rem;
+        padding: 0.15rem 0.4rem;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: var(--key-bg);
+        font: 13px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+        text-align: center;
+      }
+      footer { margin-top: 3rem; color: var(--muted); font-size: 0.8rem; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Keybindings</h1>
+
+      <section>
+        <h2>App</h2>
+        <table>
+          <tr><td>Reload Configuration</td><td><kbd>⌘</kbd><kbd>⇧</kbd><kbd>,</kbd></td></tr>
+          <tr><td>Command Palette</td><td><kbd>⌘</kbd><kbd>⇧</kbd><kbd>P</kbd></td></tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Workspaces</h2>
+        <table>
+          <tr><td>New Workspace</td><td><kbd>⌘</kbd><kbd>N</kbd></td></tr>
+          <tr><td>Go To Workspace</td><td><kbd>⌘</kbd><kbd>P</kbd></td></tr>
+          <tr><td>Next Sidebar Tab</td><td><kbd>⌘</kbd><kbd>]</kbd></td></tr>
+          <tr><td>Prev Sidebar Tab</td><td><kbd>⌘</kbd><kbd>[</kbd></td></tr>
+          <tr><td>Close Workspace</td><td><kbd>⌘</kbd><kbd>⇧</kbd><kbd>W</kbd></td></tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Surfaces</h2>
+        <table>
+          <tr><td>Next Surface</td><td><kbd>⌘</kbd><kbd>⇧</kbd><kbd>]</kbd></td></tr>
+          <tr><td>Prev Surface</td><td><kbd>⌘</kbd><kbd>⇧</kbd><kbd>[</kbd></td></tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Split Panes</h2>
+        <table>
+          <tr><td>Focus Left</td><td><kbd>⌘</kbd><kbd>1</kbd></td></tr>
+          <tr><td>Focus Right</td><td><kbd>⌘</kbd><kbd>2</kbd></td></tr>
+          <tr><td>Split Right</td><td><kbd>⌘</kbd><kbd>D</kbd></td></tr>
+          <tr><td>Zoom Split</td><td><kbd>⌘</kbd><kbd>⇧</kbd><kbd>↩</kbd></td></tr>
+          <tr><td>Equalize Splits</td><td><kbd>⌘</kbd><kbd>⇧</kbd><kbd>=</kbd></td></tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Notifications</h2>
+        <table>
+          <tr><td>Jump To Unread</td><td><kbd>⌘</kbd><kbd>⇧</kbd><kbd>U</kbd></td></tr>
+          <tr><td>Toggle Unread</td><td><kbd>⌥</kbd><kbd>⌘</kbd><kbd>U</kbd></td></tr>
+          <tr><td>Mark Oldest Unread, Jump To Next</td><td><kbd>⌃</kbd><kbd>⌘</kbd><kbd>U</kbd></td></tr>
+        </table>
+      </section>
+
+      <footer>
+        Mirrors the <code>👀</code> marked bindings in <code>AGENTS.md</code>. Keep the two in sync.
+      </footer>
+    </main>
+  </body>
+</html>

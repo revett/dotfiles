@@ -50,32 +50,44 @@ Then add the following keybindings, which I actually use and find useful:
 
 - App
   - `openSettings` → `cmd+,`
-  - `reloadConfiguration` → `cmd+shift+,`
-  - `commandPalette` → `cmd+shift+p`
+  - 👀 `reloadConfiguration` → `cmd+shift+,`
+  - 👀 `commandPalette` → `cmd+shift+p`
   - `quit` → `cmd+q`
 - Workspaces
-  - `newTab` → `cmd+n`
-  - `goToWorkspace` → `cmd+p`
-  - `nextSidebarTab` → `cmd+]`
-  - `prevSidebarTab` → `cmd+[`
-  - `closeWorkspace` → `cmd+shift+w`
+  - 👀 `newTab` → `cmd+n`
+  - 👀 `goToWorkspace` → `cmd+p`
+  - 👀 `nextSidebarTab` → `cmd+]`
+  - 👀 `prevSidebarTab` → `cmd+[`
+  - 👀 `closeWorkspace` → `cmd+shift+w`
 - Surfaces
   - `newSurface` → `cmd+t`
-  - `nextSurface` → `cmd+shift+]`
-  - `prevSurface` → `cmd+shift+[`
+  - 👀 `nextSurface` → `cmd+shift+]`
+  - 👀 `prevSurface` → `cmd+shift+[`
   - `closeTab` → `cmd+w`
 - Split Panes
-  - `focusLeft` → `cmd+1`
-  - `focusRight` → `cmd+2`
-  - `splitRight` → `cmd+d`
-  - `toggleSplitZoom` → `cmd+shift+enter`
+  - 👀 `focusLeft` → `cmd+1`
+  - 👀 `focusRight` → `cmd+2`
+  - 👀 `splitRight` → `cmd+d`
+  - 👀 `toggleSplitZoom` → `cmd+shift+enter`
   - `increaseWorkspaceTerminalFontSize` → `cmd+=`
   - `decreaseWorkspaceTerminalFontSize` → `cmd+-`
   - `resetWorkspaceTerminalFontSize` → `cmd+0`
-  - `equalizeSplits` → `cmd+shift+=`
+  - 👀 `equalizeSplits` → `cmd+shift+=`
 - Browser
   - `openBrowser` → `cmd+shift+l`
   - `focusBrowserAddressBar` → `cmd+l`
   - `browserReload` → `cmd+r`
 - Notifications
-  - `jumpToUnread` → `cmd+shift+u`
+  - 👀 `jumpToUnread` → `cmd+shift+u`
+  - 👀 `toggleUnread` → `opt+cmd+u`
+  - 👀 `markOldestUnreadAndJumpNext` → `ctrl+cmd+u`
+
+`cmux/keybindings.html` is a hand maintained cheatsheet of the bindings I actually use. There is no
+generator, so it only stays correct if you keep it correct:
+
+- Any time you add, remove, or change a non-empty binding in `shortcuts.bindings` in
+  `cmux/config.json`, edit `cmux/keybindings.html` in the same change
+- Also update the keybindings list above in this file, all three must agree
+- Only include bindings in the HTML if they have the `👀` prefix in the keybinding list above
+- Disabled bindings (`""`) never appear in the HTML
+- Match the existing section, row, and `<kbd>` markup; symbols are `⌘ ⇧ ⌥ ⌃ ↩`
