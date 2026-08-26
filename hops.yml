@@ -22,15 +22,12 @@ machines:
       - tree
       - yt-dlp
     casks:
-      - 1password
       - 1password-cli
       - claude-code@latest
       - cmux
-      - cursor
       - firefox@developer-edition
       - font-sauce-code-pro-nerd-font
       - font-space-mono
-      - google-chrome
       - handy
       - logi-options+
       - notion
@@ -68,9 +65,12 @@ machines:
       - docker
       - docker-compose
     casks:
+      - 1password
       - adobe-creative-cloud
       - calibre
       - claude
+      - cursor
+      - google-chrome
       - iina
       - private-internet-access
       - transmission
@@ -88,8 +88,12 @@ machines:
       - granola
       - linear
       - session-manager-plugin
-      - slack
       - tuple
     cursor:
       - typescriptteam.native-preview # Needed for tsgo support
       - vitest.explorer
+    ignore:
+      - 1password
+      - cursor
+      - google-chrome
+      - slack
