@@ -11,3 +11,19 @@
 ;; so --add-dirs on the socket directory is not enough.
 (allow network-outbound
   (remote unix-socket (path-regex (string-append "^" HOME_DIR "/\\.local/state/cmux/[^/]+\\.sock$"))))
+
+;; OrbStack CLI (docker, docker compose). Safehouse's docker feature covers the socket but not
+;; the binaries, which are symlinked from ~/.orbstack/bin into the app bundle.
+(allow file-read*
+  (home-subpath "/.orbstack/bin")
+  (subpath "/Applications/OrbStack.app/Contents/MacOS/xbin"))
+(allow process-exec
+  (subpath "/Applications/OrbStack.app/Contents/MacOS/xbin"))
+
+;; tsx opens a local IPC unix socket under $TMPDIR/tsx-<uid>/ on every run (pnpm scripts, vitest
+;; local migrations, plain-service codegen in team-plain/services). Safehouse denies unix socket
+;; bind by default, so allow it for that path only.
+(allow network-bind network-inbound
+  (local unix-socket (path-regex "^/private/var/folders/[^/]+/[^/]+/T/tsx-[0-9]+/[0-9]+\\.pipe$")))
+(allow network-outbound
+  (remote unix-socket (path-regex "^/private/var/folders/[^/]+/[^/]+/T/tsx-[0-9]+/[0-9]+\\.pipe$")))

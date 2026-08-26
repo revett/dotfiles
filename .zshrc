@@ -54,6 +54,11 @@ if [ -d "/Applications/cmux.app/Contents/Resources/bin" ]; then
   export PATH="/Applications/cmux.app/Contents/Resources/bin:$PATH"
 fi
 
+# Add the OrbStack docker CLI to PATH if it is installed
+if [ -d "$HOME/.orbstack/bin" ]; then
+  export PATH="$HOME/.orbstack/bin:$PATH"
+fi
+
 # ---
 # Check MACHINE_TYPE.txt and set environment variable accordingly
 # ---
