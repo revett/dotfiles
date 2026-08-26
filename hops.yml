@@ -32,6 +32,7 @@ machines:
       - logi-options+
       - notion
       - obsidian
+      - orbstack
       - postico # This is Postico 2
       - raycast
       - screen-studio
@@ -60,10 +61,6 @@ machines:
       - yoavbls.pretty-ts-errors
       - yzhang.markdown-all-in-one
   personal:
-    formulae:
-      - colima
-      - docker
-      - docker-compose
     casks:
       - 1password
       - adobe-creative-cloud
