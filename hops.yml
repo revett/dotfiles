@@ -4,7 +4,6 @@ machines:
   shared:
     taps:
       - eugene1g/safehouse
-      - manaflow-ai/cmux
       - oven-sh/bun
     formulae:
       - agent-safehouse
@@ -24,7 +23,6 @@ machines:
     casks:
       - 1password-cli
       - claude-code@latest
-      - cmux
       - firefox@developer-edition
       - font-sauce-code-pro-nerd-font
       - font-space-mono

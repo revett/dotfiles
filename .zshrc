@@ -48,12 +48,6 @@ hops reminder
 # Configure Agent Safehouse, see .functions for bash functions related to safehouse()
 SAFEHOUSE_APPEND_PROFILE="$HOME/.config/agent-safehouse/local-overrides.sb"
 
-# Put the cmux CLI on PATH (cmux only injects it into terminals it launches, so restored/resumed
-# sessions and /bin/sh hooks otherwise can't find it)
-if [ -d "/Applications/cmux.app/Contents/Resources/bin" ]; then
-  export PATH="/Applications/cmux.app/Contents/Resources/bin:$PATH"
-fi
-
 # Add the OrbStack docker CLI to PATH if it is installed
 if [ -d "$HOME/.orbstack/bin" ]; then
   export PATH="$HOME/.orbstack/bin:$PATH"
@@ -122,45 +116,6 @@ if [[ "$DOTFILES_MACHINE_TYPE" == "WORK" ]]; then
 
   # Default internal CLI format to JSON
   export PLAIN_CLI_FORMAT="json"
-fi
-
-# ---
-# CMUX
-# ---
-
-# Only configure cmux if running inside a cmux session (CMUX_WORKSPACE_ID is set by cmux)
-if [[ -n "$CMUX_WORKSPACE_ID" ]]; then
-  # Auto rename the workspace based on the current directory. When inside a project directory,
-  # extracts the owner/repo slug from the path, e.g. ~/projects/github.com/team-plain/services
-  # resolves to "team-plain/services". Outside of a project the title is left alone: every shell in
-  # a workspace shares one CMUX_WORKSPACE_ID, and this runs on shell startup as well as on cd, so
-  # writing a fallback title here lets any shell that starts outside a project (a new tab, a resumed
-  # agent surface, cmux's replacement terminal) clobber the title the project shell set.
-  _cmux_chpwd_rename() {
-    local projects_base="$HOME/projects/github.com/"
-    [[ "$PWD" == ${projects_base}* ]] || return
-
-    local rel="${PWD#$projects_base}"
-    [[ "$rel" == */* ]] || return
-
-    local owner="${rel%%/*}"
-    local rest="${rel#*/}"
-    local repo="${rest%%/*}"
-    cmux workspace rename "$CMUX_WORKSPACE_ID" --title "$owner/$repo" > /dev/null
-  }
-
-  # Register as a zsh chpwd hook, and run once for the initial working directory
-  chpwd_functions+=(_cmux_chpwd_rename)
-  _cmux_chpwd_rename
-
-  # Set default Claude status in the sidebar (replaced by Claude Code hooks when a session starts)
-  if ! cmux list-status 2>/dev/null | grep -q '^claude='; then
-    cmux set-status claude "Chilling" --icon moon.zzz --color "#c27aff" > /dev/null
-  fi
-
-  # Disable cmux's native Claude Code hook injection, sidebar status is driven by
-  # our own hooks instead (see claude/settings.json and claude/hooks/notify.sh)
-  export CMUX_CLAUDE_HOOKS_DISABLED=1
 fi
 
 # ---

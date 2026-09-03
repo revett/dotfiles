@@ -19,17 +19,6 @@ I wrote [revett/hops](https://github.com/revett/hops) as a lightweight CLI to wr
 commands to help with managing installing packages across work/personal machines, see
 [hops.yml](./hops.yml).
 
-## Todo
-
-- [ ] HTML explainer skill
-- [ ] Update `permissions.deny` list for Claude
-- [ ] Set up status line for Claude
-- [ ] Add loop based web UI for managing sessions
-- [ ] Add artifact tracking within cmux dock
-- [ ] Add ticket ID / PR number to cmux sidebar
-- [ ] Remove old skill marketplaces
-- [ ] Fix why cmux workspace rename does not work for `~/projects/scratchpad`
-
 ## Thanks
 
 - Jeff Geerling - [geerlingguy/dotfiles](https://github.com/geerlingguy/dotfiles)

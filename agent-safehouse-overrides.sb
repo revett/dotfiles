@@ -7,11 +7,6 @@
 (allow file-write*
   (home-subpath "/Downloads"))
 
-;; cmux CLI talks to the app over a unix socket; connect() is network-outbound,
-;; so --add-dirs on the socket directory is not enough.
-(allow network-outbound
-  (remote unix-socket (path-regex (string-append "^" HOME_DIR "/\\.local/state/cmux/[^/]+\\.sock$"))))
-
 ;; OrbStack CLI (docker, docker compose). Safehouse's docker feature covers the socket but not
 ;; the binaries, which are symlinked from ~/.orbstack/bin into the app bundle.
 (allow file-read*

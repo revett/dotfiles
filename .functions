@@ -22,7 +22,6 @@ branch() {
 # `cc` starts a Claude Code session inside Agent Safehouse with full tool access.
 cc() {
   clear
-  cmux set-status claude 'Ready' --icon sparkle --color '#51a2ff' > /dev/null
   safe claude --effort high --model opus --dangerously-skip-permissions "$@"
 }
 
@@ -30,7 +29,6 @@ cc() {
 # model.
 ccf() {
   clear
-  cmux set-status claude 'Ready' --icon sparkle --color '#51a2ff' > /dev/null
   safe claude --effort high --model fable --dangerously-skip-permissions "$@"
 }
 
@@ -38,15 +36,7 @@ ccf() {
 # effort level to reduce cost.
 ccl() {
   clear
-  cmux set-status claude 'Ready' --icon sparkle --color '#51a2ff' > /dev/null
   safe claude --effort high --model sonnet --dangerously-skip-permissions "$@"
-}
-
-# `cmuxhelp` is a function to show the available cmux aliases.
-cmuxhelp() {
-  echo "> Available cmux aliases"
-  echo "> See: ~/projects/github.com/revett/dotfiles/.aliases, ~/projects/github.com/revett/dotfiles/.functions"
-  alias | grep "='cmux " | sed "s/^/  - /"
 }
 
 # `githelp` is a function to show the available Git aliases and functions.
@@ -115,14 +105,12 @@ safe() {
       --enable=shell-init,cloud-credentials,1password,docker \
       --add-dirs-ro="$HOME/.claude" \
       --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
-      --add-dirs-ro="/Applications/cmux.app" \
       "${work_mounts[@]}" \
       --add-dirs="$HOME/projects/scratchpad" \
-      --add-dirs="$HOME/.local/state/cmux" \
       --add-dirs="$HOME/.local/state/koba" \
       --add-dirs="$HOME/Library/Caches/io.sentry" \
       --add-dirs="$(pwd)" \
-      --env-pass="CMUX_WORKSPACE_ID,CMUX_SURFACE_ID,CMUX_SOCKET_PATH,CMUX_CLAUDE_HOOKS_DISABLED,GH_REPO_SLUG" \
+      --env-pass="GH_REPO_SLUG" \
       --append-profile="$SAFEHOUSE_APPEND_PROFILE" \
       "$@"
 }
