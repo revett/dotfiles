@@ -19,24 +19,32 @@ branch() {
   echo ${ref#refs/heads/}
 }
 
+# `cc-setting-flags` returns the setting flags for a Claude Code session based on the repository
+# slug.
+cc-setting-flags() {
+  case "$(gh-repo-slug 2>/dev/null)" in
+    team-plain/services) echo "--setting-sources user" ;;
+  esac
+}
+
 # `cc` starts a Claude Code session inside Agent Safehouse with full tool access.
 cc() {
   clear
-  safe claude --effort high --model opus --dangerously-skip-permissions "$@"
+  safe claude --effort high --model opus --dangerously-skip-permissions ${=$(cc-setting-flags)} "$@"
 }
 
 # `ccf` starts a Claude Code session inside Agent Safehouse with full tool access, using the fable
 # model.
 ccf() {
   clear
-  safe claude --effort high --model fable --dangerously-skip-permissions "$@"
+  safe claude --effort high --model fable --dangerously-skip-permissions ${=$(cc-setting-flags)} "$@"
 }
 
 # `ccl` starts a lighweight Claude Code session inside Agent Safehouse, using a cheaper model and
 # effort level to reduce cost.
 ccl() {
   clear
-  safe claude --effort high --model sonnet --dangerously-skip-permissions "$@"
+  safe claude --effort high --model sonnet --dangerously-skip-permissions ${=$(cc-setting-flags)} "$@"
 }
 
 # `githelp` is a function to show the available Git aliases and functions.
