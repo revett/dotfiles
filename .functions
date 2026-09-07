@@ -23,7 +23,7 @@ branch() {
 # slug.
 cc-setting-flags() {
   case "$(gh-repo-slug 2>/dev/null)" in
-    team-plain/services) echo "--setting-sources user" ;;
+    team-plain/services|team-plain/support-app) echo "--setting-sources user" ;;
   esac
 }
 
