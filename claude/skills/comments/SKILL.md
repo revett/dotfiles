@@ -1,7 +1,6 @@
 ---
 name: comments
 description: Fix open comments on the current GitHub PR
-disable-model-invocation: true
 ---
 
 # Instructions

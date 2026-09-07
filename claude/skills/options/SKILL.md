@@ -1,7 +1,6 @@
 ---
 name: options
 description: Generate a list of options to consider for a given topic
-disable-model-invocation: true
 ---
 
 # Instructions

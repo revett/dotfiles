@@ -1,7 +1,6 @@
 ---
 name: do
 description: Execute a task, with the surrounding logistics
-disable-model-invocation: true
 ---
 
 # Instructions
