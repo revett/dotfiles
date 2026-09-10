@@ -21,7 +21,6 @@ machines:
       - tree
       - yt-dlp
     casks:
-      - 1password-cli
       - claude-code@latest
       - firefox@developer-edition
       - font-sauce-code-pro-nerd-font
@@ -37,7 +36,6 @@ machines:
       - spotify
       - todoist-app
       - whatsapp
-      - yaak
     cursor:
       - albert.tabout
       - bierner.markdown-emoji
@@ -62,7 +60,6 @@ machines:
     casks:
       - 1password
       - adobe-creative-cloud
-      - calibre
       - claude
       - cursor
       - google-chrome

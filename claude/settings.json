@@ -28,10 +28,11 @@
   "tui": "default",
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
+  "disableAutoMode": "disable",
   "showTurnDuration": true,
   "bypassPermissionsModeAccepted": true,
-  "disableAutoMode": "disable",
   "feedbackSurveyState": {
     "lastShownTime": 1754056697258
-  }
+  },
+  "agentPushNotifEnabled": true
 }
