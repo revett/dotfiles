@@ -4,11 +4,9 @@ machines:
   shared:
     taps:
       - eugene1g/safehouse
-      - oven-sh/bun
     formulae:
       - agent-safehouse
       - biome
-      - bun
       - coreutils
       - direnv
       - fnm
