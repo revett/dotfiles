@@ -23,6 +23,7 @@ machines:
       - firefox@developer-edition
       - font-sauce-code-pro-nerd-font
       - font-space-mono
+      - grok-bot
       - handy
       - logi-options+
       - notion
