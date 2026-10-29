@@ -51,3 +51,9 @@ Before the start of the "Problem" section of the description, there should be a 
 - After creating/updating a local HTML artifact, open it in the default browser with `open <path>`
 - Use available tools (where appropriate) to help build context and a better understanding
 - If applicable, include a sticky ToC sidebar, left of the main content that scrolls with the page
+
+Do not include any sort of additional footer, similar to below:
+
+```text
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+```
