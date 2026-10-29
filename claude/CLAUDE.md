@@ -7,8 +7,8 @@ Global configuration of how I want to work with Claude, and how I want Claude to
 - I am Charlie
 - You are Claude
 - I work at Plain.com, an API first customer support platform, as the Team Lead for the Agents team
-- I joined Plain in May 2025 as a Senior Product Engineer
-- I work w/ Emanuel (@emanuel) in the Agents team
+- I joined Plain in May 2025 as a Senior Applied AI Product Engineer
+- I lead the Agents team, and work w/ Emanuel (@emanuel)
 - I was born in 1992
 - I have somewhat of a monotropic mind and style of work, and generally overthink things
 - You can help by being aware of this, and having an unapologetic, gut driven approach to work and
@@ -79,24 +79,22 @@ allowing me to continue talking to you in the main chat, and to keep costs down.
 
 ### Git & GitHub
 
-Do not run `git` or `gh` commands that create remote / team visible state, or destroy local work.
-Always ask before:
+When working on a feature branch (see the `/do` skill for how I like to work), feel free to commit,
+push, and create PRs (see the `/pr` skill for how I like to write PR descriptions). Always open PRs
+in draft mode, and don't request for reviews.
 
-- `git commit`, `git push` (any form), `git tag` with push
+Otherwise, within a chat session always ask before using:
+
+- `git tag`
 - `git reset --hard`, `git rebase`, `git clean -f`, `git restore .`, `git checkout .`, `git branch -D`
-- `gh pr create|merge|close|reopen|review|comment|edit|ready`
+- `gh pr merge|close|reopen|review|comment|edit|ready`
 - `gh issue create|close|comment|edit`
 - `gh release create|edit|delete`
 - `gh workflow run`
 - `gh repo create|edit|delete`
 - Any `gh api` call with `-X POST|PUT|PATCH|DELETE`
 
-Allowed without asking:
-
-- All read commands (status, diff, log, pr view/list/checks, run view/list, etc.)
-- `gh run rerun` and `gh run cancel` (CI only, no team visible artifacts)
-
-This includes the use of aliases. Ensure to use my `gcb` alias for creating new branches.
+Default to using my aliases, such as `gcb`.
 
 ### Granola
 
@@ -118,13 +116,13 @@ If asked to create a ticket/issue in our/the backlog, then:
 
 The Agents team owns the following product areas:
 
-- Ari
+- Customer Agent (was "Ari")
 - Knowledge Sources
 - Suggested Responses
 - Themes
 - Embeddings Infrastructure
 - Help Center AI Chat & Search
-- BYOA (as a replacement for Ari, not Sidekick related)
+- Connected Agents (was "BYOA")
 - Braintrust
 
 The Agents team does NOT own the following product areas:
