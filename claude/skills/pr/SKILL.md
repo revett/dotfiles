@@ -8,7 +8,8 @@ description: Generate a very concise PR title and description for the current br
 Write a very concise title and description for a GitHub pull request for the current branch, then
 push the branch and open it as a draft with `gh pr create --draft --title <title> --body <body>`. If
 a PR already exists for the branch, update it with `gh pr edit --title <title> --body <body>`
-instead. Never request reviewers, and never mark the PR as ready for review.
+instead. Never request reviewers, and never mark the PR as ready for review. In a `team-plain` repo,
+stop if the branch has no Linear ticket and create one first (see CLAUDE.md).
 
 Title format:
 

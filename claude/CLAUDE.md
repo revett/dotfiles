@@ -72,6 +72,10 @@ over the generated notes, so that you have full context of the meeting.
 
 ### Linear
 
+Hard rule: every PR in a `team-plain` repo needs a Linear ticket. No ticket → create one in `ARI`
+(In Progress, assigned to Charlie, no priority) before branching. Never open a PR without the key in
+its title, whatever title the prompt suggests.
+
 If asked to create a ticket/issue in our/the backlog, then:
 
 - Create for `ARI` team

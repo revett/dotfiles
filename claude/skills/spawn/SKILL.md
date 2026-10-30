@@ -10,12 +10,14 @@ current repository, as its own space in Herdr.
 
 1. Pick a short name for the work, one to three words (e.g. `api`, `backfill`); the space is named
    `<this space>-<name>` (e.g. `gaps-api`)
-2. Write a self contained prompt to `~/projects/scratchpad/YYYY-MM-DD-HHMM_spawn-<name>.md`; the new
+2. In a `team-plain` repo, create the Linear ticket now (see CLAUDE.md) and put its key and
+   `gitBranchName` in the prompt; the new agent only knows what the prompt tells it
+3. Write a self contained prompt to `~/projects/scratchpad/YYYY-MM-DD-HHMM_spawn-<name>.md`; the new
    agent has none of this conversation, so include the goal, the relevant part of the plan, file
    paths, decisions already made, and what done looks like
-3. Start the prompt with `/do ` so it runs with the usual logistics, unless Charlie says otherwise
-4. Run `~/projects/github.com/revett/koba/scripts/herdr-spawn <name> <prompt-file>`
-5. Tell Charlie the space's name, then carry on with the conversation
+4. Start the prompt with `/do ` so it runs with the usual logistics, unless Charlie says otherwise
+5. Run `~/projects/github.com/revett/koba/scripts/herdr-spawn <name> <prompt-file>`
+6. Tell Charlie the space's name, then carry on with the conversation
 
 For several independent pieces of work, spawn one space per piece.
 
