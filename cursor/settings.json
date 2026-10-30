@@ -1,6 +1,5 @@
 {
   "[go]": {
-    "editor.defaultFormatter": "golang.go",
     "editor.formatOnSave": true
   },
   "[javascript]": {
@@ -57,6 +56,7 @@
   ],
   "go.lintOnSave": "workspace",
   "go.lintTool": "golangci-lint",
+  "json.schemaDownload.enable": true,
   "markdown.preview.fontSize": 12,
   "openInGitHub.remote.branch": "main",
   "openInGitHub.useLocalBranch": false,
@@ -99,9 +99,9 @@
       "text": "BREAD"
     }
   ],
-  "typescript.preferGoToSourceDefinition": true,
+  "js/ts.preferGoToSourceDefinition": true,
+  "window.autoDetectColorScheme": false,
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.editor.enablePreview": false,
-  "workbench.sideBar.location": "right",
-  "window.autoDetectColorScheme": false
+  "workbench.sideBar.location": "right"
 }
