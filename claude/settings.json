@@ -6,6 +6,7 @@
     "pr": ""
   },
   "autoMemoryEnabled": false,
+  "bypassPermissionsModeAccepted": true,
   "disableAutoMode": "disable",
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"

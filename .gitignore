@@ -17,3 +17,5 @@
 
 # Machine type file to differentiate between work and personal machines
 MACHINE_TYPE.txt
+
+**/.claude/settings.local.json
