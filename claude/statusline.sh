@@ -4,13 +4,10 @@
 # Receives session JSON on stdin. See https://code.claude.com/docs/en/statusline
 set -uo pipefail
 
-input=$(cat)
-
 # ── Palette (grey baseline; warm only for warnings) ───────────────────────
 RESET=$'\033[0m'
 DIM=$'\033[2m'
-FG=$'\033[38;5;250m'      # primary text
-MUT=$'\033[38;5;250m'     # all text shares one grey; bullets stay dim
+FG=$'\033[38;5;250m'      # all text shares one grey; bullets stay dim
 YELLOW=$'\033[38;5;221m'  # warn
 RED=$'\033[38;5;210m'     # hot
 OVER_C=$'\033[38;5;203m'  # 150k+ flag
@@ -20,7 +17,7 @@ SEP=" ${DIM}•${RESET} "
 threshold() { local p=${1:-0}
   if [ "$p" -ge 90 ]; then printf '%s' "$RED"
   elif [ "$p" -ge 70 ]; then printf '%s' "$YELLOW"
-  else printf '%s' "$MUT"; fi
+  else printf '%s' "$FG"; fi
 }
 
 fmt_time() { local e=${1:-}; [ -z "$e" ] && return
@@ -28,15 +25,18 @@ fmt_time() { local e=${1:-}; [ -z "$e" ] && return
 }
 
 # ── Extract ───────────────────────────────────────────────────────────────
-PR=$(echo "$input"      | jq -r '.pr.number // empty')
-DIR=$(echo "$input"     | jq -r '.workspace.current_dir // .cwd // "."')
-MODEL=$(echo "$input"   | jq -r '.model.display_name // "?"')
-EFFORT=$(echo "$input"  | jq -r '.effort.level // empty')
-PCT=$(echo "$input"     | jq -r '.context_window.used_percentage // 0' | cut -d. -f1)
-TOTIN=$(echo "$input"   | jq -r '.context_window.total_input_tokens // 0')
-FIVE=$(echo "$input"    | jq -r '.rate_limits.five_hour.used_percentage // empty')
-FIVE_RST=$(echo "$input"| jq -r '.rate_limits.five_hour.resets_at // empty')
-WEEK=$(echo "$input"    | jq -r '.rate_limits.seven_day.used_percentage // empty')
+# One jq call; fields joined with the unit separator so empty values don't collapse
+IFS=$'\x1f' read -r PR DIR MODEL EFFORT PCT TOTIN FIVE FIVE_RST WEEK < <(jq -r '[
+  .pr.number // "",
+  .workspace.current_dir // .cwd // ".",
+  .model.display_name // "?",
+  .effort.level // "",
+  (.context_window.used_percentage // 0 | floor),
+  .context_window.total_input_tokens // 0,
+  .rate_limits.five_hour.used_percentage // "",
+  .rate_limits.five_hour.resets_at // "",
+  .rate_limits.seven_day.used_percentage // ""
+] | map(tostring) | join("\u001f")')
 
 BRANCH=$(git -C "$DIR" branch --show-current 2>/dev/null || true)
 MAXB=22
@@ -45,14 +45,14 @@ MAXB=22
 # ── Segments ──────────────────────────────────────────────────────────────
 SEGS=()
 
-[ -n "$PR" ]     && SEGS+=("${MUT}#${PR}${RESET}")
-[ -n "$BRANCH" ] && SEGS+=("${MUT}${BRANCH}${RESET}")
+[ -n "$PR" ]     && SEGS+=("${FG}#${PR}${RESET}")
+[ -n "$BRANCH" ] && SEGS+=("${FG}${BRANCH}${RESET}")
 
 # model with effort folded in: "Opus 4.8 (High)"
 M="${FG}${MODEL}${RESET}"
 if [ -n "$EFFORT" ]; then
   E="$(tr '[:lower:]' '[:upper:]' <<<"${EFFORT:0:1}")${EFFORT:1}"
-  M="$M ${MUT}(${E})${RESET}"
+  M="$M ${FG}(${E})${RESET}"
 fi
 SEGS+=("$M")
 
@@ -66,12 +66,12 @@ if [ -n "$FIVE" ] || [ -n "$WEEK" ]; then
   RL=""
   if [ -n "$FIVE" ]; then
     n=$(printf '%.0f' "$FIVE"); t=$(fmt_time "$FIVE_RST")
-    RL="${MUT}5h${RESET} $(threshold "$n")${n}%${RESET}"
-    [ -n "$t" ] && RL="$RL ${MUT}(${t})${RESET}"
+    RL="${FG}5h${RESET} $(threshold "$n")${n}%${RESET}"
+    [ -n "$t" ] && RL="$RL ${FG}(${t})${RESET}"
   fi
   if [ -n "$WEEK" ]; then
     n=$(printf '%.0f' "$WEEK")
-    W="${MUT}7d${RESET} $(threshold "$n")${n}%${RESET}"
+    W="${FG}7d${RESET} $(threshold "$n")${n}%${RESET}"
     RL="${RL:+$RL ${DIM}/${RESET} }$W"
   fi
   SEGS+=("$RL")
