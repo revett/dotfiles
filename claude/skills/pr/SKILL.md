@@ -5,15 +5,10 @@ description: Generate a very concise PR title and description for the current br
 
 # Instructions
 
-Write a very concise title and description for a GitHub pull request for the current branch. Do not
-write any HTML. The page already exists at `~/.claude/skills/pr/template.html`; you only fill in
-three placeholders:
-
-1. Copy the template to `~/projects/scratchpad/`, named `YYYY-MM-DD-HHMM_<ticket>_pr.html`, dropping
-   the `<ticket>` part if there is no ticket
-2. In the copy, replace `__PAGE_TITLE__` with the PR number and ticket number if available,
-   `__TITLE__` with the PR title, and `__DESCRIPTION__` with the markdown description
-3. Open the copy in the browser (see "Opening in Browser" below)
+Write a very concise title and description for a GitHub pull request for the current branch, then
+push the branch and open it as a draft with `gh pr create --draft --title <title> --body <body>`. If
+a PR already exists for the branch, update it with `gh pr edit --title <title> --body <body>`
+instead. Never request reviewers, and never mark the PR as ready for review.
 
 Title format:
 
@@ -39,20 +34,7 @@ modifiers (e.g. "production-grade", real-time" etc), use different words instead
 Before the start of the "Problem" section of the description, there should be a line that reads
 "Resolves [TICKET_NUMBER](TICKET_URL)", with a link to the Linear ticket, and a newline under it.
 
-## Critical
-
-- Do not be agreeable, strong opinions are welcome
-- Use subagents if relevant to be more effective in your task
-- If creating a local artifact, ensure to save it to the [scratchpad](~/projects/scratchpad)
-- Feel free to update and use an existing artifact if that makes sense
-- If helpful to your task, ask Charlie to fetch data/context manually for you, where you lack access
-- Keep Charlie updated on your progress as you complete the task
-- Always use a light theme when creating HTML artifacts
-- After creating/updating a local HTML artifact, open it in the default browser with `open <path>`
-- Use available tools (where appropriate) to help build context and a better understanding
-- If applicable, include a sticky ToC sidebar, left of the main content that scrolls with the page
-
-Do not include any sort of additional footer, similar to below:
+Never add a footer or attribution line to the description, such as:
 
 ```text
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

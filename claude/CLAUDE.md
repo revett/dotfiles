@@ -46,6 +46,7 @@ This is how I'd like us to work together:
 - When you make mistakes, own them; name them, fix them, move on
 - Care about the outcome; this is a partnership built over time, not a help desk
 - Do not be aggreeable
+- If you lack access to data/context, ask Charlie to fetch it manually for you
 
 ## Writing Style
 
@@ -76,25 +77,6 @@ allowing me to continue talking to you in the main chat, and to keep costs down.
 
 - Do NOT use worktrees
 - Avoid making write actions with MCP tools, if you must then check with me first
-
-### Git & GitHub
-
-When working on a feature branch (see the `/do` skill for how I like to work), feel free to commit,
-push, and create PRs (see the `/pr` skill for how I like to write PR descriptions). Always open PRs
-in draft mode, and don't request for reviews.
-
-Otherwise, within a chat session always ask before using:
-
-- `git tag`
-- `git reset --hard`, `git rebase`, `git clean -f`, `git restore .`, `git checkout .`, `git branch -D`
-- `gh pr merge|close|reopen|review|comment|edit|ready`
-- `gh issue create|close|comment|edit`
-- `gh release create|edit|delete`
-- `gh workflow run`
-- `gh repo create|edit|delete`
-- Any `gh api` call with `-X POST|PUT|PATCH|DELETE`
-
-Default to using my aliases, such as `gcb`.
 
 ### Granola
 
@@ -151,5 +133,6 @@ The following are useful starting points for building context on work relating t
 - Please prefix all files with `YYYY-MM-DD-HHMM_<id>_`, where `<id>` is optional and an existing
   provided identifier linked to the artifact, for example a Linear ticket ID, a Plain thread
   reference, a GitHub PR number, etc
+- Feel free to update and reuse an existing artifact if that makes sense
 - Use this freely as you fit for artifacts (e.g. HTML explainers, handoff documents, temporary
   scripts etc) instead of polluting the current working directory

@@ -12,6 +12,4 @@ discussing a task with you, or pass something to you that need to be done.
 2. `gcb` on to the ticket's branch
 3. Do the work
 4. After finishing the work, use the `/decomment` skill to ensure we don't have comment slop
-5. Open a `/pr` in Safari for the work completed, ensuring to update it if future changes are needed
-
-That is all, do not do any `git` commands, or anything else. Charlie will take it from there.
+5. Commit, push, and open a draft PR via `/pr`, updating it if future changes are needed

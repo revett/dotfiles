@@ -19,24 +19,13 @@ cc-setting-flags() {
   esac
 }
 
-# `cc` starts a Claude Code session inside Agent Safehouse with full tool access.
+# `cc` starts a Claude Code session inside Agent Safehouse with full tool access, using the given
+# model (default opus), e.g. `cc`, `cc fable`, `cc sonnet --resume`.
 cc() {
+  local model=opus
+  if [[ -n "$1" && "$1" != -* ]]; then model="$1"; shift; fi
   clear
-  safe claude --effort high --model opus --dangerously-skip-permissions ${=$(cc-setting-flags)} "$@"
-}
-
-# `ccf` starts a Claude Code session inside Agent Safehouse with full tool access, using the fable
-# model.
-ccf() {
-  clear
-  safe claude --effort high --model fable --dangerously-skip-permissions ${=$(cc-setting-flags)} "$@"
-}
-
-# `ccl` starts a lighweight Claude Code session inside Agent Safehouse, using a cheaper model and
-# effort level to reduce cost.
-ccl() {
-  clear
-  safe claude --effort high --model sonnet --dangerously-skip-permissions ${=$(cc-setting-flags)} "$@"
+  safe claude --model "$model" --effort high --dangerously-skip-permissions ${=$(cc-setting-flags)} "$@"
 }
 
 # `githelp` is a function to show the available Git aliases and functions.
