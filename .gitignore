@@ -2,23 +2,15 @@
 .env
 .*.env
 
-# builds
-*.darwin-amd64
-
 # Folder view configuration files
 .DS_Store
-Desktop.ini
 
 # Thumbnail cache files
 ._*
-Thumbs.db
 
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
-
-# Output of the go coverage tool
-*.out
 
 # Swap files
 *.swp

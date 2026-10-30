@@ -11,14 +11,6 @@ asd() {
   grep '^[a-z].*()' ~/projects/github.com/revett/dotfiles/.functions | grep -v '^asd' | sed 's/() {//' | sed 's/^/  - /'
 }
 
-# `branch` is used within a number of aliases, and returns the branch from the current git
-# directory. Taken from oh-my-zsh.
-# See: https://gist.github.com/DavidToca/3086571
-branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
-}
-
 # `cc-setting-flags` returns the setting flags for a Claude Code session based on the repository
 # slug.
 cc-setting-flags() {
@@ -89,7 +81,7 @@ gh-repo-slug() {
 # the branch if the current branch is not main. It will also allow for a `--yolo` flag to bypass
 # the main branch check.
 gpush() {
-  if [ "$(branch)" = "main" ]; then
+  if [ "$(git branch --show-current)" = "main" ]; then
     if [ "$1" = "--yolo" ]; then
       git push
       return
@@ -97,7 +89,7 @@ gpush() {
     echo "error: don't force push main (use gpush --yolo)"
     return 1
   fi
-  git push --force-with-lease --set-upstream origin "$(branch)"
+  git push --force-with-lease --set-upstream origin HEAD
 }
 
 # `safe` wraps a command inside Agent Safehouse, granting specific access to parts of the machine.

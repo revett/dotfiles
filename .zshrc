@@ -17,12 +17,17 @@ if [[ $(uname -m) == 'arm64' ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Initialise zsh completions (previously handled by oh-my-zsh), put Homebrew's completion functions
-# on fpath first, then run compinit once
-if type brew &>/dev/null; then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# Initialise zsh completions, put Homebrew's completion functions on fpath first, then run compinit;
+# only rebuild the completion dump once a day, otherwise load it from cache (-C)
+if [[ -n "$HOMEBREW_PREFIX" ]]; then
+  FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 fi
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 
 # Set default editor
 export EDITOR='cursor -w'
@@ -38,9 +43,6 @@ eval "$(direnv hook zsh)"
 
 # Set fnm environment variables → https://github.com/Schniz/fnm#shell-setup
 eval "$(fnm env --corepack-enabled --use-on-cd --resolve-engines --shell zsh)"
-
-# Default to a specific version of Node
-fnm use 24
 
 # Check if `hops apply` needs to be run
 hops reminder
@@ -63,7 +65,7 @@ if [ ! -f "$MACHINE_TYPE_FILE" ]; then
   return 1
 fi
 
-DOTFILES_MACHINE_TYPE="$(cat "$MACHINE_TYPE_FILE" | tr -d '[:space:]')"
+DOTFILES_MACHINE_TYPE="$(tr -d '[:space:]' < "$MACHINE_TYPE_FILE")"
 if [[ "$DOTFILES_MACHINE_TYPE" != "PERSONAL" && "$DOTFILES_MACHINE_TYPE" != "WORK" ]]; then
   echo "error: MACHINE_TYPE.txt must contain 'PERSONAL' / 'WORK', got '$DOTFILES_MACHINE_TYPE'" >&2
   return 1
