@@ -50,6 +50,9 @@ hops reminder
 # Configure Agent Safehouse, see .functions for bash functions related to safehouse()
 SAFEHOUSE_APPEND_PROFILE="$HOME/.config/agent-safehouse/local-overrides.sb"
 
+# Sandboxed agents push through the SSH agent but can't read ~/.ssh, so load the key on login
+ssh-add -l > /dev/null 2>&1 || ssh-add --apple-load-keychain -q 2> /dev/null
+
 # Add the OrbStack docker CLI to PATH if it is installed
 if [ -d "$HOME/.orbstack/bin" ]; then
   export PATH="$HOME/.orbstack/bin:$PATH"

@@ -89,12 +89,21 @@ safe() {
     work_mounts+=(--add-dirs-ro="$HOME/projects/github.com/team-plain")
   fi
 
+  # In a worktree, commits land in the main checkout's .git, outside $(pwd)
+  local -a git_mounts=()
+  local git_dir
+  if git_dir=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null); then
+    git_mounts+=(--add-dirs="$git_dir")
+  fi
+
   GH_REPO_SLUG="$(gh-repo-slug 2>/dev/null || echo "")" \
     safehouse \
-      --enable=shell-init,cloud-credentials,1password,docker,launch-services,macos-gui \
+      --enable=shell-init,cloud-credentials,1password,docker,launch-services,macos-gui,ssh \
       --add-dirs-ro="$HOME/.claude" \
       --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
       "${work_mounts[@]}" \
+      "${git_mounts[@]}" \
+      --add-dirs-ro="$HOME/projects/github.com/revett/koba/scripts" \
       --add-dirs="$HOME/projects/scratchpad" \
       --add-dirs="$HOME/.local/state/koba" \
       --add-dirs="$HOME/Library/Caches/io.sentry" \
