@@ -21,7 +21,6 @@ machines:
       - yt-dlp
     casks:
       - claude-code@latest
-      - firefox@developer-edition
       - font-sauce-code-pro-nerd-font
       - font-space-mono
       - handy
@@ -61,6 +60,7 @@ machines:
       - adobe-creative-cloud
       - claude
       - cursor
+      - firefox@developer-edition
       - google-chrome
       - iina
       - private-internet-access
