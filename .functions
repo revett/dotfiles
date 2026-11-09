@@ -28,6 +28,16 @@ cc() {
   safe claude --model "$model" --effort high --dangerously-skip-permissions ${=$(cc-setting-flags)} "$@"
 }
 
+# `claude` routes sessions through `cc`, so anything that types `claude --resume <id>` into a shell
+# (e.g. herdr restoring panes) keeps the sandbox and bypass. Subcommands (mcp, update, doctor)
+# skip the sandbox.
+claude() {
+  case "$1" in
+    "" | -*) cc "$@" ;;
+    *) command claude "$@" ;;
+  esac
+}
+
 # `githelp` is a function to show the available Git aliases and functions.
 githelp() {
   echo "> Available Git aliases"
