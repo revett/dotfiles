@@ -108,9 +108,11 @@ safe() {
 
   GH_REPO_SLUG="$(gh-repo-slug 2>/dev/null || echo "")" \
     safehouse \
-      --enable=shell-init,cloud-credentials,1password,docker,launch-services,macos-gui,ssh \
+      --enable=shell-init,cloud-credentials,1password,docker,launch-services,macos-gui,ssh,chromium-headless \
       --add-dirs-ro="$HOME/.claude" \
       --add-dirs-ro="$HOME/projects/github.com/revett/dotfiles" \
+      --add-dirs-ro="$HOME/Library/Application Support/com.raycast.macos/clipboard" \
+      --add-dirs-ro="$HOME/.herdr/worktrees" \
       "${work_mounts[@]}" \
       "${git_mounts[@]}" \
       --add-dirs-ro="$HOME/projects/github.com/revett/koba/scripts" \

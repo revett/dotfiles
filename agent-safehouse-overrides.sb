@@ -22,3 +22,9 @@
   (local unix-socket (path-regex "^/private/var/folders/[^/]+/[^/]+/T/tsx-[0-9]+/[0-9]+\\.pipe$")))
 (allow network-outbound
   (remote unix-socket (path-regex "^/private/var/folders/[^/]+/[^/]+/T/tsx-[0-9]+/[0-9]+\\.pipe$")))
+
+;; Tool caches that spam errors or crash when unwritable: starship session logs (every zsh -ic)
+;; and biome (npx biome check).
+(allow file-read* file-write*
+  (home-subpath "/.cache/starship")
+  (home-subpath "/.biome"))
