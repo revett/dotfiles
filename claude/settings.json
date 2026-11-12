@@ -51,7 +51,6 @@
       "Bash(git *reflog expire*)",
       "Bash(git *reflog delete*)",
       "Bash(git *gc --prune*)",
-      "Bash(gh pr merge*)",
       "Bash(gh release*)",
       "Bash(gh workflow run*)",
       "Bash(gh repo delete*)",
@@ -61,17 +60,10 @@
       "Bash(gh api*-X DELETE*)",
       "Bash(gh api*--method DELETE*)",
       "Bash(gh auth token*)",
-      "Bash(gh pr review*)",
-      "Bash(gh pr close*)",
-      "Bash(gh pr ready*)",
       "Bash(gh issue comment*)",
       "Bash(gh issue create*)",
       "Bash(gh issue close*)",
       "Bash(gh issue edit*)"
-    ],
-    "ask": [
-      "Bash(gh pr comment*)",
-      "Bash(gh api graphql*)"
     ]
   },
   "showTurnDuration": true,
