@@ -61,7 +61,6 @@
       "Bash(gh api*-X DELETE*)",
       "Bash(gh api*--method DELETE*)",
       "Bash(gh auth token*)",
-      "Bash(gh pr comment*)",
       "Bash(gh pr review*)",
       "Bash(gh pr close*)",
       "Bash(gh pr ready*)",
@@ -69,6 +68,10 @@
       "Bash(gh issue create*)",
       "Bash(gh issue close*)",
       "Bash(gh issue edit*)"
+    ],
+    "ask": [
+      "Bash(gh pr comment*)",
+      "Bash(gh api graphql*)"
     ]
   },
   "showTurnDuration": true,
